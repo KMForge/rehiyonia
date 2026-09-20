@@ -9,7 +9,8 @@ class RehiyoniaApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Rehiyonia',
+      debugShowCheckedModeBanner: false,
       theme: AppTheme.light,
       initialRoute: AppRouter.home,
       routes: AppRouter.routes,

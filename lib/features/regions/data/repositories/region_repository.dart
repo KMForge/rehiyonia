@@ -58,10 +58,7 @@ class RegionRepository {
     final db = appDatabase.database;
     final batch = db.batch();
     for (final region in regions) {
-      batch.insert(
-        DatabaseConstants.tableRegions,
-        region.toMap(),
-      );
+      batch.insert(DatabaseConstants.tableRegions, region.toMap());
     }
     await batch.commit(noResult: true);
   }
