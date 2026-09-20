@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../core/database/app_database.dart';
+import '../../core/database/asset_seed_loader.dart';
 
 final appDatabaseProvider = Provider<AppDatabase>((ref) {
   final appDb = AppDatabase();
@@ -19,6 +20,8 @@ class AppInitializationNotifier extends AsyncNotifier<void> {
   Future<void> _initialize() async {
     final db = ref.read(appDatabaseProvider);
     await db.initialize();
+    final seedLoader = AssetSeedLoader(appDatabase: db);
+    await seedLoader.seedIfEmpty();
   }
 
   Future<void> retry() async {

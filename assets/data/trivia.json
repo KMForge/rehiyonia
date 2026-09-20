@@ -1,0 +1,104 @@
+[
+  {
+    "region_id": 1,
+    "question": "Ano ang itinuturing na pinakamatandang pader o tanggulan sa Maynila na itinayo ng mga Espanyol noong ika-16 na siglo?",
+    "answer": "Intramuros",
+    "fun_fact": "Ang Intramuros ay tinatawag na 'Walled City' dahil pinaliligiran ito ng makakapal na pader bilang pananggalang laban sa mga mananakop at pirata."
+  },
+  {
+    "region_id": 2,
+    "question": "Anong tanyag na hagdan-hagdang palayan sa Cordillera ang tinaguriang 'Eighth Wonder of the World'?",
+    "answer": "Banaue Rice Terraces",
+    "fun_fact": "Inukit ng mga ninunong Ifugao ang mga payyo (rice terraces) gamit lamang ang kanilang mga kamay mahigit 2,000 taon na ang nakalilipas."
+  },
+  {
+    "region_id": 3,
+    "question": "Aling lungsod sa Rehiyon I ang kinilala ng UNESCO bilang World Heritage Site dahil sa napreserbang mga bahay na bato noong panahong kolonyal?",
+    "answer": "Vigan",
+    "fun_fact": "Ang Calle Crisologo sa Vigan ay tanyag sa cobblestone streets kung saan kalesa lamang ang pinapayagang sasakyan upang mapanatili ang lumang anyo nito."
+  },
+  {
+    "region_id": 4,
+    "question": "Anong pinakahilagang lalawigan sa Pilipinas ang kilala sa tradisyunal na bahay-bato (Ivatan stone houses) at suot na vakul?",
+    "answer": "Batanes",
+    "fun_fact": "Ang mga bahay sa Batanes ay gawa sa makakapal na batong apog at kugon upang makatagal sa malalakas na bagyo at lindol."
+  },
+  {
+    "region_id": 5,
+    "question": "Bakit tinaguriang 'Bangan ng Palay' (Rice Granary of the Philippines) ang Gitnang Luzon?",
+    "answer": "Dahil sa malawak na kapatagan na nag-aani ng pinakamaraming palay sa bansa",
+    "fun_fact": "Ang lalawigan ng Nueva Ecija sa Gitnang Luzon ang nangunguna sa produksyon ng palay sa buong kapuluan."
+  },
+  {
+    "region_id": 6,
+    "question": "Saang bayan sa Cavite unang iwinagayway ang watawat ng Pilipinas noong Hunyo 12, 1898?",
+    "answer": "Kawit",
+    "fun_fact": "Sa balkonahe ng tahanan ni Heneral Emilio Aguinaldo sa Kawit, Cavite tinugtog sa unang pagkakataon ang Marcha Nacional Filipina (Lupang Hinirang)."
+  },
+  {
+    "region_id": 7,
+    "question": "Anong tanyag na kweba at pambansang parke sa Palawan ang kabilang sa New 7 Wonders of Nature?",
+    "answer": "Puerto Princesa Subterranean River",
+    "fun_fact": "Umaabot sa 8.2 kilometro ang haba ng underground river na ito at may mga nakabibighaning pormasyon ng stalactites at stalagmites."
+  },
+  {
+    "region_id": 8,
+    "question": "Anong bulkan sa Albay ang hinahangaan sa buong mundo dahil sa halos perpektong hugis kono nito?",
+    "answer": "Bulkang Mayon",
+    "fun_fact": "Ayon sa alamat ng mga Bicolano, ang pangalang Mayon ay nagmula sa salitang 'Magayon' na ang ibig sabihin ay maganda."
+  },
+  {
+    "region_id": 9,
+    "question": "Anong tanyag na pista sa Iloilo ang ipinagdiriwang bilang pasasalamat kay Santo Niño at paggunita sa kasunduan ng mga Malay at Ati?",
+    "answer": "Dinagyang Festival",
+    "fun_fact": "Nagmula ang salitang Dinagyang sa salitang Ilonggo na 'dagyang' na ang ibig sabihin ay magdiwang o magsaya."
+  },
+  {
+    "region_id": 10,
+    "question": "Ano ang kakaibang heolohikal na tanawin sa Bohol na nagiging kulay tsokolate tuwing tag-init?",
+    "answer": "Chocolate Hills",
+    "fun_fact": "Mayroong mahigit 1,260 hanggang 1,770 conical hills sa Bohol na binubuo ng limestone at tinutubuan ng damo na nagkukulay-tsokolate sa tag-araw."
+  },
+  {
+    "region_id": 11,
+    "question": "Anong makasaysayang tulay ang nagdurugtong sa mga pulo ng Samar at Leyte patawid sa San Juanico Strait?",
+    "answer": "Tulay ng San Juanico",
+    "fun_fact": "May habang mahigit 2.16 kilometro ang San Juanico Bridge at itinuturing na isa sa pinakamahabang tulay sa bansa."
+  },
+  {
+    "region_id": 12,
+    "question": "Bakit tinaguriang 'Asia's Latin City' ang Lungsod ng Zamboanga?",
+    "answer": "Dahil sa wikang Chavacano na hango sa wikang Espanyol",
+    "fun_fact": "Ang Chavacano ay isang creole language na may 70-80% bokabularyo mula sa lumang Espanyol at gramatika mula sa mga katutubong wikang Pilipino."
+  },
+  {
+    "region_id": 13,
+    "question": "Anong tanyag na talon sa Lungsod ng Iligan ang pangunahing pinagkukunan ng enerhiyang hydroelectric sa Mindanao?",
+    "answer": "Maria Cristina Falls",
+    "fun_fact": "Kilala ang Maria Cristina bilang 'twin falls' dahil sa malaking bato sa bingit ng talon na naghahati sa lagaslas ng tubig sa dalawa."
+  },
+  {
+    "region_id": 14,
+    "question": "Ano ang pinakamataas na bundok sa Pilipinas na may taas na 2,954 metro sa ibabaw ng dagat?",
+    "answer": "Bundok Apo",
+    "fun_fact": "Ang salitang 'Apo' sa mga katutubong wika ay nangangahulugang 'ninuno' o 'panginoon'. Dito rin naninirahan ang pambansang ibon na Haribon."
+  },
+  {
+    "region_id": 15,
+    "question": "Anong tradisyunal na tela ang hinahabi ng mga katutubong T'boli sa Lake Sebu, South Cotabato gamit ang hibla ng abaka?",
+    "answer": "T'nalak",
+    "fun_fact": "Ang mga naghahabi ng T'nalak ay tinatawag na 'Dreamweavers' dahil ang mga disenyo ng tela ay nagmumula sa kanilang mga panaginip na ipinagkaloob ng espiritung si Fu Dalu."
+  },
+  {
+    "region_id": 16,
+    "question": "Anong makasaysayang bangka ang nahukay sa Butuan na nagpapatunay sa maagang kalakalan at kahusayan sa pandaragat ng mga sinaunang Pilipino?",
+    "answer": "Balangay",
+    "fun_fact": "Ang mga nahukay na Balangay sa Butuan ay tinatayang ginawa noon pang 320 CE, patunay na bago pa dumating ang mga Kanluranin ay may maunlad nang sibilisasyon sa bansa."
+  },
+  {
+    "region_id": 17,
+    "question": "Ano ang pinakamalaking lawa sa Mindanao at pangalawa sa buong Pilipinas na sentro ng pamayanan at kultura ng mga Maranao?",
+    "answer": "Lawa ng Lanao",
+    "fun_fact": "Ang salitang 'Maranao' ay nangangahulugang 'mga tao ng lawa' (People of the Lake) na tumutukoy sa kanilang tahanan sa paligid ng Lawa ng Lanao."
+  }
+]

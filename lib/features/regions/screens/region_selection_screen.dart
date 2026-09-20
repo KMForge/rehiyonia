@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../app/app_router.dart';
 import '../models/region.dart';
 import '../providers/region_provider.dart';
 
@@ -145,12 +146,10 @@ class _RegionCard extends StatelessWidget {
             : const Icon(Icons.lock_outline_rounded, color: Colors.grey),
         onTap: region.isUnlocked
             ? () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text(
-                      'Sisimulan ang word search para sa ${region.name}...',
-                    ),
-                  ),
+                Navigator.pushNamed(
+                  context,
+                  AppRouter.game,
+                  arguments: region.id,
                 );
               }
             : () {

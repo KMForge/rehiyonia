@@ -5,6 +5,7 @@ import 'package:rehiyonia/shared/providers/app_initialization_provider.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
 void main() {
+  TestWidgetsFlutterBinding.ensureInitialized();
   setUpAll(() {
     sqfliteFfiInit();
   });
