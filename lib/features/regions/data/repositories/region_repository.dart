@@ -1,3 +1,5 @@
+import 'package:sqflite/sqflite.dart' as sqflite;
+
 import '../../../../core/constants/database_constants.dart';
 import '../../../../core/database/app_database.dart';
 import '../../models/region.dart';
@@ -7,8 +9,15 @@ class RegionRepository {
 
   final AppDatabase appDatabase;
 
+  Future<sqflite.Database> _getDb() async {
+    if (!appDatabase.isOpen) {
+      return appDatabase.initialize();
+    }
+    return appDatabase.database;
+  }
+
   Future<List<Region>> getAllRegions() async {
-    final db = appDatabase.database;
+    final db = await _getDb();
     final maps = await db.query(
       DatabaseConstants.tableRegions,
       orderBy: '${DatabaseConstants.columnId} ASC',
@@ -17,7 +26,7 @@ class RegionRepository {
   }
 
   Future<Region?> getRegionByCode(String code) async {
-    final db = appDatabase.database;
+    final db = await _getDb();
     final maps = await db.query(
       DatabaseConstants.tableRegions,
       where: '${DatabaseConstants.columnRegionCode} = ?',
@@ -29,7 +38,7 @@ class RegionRepository {
   }
 
   Future<void> unlockRegion(int id) async {
-    final db = appDatabase.database;
+    final db = await _getDb();
     await db.update(
       DatabaseConstants.tableRegions,
       {
@@ -42,7 +51,7 @@ class RegionRepository {
   }
 
   Future<void> updateStars(int id, int stars) async {
-    final db = appDatabase.database;
+    final db = await _getDb();
     await db.update(
       DatabaseConstants.tableRegions,
       {
@@ -55,7 +64,7 @@ class RegionRepository {
   }
 
   Future<void> insertRegions(List<Region> regions) async {
-    final db = appDatabase.database;
+    final db = await _getDb();
     final batch = db.batch();
     for (final region in regions) {
       batch.insert(DatabaseConstants.tableRegions, region.toMap());
