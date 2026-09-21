@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../app/app_router.dart';
+import '../../../core/localization/app_localizations.dart';
 import '../models/region.dart';
 import '../providers/region_provider.dart';
 
@@ -12,9 +13,10 @@ class RegionSelectionScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
     final regionsAsync = ref.watch(regionsProvider);
+    final loc = ref.watch(localizationsProvider);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Pumili ng Rehiyon (Regions)')),
+      appBar: AppBar(title: Text(loc.regionsTitle)),
       body: regionsAsync.when(
         loading: () => const Center(child: CircularProgressIndicator()),
         error: (err, stack) => Center(
@@ -27,11 +29,11 @@ class RegionSelectionScreen extends ConsumerWidget {
                 size: 48,
               ),
               const SizedBox(height: 16),
-              Text('May aberya sa pag-load ng mga rehiyon: $err'),
+              Text('${loc.errorLoadingRegions}: $err'),
               const SizedBox(height: 16),
               FilledButton(
                 onPressed: () => ref.invalidate(regionsProvider),
-                child: const Text('Subukan Muli (Retry)'),
+                child: Text(loc.retryButton),
               ),
             ],
           ),
@@ -57,14 +59,16 @@ class RegionSelectionScreen extends ConsumerWidget {
                       horizontal: 4,
                     ),
                     child: Text(
-                      'Pangkat ng $groupName',
+                      loc.islandGroup(groupName),
                       style: theme.textTheme.titleMedium?.copyWith(
                         color: theme.colorScheme.primary,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
-                  ...groupRegions.map((region) => _RegionCard(region: region)),
+                  ...groupRegions.map(
+                    (region) => _RegionCard(region: region, loc: loc),
+                  ),
                   const SizedBox(height: 16),
                 ],
               );
@@ -77,13 +81,18 @@ class RegionSelectionScreen extends ConsumerWidget {
 }
 
 class _RegionCard extends StatelessWidget {
-  const _RegionCard({required this.region});
+  const _RegionCard({required this.region, required this.loc});
 
   final Region region;
+  final AppLocalizations loc;
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+
+    // Show English designation primarily if English, Filipino name primarily if Tagalog
+    final primaryTitle = loc.isEnglish ? region.designation : region.name;
+    final secondarySubtitle = loc.isEnglish ? region.name : region.designation;
 
     return Card(
       elevation: region.isUnlocked ? 1.5 : 0.5,
@@ -103,7 +112,7 @@ class _RegionCard extends StatelessWidget {
           ),
         ),
         title: Text(
-          region.name,
+          primaryTitle,
           style: theme.textTheme.titleSmall?.copyWith(
             fontWeight: FontWeight.bold,
             color: region.isUnlocked ? null : theme.colorScheme.outline,
@@ -113,7 +122,7 @@ class _RegionCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              region.designation,
+              secondarySubtitle,
               style: theme.textTheme.bodySmall?.copyWith(
                 color: theme.colorScheme.outline,
               ),
@@ -154,11 +163,7 @@ class _RegionCard extends StatelessWidget {
               }
             : () {
                 ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text(
-                      'Naka-lock pa ang rehiyong ito. Tapusin muna ang naunang mga rehiyon!',
-                    ),
-                  ),
+                  SnackBar(content: Text(loc.regionLockedMessage)),
                 );
               },
       ),

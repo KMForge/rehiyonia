@@ -33,12 +33,13 @@ void main() {
     expect(find.text('Philippine Regional Word Search'), findsOneWidget);
     expect(find.text('Araling Panlipunan • Grade 5'), findsOneWidget);
 
-    // Verify player stats
-    expect(find.text('${AppConstants.startingCoins} Barya'), findsOneWidget);
-    expect(find.text('0 Bituin'), findsOneWidget);
+    // Verify player stats (Default is English)
+    expect(find.text('${AppConstants.startingCoins} Coins'), findsOneWidget);
+    expect(find.text('0 Stars'), findsOneWidget);
 
     // Verify primary menu action buttons
     expect(find.byKey(const Key('menu_play_button')), findsOneWidget);
+    expect(find.text('PLAY'), findsOneWidget);
     expect(find.byKey(const Key('menu_settings_button')), findsOneWidget);
     expect(find.byKey(const Key('menu_about_button')), findsOneWidget);
   });

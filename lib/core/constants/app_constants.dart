@@ -8,7 +8,8 @@ abstract final class AppConstants {
   static const int puzzleRewardCoins = 20;
   static const int triviaRewardCoins = 10;
 
-  // Audio preference default keys
+  // Preference keys
+  static const String keyLanguage = 'app_language';
   static const String keySoundEffectsEnabled = 'sfx_enabled';
   static const String keyMusicEnabled = 'music_enabled';
   static const String keyVolume = 'master_volume';

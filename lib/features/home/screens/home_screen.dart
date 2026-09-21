@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/constants/app_constants.dart';
+import '../../../core/localization/app_localizations.dart';
 import '../../settings/providers/settings_provider.dart';
 
 class HomeScreen extends ConsumerWidget {
@@ -11,6 +12,7 @@ class HomeScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
     final audioPrefs = ref.watch(settingsProvider);
+    final loc = ref.watch(localizationsProvider);
 
     return Scaffold(
       body: SafeArea(
@@ -54,7 +56,7 @@ class HomeScreen extends ConsumerWidget {
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  'Philippine Regional Word Search',
+                  loc.subtitle,
                   style: theme.textTheme.titleMedium?.copyWith(
                     color: theme.colorScheme.onSurfaceVariant,
                     fontWeight: FontWeight.w500,
@@ -62,7 +64,7 @@ class HomeScreen extends ConsumerWidget {
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  'Araling Panlipunan • Grade 5',
+                  loc.curriculumTag,
                   style: theme.textTheme.bodyMedium?.copyWith(
                     color: theme.colorScheme.outline,
                   ),
@@ -96,7 +98,7 @@ class HomeScreen extends ConsumerWidget {
                       ),
                       const SizedBox(width: 8),
                       Text(
-                        '${AppConstants.startingCoins} Barya',
+                        loc.coins(AppConstants.startingCoins),
                         style: theme.textTheme.titleSmall?.copyWith(
                           fontWeight: FontWeight.bold,
                         ),
@@ -109,7 +111,7 @@ class HomeScreen extends ConsumerWidget {
                       ),
                       const SizedBox(width: 8),
                       Text(
-                        '0 Bituin',
+                        loc.stars(0),
                         style: theme.textTheme.titleSmall?.copyWith(
                           fontWeight: FontWeight.bold,
                         ),
@@ -131,9 +133,9 @@ class HomeScreen extends ConsumerWidget {
                           Navigator.of(context).pushNamed('/regions');
                         },
                         icon: const Icon(Icons.play_arrow_rounded, size: 28),
-                        label: const Text(
-                          'MAGLARO (Play)',
-                          style: TextStyle(
+                        label: Text(
+                          loc.playButton,
+                          style: const TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                           ),
@@ -152,9 +154,9 @@ class HomeScreen extends ConsumerWidget {
                           Navigator.of(context).pushNamed('/settings');
                         },
                         icon: const Icon(Icons.settings_rounded),
-                        label: const Text(
-                          'Mga Setting',
-                          style: TextStyle(fontSize: 16),
+                        label: Text(
+                          loc.settingsButton,
+                          style: const TextStyle(fontSize: 16),
                         ),
                         style: OutlinedButton.styleFrom(
                           padding: const EdgeInsets.symmetric(vertical: 14),
@@ -167,12 +169,12 @@ class HomeScreen extends ConsumerWidget {
                       TextButton.icon(
                         key: const Key('menu_about_button'),
                         onPressed: () {
-                          _showAboutDialog(context);
+                          _showAboutDialog(context, loc);
                         },
                         icon: const Icon(Icons.info_outline_rounded),
-                        label: const Text(
-                          'Tungkol sa Laro (About)',
-                          style: TextStyle(fontSize: 15),
+                        label: Text(
+                          loc.aboutButton,
+                          style: const TextStyle(fontSize: 15),
                         ),
                       ),
                     ],
@@ -221,7 +223,7 @@ class HomeScreen extends ConsumerWidget {
     );
   }
 
-  void _showAboutDialog(BuildContext context) {
+  void _showAboutDialog(BuildContext context, AppLocalizations loc) {
     showAboutDialog(
       context: context,
       applicationName: AppConstants.appName,
@@ -231,11 +233,7 @@ class HomeScreen extends ConsumerWidget {
         size: 48,
         color: Colors.deepPurple,
       ),
-      children: const [
-        Text(
-          'Ang Rehiyonia ay isang offline educational word search mobile game para sa mga mag-aaral ng Grade 5 Araling Panlipunan tungkol sa mga rehiyon, lalawigan, kabisera, at kultura ng Pilipinas.',
-        ),
-      ],
+      children: [Text(loc.aboutContent)],
     );
   }
 }

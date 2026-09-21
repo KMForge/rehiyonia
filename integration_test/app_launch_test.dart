@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -13,13 +14,13 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.text('Rehiyonia'), findsOneWidget);
-      expect(find.text('MAGLARO (Play)'), findsOneWidget);
+      expect(find.byKey(const Key('menu_play_button')), findsOneWidget);
 
-      await tester.tap(find.text('MAGLARO (Play)'));
+      await tester.tap(find.byKey(const Key('menu_play_button')));
       await tester.pumpAndSettle();
 
-      expect(find.text('Pumili ng Rehiyon (Regions)'), findsOneWidget);
-      expect(find.text('Pangkat ng Luzon'), findsOneWidget);
+      expect(find.text('Select Region'), findsOneWidget);
+      expect(find.text('Luzon Group'), findsOneWidget);
     },
   );
 }

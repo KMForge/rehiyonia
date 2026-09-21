@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -13,16 +14,16 @@ void main() {
       await tester.pumpAndSettle();
 
       // 1. Enter Region Selection
-      await tester.tap(find.text('MAGLARO (Play)'));
+      await tester.tap(find.byKey(const Key('menu_play_button')));
       await tester.pumpAndSettle();
 
       // 2. Tap NCR to open gameplay
-      expect(find.text('Pambansang Punong Rehiyon'), findsOneWidget);
-      await tester.tap(find.text('Pambansang Punong Rehiyon'));
+      expect(find.text('NCR'), findsWidgets);
+      await tester.tap(find.text('NCR').first);
       await tester.pumpAndSettle();
 
       // 3. Verify gameplay elements loaded
-      expect(find.textContaining('Pambansang Punong Rehi'), findsOneWidget);
+      expect(find.text('NCR'), findsWidgets);
       expect(find.textContaining('Hint (-10'), findsOneWidget);
 
       // Initial coins: 50
@@ -39,7 +40,7 @@ void main() {
       await tester.pumpAndSettle();
 
       // Verify clue contents
-      expect(find.text('Lungsod'), findsOneWidget);
+      expect(find.text('City'), findsOneWidget);
       expect(find.text('Kabisera ng Republika ng Pilipinas.'), findsOneWidget);
 
       // 6. Close bottom sheet

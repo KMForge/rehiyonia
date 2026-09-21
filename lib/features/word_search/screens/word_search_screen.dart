@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../app/app_router.dart';
+import '../../../core/localization/app_localizations.dart';
 import '../../trivia/providers/trivia_provider.dart';
 import '../models/regional_word.dart';
 import '../providers/gameplay_provider.dart';
@@ -40,6 +41,7 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
   }
 
   void _showClueModal(RegionalWord word) {
+    final loc = ref.read(localizationsProvider);
     showModalBottomSheet<void>(
       context: context,
       shape: const RoundedRectangleBorder(
@@ -64,7 +66,7 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Text(
-                      word.category,
+                      loc.categoryLabel(word.category),
                       style: TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.bold,
@@ -75,7 +77,7 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
                   const Spacer(),
                   IconButton(
                     icon: const Icon(Icons.close),
-                    tooltip: 'Close',
+                    tooltip: loc.closeButton,
                     onPressed: () => Navigator.pop(context),
                   ),
                 ],
@@ -103,6 +105,11 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
   }
 
   void _showCompletionDialog(GameplayState state) {
+    final loc = ref.read(localizationsProvider);
+    final regionName = loc.isEnglish
+        ? (state.region?.designation ?? state.region?.name ?? 'Region')
+        : (state.region?.name ?? 'Rehiyon');
+
     showDialog<void>(
       context: context,
       barrierDismissible: false,
@@ -111,17 +118,17 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(24),
           ),
-          title: const Center(
+          title: Center(
             child: Text(
-              '🎉 Maligayang Bati!',
-              style: TextStyle(fontWeight: FontWeight.bold),
+              loc.congratulations,
+              style: const TextStyle(fontWeight: FontWeight.bold),
             ),
           ),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                'Nahanap mo ang lahat ng salita sa ${state.region?.name ?? 'Rehiyon'}!',
+                loc.completedMessage(regionName),
                 textAlign: TextAlign.center,
                 style: const TextStyle(fontSize: 14),
               ),
@@ -158,7 +165,7 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
                     ),
                     const SizedBox(width: 6),
                     Text(
-                      '+20 Barya (Kabuuan: ${state.coins})',
+                      loc.rewardCoins(20, state.coins),
                       style: const TextStyle(fontWeight: FontWeight.bold),
                     ),
                   ],
@@ -173,14 +180,14 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
                 Navigator.pop(context);
                 _showTriviaDialog(widget.regionId);
               },
-              child: const Text('Basahin ang Trivia'),
+              child: Text(loc.readTrivia),
             ),
             FilledButton(
               onPressed: () {
                 Navigator.pop(context);
                 Navigator.pop(context); // Return to Region Selection
               },
-              child: const Text('Magpatuloy'),
+              child: Text(loc.continueButton),
             ),
           ],
         );
@@ -193,6 +200,7 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
     final triviaList = await triviaRepo.getTriviaForRegion(regionId);
     if (!mounted) return;
 
+    final loc = ref.read(localizationsProvider);
     final trivia = triviaList.isNotEmpty ? triviaList.first : null;
 
     showDialog<void>(
@@ -202,15 +210,15 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(24),
           ),
-          title: const Row(
+          title: Row(
             children: [
-              Icon(Icons.lightbulb_rounded, color: Colors.amber),
-              SizedBox(width: 8),
-              Text('Alamin Natin! (Trivia)'),
+              const Icon(Icons.lightbulb_rounded, color: Colors.amber),
+              const SizedBox(width: 8),
+              Text(loc.triviaTitle),
             ],
           ),
           content: trivia == null
-              ? const Text('Walang trivia para sa rehiyong ito.')
+              ? Text(loc.noTriviaAvailable)
               : Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -224,7 +232,7 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
                     ),
                     const SizedBox(height: 8),
                     Text(
-                      'Sagot: ${trivia.answer}',
+                      '${loc.isEnglish ? "Answer" : "Sagot"}: ${trivia.answer}',
                       style: const TextStyle(
                         color: Color(0xFF2E7D32),
                         fontWeight: FontWeight.w600,
@@ -240,7 +248,7 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
           actions: [
             FilledButton(
               onPressed: () => Navigator.pop(context),
-              child: const Text('Naintindihan ko!'),
+              child: Text(loc.understoodButton),
             ),
           ],
         );
@@ -257,6 +265,7 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
   @override
   Widget build(BuildContext context) {
     final gameState = ref.watch(gameplayProvider);
+    final loc = ref.watch(localizationsProvider);
 
     ref.listen<GameplayState>(gameplayProvider, (prev, next) {
       if (prev?.status != GameStatus.completed &&
@@ -272,7 +281,7 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
 
     if (gameState.status == GameStatus.error) {
       return Scaffold(
-        appBar: AppBar(title: const Text('Aberya')),
+        appBar: AppBar(title: Text(loc.errorTitle)),
         body: Center(
           child: Padding(
             padding: const EdgeInsets.all(24),
@@ -281,13 +290,13 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
               children: [
                 const Icon(Icons.error_outline, size: 48, color: Colors.red),
                 const SizedBox(height: 16),
-                Text(gameState.errorMessage ?? 'May naganap na aberya.'),
+                Text(gameState.errorMessage ?? loc.errorLoadingRegions),
                 const SizedBox(height: 16),
                 FilledButton(
                   onPressed: () => ref
                       .read(gameplayProvider.notifier)
                       .initGame(widget.regionId),
-                  child: const Text('Subukan Muli'),
+                  child: Text(loc.retryButton),
                 ),
               ],
             ),
@@ -298,10 +307,17 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
 
     final puzzle = gameState.puzzle;
     if (puzzle == null) {
-      return const Scaffold(
-        body: Center(child: Text('Walang puzzle na mabuo.')),
-      );
+      return Scaffold(body: Center(child: Text(loc.noPuzzleError)));
     }
+
+    final primaryTitle = loc.isEnglish
+        ? (gameState.region?.designation ??
+              gameState.region?.name ??
+              'Word Search')
+        : (gameState.region?.name ?? 'Word Search');
+    final secondaryTitle = loc.isEnglish
+        ? (gameState.region?.name ?? '')
+        : (gameState.region?.designation ?? '');
 
     return Scaffold(
       appBar: AppBar(
@@ -309,13 +325,14 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              gameState.region?.name ?? 'Word Search',
+              primaryTitle,
               style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
-            Text(
-              gameState.region?.designation ?? '',
-              style: const TextStyle(fontSize: 12, color: Colors.grey),
-            ),
+            if (secondaryTitle.isNotEmpty)
+              Text(
+                secondaryTitle,
+                style: const TextStyle(fontSize: 12, color: Colors.grey),
+              ),
           ],
         ),
         actions: [
@@ -380,7 +397,10 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
                   ),
                   const Spacer(),
                   Text(
-                    'Nahanap: ${gameState.foundWords.length} / ${puzzle.placedWords.length}',
+                    loc.foundCount(
+                      gameState.foundWords.length,
+                      puzzle.placedWords.length,
+                    ),
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 14,
@@ -395,7 +415,7 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
                         ? () => ref.read(gameplayProvider.notifier).useHint()
                         : null,
                     icon: const Icon(Icons.lightbulb_outline, size: 16),
-                    label: const Text('Hint (-10 🪙)'),
+                    label: Text(loc.hintButton),
                   ),
                 ],
               ),

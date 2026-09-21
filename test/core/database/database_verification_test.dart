@@ -4,7 +4,6 @@ import 'dart:io';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:rehiyonia/core/constants/database_constants.dart';
 import 'package:rehiyonia/core/database/app_database.dart';
-import 'package:rehiyonia/core/database/asset_seed_loader.dart';
 import 'package:rehiyonia/features/regions/data/repositories/region_repository.dart';
 import 'package:rehiyonia/features/regions/providers/region_provider.dart';
 import 'package:rehiyonia/features/trivia/data/repositories/trivia_repository.dart';
@@ -44,7 +43,8 @@ void main() {
       expect(regionsInDb.length, 18);
 
       // 2. Load JSON files directly to simulate seed loading
-      final wordsJson = File('assets/data/regional_words.json').readAsStringSync();
+      final wordsJson = File('assets/data/regional_words.json')
+          .readAsStringSync();
       final wordsList = (json.decode(wordsJson) as List<dynamic>)
           .map((m) => RegionalWord.fromMap(m as Map<String, dynamic>))
           .toList();
@@ -73,7 +73,8 @@ void main() {
         expect(
           count,
           15,
-          reason: 'Region $rId must have exactly 15 cities/localities in the database',
+          reason:
+              'Region $rId must have exactly 15 cities/localities in the database',
         );
       }
 
@@ -103,13 +104,11 @@ void main() {
       expect(davaoNames.contains('GENEROSO'), isTrue);
 
       // 7. Verify sync behavior: if wordCount != words.length, it refreshes cleanly
-      final seedLoader = AssetSeedLoader(
-        appDatabase: appDatabase,
-        wordRepository: wordRepo,
-        triviaRepository: triviaRepo,
-      );
       // Simulate partial/stale table
-      await db.delete(DatabaseConstants.tableWords, where: '${DatabaseConstants.columnRegionId} = 1');
+      await db.delete(
+        DatabaseConstants.tableWords,
+        where: '${DatabaseConstants.columnRegionId} = 1',
+      );
       final partialCount = await wordRepo.countWords();
       expect(partialCount, 255);
 
