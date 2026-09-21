@@ -32,18 +32,26 @@ class GridGenerator {
     // Sort by length descending for optimal placement
     normalizedWords.sort((a, b) => b.length.compareTo(a.length));
 
-    for (int attempt = 0; attempt < maxAttempts; attempt++) {
-      final puzzle = _tryGenerateGrid(
-        words: normalizedWords,
-        rows: rows,
-        cols: cols,
-        directions: directions,
-        rng: rng,
-      );
+    var currentRows = rows;
+    var currentCols = cols;
 
-      if (puzzle != null) {
-        return puzzle;
+    for (int expand = 0; expand <= 2; expand++) {
+      final attemptsForDimension = expand == 0 ? maxAttempts : 30;
+      for (int attempt = 0; attempt < attemptsForDimension; attempt++) {
+        final puzzle = _tryGenerateGrid(
+          words: normalizedWords,
+          rows: currentRows,
+          cols: currentCols,
+          directions: directions,
+          rng: rng,
+        );
+
+        if (puzzle != null) {
+          return puzzle;
+        }
       }
+      currentRows++;
+      currentCols++;
     }
 
     throw StateError(

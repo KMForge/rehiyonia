@@ -75,6 +75,7 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
                   const Spacer(),
                   IconButton(
                     icon: const Icon(Icons.close),
+                    tooltip: 'Close',
                     onPressed: () => Navigator.pop(context),
                   ),
                 ],

@@ -37,24 +37,10 @@ class AssetSeedLoader {
       final wordCount = await wordRepo.countWords();
       if (wordCount == 0) {
         await wordRepo.insertWords(words);
-      } else if (wordCount < words.length) {
+      } else if (wordCount != words.length) {
         final db = appDatabase.database;
-        final existingWords = await db.query(
-          DatabaseConstants.tableWords,
-          columns: [
-            DatabaseConstants.columnRegionId,
-            DatabaseConstants.columnWord,
-          ],
-        );
-        final existingKeys = existingWords
-            .map((m) => '${m['region_id']}_${m['word']}')
-            .toSet();
-        final missingWords = words
-            .where((w) => !existingKeys.contains('${w.regionId}_${w.word}'))
-            .toList();
-        if (missingWords.isNotEmpty) {
-          await wordRepo.insertWords(missingWords);
-        }
+        await db.delete(DatabaseConstants.tableWords);
+        await wordRepo.insertWords(words);
       }
 
       final triviaJson = await rootBundle.loadString('assets/data/trivia.json');

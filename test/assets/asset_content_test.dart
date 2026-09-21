@@ -5,7 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('Asset Content & Educational Dataset Tests', () {
-    test('regional_words.json has valid structure and valid A-Z words for all 17 regions', () {
+    test('regional_words.json has valid structure and 15 cities/localities for all 18 regions', () {
       final file = File('assets/data/regional_words.json');
       expect(
         file.existsSync(),
@@ -16,9 +16,14 @@ void main() {
       final content = file.readAsStringSync();
       final List<dynamic> jsonList = json.decode(content) as List<dynamic>;
 
-      expect(jsonList, isNotEmpty);
+      expect(
+        jsonList.length,
+        equals(270),
+        reason:
+            'Expected exactly 270 entries (18 regions * 15 cities/localities)',
+      );
 
-      final regionIds = <int>{};
+      final regionWordCounts = <int, int>{};
       final validWordPattern = RegExp(r'^[A-Z]+$');
 
       for (final item in jsonList) {
@@ -35,15 +40,17 @@ void main() {
           reason: 'Word "$word" must only contain uppercase letters A-Z',
         );
 
-        regionIds.add(map['region_id'] as int);
+        final rId = map['region_id'] as int;
+        regionWordCounts[rId] = (regionWordCounts[rId] ?? 0) + 1;
       }
 
-      // All 18 Philippine regions (including NIR) must be covered
+      // All 18 Philippine regions (including NIR) must have exactly 15 words
       for (var id = 1; id <= 18; id++) {
         expect(
-          regionIds.contains(id),
-          isTrue,
-          reason: 'Region ID $id must be present in regional_words.json',
+          regionWordCounts[id],
+          equals(15),
+          reason:
+              'Region ID $id must have exactly 15 cities and localities in regional_words.json',
         );
       }
     });

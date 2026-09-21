@@ -128,7 +128,8 @@ class GameplayNotifier extends Notifier<GameplayState> {
 
       final wordStrings = words.map((w) => w.word.toUpperCase()).toList();
       final maxWordLen = wordStrings.map((w) => w.length).reduce(max);
-      final gridSize = max(10, maxWordLen);
+      final minDimension = words.length >= 10 ? 12 : 10;
+      final gridSize = max(minDimension, maxWordLen);
 
       final puzzle = _engine.createPuzzle(
         words: wordStrings,
