@@ -57,15 +57,15 @@
 
   {"region_id": 9, "word": "ILOILO", "category": "Lungsod / Lalawigan", "clue": "City of Love at tanyag sa Dinagyang Festival.", "difficulty": "Madali"},
   {"region_id": 9, "word": "BORACAY", "category": "Isla", "clue": "Tanyag sa buong mundo sa pinong puting buhangin sa Aklan.", "difficulty": "Madali"},
-  {"region_id": 9, "word": "BACOLOD", "category": "Lungsod", "clue": "City of Smiles at tahanan ng MassKara Festival.", "difficulty": "Madali"},
+  {"region_id": 9, "word": "AKLAN", "category": "Lalawigan", "clue": "Pinakamatandang lalawigan sa bansa at tahanan ng Boracay.", "difficulty": "Madali"},
   {"region_id": 9, "word": "CAPIZ", "category": "Lalawigan", "clue": "Seafood Capital of the Philippines.", "difficulty": "Madali"},
   {"region_id": 9, "word": "GUIMARAS", "category": "Lalawigan", "clue": "Kilala sa pinakamatamis na mangga sa buong bansa.", "difficulty": "Madali"},
   {"region_id": 9, "word": "ANTIQUE", "category": "Lalawigan", "clue": "Lalawigan kung saan nagtatagpo ang bundok at dagat.", "difficulty": "Katamtaman"},
 
   {"region_id": 10, "word": "CEBU", "category": "Lungsod / Lalawigan", "clue": "Queen City of the South at Pista ng Sinulog.", "difficulty": "Madali"},
   {"region_id": 10, "word": "BOHOL", "category": "Lalawigan", "clue": "Tahanan ng Chocolate Hills at maliliit na Tarsier.", "difficulty": "Madali"},
-  {"region_id": 10, "word": "SIQUIJOR", "category": "Lalawigan", "clue": "Isla ng Apoy (Isla del Fuego) sa Gitnang Visayas.", "difficulty": "Katamtaman"},
-  {"region_id": 10, "word": "DUMAGUETE", "category": "Lungsod", "clue": "City of Gentle People sa Negros Oriental.", "difficulty": "Katamtaman"},
+  {"region_id": 10, "word": "TAGBILARAN", "category": "Lungsod", "clue": "City of Peace and Friendship at kabisera ng Bohol.", "difficulty": "Katamtaman"},
+  {"region_id": 10, "word": "LAPULAPU", "category": "Lungsod", "clue": "Makasaysayang lungsod sa Mactan na ipinangalan sa unang bayani.", "difficulty": "Katamtaman"},
   {"region_id": 10, "word": "MACTAN", "category": "Isla", "clue": "Labanan nina Lapu-Lapu at Magellan noong 1521.", "difficulty": "Madali"},
   {"region_id": 10, "word": "PANGLAO", "category": "Pasyalan", "clue": "Tanyag na isla ng mga beach resort sa Bohol.", "difficulty": "Katamtaman"},
 
@@ -116,5 +116,12 @@
   {"region_id": 17, "word": "SULU", "category": "Kapuluan", "clue": "Makasaysayang kapuluan ng Perlas at Kasultanan.", "difficulty": "Madali"},
   {"region_id": 17, "word": "TAWITOWI", "category": "Lalawigan", "clue": "Pinakatimog na lalawigan ng Republika ng Pilipinas.", "difficulty": "Katamtaman"},
   {"region_id": 17, "word": "BASILAN", "category": "Lalawigan", "clue": "Isla-lalawigan na tanyag sa paghahabi ng Yakan.", "difficulty": "Katamtaman"},
-  {"region_id": 17, "word": "MAGUINDANAO", "category": "Lalawigan", "clue": "Lupain ng mga tao sa kapatagan at bahaing lupa.", "difficulty": "Katamtaman"}
+  {"region_id": 17, "word": "MAGUINDANAO", "category": "Lalawigan", "clue": "Lupain ng mga tao sa kapatagan at bahaing lupa.", "difficulty": "Katamtaman"},
+
+  {"region_id": 18, "word": "BACOLOD", "category": "Lungsod", "clue": "City of Smiles at sentro ng Negros Occidental.", "difficulty": "Madali"},
+  {"region_id": 18, "word": "DUMAGUETE", "category": "Lungsod", "clue": "City of Gentle People at kabisera ng Negros Oriental.", "difficulty": "Madali"},
+  {"region_id": 18, "word": "SIQUIJOR", "category": "Lalawigan", "clue": "Isla-lalawigan ng Apoy at bahagi ng NIR.", "difficulty": "Madali"},
+  {"region_id": 18, "word": "KANLAON", "category": "Bulkan", "clue": "Pinakamataas na aktibong bulkan sa Pulo ng Negros.", "difficulty": "Katamtaman"},
+  {"region_id": 18, "word": "SILAY", "category": "Lungsod", "clue": "Paris of Negros na kilala sa mga ancestral homes.", "difficulty": "Katamtaman"},
+  {"region_id": 18, "word": "MASSKARA", "category": "Pista", "clue": "Makulay na pista ng mga nakangiting maskara sa Bacolod.", "difficulty": "Katamtaman"}
 ]

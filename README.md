@@ -10,9 +10,9 @@ Rehiyonia is an interactive, fully offline educational word search game for Andr
 ## 🌟 Key Features
 
 - **100% Offline Capability**: Complete zero-network architecture. All datasets, audio files, and database schemas are bundled locally on-device.
-- **All 17 Philippine Regions**: Covers Luzon (NCR, CAR, Region I-V), Visayas (Region VI-VIII), and Mindanao (Region IX-XIII, BARMM).
+- **All 18 Philippine Regions**: Covers Luzon (NCR, CAR, Region I-V), Visayas (Region VI-VIII, and NIR - Negros Island Region), and Mindanao (Region IX-XIII, BARMM).
 - **Curated Educational Words & Trivia**:
-  - 102 regional terms categorized by Province, Capital, Landmark, and Delicacy.
+  - 108 regional terms across all 18 regions categorized by Province, Capital, Landmark, and Delicacy.
   - Grade 5 Araling Panlipunan trivia questions and cultural fun facts revealed upon level completion.
 - **Smart Word Search Engine**:
   - High-performance algorithm generating 10x10 grids in <2ms.

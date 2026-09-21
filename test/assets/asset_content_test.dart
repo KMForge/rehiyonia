@@ -38,8 +38,8 @@ void main() {
         regionIds.add(map['region_id'] as int);
       }
 
-      // All 17 Philippine regions must be covered
-      for (var id = 1; id <= 17; id++) {
+      // All 18 Philippine regions (including NIR) must be covered
+      for (var id = 1; id <= 18; id++) {
         expect(
           regionIds.contains(id),
           isTrue,
@@ -48,14 +48,14 @@ void main() {
       }
     });
 
-    test('trivia.json has valid AP Grade 5 questions for all 17 regions', () {
+    test('trivia.json has valid AP Grade 5 questions for all 18 regions', () {
       final file = File('assets/data/trivia.json');
       expect(file.existsSync(), isTrue, reason: 'trivia.json must exist');
 
       final content = file.readAsStringSync();
       final List<dynamic> jsonList = json.decode(content) as List<dynamic>;
 
-      expect(jsonList.length, greaterThanOrEqualTo(17));
+      expect(jsonList.length, greaterThanOrEqualTo(18));
 
       final regionIds = <int>{};
       for (final item in jsonList) {
@@ -68,7 +68,7 @@ void main() {
         regionIds.add(map['region_id'] as int);
       }
 
-      for (var id = 1; id <= 17; id++) {
+      for (var id = 1; id <= 18; id++) {
         expect(
           regionIds.contains(id),
           isTrue,

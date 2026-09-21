@@ -84,8 +84,7 @@ final defaultPhilippineRegions = <Region>[
     name: 'Kanlurang Visayas',
     designation: 'Region VI',
     islandGroup: 'Visayas',
-    description:
-        'Kilala sa Pista ng Dinagyang, Ati-Atihan, at Isla ng Boracay.',
+    description: 'Aklan, Antique, Capiz, Guimaras, at Iloilo. Pista ng Dinagyang at Boracay.',
   ),
   const Region(
     id: 10,
@@ -93,7 +92,7 @@ final defaultPhilippineRegions = <Region>[
     name: 'Gitnang Visayas',
     designation: 'Region VII',
     islandGroup: 'Visayas',
-    description: 'Cebu, Bohol (Chocolate Hills), Siquijor, at Negros Oriental.',
+    description: 'Cebu at Bohol (Chocolate Hills, Sinulog, at Mactan).',
   ),
   const Region(
     id: 11,
@@ -102,6 +101,14 @@ final defaultPhilippineRegions = <Region>[
     designation: 'Region VIII',
     islandGroup: 'Visayas',
     description: 'Leyte, Samar, Biliran, at ang Tulay ng San Juanico.',
+  ),
+  const Region(
+    id: 18,
+    code: 'NIR',
+    name: 'Rehiyon ng Pulo ng Negros',
+    designation: 'Negros Island Region',
+    islandGroup: 'Visayas',
+    description: 'Negros Occidental, Negros Oriental, at Siquijor (Batas Republika Blg. 12000).',
   ),
   const Region(
     id: 12,
@@ -164,6 +171,15 @@ class RegionsNotifier extends AsyncNotifier<List<Region>> {
     if (regions.isEmpty) {
       await repo.insertRegions(defaultPhilippineRegions);
       regions = await repo.getAllRegions();
+    } else if (regions.length < defaultPhilippineRegions.length) {
+      final existingIds = regions.map((r) => r.id).toSet();
+      final missing = defaultPhilippineRegions
+          .where((r) => !existingIds.contains(r.id))
+          .toList();
+      if (missing.isNotEmpty) {
+        await repo.insertRegions(missing);
+        regions = await repo.getAllRegions();
+      }
     }
 
     return regions;
