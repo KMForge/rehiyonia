@@ -8,7 +8,11 @@ abstract final class AppConstants {
   static const int puzzleRewardCoins = 20;
   static const int triviaRewardCoins = 10;
 
-  // Preference keys
+  // Preference & Progress keys
+  static const String keyPlayerName = 'player_name';
+  static const String keyCoins = 'player_coins';
+  static const String keyTotalStars = 'total_stars';
+  static const String defaultPlayerName = 'Bayani';
   static const String keyLanguage = 'app_language';
   static const String keySoundEffectsEnabled = 'sfx_enabled';
   static const String keyMusicEnabled = 'music_enabled';
