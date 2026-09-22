@@ -8,6 +8,7 @@ import '../../features/word_search/data/repositories/word_repository.dart';
 import '../../features/word_search/models/regional_word.dart';
 import '../constants/database_constants.dart';
 import 'app_database.dart';
+import 'database_tables.dart';
 
 class AssetSeedLoader {
   const AssetSeedLoader({
@@ -43,6 +44,47 @@ class AssetSeedLoader {
         await wordRepo.insertWords(words);
       }
 
+      // Seed localities table (Database v2)
+      final db = appDatabase.database;
+      final localitiesCountRes = await db.rawQuery(
+        'SELECT COUNT(*) as count FROM ${DatabaseConstants.tableLocalities}',
+      );
+      final localitiesCount = (localitiesCountRes.first['count'] as int?) ?? 0;
+      final sampleLocality = localitiesCount > 0
+          ? await db.query(DatabaseConstants.tableLocalities, limit: 1)
+          : null;
+      final hasImagePath = sampleLocality != null &&
+          sampleLocality.isNotEmpty &&
+          sampleLocality.first.containsKey(DatabaseConstants.columnImagePath) &&
+          sampleLocality.first[DatabaseConstants.columnImagePath] != null;
+
+      if (localitiesCount == 0 || localitiesCount != words.length || !hasImagePath) {
+        await db.execute('DROP TABLE IF EXISTS ${DatabaseConstants.tableLocalities}');
+        await db.execute(DatabaseTables.createLocalitiesTable);
+        final batch = db.batch();
+        for (var i = 0; i < words.length; i++) {
+          final w = words[i];
+          // Top 10 per region are word search targets, remaining 5 are locality cards
+          final isTarget = (i % 15) < 10;
+          batch.insert(DatabaseConstants.tableLocalities, {
+            DatabaseConstants.columnRegionId: w.regionId,
+            DatabaseConstants.columnWord: w.word,
+            DatabaseConstants.columnNameEn: w.displayNameEn,
+            DatabaseConstants.columnNameFil: w.displayNameFil,
+            DatabaseConstants.columnProvinceEn: w.provinceEn ?? '',
+            DatabaseConstants.columnProvinceFil: w.provinceFil ?? '',
+            DatabaseConstants.columnCategory: w.category,
+            DatabaseConstants.columnDescriptionEn: w.displayClueEn,
+            DatabaseConstants.columnDescriptionFil: w.displayClueFil,
+            DatabaseConstants.columnFactEn: w.displayFactEn,
+            DatabaseConstants.columnFactFil: w.displayFactFil,
+            DatabaseConstants.columnImagePath: w.resolvedImagePath,
+            DatabaseConstants.columnIsWordSearchTarget: isTarget ? 1 : 0,
+          });
+        }
+        await batch.commit(noResult: true);
+      }
+
       final triviaJson = await rootBundle.loadString('assets/data/trivia.json');
       final List<dynamic> triviaList = json.decode(triviaJson) as List<dynamic>;
       final trivia = triviaList
@@ -53,7 +95,6 @@ class AssetSeedLoader {
       if (triviaCount == 0) {
         await triviaRepo.insertTrivia(trivia);
       } else if (triviaCount < trivia.length) {
-        final db = appDatabase.database;
         final existingTrivia = await db.query(
           DatabaseConstants.tableTrivia,
           columns: [DatabaseConstants.columnRegionId],
@@ -67,6 +108,35 @@ class AssetSeedLoader {
         if (missingTrivia.isNotEmpty) {
           await triviaRepo.insertTrivia(missingTrivia);
         }
+      }
+
+      // Seed trivia_questions table (Database v2)
+      final triviaQCountRes = await db.rawQuery(
+        'SELECT COUNT(*) as count FROM ${DatabaseConstants.tableTriviaQuestions}',
+      );
+      final triviaQCount = (triviaQCountRes.first['count'] as int?) ?? 0;
+      if (triviaQCount == 0 || triviaQCount < trivia.length) {
+        await db.delete(DatabaseConstants.tableTriviaQuestions);
+        final batch = db.batch();
+        for (final t in trivia) {
+          batch.insert(DatabaseConstants.tableTriviaQuestions, {
+            DatabaseConstants.columnRegionId: t.regionId,
+            DatabaseConstants.columnQuestionEn: t.getQuestion(true),
+            DatabaseConstants.columnQuestionFil: t.getQuestion(false),
+            DatabaseConstants.columnOptionAEn: t.getOptionA(true),
+            DatabaseConstants.columnOptionAFil: t.getOptionA(false),
+            DatabaseConstants.columnOptionBEn: t.getOptionB(true),
+            DatabaseConstants.columnOptionBFil: t.getOptionB(false),
+            DatabaseConstants.columnOptionCEn: t.getOptionC(true),
+            DatabaseConstants.columnOptionCFil: t.getOptionC(false),
+            DatabaseConstants.columnOptionDEn: t.getOptionD(true),
+            DatabaseConstants.columnOptionDFil: t.getOptionD(false),
+            DatabaseConstants.columnCorrectOption: t.correctOption,
+            DatabaseConstants.columnExplanationEn: t.getExplanation(true),
+            DatabaseConstants.columnExplanationFil: t.getExplanation(false),
+          });
+        }
+        await batch.commit(noResult: true);
       }
     } catch (_) {
       // Gracefully handle headless/pure unit tests where rootBundle is uninitialized

@@ -20,7 +20,7 @@ class WordRepository {
   Future<List<RegionalWord>> getWordsForRegion(int regionId) async {
     final db = await _getDb();
     var maps = await db.query(
-      DatabaseConstants.tableWords,
+      DatabaseConstants.tableLocalities,
       where: '${DatabaseConstants.columnRegionId} = ?',
       whereArgs: [regionId],
       orderBy: '${DatabaseConstants.columnId} ASC',
@@ -33,14 +33,25 @@ class WordRepository {
       );
       await seedLoader.seedIfEmpty();
       maps = await db.query(
-        DatabaseConstants.tableWords,
+        DatabaseConstants.tableLocalities,
         where: '${DatabaseConstants.columnRegionId} = ?',
         whereArgs: [regionId],
         orderBy: '${DatabaseConstants.columnId} ASC',
       );
     }
 
-    return maps.map(RegionalWord.fromMap).toList();
+    if (maps.isNotEmpty) {
+      return maps.map(RegionalWord.fromMap).toList();
+    }
+
+    // Fallback to legacy words table if localities empty
+    final legacyMaps = await db.query(
+      DatabaseConstants.tableWords,
+      where: '${DatabaseConstants.columnRegionId} = ?',
+      whereArgs: [regionId],
+      orderBy: '${DatabaseConstants.columnId} ASC',
+    );
+    return legacyMaps.map(RegionalWord.fromMap).toList();
   }
 
   Future<void> insertWords(List<RegionalWord> words) async {

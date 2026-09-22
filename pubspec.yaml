@@ -38,6 +38,9 @@ dependencies:
   sqflite: ^2.4.4
   path: ^1.9.1
   audioplayers: ^6.8.1
+  flutter_localizations:
+    sdk: flutter
+  intl: any
 
 dev_dependencies:
   flutter_test:
@@ -63,9 +66,11 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  generate: true
 
   assets:
     - assets/data/
+    - assets/images/localities/
     - assets/audio/music/
     - assets/audio/sound_effects/
 
