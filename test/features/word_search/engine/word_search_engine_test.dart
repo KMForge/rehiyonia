@@ -35,6 +35,48 @@ void main() {
       }
     });
 
+    test('generates balanced multi-directional placements with horizontal, vertical, and slant/diagonal words', () {
+      final inputWords = [
+        'MANILA',
+        'QUEZON',
+        'CALOOCAN',
+        'MAKATI',
+        'PASIG',
+        'TAGUIG',
+        'PARANAQUE',
+        'MARIKINA',
+        'MUNTINLUPA',
+        'VALENZUELA',
+        'LASPINAS',
+        'MANDALUYONG',
+        'NAVOTAS',
+        'PASAY',
+        'SANJUAN',
+      ];
+      final puzzle = engine.createPuzzle(
+        words: inputWords,
+        rows: 12,
+        cols: 12,
+        seed: 777,
+      );
+
+      expect(puzzle.placedWords.length, 15);
+
+      final hasHorizontal = puzzle.placedWords.any(
+        (p) => p.direction.isHorizontal,
+      );
+      final hasVertical = puzzle.placedWords.any((p) => p.direction.isVertical);
+      final hasDiagonal = puzzle.placedWords.any((p) => p.direction.isDiagonal);
+
+      expect(hasHorizontal, isTrue, reason: 'Must contain horizontal words');
+      expect(hasVertical, isTrue, reason: 'Must contain vertical words');
+      expect(
+        hasDiagonal,
+        isTrue,
+        reason: 'Must contain slant / diagonal words',
+      );
+    });
+
     test('deterministic seed produces identical grid and word placements', () {
       final words = ['ILOCOS', 'CAGAYAN', 'BICOL'];
       final puzzle1 = engine.createPuzzle(

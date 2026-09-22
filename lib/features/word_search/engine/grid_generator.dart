@@ -70,6 +70,9 @@ class GridGenerator {
     final grid = List.generate(rows, (_) => List<String?>.filled(cols, null));
 
     final placedWords = <PlacedWord>[];
+    int horizontalCount = 0;
+    int verticalCount = 0;
+    int diagonalCount = 0;
 
     for (final word in words) {
       if (word.length > rows && word.length > cols) {
@@ -98,8 +101,41 @@ class GridGenerator {
         return null; // Cannot place this word in this configuration
       }
 
-      // Pick a random valid position
-      final chosen = positions[rng.nextInt(positions.length)];
+      // Group available positions by orientation category
+      final diagPositions = positions.where((p) => p.dir.isDiagonal).toList();
+      final vertPositions = positions.where((p) => p.dir.isVertical).toList();
+      final horizPositions = positions
+          .where((p) => p.dir.isHorizontal)
+          .toList();
+
+      // Sort categories by current usage count ascending to enforce balanced distribution
+      final categoryPools = [
+        (count: diagonalCount, pool: diagPositions),
+        (count: verticalCount, pool: vertPositions),
+        (count: horizontalCount, pool: horizPositions),
+      ]..sort((a, b) => a.count.compareTo(b.count));
+
+      // Select candidate pool from the least-represented category that has valid positions
+      List<({int r, int c, WordSearchDirection dir})>? selectedPool;
+      for (final cat in categoryPools) {
+        if (cat.pool.isNotEmpty) {
+          selectedPool = cat.pool;
+          break;
+        }
+      }
+
+      selectedPool ??= positions;
+
+      // Pick a random valid position from the prioritized pool
+      final chosen = selectedPool[rng.nextInt(selectedPool.length)];
+      if (chosen.dir.isDiagonal) {
+        diagonalCount++;
+      } else if (chosen.dir.isVertical) {
+        verticalCount++;
+      } else {
+        horizontalCount++;
+      }
+
       final coords = WordPlacement.getCoordinates(
         wordLength: word.length,
         startRow: chosen.r,
@@ -114,6 +150,18 @@ class GridGenerator {
       placedWords.add(
         PlacedWord(word: word, coordinates: coords, direction: chosen.dir),
       );
+    }
+
+    // For puzzles with 5 or more words where all direction types are allowed,
+    // ensure the puzzle contains horizontal, vertical, AND diagonal/slant words.
+    final hasAllDirTypes =
+        directions.any((d) => d.isDiagonal) &&
+        directions.any((d) => d.isVertical) &&
+        directions.any((d) => d.isHorizontal);
+    if (words.length >= 5 && hasAllDirTypes) {
+      if (diagonalCount == 0 || verticalCount == 0 || horizontalCount == 0) {
+        return null; // Retry to find a multi-directional configuration
+      }
     }
 
     // Fill remaining empty cells with random uppercase letters

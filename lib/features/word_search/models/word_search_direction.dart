@@ -12,4 +12,8 @@ enum WordSearchDirection {
 
   final int dRow;
   final int dCol;
+
+  bool get isHorizontal => dRow == 0 && dCol != 0;
+  bool get isVertical => dCol == 0 && dRow != 0;
+  bool get isDiagonal => dRow != 0 && dCol != 0;
 }
