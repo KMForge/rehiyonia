@@ -69,8 +69,11 @@ class AppDatabase {
     final batch = db.batch();
     batch.execute(DatabaseTables.createRegionsTable);
     batch.execute(DatabaseTables.createWordsTable);
+    batch.execute(DatabaseTables.createLocalitiesTable);
     batch.execute(DatabaseTables.createTriviaTable);
+    batch.execute(DatabaseTables.createTriviaQuestionsTable);
     batch.execute(DatabaseTables.createUserProgressTable);
+    batch.execute(DatabaseTables.createPlayerProfileTable);
     batch.execute(DatabaseTables.createAchievementsTable);
     await batch.commit(noResult: true);
   }
@@ -80,7 +83,17 @@ class AppDatabase {
     int oldVersion,
     int newVersion,
   ) async {
-    // Migration handling will be added as schema versions increment.
+    if (oldVersion < 2) {
+      await db.execute(DatabaseTables.createLocalitiesTable);
+      await db.execute(DatabaseTables.createTriviaQuestionsTable);
+      await db.execute(DatabaseTables.createPlayerProfileTable);
+
+      await db.insert(DatabaseConstants.tablePlayerProfile, {
+        DatabaseConstants.columnPlayerName: 'Bayanito',
+        DatabaseConstants.columnCoins: 50,
+        DatabaseConstants.columnTotalStars: 0,
+      });
+    }
   }
 
   Future<void> close() async {
