@@ -9,6 +9,12 @@ class TriviaItem {
     required this.optionD,
     required this.correctOption,
     required this.explanation,
+    this.questionEn,
+    this.optionAEn,
+    this.optionBEn,
+    this.optionCEn,
+    this.optionDEn,
+    this.explanationEn,
   });
 
   final int? id;
@@ -20,24 +26,46 @@ class TriviaItem {
   final String optionD;
   final int correctOption;
   final String explanation;
+  final String? questionEn;
+  final String? optionAEn;
+  final String? optionBEn;
+  final String? optionCEn;
+  final String? optionDEn;
+  final String? explanationEn;
 
-  String get answer {
+  String getQuestion(bool isEnglish) =>
+      isEnglish ? (questionEn ?? question) : question;
+  String getOptionA(bool isEnglish) =>
+      isEnglish ? (optionAEn ?? optionA) : optionA;
+  String getOptionB(bool isEnglish) =>
+      isEnglish ? (optionBEn ?? optionB) : optionB;
+  String getOptionC(bool isEnglish) =>
+      isEnglish ? (optionCEn ?? optionC) : optionC;
+  String getOptionD(bool isEnglish) =>
+      isEnglish ? (optionDEn ?? optionD) : optionD;
+  String getExplanation(bool isEnglish) =>
+      isEnglish ? (explanationEn ?? explanation) : explanation;
+
+  String getAnswer(bool isEnglish) {
     switch (correctOption) {
       case 0:
-        return optionA;
+        return getOptionA(isEnglish);
       case 1:
-        return optionB;
+        return getOptionB(isEnglish);
       case 2:
-        return optionC;
+        return getOptionC(isEnglish);
       case 3:
-        return optionD;
+        return getOptionD(isEnglish);
       default:
-        return optionA;
+        return getOptionA(isEnglish);
     }
   }
 
+  String get answer => getAnswer(false);
+
   String get funFact => explanation;
 
+  /// Maps to the legacy `trivia` table columns
   Map<String, dynamic> toMap() {
     return {
       if (id != null) 'id': id,
@@ -49,6 +77,27 @@ class TriviaItem {
       'option_d': optionD,
       'correct_option': correctOption,
       'explanation': explanation,
+    };
+  }
+
+  /// Maps to the Database v2 `trivia_questions` table columns
+  Map<String, dynamic> toTriviaQuestionMap() {
+    return {
+      if (id != null) 'id': id,
+      'region_id': regionId,
+      'question_en': getQuestion(true),
+      'question_fil': getQuestion(false),
+      'option_a_en': getOptionA(true),
+      'option_a_fil': getOptionA(false),
+      'option_b_en': getOptionB(true),
+      'option_b_fil': getOptionB(false),
+      'option_c_en': getOptionC(true),
+      'option_c_fil': getOptionC(false),
+      'option_d_en': getOptionD(true),
+      'option_d_fil': getOptionD(false),
+      'correct_option': correctOption,
+      'explanation_en': getExplanation(true),
+      'explanation_fil': getExplanation(false),
     };
   }
 
@@ -64,6 +113,12 @@ class TriviaItem {
       correctOption: (map['correct_option'] as int?) ?? 0,
       explanation:
           (map['explanation'] as String?) ?? (map['fun_fact'] as String? ?? ''),
+      questionEn: map['question_en'] as String?,
+      optionAEn: map['option_a_en'] as String?,
+      optionBEn: map['option_b_en'] as String?,
+      optionCEn: map['option_c_en'] as String?,
+      optionDEn: map['option_d_en'] as String?,
+      explanationEn: map['explanation_en'] as String?,
     );
   }
 
