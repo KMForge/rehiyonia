@@ -3,22 +3,42 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../app/app_router.dart';
 import '../../../core/localization/app_localizations.dart';
+import '../../../core/theme/app_colors.dart';
 import '../models/region.dart';
 import '../providers/region_provider.dart';
 
-class RegionSelectionScreen extends ConsumerWidget {
-  const RegionSelectionScreen({super.key});
+class RegionSelectionScreen extends ConsumerStatefulWidget {
+  const RegionSelectionScreen({super.key, this.initialGroup});
+
+  final String? initialGroup;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final theme = Theme.of(context);
+  ConsumerState<RegionSelectionScreen> createState() =>
+      _RegionSelectionScreenState();
+}
+
+class _RegionSelectionScreenState extends ConsumerState<RegionSelectionScreen> {
+  String _selectedGroup = 'All';
+
+  @override
+  void initState() {
+    super.initState();
+    if (widget.initialGroup != null) {
+      _selectedGroup = widget.initialGroup!;
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final regionsAsync = ref.watch(regionsProvider);
     final loc = ref.watch(localizationsProvider);
 
     return Scaffold(
       appBar: AppBar(title: Text(loc.regionsTitle)),
       body: regionsAsync.when(
-        loading: () => const Center(child: CircularProgressIndicator()),
+        loading: () => const Center(
+          child: CircularProgressIndicator(color: AppColors.deepBlue),
+        ),
         error: (err, stack) => Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -39,40 +59,79 @@ class RegionSelectionScreen extends ConsumerWidget {
           ),
         ),
         data: (regions) {
-          final islandGroups = ['Luzon', 'Visayas', 'Mindanao'];
+          final filterOptions = ['All', 'Luzon', 'Visayas', 'Mindanao'];
 
-          return ListView.builder(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-            itemCount: islandGroups.length,
-            itemBuilder: (context, groupIndex) {
-              final groupName = islandGroups[groupIndex];
-              final groupRegions = regions
-                  .where((r) => r.islandGroup == groupName)
-                  .toList();
+          final filteredRegions = _selectedGroup == 'All'
+              ? regions
+              : regions.where((r) => r.islandGroup == _selectedGroup).toList();
 
-              return Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
+          return SafeArea(
+            child: Column(
+              children: [
+                const SizedBox(height: 12),
+
+                // Island Group Tab Filter Chips
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Row(
+                    children: filterOptions.map((opt) {
+                      final isSelected = _selectedGroup == opt;
+                      String label = opt;
+                      if (opt == 'Visayas') {
+                        label = loc.visayasTitle;
+                      } else if (opt == 'All') {
+                        label = loc.isEnglish ? 'All (18)' : 'Lahat (18)';
+                      }
+
+                      return Padding(
+                        padding: const EdgeInsets.only(right: 8),
+                        child: ChoiceChip(
+                          label: Text(label),
+                          selected: isSelected,
+                          selectedColor: AppColors.deepBlue,
+                          backgroundColor: Colors.white,
+                          labelStyle: TextStyle(
+                            color: isSelected
+                                ? Colors.white
+                                : AppColors.textNavy,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16),
+                            side: BorderSide(
+                              color: isSelected
+                                  ? AppColors.deepBlue
+                                  : AppColors.babyBlue,
+                            ),
+                          ),
+                          onSelected: (_) {
+                            setState(() => _selectedGroup = opt);
+                          },
+                        ),
+                      );
+                    }).toList(),
+                  ),
+                ),
+
+                const SizedBox(height: 12),
+
+                // Regions List
+                Expanded(
+                  child: ListView.builder(
                     padding: const EdgeInsets.symmetric(
+                      horizontal: 16,
                       vertical: 8,
-                      horizontal: 4,
                     ),
-                    child: Text(
-                      loc.islandGroup(groupName),
-                      style: theme.textTheme.titleMedium?.copyWith(
-                        color: theme.colorScheme.primary,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
+                    itemCount: filteredRegions.length,
+                    itemBuilder: (context, index) {
+                      final region = filteredRegions[index];
+                      return _RegionCard(region: region, loc: loc);
+                    },
                   ),
-                  ...groupRegions.map(
-                    (region) => _RegionCard(region: region, loc: loc),
-                  ),
-                  const SizedBox(height: 16),
-                ],
-              );
-            },
+                ),
+              ],
+            ),
           );
         },
       ),
@@ -95,27 +154,36 @@ class _RegionCard extends StatelessWidget {
     final secondarySubtitle = loc.isEnglish ? region.name : region.designation;
 
     return Card(
-      elevation: region.isUnlocked ? 1.5 : 0.5,
+      elevation: region.isUnlocked ? 2 : 0.5,
       margin: const EdgeInsets.only(bottom: 12),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),
+        side: BorderSide(
+          color: region.isUnlocked
+              ? AppColors.babyBlue.withValues(alpha: 0.6)
+              : Colors.grey.shade300,
+        ),
+      ),
       child: ListTile(
         contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         leading: CircleAvatar(
           backgroundColor: region.isUnlocked
-              ? theme.colorScheme.primaryContainer
-              : theme.colorScheme.surfaceContainerHighest,
+              ? AppColors.babyBlue.withValues(alpha: 0.5)
+              : const Color(0xFFF1F5F9),
           child: Icon(
             region.isUnlocked ? Icons.explore_rounded : Icons.lock_rounded,
             color: region.isUnlocked
-                ? theme.colorScheme.primary
-                : theme.colorScheme.outline,
+                ? AppColors.deepBlue
+                : const Color(0xFF94A3B8),
           ),
         ),
         title: Text(
           primaryTitle,
           style: theme.textTheme.titleSmall?.copyWith(
             fontWeight: FontWeight.bold,
-            color: region.isUnlocked ? null : theme.colorScheme.outline,
+            color: region.isUnlocked
+                ? AppColors.textNavy
+                : const Color(0xFF94A3B8),
           ),
         ),
         subtitle: Column(
@@ -124,7 +192,7 @@ class _RegionCard extends StatelessWidget {
             Text(
               secondarySubtitle,
               style: theme.textTheme.bodySmall?.copyWith(
-                color: theme.colorScheme.outline,
+                color: AppColors.mutedSlate,
               ),
             ),
             const SizedBox(height: 4),
@@ -132,7 +200,9 @@ class _RegionCard extends StatelessWidget {
               region.description,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
-              style: theme.textTheme.bodySmall,
+              style: theme.textTheme.bodySmall?.copyWith(
+                color: AppColors.textNavy,
+              ),
             ),
           ],
         ),
@@ -142,28 +212,34 @@ class _RegionCard extends StatelessWidget {
                 children: [
                   const Icon(
                     Icons.star_rounded,
-                    color: Colors.orange,
+                    color: Color(0xFFFFB300),
                     size: 20,
                   ),
                   const SizedBox(width: 4),
                   Text(
                     '${region.starsEarned}/3',
-                    style: const TextStyle(fontWeight: FontWeight.bold),
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: AppColors.textNavy,
+                    ),
                   ),
                 ],
               )
-            : const Icon(Icons.lock_outline_rounded, color: Colors.grey),
+            : const Icon(Icons.lock_outline_rounded, color: Color(0xFF94A3B8)),
         onTap: region.isUnlocked
             ? () {
                 Navigator.pushNamed(
                   context,
-                  AppRouter.game,
+                  AppRouter.regionIntro,
                   arguments: region.id,
                 );
               }
             : () {
                 ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text(loc.regionLockedMessage)),
+                  SnackBar(
+                    content: Text(loc.regionLockedMessage),
+                    backgroundColor: AppColors.deepBlue,
+                  ),
                 );
               },
       ),

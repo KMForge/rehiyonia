@@ -1,11 +1,11 @@
 import 'dart:math';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../core/constants/app_constants.dart';
+import '../../profile/providers/profile_provider.dart';
 import '../../regions/models/region.dart';
 import '../../regions/providers/region_provider.dart';
-import '../../settings/providers/settings_provider.dart';
 import '../engine/selection_validator.dart';
 import '../engine/word_search_engine.dart';
 import '../models/puzzle_coordinate.dart';
@@ -108,6 +108,9 @@ class GameplayNotifier extends Notifier<GameplayState> {
       );
 
       var words = await wordRepo.getWordsForRegion(regionId);
+      if (words.length > 10) {
+        words = words.take(10).toList();
+      }
       if (words.isEmpty) {
         // Fallback words if database not yet populated
         words = [
@@ -138,6 +141,12 @@ class GameplayNotifier extends Notifier<GameplayState> {
         seed: seed,
       );
 
+      int userCoins = 50;
+      try {
+        userCoins = ref.read(profileProvider).coins;
+      } catch (_) {}
+
+      if (!ref.mounted) return;
       state = GameplayState(
         status: GameStatus.playing,
         region: region,
@@ -149,9 +158,10 @@ class GameplayNotifier extends Notifier<GameplayState> {
         elapsedSeconds: 0,
         score: 0,
         starsEarned: 0,
-        coins: 50,
+        coins: userCoins,
       );
     } catch (e) {
+      if (!ref.mounted) return;
       state = state.copyWith(
         status: GameStatus.error,
         errorMessage: 'May aberya sa pagsisimula ng laro: $e',
@@ -208,9 +218,10 @@ class GameplayNotifier extends Notifier<GameplayState> {
 
       int stars = state.starsEarned;
       if (isCompleted) {
-        if (state.elapsedSeconds < 90 && state.revealedHints.isEmpty) {
+        // Strict no-timer requirement: stars based on hint conservation and puzzle completion
+        if (state.revealedHints.isEmpty) {
           stars = 3;
-        } else if (state.elapsedSeconds < 180) {
+        } else if (state.revealedHints.length <= 2) {
           stars = 2;
         } else {
           stars = 1;
@@ -220,9 +231,23 @@ class GameplayNotifier extends Notifier<GameplayState> {
         if (state.region != null) {
           final regionRepo = ref.read(regionRepositoryProvider);
           await regionRepo.updateStars(state.region!.id, stars);
-          // Unlock next region
-          await regionRepo.unlockRegion(state.region!.id + 1);
+
+          // Unlock next region in geographic curriculum sequence
+          final nextRegion = getNextRegion(state.region!.id);
+          if (nextRegion != null) {
+            await regionRepo.unlockRegion(nextRegion.id);
+          }
+          ref.invalidate(regionsProvider);
+
+          try {
+            await ref.read(profileProvider.notifier).addCoins(20);
+            await ref.read(profileProvider.notifier).loadProfile();
+          } catch (_) {}
         }
+      } else {
+        try {
+          await ref.read(profileProvider.notifier).addCoins(5);
+        } catch (_) {}
       }
 
       state = state.copyWith(
@@ -234,17 +259,6 @@ class GameplayNotifier extends Notifier<GameplayState> {
         starsEarned: stars,
         status: isCompleted ? GameStatus.completed : GameStatus.playing,
       );
-
-      try {
-        final audio = ref.read(audioServiceProvider);
-        if (isCompleted) {
-          await audio.playSoundEffect(AppConstants.audioSfxPuzzleComplete);
-        } else {
-          await audio.playSoundEffect(AppConstants.audioSfxWordFound);
-        }
-      } catch (_) {
-        // Gracefully ignore audio playback errors in headless/test environments
-      }
 
       return true;
     }
@@ -261,21 +275,46 @@ class GameplayNotifier extends Notifier<GameplayState> {
       if (!state.foundWords.contains(placed.word)) {
         final firstCoord = placed.coordinates.first;
         if (!state.revealedHints.contains(firstCoord)) {
+          final updatedCoins = state.coins - 10;
           state = state.copyWith(
-            coins: state.coins - 10,
+            coins: updatedCoins,
             revealedHints: Set<PuzzleCoordinate>.from(state.revealedHints)
               ..add(firstCoord),
           );
+          try {
+            ref.read(profileProvider.notifier).setCoins(updatedCoins);
+          } catch (_) {}
           return;
         }
       }
     }
   }
 
-  void tickTimer() {
-    if (state.status == GameStatus.playing) {
-      state = state.copyWith(elapsedSeconds: state.elapsedSeconds + 1);
+  Region? getNextRegion([int? currentRegionId]) {
+    final curId = currentRegionId ?? state.region?.id;
+    if (curId == null) return null;
+    final index = defaultPhilippineRegions.indexWhere((r) => r.id == curId);
+    if (index >= 0 && index < defaultPhilippineRegions.length - 1) {
+      return defaultPhilippineRegions[index + 1];
     }
+    return null;
+  }
+
+  bool get hasNextLevel => getNextRegion() != null;
+
+  Future<void> nextLevel() async {
+    final next = getNextRegion();
+    if (next != null) {
+      await initGame(next.id);
+    }
+  }
+
+  Future<void> awardTriviaBonus([int amount = 10]) async {
+    final updatedCoins = state.coins + amount;
+    state = state.copyWith(coins: updatedCoins);
+    try {
+      await ref.read(profileProvider.notifier).setCoins(updatedCoins);
+    } catch (_) {}
   }
 
   void togglePause() {
@@ -284,6 +323,11 @@ class GameplayNotifier extends Notifier<GameplayState> {
     } else if (state.status == GameStatus.paused) {
       state = state.copyWith(status: GameStatus.playing);
     }
+  }
+
+  @visibleForTesting
+  void updateStateForTesting(GameplayState newState) {
+    state = newState;
   }
 }
 

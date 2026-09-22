@@ -1,0 +1,174 @@
+{
+  "@@locale": "en",
+  "appName": "Rehiyonia",
+  "subtitle": "Philippine Regional Word Search",
+  "curriculumTag": "Araling Panlipunan • Grade 5",
+  "coins": "{count} Coins",
+  "@coins": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "stars": "{count} Stars",
+  "@stars": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "playButton": "PLAY",
+  "avatarStudioButton": "Avatar Studio",
+  "badgeGalleryButton": "Badge Gallery",
+  "settingsButton": "Settings",
+  "aboutButton": "About Game",
+  "aboutTitle": "About Rehiyonia",
+  "aboutContent": "Rehiyonia is an offline educational word search game designed for Grade 5 Araling Panlipunan, covering all 18 Philippine regions with 100% offline gameplay.",
+  "closeButton": "Close",
+  "settingsTitle": "Settings",
+  "languageSection": "Language",
+  "languageSubtitle": "Select game language",
+  "accountSection": "Player Account",
+  "customizeName": "Customize Player Name",
+  "enterNameHint": "Enter player name",
+  "saveButton": "Save",
+  "cancelButton": "Cancel",
+  "nameUpdatedMessage": "Player name updated successfully!",
+  "avatarStudioTitle": "Avatar Studio",
+  "skinTone": "Skin Tone",
+  "hairStyle": "Hair Style",
+  "hairColor": "Hair Color",
+  "outfitColor": "Outfit Color",
+  "accessory": "Accessory",
+  "saveAvatar": "Save Avatar",
+  "avatarSaved": "Avatar updated successfully!",
+  "badgeGalleryTitle": "Badge Gallery",
+  "badgesEarned": "Badges Earned: {earned} / {total}",
+  "@badgesEarned": {
+    "placeholders": {
+      "earned": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "lockedBadge": "Locked",
+  "unlockedBadge": "Unlocked",
+  "selectIslandGroup": "Select Island Group",
+  "luzonTitle": "Luzon",
+  "visayasTitle": "Visayas",
+  "mindanaoTitle": "Mindanao",
+  "regionsCount": "{count} Regions",
+  "@regionsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "regionsTitle": "Select Region",
+  "selectRegionPrompt": "Choose a region to begin exploring!",
+  "islandGroup": "{group} Group",
+  "@islandGroup": {
+    "placeholders": {
+      "group": {
+        "type": "String"
+      }
+    }
+  },
+  "retryButton": "Retry",
+  "errorLoadingRegions": "Error loading regions",
+  "regionLockedMessage": "This region is locked. Complete previous regions first!",
+  "regionIntroTitle": "Region Overview",
+  "culturalHighlights": "Cultural Highlights",
+  "localitiesToExplore": "15 Localities to Explore",
+  "startLearningButton": "Start Learning (15 Localities)",
+  "localityCardsTitle": "Explore Localities",
+  "cardProgress": "Locality {current} of {total}",
+  "@cardProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "provinceLabel": "Province",
+  "categoryLabel": "Category",
+  "funFactLabel": "Did You Know?",
+  "takeTriviaButton": "Take Trivia Challenge",
+  "previousCard": "Previous",
+  "nextCard": "Next",
+  "triviaTitle": "Regional Trivia",
+  "triviaChallenge": "🎓 Regional Trivia Challenge",
+  "questionProgress": "Question {current} of {total}",
+  "@questionProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "selectAnswer": "Select the correct answer to earn bonus coins:",
+  "correctAnswer": "🎉 Correct! Outstanding knowledge!",
+  "incorrectAnswer": "Nice try! The correct answer is:",
+  "triviaBonus": "+10 Bonus Coins",
+  "startWordSearchButton": "Start Word Search ➔",
+  "foundCount": "Found: {found} / {total}",
+  "@foundCount": {
+    "placeholders": {
+      "found": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "hintButton": "Hint (-10 🪙)",
+  "errorTitle": "Error",
+  "noPuzzleError": "No puzzle could be generated.",
+  "congratulations": "🎉 Level Complete!",
+  "completedMessage": "You found all words in {regionName}!",
+  "@completedMessage": {
+    "placeholders": {
+      "regionName": {
+        "type": "String"
+      }
+    }
+  },
+  "rewardCoins": "+{coins} Coins (Total: {total})",
+  "@rewardCoins": {
+    "placeholders": {
+      "coins": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "readTrivia": "Read Trivia",
+  "continueButton": "Continue",
+  "understoodButton": "Got it!",
+  "nextLevelButton": "Next Level ➔",
+  "allRegionsCompleted": "🏆 All 18 Regions Completed!",
+  "allRegionsCompletedMessage": "You are now a true master of Philippine geography and culture!",
+  "funFactTitle": "Did you know?",
+  "noTriviaAvailable": "No trivia available.",
+  "audioSection": "Audio & Music",
+  "musicTitle": "Background Music",
+  "musicSubtitle": "Play uplifting background music while playing",
+  "sfxTitle": "Sound Effects",
+  "sfxSubtitle": "Sound on word selection and interaction",
+  "volumeTitle": "Volume"
+}

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/localization/app_localizations.dart';
+import '../../profile/providers/profile_provider.dart';
 import '../models/app_language.dart';
 import '../providers/settings_provider.dart';
 
@@ -14,12 +15,54 @@ class SettingsScreen extends ConsumerWidget {
     final audioPrefs = ref.watch(settingsProvider);
     final notifier = ref.read(settingsProvider.notifier);
     final loc = ref.watch(localizationsProvider);
+    final profile = ref.watch(profileProvider);
 
     return Scaffold(
       appBar: AppBar(title: Text(loc.settingsTitle)),
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
         children: [
+          // Player Account Section
+          Text(
+            loc.accountSection,
+            style: theme.textTheme.titleMedium?.copyWith(
+              color: theme.colorScheme.primary,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: 8),
+          Card(
+            elevation: 0,
+            color: theme.colorScheme.surfaceContainerHighest.withValues(
+              alpha: 0.5,
+            ),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16),
+            ),
+            child: ListTile(
+              leading: CircleAvatar(
+                backgroundColor: theme.colorScheme.primaryContainer,
+                child: Icon(
+                  Icons.person_rounded,
+                  color: theme.colorScheme.primary,
+                ),
+              ),
+              title: Text(
+                profile.name,
+                style: const TextStyle(fontWeight: FontWeight.bold),
+              ),
+              subtitle: Text(loc.customizeName),
+              trailing: IconButton(
+                key: const Key('button_settings_edit_name'),
+                icon: const Icon(Icons.edit_rounded),
+                onPressed: () =>
+                    _showEditNameDialog(context, loc, ref, profile.name),
+              ),
+            ),
+          ),
+
+          const Divider(height: 32),
+
           // Language Section
           Text(
             loc.languageSection,
@@ -60,49 +103,70 @@ class SettingsScreen extends ConsumerWidget {
               ),
             ),
           ),
-
-          const Divider(height: 36),
-
-          // Audio Section
-          Text(
-            loc.audioSection,
-            style: theme.textTheme.titleMedium?.copyWith(
-              color: theme.colorScheme.primary,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const SizedBox(height: 8),
-          SwitchListTile(
-            title: Text(loc.musicTitle),
-            subtitle: Text(loc.musicSubtitle),
-            value: audioPrefs.isMusicEnabled,
-            onChanged: (_) => notifier.toggleMusic(),
-            secondary: const Icon(Icons.music_note_rounded),
-          ),
-          SwitchListTile(
-            title: Text(loc.sfxTitle),
-            subtitle: Text(loc.sfxSubtitle),
-            value: audioPrefs.isSoundEffectsEnabled,
-            onChanged: (_) => notifier.toggleSoundEffects(),
-            secondary: const Icon(Icons.volume_up_rounded),
-          ),
-          const Divider(height: 32),
-          Text(
-            loc.volumeTitle,
-            style: theme.textTheme.titleSmall?.copyWith(
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          Slider(
-            value: audioPrefs.volume,
-            min: 0.0,
-            max: 1.0,
-            divisions: 10,
-            label: '${(audioPrefs.volume * 100).round()}%',
-            onChanged: (value) => notifier.setVolume(value),
-          ),
         ],
       ),
+    );
+  }
+
+  void _showEditNameDialog(
+    BuildContext context,
+    AppLocalizations loc,
+    WidgetRef ref,
+    String currentName,
+  ) {
+    final controller = TextEditingController(text: currentName);
+    showDialog<void>(
+      context: context,
+      builder: (dialogContext) {
+        return AlertDialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
+          title: Row(
+            children: [
+              const Icon(Icons.person_pin_rounded, color: Colors.deepPurple),
+              const SizedBox(width: 8),
+              Text(loc.customizeName, style: const TextStyle(fontSize: 18)),
+            ],
+          ),
+          content: TextField(
+            key: const Key('input_settings_player_name'),
+            controller: controller,
+            autofocus: true,
+            maxLength: 20,
+            decoration: InputDecoration(
+              hintText: loc.enterNameHint,
+              prefixIcon: const Icon(Icons.badge_outlined),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+            ),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(dialogContext),
+              child: Text(loc.cancelButton),
+            ),
+            FilledButton(
+              key: const Key('button_settings_save_name'),
+              onPressed: () {
+                final newName = controller.text.trim();
+                if (newName.isNotEmpty) {
+                  ref.read(profileProvider.notifier).setPlayerName(newName);
+                  Navigator.pop(dialogContext);
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(loc.nameUpdatedMessage),
+                      duration: const Duration(seconds: 2),
+                    ),
+                  );
+                }
+              },
+              child: Text(loc.saveButton),
+            ),
+          ],
+        );
+      },
     );
   }
 }

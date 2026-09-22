@@ -1,11 +1,10 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../app/app_router.dart';
 import '../../../core/localization/app_localizations.dart';
-import '../../trivia/providers/trivia_provider.dart';
+import '../../../core/theme/app_colors.dart';
+import '../../mascot/widgets/bayanito_mascot_widget.dart';
 import '../models/regional_word.dart';
 import '../providers/gameplay_provider.dart';
 import '../widgets/word_list_bar.dart';
@@ -21,23 +20,12 @@ class WordSearchScreen extends ConsumerStatefulWidget {
 }
 
 class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
-  Timer? _timer;
-
   @override
   void initState() {
     super.initState();
     Future.microtask(() {
       ref.read(gameplayProvider.notifier).initGame(widget.regionId);
     });
-    _timer = Timer.periodic(const Duration(seconds: 1), (_) {
-      ref.read(gameplayProvider.notifier).tickTimer();
-    });
-  }
-
-  @override
-  void dispose() {
-    _timer?.cancel();
-    super.dispose();
   }
 
   void _showClueModal(RegionalWord word) {
@@ -45,7 +33,7 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
     showModalBottomSheet<void>(
       context: context,
       shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
       ),
       builder: (context) {
         return Padding(
@@ -58,25 +46,25 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
                 children: [
                   Container(
                     padding: const EdgeInsets.symmetric(
-                      horizontal: 10,
-                      vertical: 4,
+                      horizontal: 12,
+                      vertical: 6,
                     ),
                     decoration: BoxDecoration(
-                      color: Theme.of(context).colorScheme.primaryContainer,
-                      borderRadius: BorderRadius.circular(8),
+                      color: AppColors.babyBlue.withValues(alpha: 0.5),
+                      borderRadius: BorderRadius.circular(10),
                     ),
                     child: Text(
                       loc.categoryLabel(word.category),
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.bold,
-                        color: Theme.of(context).colorScheme.onPrimaryContainer,
+                        color: AppColors.deepBlue,
                       ),
                     ),
                   ),
                   const Spacer(),
                   IconButton(
-                    icon: const Icon(Icons.close),
+                    icon: const Icon(Icons.close_rounded),
                     tooltip: loc.closeButton,
                     onPressed: () => Navigator.pop(context),
                   ),
@@ -84,17 +72,21 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
               ),
               const SizedBox(height: 12),
               Text(
-                word.word,
+                word.displayNameEn,
                 style: const TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.bold,
-                  letterSpacing: 1.2,
+                  color: AppColors.textNavy,
                 ),
               ),
               const SizedBox(height: 8),
               Text(
-                word.clue,
-                style: const TextStyle(fontSize: 15, height: 1.4),
+                loc.isEnglish ? word.displayClueEn : word.displayClueFil,
+                style: const TextStyle(
+                  fontSize: 15,
+                  height: 1.4,
+                  color: AppColors.textNavy,
+                ),
               ),
               const SizedBox(height: 16),
             ],
@@ -109,28 +101,38 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
     final regionName = loc.isEnglish
         ? (state.region?.designation ?? state.region?.name ?? 'Region')
         : (state.region?.name ?? 'Rehiyon');
+    final hasNext = ref.read(gameplayProvider.notifier).hasNextLevel;
 
     showDialog<void>(
       context: context,
       barrierDismissible: false,
-      builder: (context) {
+      builder: (dialogCtx) {
         return AlertDialog(
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(24),
+            borderRadius: BorderRadius.circular(28),
           ),
           title: Center(
             child: Text(
               loc.congratulations,
-              style: const TextStyle(fontWeight: FontWeight.bold),
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                color: AppColors.textNavy,
+              ),
             ),
           ),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
+              const BayanitoMascotWidget(
+                size: 90,
+                expression: MascotExpression.celebrating,
+                animated: false,
+              ),
+              const SizedBox(height: 12),
               Text(
                 loc.completedMessage(regionName),
                 textAlign: TextAlign.center,
-                style: const TextStyle(fontSize: 14),
+                style: const TextStyle(fontSize: 15, color: AppColors.textNavy),
               ),
               const SizedBox(height: 16),
               Row(
@@ -140,12 +142,12 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
                     index < state.starsEarned
                         ? Icons.star_rounded
                         : Icons.star_border_rounded,
-                    color: Colors.amber,
-                    size: 40,
+                    color: const Color(0xFFFFB300),
+                    size: 42,
                   );
                 }),
               ),
-              const SizedBox(height: 12),
+              const SizedBox(height: 14),
               Container(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 16,
@@ -153,20 +155,24 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
                 ),
                 decoration: BoxDecoration(
                   color: const Color(0xFFFFF8E1),
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius: BorderRadius.circular(14),
+                  border: Border.all(color: const Color(0xFFFFD54F)),
                 ),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     const Icon(
-                      Icons.monetization_on,
-                      color: Colors.orange,
-                      size: 20,
+                      Icons.monetization_on_rounded,
+                      color: Color(0xFFFFB300),
+                      size: 22,
                     ),
                     const SizedBox(width: 6),
                     Text(
                       loc.rewardCoins(20, state.coins),
-                      style: const TextStyle(fontWeight: FontWeight.bold),
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.textNavy,
+                      ),
                     ),
                   ],
                 ),
@@ -176,90 +182,48 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
           actionsAlignment: MainAxisAlignment.center,
           actions: [
             OutlinedButton(
+              key: const Key('button_return_regions'),
+              style: OutlinedButton.styleFrom(
+                foregroundColor: AppColors.deepBlue,
+                side: const BorderSide(color: AppColors.deepBlue),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16),
+                ),
+              ),
               onPressed: () {
-                Navigator.pop(context);
-                _showTriviaDialog(widget.regionId);
-              },
-              child: Text(loc.readTrivia),
-            ),
-            FilledButton(
-              onPressed: () {
-                Navigator.pop(context);
+                Navigator.pop(dialogCtx);
                 Navigator.pop(context); // Return to Region Selection
               },
               child: Text(loc.continueButton),
             ),
-          ],
-        );
-      },
-    );
-  }
-
-  Future<void> _showTriviaDialog(int regionId) async {
-    final triviaRepo = ref.read(triviaRepositoryProvider);
-    final triviaList = await triviaRepo.getTriviaForRegion(regionId);
-    if (!mounted) return;
-
-    final loc = ref.read(localizationsProvider);
-    final trivia = triviaList.isNotEmpty ? triviaList.first : null;
-
-    showDialog<void>(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(24),
-          ),
-          title: Row(
-            children: [
-              const Icon(Icons.lightbulb_rounded, color: Colors.amber),
-              const SizedBox(width: 8),
-              Text(loc.triviaTitle),
-            ],
-          ),
-          content: trivia == null
-              ? Text(loc.noTriviaAvailable)
-              : Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      trivia.question,
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15,
-                      ),
-                    ),
-                    const SizedBox(height: 8),
-                    Text(
-                      '${loc.isEnglish ? "Answer" : "Sagot"}: ${trivia.answer}',
-                      style: const TextStyle(
-                        color: Color(0xFF2E7D32),
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    const SizedBox(height: 12),
-                    Text(
-                      trivia.funFact,
-                      style: const TextStyle(fontSize: 13, height: 1.4),
-                    ),
-                  ],
+            if (hasNext)
+              FilledButton.icon(
+                key: const Key('button_next_level'),
+                style: FilledButton.styleFrom(
+                  backgroundColor: AppColors.deepBlue,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
                 ),
-          actions: [
-            FilledButton(
-              onPressed: () => Navigator.pop(context),
-              child: Text(loc.understoodButton),
-            ),
+                icon: const Icon(Icons.arrow_forward_rounded),
+                onPressed: () {
+                  Navigator.pop(dialogCtx);
+                  final nextRegion =
+                      ref.read(gameplayProvider.notifier).getNextRegion();
+                  if (nextRegion != null) {
+                    Navigator.pushReplacementNamed(
+                      context,
+                      AppRouter.triviaChallenge,
+                      arguments: nextRegion.id,
+                    );
+                  }
+                },
+                label: Text(loc.nextLevelButton),
+              ),
           ],
         );
       },
     );
-  }
-
-  String _formatDuration(int seconds) {
-    final m = seconds ~/ 60;
-    final s = seconds % 60;
-    return '${m.toString().padLeft(2, '0')}:${s.toString().padLeft(2, '0')}';
   }
 
   @override
@@ -270,13 +234,16 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
     ref.listen<GameplayState>(gameplayProvider, (prev, next) {
       if (prev?.status != GameStatus.completed &&
           next.status == GameStatus.completed) {
-        _timer?.cancel();
         _showCompletionDialog(next);
       }
     });
 
     if (gameState.status == GameStatus.loading) {
-      return const Scaffold(body: Center(child: CircularProgressIndicator()));
+      return const Scaffold(
+        body: Center(
+          child: CircularProgressIndicator(color: AppColors.deepBlue),
+        ),
+      );
     }
 
     if (gameState.status == GameStatus.error) {
@@ -288,11 +255,18 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Icon(Icons.error_outline, size: 48, color: Colors.red),
+                const Icon(
+                  Icons.error_outline_rounded,
+                  size: 48,
+                  color: Colors.red,
+                ),
                 const SizedBox(height: 16),
                 Text(gameState.errorMessage ?? loc.errorLoadingRegions),
                 const SizedBox(height: 16),
                 FilledButton(
+                  style: FilledButton.styleFrom(
+                    backgroundColor: AppColors.deepBlue,
+                  ),
                   onPressed: () => ref
                       .read(gameplayProvider.notifier)
                       .initGame(widget.regionId),
@@ -326,29 +300,37 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
           children: [
             Text(
               primaryTitle,
-              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              style: const TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                color: AppColors.textNavy,
+              ),
             ),
             if (secondaryTitle.isNotEmpty)
               Text(
                 secondaryTitle,
-                style: const TextStyle(fontSize: 12, color: Colors.grey),
+                style: const TextStyle(
+                  fontSize: 12,
+                  color: AppColors.mutedSlate,
+                ),
               ),
           ],
         ),
         actions: [
           Container(
-            margin: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
+            margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 8),
             padding: const EdgeInsets.symmetric(horizontal: 10),
             decoration: BoxDecoration(
-              color: const Color(0xFFFFF8E1),
+              color: Colors.white,
               borderRadius: BorderRadius.circular(16),
+              border: Border.all(color: AppColors.babyBlue),
             ),
             child: Row(
               children: [
                 const Icon(
-                  Icons.monetization_on,
-                  color: Colors.amber,
-                  size: 16,
+                  Icons.monetization_on_rounded,
+                  color: Color(0xFFFFB300),
+                  size: 18,
                 ),
                 const SizedBox(width: 4),
                 Text(
@@ -356,13 +338,14 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 13,
+                    color: AppColors.textNavy,
                   ),
                 ),
               ],
             ),
           ),
           IconButton(
-            icon: const Icon(Icons.settings),
+            icon: const Icon(Icons.settings_rounded, color: AppColors.textNavy),
             onPressed: () => Navigator.pushNamed(context, AppRouter.settings),
           ),
         ],
@@ -370,7 +353,7 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            // Status bar
+            // Status bar (Grid size, Found count, Hint button)
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               child: Row(
@@ -378,19 +361,27 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
                   Container(
                     padding: const EdgeInsets.symmetric(
                       horizontal: 10,
-                      vertical: 4,
+                      vertical: 5,
                     ),
                     decoration: BoxDecoration(
-                      color: Colors.grey.shade200,
+                      color: AppColors.babyBlue.withValues(alpha: 0.4),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Row(
                       children: [
-                        const Icon(Icons.timer_outlined, size: 16),
+                        const Icon(
+                          Icons.grid_4x4_rounded,
+                          size: 16,
+                          color: AppColors.deepBlue,
+                        ),
                         const SizedBox(width: 4),
                         Text(
-                          _formatDuration(gameState.elapsedSeconds),
-                          style: const TextStyle(fontWeight: FontWeight.bold),
+                          '${puzzle.rows}x${puzzle.cols}',
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 12,
+                            color: AppColors.deepBlue,
+                          ),
                         ),
                       ],
                     ),
@@ -403,19 +394,33 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
                     ),
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 14,
+                      fontSize: 15,
+                      color: AppColors.textNavy,
                     ),
                   ),
                   const Spacer(),
                   FilledButton.tonalIcon(
                     style: FilledButton.styleFrom(
+                      backgroundColor: const Color(0xFFFFF8E1),
+                      foregroundColor: const Color(0xFFE65100),
                       visualDensity: VisualDensity.compact,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        side: const BorderSide(color: Color(0xFFFFD54F)),
+                      ),
                     ),
                     onPressed: gameState.coins >= 10
                         ? () => ref.read(gameplayProvider.notifier).useHint()
                         : null,
-                    icon: const Icon(Icons.lightbulb_outline, size: 16),
-                    label: Text(loc.hintButton),
+                    icon: const Icon(
+                      Icons.lightbulb_rounded,
+                      size: 16,
+                      color: Color(0xFFFFA000),
+                    ),
+                    label: Text(
+                      loc.hintButton,
+                      style: const TextStyle(fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ],
               ),
