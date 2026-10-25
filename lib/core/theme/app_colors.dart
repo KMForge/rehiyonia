@@ -7,7 +7,7 @@ abstract final class AppColors {
   static const babyBlue = Color(
     0xFFA9D6F5,
   ); // Main brand surface & hero elements
-  static const deepBlue = Color(0xFF4F8FC0); // Primary action buttons & headers
+  static const deepBlue = Color(0xFF1465C0); // Accessible ocean-blue actions
 
   // Brand Accents
   static const pastelPink = Color(
@@ -19,11 +19,11 @@ abstract final class AppColors {
 
   // Neutrals & Backgrounds
   static const lightCream = Color(
-    0xFFFFF9F2,
+    0xFFFFF9EF,
   ); // Game canvas & scaffold background
   static const surfaceWhite = Color(0xFFFFFFFF); // Layered card surfaces
   static const textNavy = Color(
-    0xFF264653,
+    0xFF16324F,
   ); // High-contrast readable body & titles
   static const mutedSlate = Color(0xFF64748B); // Subtitles, counters, borders
 

@@ -36,10 +36,6 @@ class _BayanitoMascotWidgetState extends State<BayanitoMascotWidget>
   @override
   void initState() {
     super.initState();
-    final isTestEnv = WidgetsBinding.instance.runtimeType.toString().contains(
-      'Test',
-    );
-    final shouldAnimate = widget.animated ?? !isTestEnv;
 
     _animController = AnimationController(
       vsync: this,
@@ -49,9 +45,19 @@ class _BayanitoMascotWidgetState extends State<BayanitoMascotWidget>
     _bounceAnimation = Tween<double>(begin: 0.0, end: -8.0).animate(
       CurvedAnimation(parent: _animController, curve: Curves.easeInOut),
     );
+  }
 
-    if (shouldAnimate) {
-      _animController.repeat(reverse: true);
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (MediaQuery.disableAnimationsOf(context) ||
+        widget.animated == false ||
+        !TickerMode.valuesOf(context).enabled) {
+      _animController.stop();
+      _animController.value = 0;
+    } else {
+      // A finite greeting avoids distracting movement throughout gameplay.
+      _animController.forward();
     }
   }
 

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/localization/app_localizations.dart';
+import '../../../shared/localization/explorer_strings.dart';
 import '../../profile/providers/profile_provider.dart';
 import '../models/app_language.dart';
 import '../providers/settings_provider.dart';
@@ -22,6 +23,31 @@ class SettingsScreen extends ConsumerWidget {
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
         children: [
+          Card(
+            child: SwitchListTile.adaptive(
+              key: const Key('reduce_motion_switch'),
+              secondary: const Icon(Icons.animation_rounded),
+              title: Text(ExplorerStrings(loc.isEnglish)('motion')),
+              subtitle: Text(ExplorerStrings(loc.isEnglish)('motionHint')),
+              value: audioPrefs.reduceMotion,
+              onChanged: (value) async {
+                try {
+                  await notifier.setReduceMotion(value);
+                } catch (_) {
+                  if (context.mounted) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                          ExplorerStrings(loc.isEnglish)('saveFailed'),
+                        ),
+                      ),
+                    );
+                  }
+                }
+              },
+            ),
+          ),
+          const SizedBox(height: 24),
           // Player Account Section
           Text(
             loc.accountSection,

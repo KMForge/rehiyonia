@@ -20,7 +20,6 @@ class SettingsNotifier extends Notifier<AudioPreferences> {
   @override
   AudioPreferences build() {
     // English is the default language
-    Future.microtask(() => _loadSavedPreferences());
     return const AudioPreferences();
   }
 
@@ -60,19 +59,24 @@ class SettingsNotifier extends Notifier<AudioPreferences> {
     }
   }
 
-  Future<void> _loadSavedPreferences() async {
+  Future<void> loadSavedPreferences() async {
     try {
       final appDb = ref.read(appDatabaseProvider);
       if (appDb.isOpen) {
         final db = appDb.database;
-        final results = await db.query(
-          DatabaseConstants.tableUserProgress,
-          where: '${DatabaseConstants.columnKey} = ?',
-          whereArgs: [AppConstants.keyLanguage],
-        );
-        if (results.isNotEmpty) {
-          final code = results.first[DatabaseConstants.columnValue] as String?;
-          state = state.copyWith(language: AppLanguage.fromCode(code));
+        final results = await db.query(DatabaseConstants.tableUserProgress);
+        for (final row in results) {
+          if (row[DatabaseConstants.columnKey] == AppConstants.keyLanguage) {
+            state = state.copyWith(
+              language: AppLanguage.fromCode(
+                row[DatabaseConstants.columnValue] as String?,
+              ),
+            );
+          } else if (row[DatabaseConstants.columnKey] == 'reduce_motion') {
+            state = state.copyWith(
+              reduceMotion: row[DatabaseConstants.columnValue] == 'true',
+            );
+          }
         }
       }
     } catch (_) {}
@@ -86,6 +90,17 @@ class SettingsNotifier extends Notifier<AudioPreferences> {
           soundEffectsEnabled: state.isSoundEffectsEnabled,
           volume: state.volume,
         );
+  }
+
+  Future<void> setReduceMotion(bool enabled) async {
+    final db = ref.read(appDatabaseProvider);
+    if (db.isOpen) {
+      await db.database.insert(DatabaseConstants.tableUserProgress, {
+        DatabaseConstants.columnKey: 'reduce_motion',
+        DatabaseConstants.columnValue: enabled.toString(),
+      }, conflictAlgorithm: ConflictAlgorithm.replace);
+    }
+    state = state.copyWith(reduceMotion: enabled);
   }
 }
 

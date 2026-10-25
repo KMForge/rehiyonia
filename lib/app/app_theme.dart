@@ -1,128 +1,96 @@
 import 'package:flutter/material.dart';
 
-import '../core/theme/app_colors.dart';
+import 'explorer_theme.dart';
 
 abstract final class AppTheme {
   static final ThemeData light = ThemeData(
     useMaterial3: true,
-    scaffoldBackgroundColor: AppColors.lightCream,
-    colorScheme: const ColorScheme(
-      brightness: Brightness.light,
-      primary: AppColors.deepBlue,
-      onPrimary: Colors.white,
-      primaryContainer: AppColors.babyBlue,
-      onPrimaryContainer: AppColors.textNavy,
-      secondary: AppColors.pastelPink,
-      onSecondary: AppColors.textNavy,
-      secondaryContainer: AppColors.softLavender,
-      onSecondaryContainer: AppColors.textNavy,
-      error: Color(0xFFE57373),
-      onError: Colors.white,
-      surface: AppColors.surfaceWhite,
-      onSurface: AppColors.textNavy,
-      outline: AppColors.mutedSlate,
-      surfaceContainerHighest: AppColors.babyBlue,
+    scaffoldBackgroundColor: ExplorerTheme.paper,
+    colorScheme: ColorScheme.fromSeed(
+      seedColor: ExplorerTheme.ocean,
+      primary: ExplorerTheme.ocean,
+      secondary: ExplorerTheme.teal,
+      surface: ExplorerTheme.paper,
+      onSurface: ExplorerTheme.ink,
+      error: const Color(0xFFB3261E),
     ),
     appBarTheme: const AppBarTheme(
-      backgroundColor: AppColors.lightCream,
-      foregroundColor: AppColors.textNavy,
+      backgroundColor: ExplorerTheme.paper,
+      foregroundColor: ExplorerTheme.ink,
+      surfaceTintColor: Colors.transparent,
       elevation: 0,
-      centerTitle: true,
+      centerTitle: false,
       titleTextStyle: TextStyle(
-        color: AppColors.textNavy,
         fontSize: 20,
-        fontWeight: FontWeight.bold,
+        fontWeight: FontWeight.w800,
+        color: ExplorerTheme.ink,
       ),
-      iconTheme: IconThemeData(color: AppColors.textNavy, size: 24),
     ),
     cardTheme: CardThemeData(
-      color: AppColors.surfaceWhite,
-      elevation: 2,
-      shadowColor: AppColors.deepBlue.withValues(alpha: 0.08),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      color: Colors.white,
+      elevation: 0,
       margin: EdgeInsets.zero,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),
+        side: const BorderSide(color: ExplorerTheme.line),
+      ),
     ),
     filledButtonTheme: FilledButtonThemeData(
       style: FilledButton.styleFrom(
-        backgroundColor: AppColors.deepBlue,
-        foregroundColor: Colors.white,
-        minimumSize: const Size(48, 48),
+        minimumSize: const Size(48, 52),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+        textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-      ),
-    ),
-    elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(
-        backgroundColor: AppColors.deepBlue,
-        foregroundColor: Colors.white,
-        minimumSize: const Size(48, 48),
-        elevation: 2,
-        shadowColor: AppColors.deepBlue.withValues(alpha: 0.15),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
       ),
     ),
     outlinedButtonTheme: OutlinedButtonThemeData(
       style: OutlinedButton.styleFrom(
-        foregroundColor: AppColors.deepBlue,
         minimumSize: const Size(48, 48),
-        side: const BorderSide(color: AppColors.deepBlue, width: 2),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
       ),
+    ),
+    chipTheme: ChipThemeData(
+      side: const BorderSide(color: ExplorerTheme.line),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+      padding: const EdgeInsets.all(8),
     ),
     dialogTheme: DialogThemeData(
-      backgroundColor: AppColors.surfaceWhite,
-      elevation: 4,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
-      titleTextStyle: const TextStyle(
-        color: AppColors.textNavy,
-        fontSize: 20,
-        fontWeight: FontWeight.bold,
-      ),
-      contentTextStyle: const TextStyle(
-        color: AppColors.textNavy,
-        fontSize: 15,
-        height: 1.4,
-      ),
+      backgroundColor: ExplorerTheme.paper,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(28)),
     ),
     textTheme: const TextTheme(
-      displayLarge: TextStyle(
-        fontSize: 28,
-        fontWeight: FontWeight.bold,
-        color: AppColors.textNavy,
-        letterSpacing: -0.5,
+      headlineLarge: TextStyle(
+        fontSize: 32,
+        fontWeight: FontWeight.w900,
+        color: ExplorerTheme.ink,
+        letterSpacing: -1,
       ),
       headlineMedium: TextStyle(
+        fontSize: 26,
+        fontWeight: FontWeight.w800,
+        color: ExplorerTheme.ink,
+        letterSpacing: -0.5,
+      ),
+      titleLarge: TextStyle(
         fontSize: 22,
-        fontWeight: FontWeight.bold,
-        color: AppColors.textNavy,
+        fontWeight: FontWeight.w800,
+        color: ExplorerTheme.ink,
       ),
       titleMedium: TextStyle(
         fontSize: 18,
-        fontWeight: FontWeight.w600,
-        color: AppColors.textNavy,
+        fontWeight: FontWeight.w700,
+        color: ExplorerTheme.ink,
       ),
-      titleSmall: TextStyle(
-        fontSize: 15,
-        fontWeight: FontWeight.w600,
-        color: AppColors.textNavy,
-      ),
-      bodyLarge: TextStyle(
-        fontSize: 16,
-        fontWeight: FontWeight.normal,
-        color: AppColors.textNavy,
-        height: 1.4,
-      ),
+      bodyLarge: TextStyle(fontSize: 16, height: 1.5, color: ExplorerTheme.ink),
       bodyMedium: TextStyle(
         fontSize: 14,
-        fontWeight: FontWeight.normal,
-        color: AppColors.textNavy,
+        height: 1.4,
+        color: ExplorerTheme.ink,
       ),
-      labelLarge: TextStyle(
-        fontSize: 14,
-        fontWeight: FontWeight.w600,
-        color: AppColors.textNavy,
+      bodySmall: TextStyle(
+        fontSize: 12,
+        height: 1.4,
+        color: ExplorerTheme.muted,
       ),
     ),
   );
