@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:rehiyonia/app/app.dart';
+
+import 'test_app.dart';
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
@@ -10,8 +10,7 @@ void main() {
   testWidgets(
     'App boots up, displays main menu and navigates to region selection',
     (tester) async {
-      await tester.pumpWidget(const ProviderScope(child: RehiyoniaApp()));
-      await tester.pumpAndSettle();
+      await launchTestApp(tester);
 
       expect(find.text('Rehiyonia'), findsOneWidget);
       expect(find.byKey(const Key('menu_play_button')), findsOneWidget);
@@ -20,7 +19,7 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.text('Select Region'), findsOneWidget);
-      expect(find.text('Luzon Group'), findsOneWidget);
+      expect(find.text('Luzon'), findsWidgets);
     },
   );
 }

@@ -56,8 +56,8 @@ void main() {
 
         expect(find.text('Badge Gallery'), findsOneWidget);
         expect(find.text('Badges Earned: 1 / 2'), findsOneWidget);
-        expect(find.text('NCR'), findsNWidgets(2));
-        expect(find.text('CAR'), findsNWidgets(2));
+        expect(find.text('NCR'), findsOneWidget);
+        expect(find.text('CAR'), findsOneWidget);
         expect(find.text('Locked'), findsOneWidget);
       },
     );

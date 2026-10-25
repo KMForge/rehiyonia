@@ -125,6 +125,9 @@ void main() {
         expect(find.text('Region Overview'), findsOneWidget);
         expect(find.text('NCR'), findsOneWidget);
         expect(find.text('Cultural Highlights'), findsOneWidget);
+        await tester.scrollUntilVisible(
+          find.byKey(const Key('button_start_learning')), 180,
+        );
         expect(find.byKey(const Key('button_start_learning')), findsOneWidget);
       },
     );
