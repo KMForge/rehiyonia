@@ -94,6 +94,16 @@ class AppDatabase {
         DatabaseConstants.columnTotalStars: 0,
       });
     }
+    if (oldVersion < 3) await _upgradeAvatar(db);
+  }
+
+  Future<void> _upgradeAvatar(sqflite.Database db) async {
+    final columns = await db.rawQuery('PRAGMA table_info(player_profile)');
+    if (!columns.any((c) => c['name'] == 'avatar_json')) {
+      await db.execute(
+        'ALTER TABLE player_profile ADD COLUMN avatar_json TEXT',
+      );
+    }
   }
 
   Future<void> close() async {

@@ -107,6 +107,7 @@ abstract final class DatabaseTables {
       ${DatabaseConstants.columnAvatarHairColor} INTEGER NOT NULL DEFAULT 0,
       ${DatabaseConstants.columnAvatarOutfit} INTEGER NOT NULL DEFAULT 0,
       ${DatabaseConstants.columnAvatarAccessory} INTEGER NOT NULL DEFAULT 0,
+      avatar_json TEXT,
       ${DatabaseConstants.columnCoins} INTEGER NOT NULL DEFAULT 50,
       ${DatabaseConstants.columnTotalStars} INTEGER NOT NULL DEFAULT 0,
       ${DatabaseConstants.columnUpdatedAt} TEXT NOT NULL DEFAULT (DATETIME('now'))

@@ -36,18 +36,8 @@ class UserProfile {
           name == other.name &&
           coins == other.coins &&
           totalStars == other.totalStars &&
-          avatar.skinIndex == other.avatar.skinIndex &&
-          avatar.hairStyleIndex == other.avatar.hairStyleIndex &&
-          avatar.hairColorIndex == other.avatar.hairColorIndex &&
-          avatar.outfitColorIndex == other.avatar.outfitColorIndex &&
-          avatar.accessoryIndex == other.avatar.accessoryIndex;
+          avatar == other.avatar;
 
   @override
-  int get hashCode => Object.hash(
-    name,
-    coins,
-    totalStars,
-    avatar.skinIndex,
-    avatar.hairStyleIndex,
-  );
+  int get hashCode => Object.hash(name, coins, totalStars, avatar);
 }

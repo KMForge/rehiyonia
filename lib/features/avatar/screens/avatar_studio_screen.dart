@@ -1,306 +1,340 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../app/explorer_theme.dart';
 import '../../../core/localization/app_localizations.dart';
-import '../../../core/theme/app_colors.dart';
-import '../../profile/providers/profile_provider.dart';
+import '../../../shared/localization/explorer_strings.dart';
+import '../widgets/avatar_stage.dart';
+import '../data/avatar_catalog.dart';
 import '../models/player_avatar.dart';
+import '../providers/avatar_editor_provider.dart';
 import '../widgets/player_avatar_widget.dart';
 
 class AvatarStudioScreen extends ConsumerStatefulWidget {
   const AvatarStudioScreen({super.key});
-
   @override
   ConsumerState<AvatarStudioScreen> createState() => _AvatarStudioScreenState();
 }
 
 class _AvatarStudioScreenState extends ConsumerState<AvatarStudioScreen> {
-  late PlayerAvatar _currentAvatar;
-  int _selectedCategoryIndex = 0;
+  String _category = 'hair';
+  bool _allowPop = false;
+  static const _categories = [
+    'hair',
+    'skin',
+    'hairColor',
+    'headwear',
+    'glasses',
+    'necklace',
+    'top',
+    'topColor',
+    'bottom',
+    'bottomColor',
+    'shoes',
+  ];
 
-  @override
-  void initState() {
-    super.initState();
-    _currentAvatar = ref.read(profileProvider).avatar;
+  List<String> _items() => switch (_category) {
+    'hair' => AvatarCatalog.hairs,
+    'skin' => AvatarCatalog.skins,
+    'hairColor' => AvatarCatalog.hairColors,
+    'headwear' => AvatarCatalog.headwear,
+    'glasses' => AvatarCatalog.glasses,
+    'necklace' => AvatarCatalog.necklaces,
+    'top' => AvatarCatalog.tops,
+    'bottom' => AvatarCatalog.bottoms,
+    'shoes' => AvatarCatalog.shoes,
+    _ => AvatarCatalog.colors,
+  };
+  PlayerAvatar _withItem(PlayerAvatar a, int i) => switch (_category) {
+    'hair' => a.copyWith(hairStyleIndex: i),
+    'skin' => a.copyWith(skinIndex: i),
+    'hairColor' => a.copyWith(hairColorIndex: i),
+    'topColor' => a.copyWith(outfitColorIndex: i),
+    'bottomColor' => a.copyWith(bottomColorIndex: i),
+    'headwear' => a.copyWith(headwearId: _items()[i]),
+    'glasses' => a.copyWith(glassesId: _items()[i]),
+    'necklace' => a.copyWith(necklaceId: _items()[i]),
+    'top' => a.copyWith(topId: _items()[i]),
+    'bottom' => a.copyWith(bottomId: _items()[i]),
+    _ => a.copyWith(shoesId: _items()[i]),
+  };
+
+  Future<void> _leave() async {
+    final state = ref.read(avatarEditorProvider);
+    if (state.saving) return;
+    final ui = ExplorerStrings(ref.read(localizationsProvider).isEnglish);
+    final leave =
+        !state.isDirty ||
+        await showDialog<bool>(
+              context: context,
+              builder: (ctx) => AlertDialog(
+                title: Text(ui('discardTitle')),
+                actions: [
+                  TextButton(
+                    onPressed: () => Navigator.pop(ctx, false),
+                    child: Text(ui('stay')),
+                  ),
+                  FilledButton(
+                    onPressed: () => Navigator.pop(ctx, true),
+                    child: Text(ui('discard')),
+                  ),
+                ],
+              ),
+            ) ==
+            true;
+    if (leave && mounted) {
+      setState(() => _allowPop = true);
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) Navigator.pop(context);
+      });
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     final loc = ref.watch(localizationsProvider);
-
-    final categories = [
-      loc.skinTone,
-      loc.hairStyle,
-      loc.hairColor,
-      loc.outfitColor,
-      loc.accessory,
-    ];
-
-    return Scaffold(
-      appBar: AppBar(title: Text(loc.avatarStudioTitle)),
-      body: SafeArea(
-        child: Column(
-          children: [
-            const SizedBox(height: 16),
-
-            // Live Preview Card
-            Center(
-              child: Container(
-                padding: const EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(28),
-                  boxShadow: [
-                    BoxShadow(
-                      color: AppColors.deepBlue.withValues(alpha: 0.1),
-                      blurRadius: 16,
-                      offset: const Offset(0, 6),
-                    ),
-                  ],
-                  border: Border.all(color: AppColors.babyBlue, width: 2),
-                ),
-                child: Column(
-                  children: [
-                    PlayerAvatarWidget(avatar: _currentAvatar, size: 130),
-                    const SizedBox(height: 12),
-                    Text(
-                      ref.watch(profileProvider).name,
-                      style: const TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: AppColors.textNavy,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-
-            const SizedBox(height: 20),
-
-            // Category Chips Tab Bar
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Row(
-                children: List.generate(categories.length, (idx) {
-                  final isSelected = _selectedCategoryIndex == idx;
-                  return Padding(
-                    padding: const EdgeInsets.only(right: 8),
-                    child: ChoiceChip(
-                      label: Text(categories[idx]),
-                      selected: isSelected,
-                      selectedColor: AppColors.deepBlue,
-                      backgroundColor: Colors.white,
-                      labelStyle: TextStyle(
-                        color: isSelected ? Colors.white : AppColors.textNavy,
-                        fontWeight: FontWeight.bold,
-                      ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16),
-                        side: BorderSide(
-                          color: isSelected
-                              ? AppColors.deepBlue
-                              : AppColors.babyBlue,
-                        ),
-                      ),
-                      onSelected: (_) {
-                        setState(() => _selectedCategoryIndex = idx);
-                      },
-                    ),
-                  );
-                }),
-              ),
-            ),
-
-            const SizedBox(height: 16),
-
-            // Options Palette
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: _buildCategoryOptions(loc),
-              ),
-            ),
-
-            // Save Button
-            Padding(
-              padding: const EdgeInsets.all(20),
-              child: FilledButton.icon(
-                key: const Key('button_save_avatar'),
-                style: FilledButton.styleFrom(
-                  minimumSize: const Size.fromHeight(54),
-                  backgroundColor: AppColors.deepBlue,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(18),
-                  ),
-                ),
-                icon: const Icon(Icons.check_rounded, size: 24),
-                label: Text(
-                  loc.saveAvatar,
-                  style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                onPressed: () {
-                  ref.read(profileProvider.notifier).setAvatar(_currentAvatar);
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text(loc.avatarSaved),
-                      duration: const Duration(seconds: 2),
-                      backgroundColor: AppColors.deepBlue,
-                    ),
-                  );
-                },
-              ),
+    final ui = ExplorerStrings(loc.isEnglish);
+    final state = ref.watch(avatarEditorProvider);
+    final editor = ref.read(avatarEditorProvider.notifier);
+    final a = state.draft;
+    final items = _items();
+    return PopScope(
+      canPop: _allowPop || (!state.isDirty && !state.saving),
+      onPopInvokedWithResult: (didPop, _) {
+        if (!didPop) _leave();
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(loc.avatarStudioTitle),
+          actions: [
+            IconButton(
+              tooltip: ui('reset'),
+              icon: const Icon(Icons.restart_alt_rounded),
+              onPressed: state.isDirty && !state.saving ? editor.reset : null,
             ),
           ],
         ),
-      ),
-    );
-  }
-
-  Widget _buildCategoryOptions(AppLocalizations loc) {
-    switch (_selectedCategoryIndex) {
-      case 0: // Skin Tone
-        return _buildColorGrid(
-          colors: PlayerAvatar.skinColors,
-          selectedIndex: _currentAvatar.skinIndex,
-          onSelect: (i) => setState(
-            () => _currentAvatar = _currentAvatar.copyWith(skinIndex: i),
+        body: SafeArea(
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              return ListView(
+                padding: const EdgeInsets.fromLTRB(20, 4, 20, 24),
+                children: [
+                  Text(
+                    ui('studioHint'),
+                    style: Theme.of(context).textTheme.bodyLarge,
+                  ),
+                  const SizedBox(height: 16),
+                  AvatarStage(
+                    height: constraints.maxHeight < 500 ? 180 : 260,
+                    child: Center(
+                      child: AnimatedSwitcher(
+                        duration: MediaQuery.disableAnimationsOf(context)
+                            ? Duration.zero
+                            : const Duration(milliseconds: 160),
+                        child: PlayerAvatarWidget(
+                          key: ValueKey(a.baseId),
+                          avatar: a,
+                          size: constraints.maxHeight < 500 ? 110 : 162,
+                          fullBody: true,
+                          showBorder: false,
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  Center(
+                    child: SegmentedButton<String>(
+                      key: const Key('avatar_base_selector'),
+                      segments: [
+                        ButtonSegment(
+                          value: 'male',
+                          label: Text(ui('male')),
+                          icon: const Icon(Icons.face_rounded),
+                        ),
+                        ButtonSegment(
+                          value: 'female',
+                          label: Text(ui('female')),
+                          icon: const Icon(Icons.face_3_rounded),
+                        ),
+                      ],
+                      selected: {a.baseId},
+                      onSelectionChanged: state.saving
+                          ? null
+                          : (v) => editor.change(a.copyWith(baseId: v.first)),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: _categories
+                          .map(
+                            (c) => Padding(
+                              padding: const EdgeInsets.only(right: 8),
+                              child: ChoiceChip(
+                                key: ValueKey('category_$c'),
+                                label: Text(ui(c)),
+                                selected: _category == c,
+                                onSelected: state.saving
+                                    ? null
+                                    : (_) => setState(() => _category = c),
+                              ),
+                            ),
+                          )
+                          .toList(),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  // Wrap instead of fixed grid heights: labels survive text scaling.
+                  Wrap(
+                    spacing: 10,
+                    runSpacing: 10,
+                    children: List.generate(items.length, (i) {
+                      final candidate = _withItem(a, i);
+                      final selected = candidate == a;
+                      final isColor = [
+                        'skin',
+                        'hairColor',
+                        'topColor',
+                        'bottomColor',
+                      ].contains(_category);
+                      final palette = _category == 'skin'
+                          ? AvatarPalette.skins
+                          : _category == 'hairColor'
+                          ? AvatarPalette.hair
+                          : AvatarPalette.clothes;
+                      return SizedBox(
+                        width: (constraints.maxWidth - 50) / 2,
+                        child: Semantics(
+                          selected: selected,
+                          button: true,
+                          child: Material(
+                            color: selected
+                                ? const Color(0xFFE1F0EF)
+                                : Colors.white,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(18),
+                              side: BorderSide(
+                                color: selected
+                                    ? ExplorerTheme.teal
+                                    : ExplorerTheme.line,
+                                width: selected ? 2 : 1,
+                              ),
+                            ),
+                            child: InkWell(
+                              key: ValueKey('avatar_item_${items[i]}'),
+                              borderRadius: BorderRadius.circular(18),
+                              onTap: state.saving
+                                  ? null
+                                  : () => editor.change(candidate),
+                              child: Padding(
+                                padding: const EdgeInsets.all(12),
+                                child: Column(
+                                  children: [
+                                    if (isColor)
+                                      Container(
+                                        width: 48,
+                                        height: 48,
+                                        decoration: BoxDecoration(
+                                          color: palette[i],
+                                          shape: BoxShape.circle,
+                                        ),
+                                      )
+                                    else
+                                      PlayerAvatarWidget(
+                                        avatar: candidate,
+                                        size: 62,
+                                        fullBody: [
+                                          'top',
+                                          'bottom',
+                                          'shoes',
+                                          'necklace',
+                                        ].contains(_category),
+                                      ),
+                                    const SizedBox(height: 8),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        if (selected)
+                                          const Padding(
+                                            padding: EdgeInsets.only(right: 4),
+                                            child: Icon(
+                                              Icons.check_circle,
+                                              size: 16,
+                                              color: ExplorerTheme.teal,
+                                            ),
+                                          ),
+                                        Flexible(
+                                          child: Text(
+                                            ui(items[i]),
+                                            textAlign: TextAlign.center,
+                                            style: const TextStyle(
+                                              fontWeight: FontWeight.w700,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      );
+                    }),
+                  ),
+                ],
+              );
+            },
           ),
-        );
-      case 1: // Hair Style
-        final styles = ['Short', 'Curly', 'Ponytail', 'Spiky'];
-        return _buildChoiceGrid(
-          labels: styles,
-          selectedIndex: _currentAvatar.hairStyleIndex,
-          onSelect: (i) => setState(
-            () => _currentAvatar = _currentAvatar.copyWith(hairStyleIndex: i),
-          ),
-        );
-      case 2: // Hair Color
-        return _buildColorGrid(
-          colors: PlayerAvatar.hairColors,
-          selectedIndex: _currentAvatar.hairColorIndex,
-          onSelect: (i) => setState(
-            () => _currentAvatar = _currentAvatar.copyWith(hairColorIndex: i),
-          ),
-        );
-      case 3: // Outfit Color
-        return _buildColorGrid(
-          colors: PlayerAvatar.outfitColors,
-          selectedIndex: _currentAvatar.outfitColorIndex,
-          onSelect: (i) => setState(
-            () => _currentAvatar = _currentAvatar.copyWith(outfitColorIndex: i),
-          ),
-        );
-      case 4: // Accessory
-        final accessories = [
-          'None',
-          'Explorer Cap',
-          'Flower Ribbon',
-          'Star Glasses',
-        ];
-        return _buildChoiceGrid(
-          labels: accessories,
-          selectedIndex: _currentAvatar.accessoryIndex,
-          onSelect: (i) => setState(
-            () => _currentAvatar = _currentAvatar.copyWith(accessoryIndex: i),
-          ),
-        );
-      default:
-        return const SizedBox.shrink();
-    }
-  }
-
-  Widget _buildColorGrid({
-    required List<Color> colors,
-    required int selectedIndex,
-    required ValueChanged<int> onSelect,
-  }) {
-    return GridView.builder(
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 4,
-        crossAxisSpacing: 16,
-        mainAxisSpacing: 16,
-      ),
-      itemCount: colors.length,
-      itemBuilder: (context, idx) {
-        final isSelected = selectedIndex == idx;
-        return GestureDetector(
-          onTap: () => onSelect(idx),
-          child: Container(
-            decoration: BoxDecoration(
-              color: colors[idx],
-              shape: BoxShape.circle,
-              border: Border.all(
-                color: isSelected ? AppColors.deepBlue : Colors.white,
-                width: isSelected ? 4 : 2,
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: colors[idx].withValues(alpha: 0.35),
-                  blurRadius: 8,
-                  offset: const Offset(0, 3),
+        ),
+        bottomNavigationBar: SafeArea(
+          top: false,
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(20, 8, 20, 12),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                if (state.failed)
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 8),
+                    child: Text(
+                      ui('saveFailed'),
+                      style: TextStyle(
+                        color: Theme.of(context).colorScheme.error,
+                      ),
+                    ),
+                  ),
+                SizedBox(
+                  width: double.infinity,
+                  child: FilledButton.icon(
+                    key: const Key('button_save_avatar'),
+                    onPressed: state.saving
+                        ? null
+                        : () async {
+                            final saved = await editor.save();
+                            if (saved && context.mounted) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(content: Text(loc.avatarSaved)),
+                              );
+                            }
+                          },
+                    icon: Icon(
+                      state.saving
+                          ? Icons.hourglass_top_rounded
+                          : Icons.check_rounded,
+                    ),
+                    label: Text(state.saving ? ui('saving') : loc.saveAvatar),
+                  ),
                 ),
               ],
             ),
-            child: isSelected
-                ? const Icon(Icons.check, color: Colors.white, size: 28)
-                : null,
           ),
-        );
-      },
-    );
-  }
-
-  Widget _buildChoiceGrid({
-    required List<String> labels,
-    required int selectedIndex,
-    required ValueChanged<int> onSelect,
-  }) {
-    return GridView.builder(
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        crossAxisSpacing: 16,
-        mainAxisSpacing: 16,
-        childAspectRatio: 2.2,
+        ),
       ),
-      itemCount: labels.length,
-      itemBuilder: (context, idx) {
-        final isSelected = selectedIndex == idx;
-        return GestureDetector(
-          onTap: () => onSelect(idx),
-          child: Container(
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              color: isSelected ? AppColors.babyBlue : Colors.white,
-              borderRadius: BorderRadius.circular(18),
-              border: Border.all(
-                color: isSelected ? AppColors.deepBlue : AppColors.softLavender,
-                width: isSelected ? 2.5 : 1.5,
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: AppColors.deepBlue.withValues(alpha: 0.05),
-                  blurRadius: 6,
-                  offset: const Offset(0, 3),
-                ),
-              ],
-            ),
-            child: Text(
-              labels[idx],
-              style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.bold,
-                color: isSelected ? AppColors.deepBlue : AppColors.textNavy,
-              ),
-            ),
-          ),
-        );
-      },
     );
   }
 }
