@@ -2,195 +2,295 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../app/app_router.dart';
+import '../../../app/app_startup_provider.dart';
 import '../../../core/localization/app_localizations.dart';
-import '../../../core/theme/app_colors.dart';
 import '../../../shared/providers/app_initialization_provider.dart';
-import '../../mascot/widgets/bayanito_mascot_widget.dart';
+import '../../profile/widgets/create_explorer_dialog.dart';
 
 class SplashScreen extends ConsumerStatefulWidget {
   const SplashScreen({super.key});
-
   @override
   ConsumerState<SplashScreen> createState() => _SplashScreenState();
 }
 
 class _SplashScreenState extends ConsumerState<SplashScreen>
     with SingleTickerProviderStateMixin {
-  late AnimationController _fadeController;
-  late Animation<double> _scaleAnimation;
-  late Animation<double> _fadeAnimation;
+  bool _navigating = false;
+  late final AnimationController _intro;
 
   @override
   void initState() {
     super.initState();
-    _fadeController = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 1200),
-    );
-
-    _scaleAnimation = Tween<double>(begin: 0.85, end: 1.0).animate(
-      CurvedAnimation(parent: _fadeController, curve: Curves.easeOutBack),
-    );
-
-    _fadeAnimation = Tween<double>(
-      begin: 0.0,
-      end: 1.0,
-    ).animate(CurvedAnimation(parent: _fadeController, curve: Curves.easeIn));
-
-    _fadeController.forward();
-    _initializeApp();
+    _intro =
+        AnimationController(
+          vsync: this,
+          duration: const Duration(milliseconds: 900),
+        )..addStatusListener((status) {
+          if (status == AnimationStatus.completed && mounted) setState(() {});
+        });
   }
 
-  Future<void> _initializeApp() async {
-    final stopwatch = Stopwatch()..start();
-    try {
-      await ref.read(appInitializationProvider.future);
-    } catch (_) {}
-
-    // Ensure splash displays for at least 1.8 seconds for child enjoyment
-    final elapsed = stopwatch.elapsedMilliseconds;
-    if (elapsed < 1800) {
-      await Future<void>.delayed(Duration(milliseconds: 1800 - elapsed));
-    }
-
-    if (mounted) {
-      Navigator.pushReplacementNamed(context, AppRouter.home);
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (MediaQuery.disableAnimationsOf(context)) {
+      _intro.value = 1;
+    } else if (!_intro.isAnimating && !_intro.isCompleted) {
+      _intro.forward();
     }
   }
 
   @override
   void dispose() {
-    _fadeController.dispose();
+    _intro.dispose();
     super.dispose();
+  }
+
+  Future<void> _enter(bool needsName) async {
+    if (!mounted) return;
+    if (needsName) {
+      await showDialog<bool>(
+        context: context,
+        barrierDismissible: false,
+        builder: (_) => const CreateExplorerDialog(),
+      );
+    }
+    if (mounted) Navigator.pushReplacementNamed(context, AppRouter.home);
   }
 
   @override
   Widget build(BuildContext context) {
-    final loc = ref.watch(localizationsProvider);
-
+    final english = ref.watch(localizationsProvider).isEnglish;
+    final startup = ref.watch(appStartupProvider);
+    final progress = ref.watch(startupProgressProvider);
+    final ready = startup.hasValue && !startup.isLoading && !startup.hasError;
+    // A finite logo reveal, not a simulated loading timer. Progress can reach
+    // 100% during the reveal; reduced motion bypasses it immediately.
+    if (ready && _intro.isCompleted && !_navigating) {
+      _navigating = true;
+      WidgetsBinding.instance.addPostFrameCallback(
+        (_) => _enter(progress.needsName),
+      );
+    }
+    final labels = english
+        ? [
+            'Preparing island discoveries',
+            'Loading your explorer',
+            'Restoring preferences',
+            'Checking your passport',
+            'Ready to explore',
+          ]
+        : [
+            'Inihahanda ang mga isla',
+            'Ikinakarga ang manlalakbay',
+            'Ibinabalik ang mga setting',
+            'Sinusuri ang pasaporte',
+            'Handa nang maglakbay',
+          ];
+    final value = ready ? 1.0 : progress.fraction;
     return Scaffold(
-      body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              AppColors.babyBlue,
-              Color(0xFFE8F4FD),
-              AppColors.lightCream,
-            ],
+      backgroundColor: const Color(0xFF091C30),
+      body: Stack(
+        fit: StackFit.expand,
+        children: [
+          Image.asset(
+            'assets/images/branding/loading-islands-v1.png',
+            fit: BoxFit.cover,
+            excludeFromSemantics: true,
+            cacheWidth: 1080,
+            errorBuilder: (_, _, _) =>
+                const ColoredBox(color: Color(0xFF123D51)),
           ),
-        ),
-        child: SafeArea(
-          child: Center(
-            child: FadeTransition(
-              opacity: _fadeAnimation,
-              child: ScaleTransition(
-                scale: _scaleAnimation,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    // Hero Mascot
-                    const BayanitoMascotWidget(
-                      size: 140,
-                      expression: MascotExpression.cheering,
-                    ),
-
-                    const SizedBox(height: 24),
-
-                    // Game Title
-                    Text(
-                      loc.appName,
-                      style: const TextStyle(
-                        fontSize: 40,
-                        fontWeight: FontWeight.w900,
-                        color: AppColors.textNavy,
-                        letterSpacing: 1.5,
+          const DecoratedBox(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Color(0x2209182C),
+                  Color(0x0009182C),
+                  Color(0xF509182C),
+                ],
+                stops: [0, .4, 1],
+              ),
+            ),
+          ),
+          SafeArea(
+            child: LayoutBuilder(
+              builder: (context, constraints) {
+                return SingleChildScrollView(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 28,
+                    vertical: 24,
+                  ),
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(
+                      minHeight: (constraints.maxHeight - 48).clamp(
+                        0,
+                        double.infinity,
                       ),
                     ),
-
-                    const SizedBox(height: 6),
-
-                    // Subtitle
-                    Text(
-                      loc.subtitle,
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                        color: AppColors.deepBlue,
-                      ),
-                    ),
-
-                    const SizedBox(height: 12),
-
-                    // Curriculum Badge
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 16,
-                        vertical: 6,
-                      ),
-                      decoration: BoxDecoration(
-                        color: AppColors.pastelPink.withValues(alpha: 0.6),
-                        borderRadius: BorderRadius.circular(20),
-                        border: Border.all(
-                          color: AppColors.pastelPink,
-                          width: 1.5,
-                        ),
-                      ),
-                      child: Text(
-                        loc.curriculumTag,
-                        style: const TextStyle(
-                          fontSize: 13,
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.textNavy,
-                        ),
-                      ),
-                    ),
-
-                    const SizedBox(height: 48),
-
-                    // Soft loading pill
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 20,
-                        vertical: 8,
-                      ),
-                      decoration: BoxDecoration(
-                        color: Colors.white.withValues(alpha: 0.8),
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
+                    child: IntrinsicHeight(
+                      child: Column(
                         children: [
-                          const SizedBox(
-                            width: 16,
-                            height: 16,
-                            child: CircularProgressIndicator(
-                              strokeWidth: 2.5,
-                              color: AppColors.deepBlue,
+                          Semantics(
+                            label: 'Rehiyonia',
+                            image: true,
+                            child: FadeTransition(
+                              opacity: _intro,
+                              child: Image.asset(
+                                'assets/images/branding/rehiyonia-logo-v1.png',
+                                width: 360,
+                                height: constraints.maxHeight < 500 ? 100 : 180,
+                                fit: BoxFit.contain,
+                                excludeFromSemantics: true,
+                                errorBuilder: (_, _, _) => const Text(
+                                  'REHIYONIA',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 36,
+                                    fontWeight: FontWeight.w900,
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
-                          const SizedBox(width: 12),
                           Text(
-                            loc.isEnglish
-                                ? 'Preparing your adventure...'
-                                : 'Naghahanda para sa paglalakbay...',
+                            english
+                                ? 'EVERY WORD. A NEW DISCOVERY.'
+                                : 'BAWAT SALITA. BAGONG TUKLAS.',
+                            textAlign: TextAlign.center,
                             style: const TextStyle(
-                              fontSize: 13,
-                              fontWeight: FontWeight.w600,
-                              color: AppColors.textNavy,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w700,
+                              letterSpacing: 1.6,
+                              fontSize: 11,
+                            ),
+                          ),
+                          const Spacer(),
+                          const SizedBox(height: 48),
+                          ConstrainedBox(
+                            constraints: const BoxConstraints(maxWidth: 460),
+                            child: Column(
+                              children: [
+                                Text(
+                                  english
+                                      ? 'Your next discovery awaits'
+                                      : 'Naghihintay ang susunod mong tuklas',
+                                  textAlign: TextAlign.center,
+                                  style: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.w800,
+                                  ),
+                                ),
+                                const SizedBox(height: 12),
+                                Text(
+                                  english
+                                      ? 'Explore the Philippines, one word at a time.'
+                                      : 'Tuklasin ang Pilipinas, isang salita bawat hakbang.',
+                                  textAlign: TextAlign.center,
+                                  style: const TextStyle(
+                                    color: Color(0xFFCFDDE6),
+                                    height: 1.5,
+                                  ),
+                                ),
+                                const SizedBox(height: 28),
+                                if (startup.hasError) ...[
+                                  Text(
+                                    english
+                                        ? 'Your journey could not load. Please try again.'
+                                        : 'Hindi maikarga ang paglalakbay. Subukan muli.',
+                                    textAlign: TextAlign.center,
+                                    style: const TextStyle(color: Colors.white),
+                                  ),
+                                  const SizedBox(height: 12),
+                                  FilledButton.icon(
+                                    key: const Key('startup_retry'),
+                                    onPressed: () {
+                                      ref
+                                          .read(
+                                            startupProgressProvider.notifier,
+                                          )
+                                          .update(0);
+                                      ref.invalidate(appInitializationProvider);
+                                      ref.invalidate(appStartupProvider);
+                                    },
+                                    icon: const Icon(Icons.refresh),
+                                    label: Text(
+                                      english ? 'Try again' : 'Subukan muli',
+                                    ),
+                                  ),
+                                ] else ...[
+                                  Row(
+                                    children: [
+                                      Expanded(
+                                        child: Text(
+                                          labels[ready ? 4 : progress.step],
+                                          style: const TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                      ),
+                                      const SizedBox(width: 12),
+                                      Text(
+                                        '${(value * 100).round()}%',
+                                        style: const TextStyle(
+                                          color: Color(0xFFFFD777),
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(height: 10),
+                                  TweenAnimationBuilder<double>(
+                                    tween: Tween(begin: 0, end: value),
+                                    duration:
+                                        MediaQuery.disableAnimationsOf(context)
+                                        ? Duration.zero
+                                        : const Duration(milliseconds: 280),
+                                    builder: (_, v, _) =>
+                                        LinearProgressIndicator(
+                                          key: const Key('startup_progress'),
+                                          value: v,
+                                          minHeight: 8,
+                                          borderRadius: BorderRadius.circular(
+                                            8,
+                                          ),
+                                          color: const Color(0xFFFFCF68),
+                                          backgroundColor: const Color(
+                                            0xFF385367,
+                                          ),
+                                          semanticsLabel: english
+                                              ? 'Startup progress'
+                                              : 'Pag-usad ng paghahanda',
+                                        ),
+                                  ),
+                                  const SizedBox(height: 14),
+                                  Text(
+                                    english
+                                        ? 'Tip: tap a word in the puzzle to discover its clue.'
+                                        : 'Tip: pindutin ang salita sa palaisipan para sa pahiwatig.',
+                                    textAlign: TextAlign.center,
+                                    style: const TextStyle(
+                                      color: Color(0xFFADBFCF),
+                                      fontSize: 11,
+                                    ),
+                                  ),
+                                ],
+                              ],
                             ),
                           ),
                         ],
                       ),
                     ),
-                  ],
-                ),
-              ),
+                  ),
+                );
+              },
             ),
           ),
-        ),
+        ],
       ),
     );
   }

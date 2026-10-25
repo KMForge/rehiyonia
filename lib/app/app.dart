@@ -20,7 +20,17 @@ class RehiyoniaApp extends ConsumerWidget {
       locale: Locale(settings.language.code),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      initialRoute: AppRouter.home,
+      builder: (context, child) => MediaQuery(
+        data: MediaQuery.of(context).copyWith(
+          disableAnimations:
+              MediaQuery.disableAnimationsOf(context) || settings.reduceMotion,
+        ),
+        child: child ?? const SizedBox.shrink(),
+      ),
+      initialRoute: AppRouter.splash,
+      onGenerateInitialRoutes: (_) => [
+        AppRouter.onGenerateRoute(const RouteSettings(name: AppRouter.splash))!,
+      ],
       onGenerateRoute: AppRouter.onGenerateRoute,
     );
   }
