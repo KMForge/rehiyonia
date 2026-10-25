@@ -135,12 +135,12 @@ class _PreGameTriviaScreenState extends ConsumerState<PreGameTriviaScreen> {
                       borderRadius: BorderRadius.circular(24),
                       boxShadow: [
                         BoxShadow(
-                          color: AppColors.deepBlue.withValues(alpha: 0.1),
-                          blurRadius: 14,
-                          offset: const Offset(0, 4),
+                          color: AppColors.deepBlue.withValues(alpha: 0.04),
+                          blurRadius: 8,
+                          offset: const Offset(0, 3),
                         ),
                       ],
-                      border: Border.all(color: AppColors.babyBlue, width: 2),
+                      border: Border.all(color: const Color(0xFFE1E7EA)),
                     ),
                     child: Column(
                       children: [
@@ -208,6 +208,7 @@ class _PreGameTriviaScreenState extends ConsumerState<PreGameTriviaScreen> {
                         color: cardColor,
                         borderRadius: BorderRadius.circular(18),
                         child: InkWell(
+                          key: Key('trivia_option_$index'),
                           onTap: _answered
                               ? null
                               : () => _handleAnswer(index, currentItem),

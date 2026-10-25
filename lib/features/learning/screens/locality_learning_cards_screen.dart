@@ -214,14 +214,14 @@ class _LocalityLearningCardsScreenState
           borderRadius: BorderRadius.circular(28),
           boxShadow: [
             BoxShadow(
-              color: AppColors.deepBlue.withValues(alpha: 0.12),
-              blurRadius: 20,
-              offset: const Offset(0, 8),
+              color: AppColors.deepBlue.withValues(alpha: 0.04),
+              blurRadius: 8,
+              offset: const Offset(0, 3),
             ),
           ],
           border: Border.all(
             color: AppColors.babyBlue.withValues(alpha: 0.6),
-            width: 2,
+            width: 1,
           ),
         ),
         padding: const EdgeInsets.all(18),
@@ -387,7 +387,11 @@ class _LocalityLearningCardsScreenState
 
               const Padding(
                 padding: EdgeInsets.symmetric(vertical: 14),
-                child: Divider(height: 1, thickness: 1, color: Color(0xFFE8EEF4)),
+                child: Divider(
+                  height: 1,
+                  thickness: 1,
+                  color: Color(0xFFE8EEF4),
+                ),
               ),
 
               // Educational Description

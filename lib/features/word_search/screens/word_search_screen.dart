@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../app/app_router.dart';
 import '../../../core/localization/app_localizations.dart';
 import '../../../core/theme/app_colors.dart';
+import '../../../shared/localization/explorer_strings.dart';
 import '../../mascot/widgets/bayanito_mascot_widget.dart';
 import '../models/regional_word.dart';
 import '../providers/gameplay_provider.dart';
@@ -138,12 +139,20 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: List.generate(3, (index) {
-                  return Icon(
-                    index < state.starsEarned
-                        ? Icons.star_rounded
-                        : Icons.star_border_rounded,
-                    color: const Color(0xFFFFB300),
-                    size: 42,
+                  return TweenAnimationBuilder<double>(
+                    tween: Tween(begin: 0.65, end: 1),
+                    duration: MediaQuery.disableAnimationsOf(context)
+                        ? Duration.zero
+                        : Duration(milliseconds: 300 + index * 140),
+                    builder: (_, scale, child) =>
+                        Transform.scale(scale: scale, child: child),
+                    child: Icon(
+                      index < state.starsEarned
+                          ? Icons.star_rounded
+                          : Icons.star_border_rounded,
+                      color: const Color(0xFFFFB300),
+                      size: 42,
+                    ),
                   );
                 }),
               ),
@@ -208,8 +217,9 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
                 icon: const Icon(Icons.arrow_forward_rounded),
                 onPressed: () {
                   Navigator.pop(dialogCtx);
-                  final nextRegion =
-                      ref.read(gameplayProvider.notifier).getNextRegion();
+                  final nextRegion = ref
+                      .read(gameplayProvider.notifier)
+                      .getNextRegion();
                   if (nextRegion != null) {
                     Navigator.pushReplacementNamed(
                       context,
@@ -317,6 +327,23 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
           ],
         ),
         actions: [
+          IconButton(
+            tooltip: ExplorerStrings(loc.isEnglish)('help'),
+            icon: const Icon(Icons.help_outline_rounded),
+            onPressed: () => showDialog<void>(
+              context: context,
+              builder: (ctx) => AlertDialog(
+                title: Text(ExplorerStrings(loc.isEnglish)('help')),
+                content: Text(ExplorerStrings(loc.isEnglish)('helpText')),
+                actions: [
+                  TextButton(
+                    onPressed: () => Navigator.pop(ctx),
+                    child: Text(loc.closeButton),
+                  ),
+                ],
+              ),
+            ),
+          ),
           Container(
             margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 8),
             padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -426,6 +453,22 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
               ),
             ),
 
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 4),
+              child: TweenAnimationBuilder<double>(
+                tween: Tween(
+                  end: gameState.foundWords.length / puzzle.placedWords.length,
+                ),
+                duration: MediaQuery.disableAnimationsOf(context)
+                    ? Duration.zero
+                    : const Duration(milliseconds: 240),
+                builder: (_, value, _) => LinearProgressIndicator(
+                  value: value,
+                  minHeight: 5,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+              ),
+            ),
             // Word search grid
             Expanded(
               child: WordSearchGridWidget(
@@ -444,10 +487,15 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
             ),
 
             // Target word list
-            WordListBar(
-              words: gameState.targetWords,
-              foundWords: gameState.foundWords,
-              onWordClueTap: _showClueModal,
+            ConstrainedBox(
+              constraints: const BoxConstraints(maxHeight: 160),
+              child: SingleChildScrollView(
+                child: WordListBar(
+                  words: gameState.targetWords,
+                  foundWords: gameState.foundWords,
+                  onWordClueTap: _showClueModal,
+                ),
+              ),
             ),
             const SizedBox(height: 8),
           ],

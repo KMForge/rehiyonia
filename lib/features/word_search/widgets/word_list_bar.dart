@@ -29,17 +29,18 @@ class WordListBar extends StatelessWidget {
             onTap: () => onWordClueTap(w),
             borderRadius: BorderRadius.circular(16),
             child: AnimatedContainer(
-              duration: const Duration(milliseconds: 200),
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+              duration: MediaQuery.disableAnimationsOf(context)
+                  ? Duration.zero
+                  : const Duration(milliseconds: 200),
+              constraints: const BoxConstraints(minHeight: 48),
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
               decoration: BoxDecoration(
-                color: isFound
-                    ? const Color(0xFFE8F5E9)
-                    : const Color(0xFFEDE7F6),
+                color: isFound ? const Color(0xFFE8F5E9) : Colors.white,
                 borderRadius: BorderRadius.circular(16),
                 border: Border.all(
                   color: isFound
                       ? const Color(0xFF81C784)
-                      : const Color(0xFFD1C4E9),
+                      : const Color(0xFFE1E7EA),
                   width: 1.2,
                 ),
               ),
@@ -63,7 +64,7 @@ class WordListBar extends StatelessWidget {
                       decoration: isFound ? TextDecoration.lineThrough : null,
                       color: isFound
                           ? const Color(0xFF2E7D32)
-                          : const Color(0xFF4A148C),
+                          : const Color(0xFF16324F),
                     ),
                   ),
                 ],

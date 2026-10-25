@@ -53,13 +53,18 @@ class AssetSeedLoader {
       final sampleLocality = localitiesCount > 0
           ? await db.query(DatabaseConstants.tableLocalities, limit: 1)
           : null;
-      final hasImagePath = sampleLocality != null &&
+      final hasImagePath =
+          sampleLocality != null &&
           sampleLocality.isNotEmpty &&
           sampleLocality.first.containsKey(DatabaseConstants.columnImagePath) &&
           sampleLocality.first[DatabaseConstants.columnImagePath] != null;
 
-      if (localitiesCount == 0 || localitiesCount != words.length || !hasImagePath) {
-        await db.execute('DROP TABLE IF EXISTS ${DatabaseConstants.tableLocalities}');
+      if (localitiesCount == 0 ||
+          localitiesCount != words.length ||
+          !hasImagePath) {
+        await db.execute(
+          'DROP TABLE IF EXISTS ${DatabaseConstants.tableLocalities}',
+        );
         await db.execute(DatabaseTables.createLocalitiesTable);
         final batch = db.batch();
         for (var i = 0; i < words.length; i++) {
