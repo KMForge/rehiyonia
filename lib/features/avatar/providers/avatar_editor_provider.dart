@@ -9,26 +9,64 @@ class AvatarEditorState {
     required this.draft,
     this.saving = false,
     this.failed = false,
+    this.savedPresets = const {},
+    this.draftPresets = const {},
   });
   final PlayerAvatar saved, draft;
   final bool saving, failed;
-  bool get isDirty => saved != draft;
+  final Map<String, PlayerAvatar> savedPresets, draftPresets;
+  bool get isDirty =>
+      saved != draft ||
+      savedPresets.length != draftPresets.length ||
+      draftPresets.entries.any((e) => savedPresets[e.key] != e.value);
 }
 
 class AvatarEditor extends Notifier<AvatarEditorState> {
   @override
   AvatarEditorState build() {
-    final avatar = ref.read(profileProvider).avatar;
-    return AvatarEditorState(saved: avatar, draft: avatar);
+    final profile = ref.read(profileProvider);
+    final avatar = profile.avatar;
+    final presets = Map<String, PlayerAvatar>.unmodifiable({
+      ...profile.avatarPresets,
+      avatar.baseId: avatar,
+    });
+    return AvatarEditorState(
+      saved: avatar,
+      draft: avatar,
+      savedPresets: presets,
+      draftPresets: presets,
+    );
   }
 
   void change(PlayerAvatar avatar) {
     if (!state.saving) {
-      state = AvatarEditorState(saved: state.saved, draft: avatar);
+      state = AvatarEditorState(
+        saved: state.saved,
+        draft: avatar,
+        savedPresets: state.savedPresets,
+        draftPresets: Map.unmodifiable({
+          ...state.draftPresets,
+          avatar.baseId: avatar,
+        }),
+      );
     }
   }
 
-  void reset() => change(state.saved);
+  void switchBase(String base) {
+    if (base != 'male' && base != 'female') return;
+    change(state.draftPresets[base] ?? PlayerAvatar.starter(base));
+  }
+
+  void reset() {
+    if (state.saving) return;
+    state = AvatarEditorState(
+      saved: state.saved,
+      draft: state.saved,
+      savedPresets: state.savedPresets,
+      draftPresets: state.savedPresets,
+    );
+  }
+
   Future<bool> save() async {
     if (state.saving) return false;
     final before = state;
@@ -36,11 +74,20 @@ class AvatarEditor extends Notifier<AvatarEditorState> {
       saved: before.saved,
       draft: before.draft,
       saving: true,
+      savedPresets: before.savedPresets,
+      draftPresets: before.draftPresets,
     );
     try {
-      await ref.read(profileProvider.notifier).setAvatar(before.draft);
+      await ref
+          .read(profileProvider.notifier)
+          .setAvatar(before.draft, presets: before.draftPresets);
       if (!ref.mounted) return false;
-      state = AvatarEditorState(saved: before.draft, draft: before.draft);
+      state = AvatarEditorState(
+        saved: before.draft,
+        draft: before.draft,
+        savedPresets: before.draftPresets,
+        draftPresets: before.draftPresets,
+      );
       return true;
     } catch (_) {
       if (ref.mounted) {
@@ -48,6 +95,8 @@ class AvatarEditor extends Notifier<AvatarEditorState> {
           saved: before.saved,
           draft: before.draft,
           failed: true,
+          savedPresets: before.savedPresets,
+          draftPresets: before.draftPresets,
         );
       }
       return false;

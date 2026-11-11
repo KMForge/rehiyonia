@@ -9,6 +9,8 @@ import '../data/avatar_catalog.dart';
 import '../models/player_avatar.dart';
 import '../providers/avatar_editor_provider.dart';
 import '../widgets/player_avatar_widget.dart';
+import '../widgets/wardrobe_purchase_dialog.dart';
+import '../../profile/providers/profile_provider.dart';
 
 class AvatarStudioScreen extends ConsumerStatefulWidget {
   const AvatarStudioScreen({super.key});
@@ -26,6 +28,8 @@ class _AvatarStudioScreenState extends ConsumerState<AvatarStudioScreen> {
     'headwear',
     'glasses',
     'necklace',
+    'earrings',
+    'bracelet',
     'top',
     'topColor',
     'bottom',
@@ -37,13 +41,11 @@ class _AvatarStudioScreenState extends ConsumerState<AvatarStudioScreen> {
     'hair' => AvatarCatalog.hairs,
     'skin' => AvatarCatalog.skins,
     'hairColor' => AvatarCatalog.hairColors,
-    'headwear' => AvatarCatalog.headwear,
-    'glasses' => AvatarCatalog.glasses,
-    'necklace' => AvatarCatalog.necklaces,
-    'top' => AvatarCatalog.tops,
-    'bottom' => AvatarCatalog.bottoms,
-    'shoes' => AvatarCatalog.shoes,
-    _ => AvatarCatalog.colors,
+    'topColor' || 'bottomColor' => AvatarCatalog.colors,
+    _ => AvatarCatalog.itemsFor(
+      _category,
+      ref.read(avatarEditorProvider).draft.baseId,
+    ),
   };
   PlayerAvatar _withItem(PlayerAvatar a, int i) => switch (_category) {
     'hair' => a.copyWith(hairStyleIndex: i),
@@ -54,10 +56,26 @@ class _AvatarStudioScreenState extends ConsumerState<AvatarStudioScreen> {
     'headwear' => a.copyWith(headwearId: _items()[i]),
     'glasses' => a.copyWith(glassesId: _items()[i]),
     'necklace' => a.copyWith(necklaceId: _items()[i]),
+    'earrings' => a.copyWith(earringsId: _items()[i]),
+    'bracelet' => a.copyWith(braceletId: _items()[i]),
     'top' => a.copyWith(topId: _items()[i]),
     'bottom' => a.copyWith(bottomId: _items()[i]),
     _ => a.copyWith(shoesId: _items()[i]),
   };
+
+  Future<void> _previewPurchase(
+    PlayerAvatar candidate,
+    WardrobeItem item,
+  ) async {
+    final purchased = await showDialog<bool>(
+      context: context,
+      barrierDismissible: false,
+      builder: (_) => WardrobePurchaseDialog(item: item, preview: candidate),
+    );
+    if (purchased == true && mounted) {
+      ref.read(avatarEditorProvider.notifier).change(candidate);
+    }
+  }
 
   Future<void> _leave() async {
     final state = ref.read(avatarEditorProvider);
@@ -97,6 +115,7 @@ class _AvatarStudioScreenState extends ConsumerState<AvatarStudioScreen> {
     final state = ref.watch(avatarEditorProvider);
     final editor = ref.read(avatarEditorProvider.notifier);
     final a = state.draft;
+    final profile = ref.watch(profileProvider);
     final items = _items();
     return PopScope(
       canPop: _allowPop || (!state.isDirty && !state.saving),
@@ -123,6 +142,32 @@ class _AvatarStudioScreenState extends ConsumerState<AvatarStudioScreen> {
                   Text(
                     ui('studioHint'),
                     style: Theme.of(context).textTheme.bodyLarge,
+                  ),
+                  const SizedBox(height: 12),
+                  Wrap(
+                    spacing: 12,
+                    runSpacing: 8,
+                    crossAxisAlignment: WrapCrossAlignment.center,
+                    children: [
+                      Text(
+                        ui(
+                          a.baseId == 'male'
+                              ? 'maleCollection'
+                              : 'femaleCollection',
+                        ),
+                        style: const TextStyle(fontWeight: FontWeight.w800),
+                      ),
+                      Chip(
+                        avatar: const Icon(
+                          Icons.monetization_on_rounded,
+                          color: Color(0xFFB27A14),
+                        ),
+                        label: Text(
+                          '${profile.coins} ${ui('coins')}',
+                          key: const Key('wardrobe_balance'),
+                        ),
+                      ),
+                    ],
                   ),
                   const SizedBox(height: 16),
                   AvatarStage(
@@ -161,7 +206,7 @@ class _AvatarStudioScreenState extends ConsumerState<AvatarStudioScreen> {
                       selected: {a.baseId},
                       onSelectionChanged: state.saving
                           ? null
-                          : (v) => editor.change(a.copyWith(baseId: v.first)),
+                          : (v) => editor.switchBase(v.first),
                     ),
                   ),
                   const SizedBox(height: 16),
@@ -192,6 +237,11 @@ class _AvatarStudioScreenState extends ConsumerState<AvatarStudioScreen> {
                     runSpacing: 10,
                     children: List.generate(items.length, (i) {
                       final candidate = _withItem(a, i);
+                      final item = AvatarCatalog.slots.containsKey(_category)
+                          ? AvatarCatalog.item(_category, items[i])
+                          : null;
+                      final owned =
+                          item?.isOwned(profile.ownedWardrobeItems) ?? true;
                       final selected = candidate == a;
                       final isColor = [
                         'skin',
@@ -227,7 +277,13 @@ class _AvatarStudioScreenState extends ConsumerState<AvatarStudioScreen> {
                               borderRadius: BorderRadius.circular(18),
                               onTap: state.saving
                                   ? null
-                                  : () => editor.change(candidate),
+                                  : () {
+                                      if (!owned && item != null) {
+                                        _previewPurchase(candidate, item);
+                                      } else {
+                                        editor.change(candidate);
+                                      }
+                                    },
                               child: Padding(
                                 padding: const EdgeInsets.all(12),
                                 child: Column(
@@ -250,9 +306,41 @@ class _AvatarStudioScreenState extends ConsumerState<AvatarStudioScreen> {
                                           'bottom',
                                           'shoes',
                                           'necklace',
+                                          'bracelet',
                                         ].contains(_category),
                                       ),
                                     const SizedBox(height: 8),
+                                    if (item != null && item.price > 0)
+                                      Padding(
+                                        padding: const EdgeInsets.only(
+                                          bottom: 6,
+                                        ),
+                                        child: Wrap(
+                                          spacing: 4,
+                                          crossAxisAlignment:
+                                              WrapCrossAlignment.center,
+                                          children: [
+                                            Icon(
+                                              owned
+                                                  ? Icons.verified_rounded
+                                                  : Icons.lock_rounded,
+                                              size: 16,
+                                              color: owned
+                                                  ? ExplorerTheme.teal
+                                                  : const Color(0xFFAD4775),
+                                            ),
+                                            Text(
+                                              owned
+                                                  ? ui('owned')
+                                                  : '${item.price} ${ui('coins')}',
+                                              style: const TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w700,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
                                     Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,

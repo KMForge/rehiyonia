@@ -14,12 +14,18 @@ class MemoryProfileRepository extends ProfileRepository {
   MemoryProfileRepository() : super(AppDatabase());
   PlayerAvatar avatar = const PlayerAvatar();
   bool failSave = false;
+  Map<String, PlayerAvatar> presets = {};
   @override
-  Future<void> saveAvatar(PlayerAvatar value) async {
+  Future<void> saveAvatar(
+    PlayerAvatar value, {
+    Map<String, PlayerAvatar>? presets,
+  }) async {
     if (failSave) throw StateError('Storage unavailable');
     avatar = value;
+    this.presets = {...this.presets, ...?presets, value.baseId: value};
   }
 
   @override
-  Future<UserProfile> load() async => UserProfile(avatar: avatar);
+  Future<UserProfile> load() async =>
+      UserProfile(avatar: avatar, avatarPresets: presets);
 }

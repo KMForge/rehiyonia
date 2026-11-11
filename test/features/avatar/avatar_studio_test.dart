@@ -10,6 +10,41 @@ import 'package:rehiyonia/features/profile/providers/profile_provider.dart';
 import '../../support/explorer_fakes.dart';
 
 void main() {
+  test(
+    'base switching remembers both draft outfits and reset restores both',
+    () async {
+      final repo = MemoryProfileRepository();
+      final container = ProviderContainer(
+        overrides: [profileRepositoryProvider.overrideWithValue(repo)],
+      );
+      addTearDown(container.dispose);
+      final subscription = container.listen(avatarEditorProvider, (_, _) {});
+      addTearDown(subscription.close);
+      final editor = container.read(avatarEditorProvider.notifier);
+      editor.change(
+        const PlayerAvatar(topId: 'striped_tee', bottomId: 'chinos'),
+      );
+      editor.switchBase('female');
+      expect(container.read(avatarEditorProvider).draft.topId, 'blouse');
+      editor.change(
+        container
+            .read(avatarEditorProvider)
+            .draft
+            .copyWith(braceletId: 'woven'),
+      );
+      editor.switchBase('male');
+      expect(container.read(avatarEditorProvider).draft.topId, 'striped_tee');
+      expect(await editor.save(), isTrue);
+      expect(repo.presets['female']?.braceletId, 'woven');
+      editor.switchBase('female');
+      editor.change(
+        container.read(avatarEditorProvider).draft.copyWith(topId: 'tee'),
+      );
+      editor.reset();
+      editor.switchBase('female');
+      expect(container.read(avatarEditorProvider).draft.topId, 'blouse');
+    },
+  );
   test('new wardrobe IDs survive serialization for either base', () {
     for (final base in ['male', 'female']) {
       for (final top in ['hoodie', 'explorer']) {

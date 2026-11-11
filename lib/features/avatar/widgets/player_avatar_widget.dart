@@ -126,7 +126,25 @@ class _AvatarPainter extends CustomPainter {
     // Legs: shorts reveal calves; pants and shoes keep the same anchors.
     box(78, 225, 26, 83, 12, skin);
     box(116, 225, 26, 83, 12, skin);
-    if (avatar.bottomId != 'shorts') {
+    final shortBottom = [
+      'shorts',
+      'sport_shorts',
+      'pleated_shorts',
+      'skirt',
+    ].contains(avatar.bottomId);
+    if (avatar.bottomId == 'wide_pants') {
+      for (final x in [76.0, 115.0]) {
+        canvas.drawPath(
+          Path()
+            ..moveTo(x, 219)
+            ..lineTo(x + 28, 219)
+            ..lineTo(x + 35, 299)
+            ..lineTo(x - 6, 299)
+            ..close(),
+          Paint()..color = bottom,
+        );
+      }
+    } else if (!shortBottom) {
       box(75, 215, 31, 84, 10, bottom);
       box(114, 215, 31, 84, 10, bottom);
     } else {
@@ -134,20 +152,59 @@ class _AvatarPainter extends CustomPainter {
       box(112, 215, 35, 42, 8, bottom);
     }
     box(75, 211, 69, 26, 8, bottom);
+    if (avatar.bottomId == 'skirt') {
+      canvas.drawPath(
+        Path()
+          ..moveTo(77, 216)
+          ..lineTo(143, 216)
+          ..lineTo(155, 262)
+          ..quadraticBezierTo(110, 273, 65, 262)
+          ..close(),
+        Paint()..color = bottom,
+      );
+      for (var x = 81.0; x <= 139; x += 14) {
+        stroke(
+          [Offset(x, 229), Offset(x + (x - 110) * .25, 260)],
+          Colors.white.withValues(alpha: .3),
+          2,
+        );
+      }
+    }
+    if (avatar.bottomId == 'chinos') {
+      stroke(
+        [const Offset(80, 237), const Offset(95, 245)],
+        ExplorerTheme.paper,
+        2,
+      );
+      stroke(
+        [const Offset(140, 237), const Offset(125, 245)],
+        ExplorerTheme.paper,
+        2,
+      );
+      box(75, 288, 31, 9, 2, Color.lerp(bottom, Colors.white, .3)!);
+      box(114, 288, 31, 9, 2, Color.lerp(bottom, Colors.white, .3)!);
+    }
+    if (avatar.bottomId == 'sport_shorts') {
+      stroke([const Offset(77, 235), const Offset(77, 252)], Colors.white, 3);
+      stroke([const Offset(143, 235), const Offset(143, 252)], Colors.white, 3);
+    }
+    if (avatar.bottomId == 'pleated_shorts') {
+      for (final x in [82.0, 96.0, 121.0, 135.0]) {
+        stroke(
+          [Offset(x, 233), Offset(x, 254)],
+          Colors.white.withValues(alpha: .4),
+          2,
+        );
+      }
+    }
     // Tailored seams, cuffs and utility pockets retain the shared leg anchors.
     stroke(
-      [
-        const Offset(90, 239),
-        Offset(90, avatar.bottomId == 'shorts' ? 250 : 288),
-      ],
+      [const Offset(90, 239), Offset(90, shortBottom ? 250 : 288)],
       Colors.white.withValues(alpha: .18),
       2,
     );
     stroke(
-      [
-        const Offset(130, 239),
-        Offset(130, avatar.bottomId == 'shorts' ? 250 : 288),
-      ],
+      [const Offset(130, 239), Offset(130, shortBottom ? 250 : 288)],
       Colors.white.withValues(alpha: .18),
       2,
     );
@@ -157,7 +214,32 @@ class _AvatarPainter extends CustomPainter {
       stroke([const Offset(77, 258), const Offset(96, 258)], bottom, 2);
       stroke([const Offset(125, 258), const Offset(144, 258)], bottom, 2);
     }
-    if (avatar.shoesId == 'sandals') {
+    if (['flats', 'heels', 'loafers'].contains(avatar.shoesId)) {
+      final shoeColor = avatar.shoesId == 'loafers'
+          ? const Color(0xFF73503E)
+          : top;
+      for (final x in [72.0, 114.0]) {
+        box(x, 304, 35, 12, 6, shoeColor);
+        oval(x + 7, 298, 21, 12, skin);
+        if (avatar.shoesId == 'heels') {
+          box(x + 24, 309, 8, 11, 2, shoeColor);
+          box(x, 313, 13, 6, 2, shoeColor);
+          stroke([Offset(x + 5, 301), Offset(x + 29, 301)], shoeColor, 3);
+          oval(x + 25, 299, 5, 5, ExplorerTheme.sun);
+        } else if (avatar.shoesId == 'loafers') {
+          box(x + 3, 304, 29, 7, 3, shoeColor);
+          stroke(
+            [Offset(x + 11, 307), Offset(x + 23, 307)],
+            ExplorerTheme.sun,
+            3,
+          );
+        } else {
+          oval(x + 9, 307, 8, 5, ExplorerTheme.paper);
+          oval(x + 17, 307, 8, 5, ExplorerTheme.paper);
+        }
+      }
+    } else if (avatar.shoesId == 'sandals' ||
+        avatar.shoesId == 'strappy_sandals') {
       box(74, 298, 33, 18, 7, skin);
       box(115, 298, 33, 18, 7, skin);
       box(73, 310, 35, 7, 3, ExplorerTheme.ink);
@@ -172,6 +254,13 @@ class _AvatarPainter extends CustomPainter {
         ExplorerTheme.ink,
         5,
       );
+      if (avatar.shoesId == 'strappy_sandals') {
+        for (final x in [78.0, 119.0]) {
+          stroke([Offset(x, 293), Offset(x + 23, 293)], top, 4);
+          stroke([Offset(x, 307), Offset(x + 20, 298)], ExplorerTheme.sun, 3);
+          oval(x + 20, 291, 5, 5, ExplorerTheme.sun);
+        }
+      }
     } else if (avatar.shoesId == 'boots') {
       box(75, 286, 31, 24, 5, const Color(0xFF97683D));
       box(115, 286, 31, 24, 5, const Color(0xFF97683D));
@@ -184,6 +273,20 @@ class _AvatarPainter extends CustomPainter {
       box(68, 315, 40, 5, 2, ExplorerTheme.ink);
       box(114, 315, 40, 5, 2, ExplorerTheme.ink);
     } else {
+      if (avatar.shoesId == 'high_tops') {
+        box(75, 281, 31, 27, 6, top);
+        box(115, 281, 31, 27, 6, top);
+        stroke(
+          [const Offset(80, 286), const Offset(101, 286)],
+          Colors.white,
+          3,
+        );
+        stroke(
+          [const Offset(120, 286), const Offset(141, 286)],
+          Colors.white,
+          3,
+        );
+      }
       box(68, 294, 40, 24, 9, Colors.white);
       box(114, 294, 40, 24, 9, Colors.white);
       box(68, 312, 40, 6, 3, ExplorerTheme.ink);
@@ -250,7 +353,126 @@ class _AvatarPainter extends CustomPainter {
         ..style = PaintingStyle.stroke
         ..strokeWidth = 5,
     );
-    if (avatar.topId == 'polo') {
+    if (avatar.topId == 'striped_tee') {
+      canvas.save();
+      canvas.clipPath(shirt);
+      for (var y = 166.0; y < 220; y += 14) {
+        box(57, y, 106, 5, 0, Colors.white.withValues(alpha: .75));
+      }
+      canvas.restore();
+    } else if (avatar.topId == 'varsity') {
+      canvas.save();
+      canvas.clipPath(shirt);
+      box(56, 143, 25, 42, 5, ExplorerTheme.paper);
+      box(140, 143, 25, 42, 5, ExplorerTheme.paper);
+      canvas.restore();
+      stroke(
+        [const Offset(110, 154), const Offset(110, 221)],
+        ExplorerTheme.paper,
+        3,
+      );
+      for (var y = 163.0; y < 215; y += 13) {
+        oval(113, y, 3, 3, ExplorerTheme.sun);
+      }
+      box(80, 210, 60, 10, 3, ExplorerTheme.paper);
+      stroke(
+        [
+          const Offset(126, 168),
+          const Offset(123, 176),
+          const Offset(132, 176),
+          const Offset(129, 168),
+        ],
+        ExplorerTheme.sun,
+        3,
+      );
+    } else if (avatar.topId == 'barong') {
+      canvas.drawPath(shirt, Paint()..color = const Color(0xFFF3E3C1));
+      stroke(
+        [const Offset(109, 143), const Offset(109, 219)],
+        const Color(0xFFB69565),
+        2,
+      );
+      for (var y = 160.0; y < 211; y += 12) {
+        for (final x in [96.0, 124.0]) {
+          stroke(
+            [
+              Offset(x, y - 4),
+              Offset(x + 4, y),
+              Offset(x, y + 4),
+              Offset(x - 4, y),
+              Offset(x, y - 4),
+            ],
+            const Color(0xFFB69565),
+            1.4,
+          );
+        }
+        oval(108, y, 3, 3, const Color(0xFFB69565));
+      }
+    } else if (['blouse', 'bolero', 'peplum'].contains(avatar.topId)) {
+      oval(61, 143, 25, 32, top);
+      oval(135, 143, 25, 32, top);
+      if (avatar.topId == 'bolero') {
+        box(93, 155, 34, 65, 5, ExplorerTheme.paper);
+        canvas.drawPath(
+          Path()
+            ..moveTo(90, 140)
+            ..lineTo(106, 155)
+            ..lineTo(89, 185)
+            ..lineTo(78, 180)
+            ..close(),
+          Paint()..color = top,
+        );
+        canvas.drawPath(
+          Path()
+            ..moveTo(130, 140)
+            ..lineTo(114, 155)
+            ..lineTo(131, 185)
+            ..lineTo(142, 180)
+            ..close(),
+          Paint()..color = top,
+        );
+        oval(133, 161, 7, 7, ExplorerTheme.sun);
+      } else {
+        canvas.drawPath(
+          Path()
+            ..moveTo(110, 155)
+            ..lineTo(95, 149)
+            ..lineTo(95, 163)
+            ..close(),
+          Paint()..color = ExplorerTheme.paper,
+        );
+        canvas.drawPath(
+          Path()
+            ..moveTo(110, 155)
+            ..lineTo(125, 149)
+            ..lineTo(125, 163)
+            ..close(),
+          Paint()..color = ExplorerTheme.paper,
+        );
+        for (var y = 169.0; y < 208; y += 12) {
+          oval(108, y, 4, 4, ExplorerTheme.paper);
+        }
+      }
+      if (avatar.topId == 'peplum') {
+        canvas.drawPath(
+          Path()
+            ..moveTo(84, 199)
+            ..lineTo(136, 199)
+            ..lineTo(153, 232)
+            ..quadraticBezierTo(110, 242, 67, 232)
+            ..close(),
+          Paint()..color = top,
+        );
+        box(83, 196, 54, 6, 2, ExplorerTheme.sun);
+        for (final x in [87.0, 103.0, 119.0, 135.0]) {
+          stroke(
+            [Offset(x, 207), Offset(x + (x - 110) * .25, 230)],
+            Colors.white.withValues(alpha: .3),
+            2,
+          );
+        }
+      }
+    } else if (avatar.topId == 'polo') {
       final collarLeft = Path()
         ..moveTo(90, 136)
         ..lineTo(108, 151)
@@ -396,7 +618,8 @@ class _AvatarPainter extends CustomPainter {
     );
 
     // Front hair remains above the face; hat trims the tall silhouette.
-    final capOn = avatar.headwearId == 'cap';
+    final capOn =
+        avatar.headwearId == 'cap' || avatar.headwearId == 'sport_cap';
     final hairPath = Path()
       ..moveTo(62, 82)
       ..cubicTo(44, 27, 77, 13, 111, 21)
@@ -428,14 +651,50 @@ class _AvatarPainter extends CustomPainter {
       4,
     );
     if (capOn) {
-      box(60, 23, 99, 34, 17, const Color(0xFFCD9D5F));
-      box(100, 48, 73, 10, 5, const Color(0xFF98703D));
+      box(
+        60,
+        23,
+        99,
+        34,
+        17,
+        avatar.headwearId == 'sport_cap' ? top : const Color(0xFFCD9D5F),
+      );
+      box(
+        100,
+        48,
+        73,
+        10,
+        5,
+        avatar.headwearId == 'sport_cap'
+            ? ExplorerTheme.ink
+            : const Color(0xFF98703D),
+      );
       oval(99, 29, 20, 20, ExplorerTheme.paper);
       stroke(
         [const Offset(104, 39), const Offset(109, 33), const Offset(115, 39)],
         ExplorerTheme.teal,
         2,
       );
+    } else if (avatar.headwearId == 'beret') {
+      oval(54, 14, 112, 39, top);
+      box(65, 41, 87, 10, 4, Color.lerp(top, ExplorerTheme.ink, .3)!);
+      stroke([const Offset(107, 14), const Offset(111, 8)], top, 5);
+      oval(137, 31, 9, 9, ExplorerTheme.sun);
+    } else if (avatar.headwearId == 'crown') {
+      final crown = Path()
+        ..moveTo(70, 47)
+        ..lineTo(64, 14)
+        ..lineTo(88, 30)
+        ..lineTo(110, 7)
+        ..lineTo(132, 30)
+        ..lineTo(156, 14)
+        ..lineTo(149, 47)
+        ..close();
+      canvas.drawPath(crown, Paint()..color = ExplorerTheme.sun);
+      box(70, 40, 79, 9, 3, const Color(0xFFF9D981));
+      for (final x in [85.0, 110.0, 135.0]) {
+        oval(x - 4, 33, 8, 10, const Color(0xFFC14E82));
+      }
     } else if (avatar.headwearId == 'bucket') {
       final hat = Path()
         ..moveTo(68, 49)
@@ -459,6 +718,63 @@ class _AvatarPainter extends CustomPainter {
       }
       oval(145, 49, 9, 9, ExplorerTheme.sun);
     }
+    if (avatar.earringsId != 'none') {
+      for (final x in [63.0, 157.0]) {
+        oval(x - 3, 97, 6, 6, ExplorerTheme.sun);
+        if (avatar.earringsId == 'hoops') {
+          canvas.drawOval(
+            Rect.fromLTWH(x - 6, 100, 12, 15),
+            Paint()
+              ..color = ExplorerTheme.sun
+              ..style = PaintingStyle.stroke
+              ..strokeWidth = 2.5,
+          );
+        } else if (avatar.earringsId == 'star_drops') {
+          stroke([Offset(x, 101), Offset(x, 109)], ExplorerTheme.sun, 2);
+          final star = Path();
+          for (var i = 0; i < 10; i++) {
+            final angle = i * math.pi / 5 - math.pi / 2;
+            final radius = i.isEven ? 7.0 : 3.0;
+            final point = Offset(
+              x + math.cos(angle) * radius,
+              113 + math.sin(angle) * radius,
+            );
+            if (i == 0) {
+              star.moveTo(point.dx, point.dy);
+            } else {
+              star.lineTo(point.dx, point.dy);
+            }
+          }
+          canvas.drawPath(star..close(), Paint()..color = ExplorerTheme.sun);
+        }
+      }
+    }
+    if (avatar.braceletId != 'none') {
+      for (final wrist in [const Offset(53, 207), const Offset(160, 202)]) {
+        box(
+          wrist.dx - 6,
+          wrist.dy,
+          18,
+          avatar.braceletId == 'gem_cuff' ? 10 : 6,
+          3,
+          avatar.braceletId == 'woven'
+              ? const Color(0xFFDE8065)
+              : ExplorerTheme.sun,
+        );
+        if (avatar.braceletId == 'woven') {
+          stroke(
+            [
+              Offset(wrist.dx - 3, wrist.dy + 3),
+              Offset(wrist.dx + 8, wrist.dy + 3),
+            ],
+            ExplorerTheme.paper,
+            2,
+          );
+        } else if (avatar.braceletId == 'gem_cuff') {
+          oval(wrist.dx, wrist.dy + 2, 7, 7, const Color(0xFF40ACAE));
+        }
+      }
+    }
     if (avatar.necklaceId != 'none') {
       final chain = Path()
         ..moveTo(92, 144)
@@ -477,6 +793,27 @@ class _AvatarPainter extends CustomPainter {
             const Radius.circular(3),
           ),
           Paint()..color = ExplorerTheme.sun,
+        );
+      }
+      if (avatar.necklaceId == 'pearls') {
+        for (var i = 0; i <= 10; i++) {
+          final t = i / 10;
+          oval(89 + 37 * t, 141 + 100 * t * (1 - t), 6, 6, ExplorerTheme.paper);
+        }
+      } else if (avatar.necklaceId == 'gem_pendant') {
+        final gem = Path()
+          ..moveTo(110, 166)
+          ..lineTo(118, 175)
+          ..lineTo(110, 185)
+          ..lineTo(102, 175)
+          ..close();
+        canvas.drawPath(gem, Paint()..color = const Color(0xFF40ACAE));
+        canvas.drawPath(
+          gem,
+          Paint()
+            ..color = ExplorerTheme.sun
+            ..style = PaintingStyle.stroke
+            ..strokeWidth = 2,
         );
       }
     }

@@ -14,6 +14,8 @@ class PlayerAvatar {
     String? headwearId,
     String? glassesId,
     this.necklaceId = 'none',
+    this.earringsId = 'none',
+    this.braceletId = 'none',
     this.topId = 'tee',
     this.bottomId = 'pants',
     this.bottomColorIndex = 0,
@@ -28,6 +30,33 @@ class PlayerAvatar {
   final int skinIndex, hairStyleIndex, hairColorIndex, outfitColorIndex;
   final int accessoryIndex, bottomColorIndex;
   final String baseId, necklaceId, topId, bottomId, shoesId;
+  final String earringsId, braceletId;
+
+  static PlayerAvatar starter(String base) => base == 'female'
+      ? const PlayerAvatar(
+          baseId: 'female',
+          hairStyleIndex: 5,
+          topId: 'blouse',
+          bottomId: 'wide_pants',
+          shoesId: 'flats',
+        )
+      : const PlayerAvatar();
+
+  Map<String, String> get wornItems => {
+    'headwear': headwearId,
+    'glasses': glassesId,
+    'necklace': necklaceId,
+    'earrings': earringsId,
+    'bracelet': braceletId,
+    'top': topId,
+    'bottom': bottomId,
+    'shoes': shoesId,
+  };
+
+  bool canEquip(Set<String> owned) => wornItems.entries.every((entry) {
+    final item = AvatarCatalog.item(entry.key, entry.value);
+    return item.supports(baseId) && item.isOwned(owned);
+  });
   final String? _headwearId, _glassesId;
   String get headwearId =>
       _headwearId ??
@@ -49,6 +78,8 @@ class PlayerAvatar {
     String? headwearId,
     String? glassesId,
     String? necklaceId,
+    String? earringsId,
+    String? braceletId,
     String? topId,
     String? bottomId,
     int? bottomColorIndex,
@@ -63,6 +94,8 @@ class PlayerAvatar {
     headwearId: headwearId ?? (accessoryIndex != null ? null : this.headwearId),
     glassesId: glassesId ?? (accessoryIndex != null ? null : this.glassesId),
     necklaceId: necklaceId ?? this.necklaceId,
+    earringsId: earringsId ?? this.earringsId,
+    braceletId: braceletId ?? this.braceletId,
     topId: topId ?? this.topId,
     bottomId: bottomId ?? this.bottomId,
     bottomColorIndex: bottomColorIndex ?? this.bottomColorIndex,
@@ -81,6 +114,8 @@ class PlayerAvatar {
     'headwear': AvatarCatalog.valid(headwearId, AvatarCatalog.headwear),
     'glasses': AvatarCatalog.valid(glassesId, AvatarCatalog.glasses),
     'necklace': AvatarCatalog.valid(necklaceId, AvatarCatalog.necklaces),
+    'earrings': AvatarCatalog.valid(earringsId, AvatarCatalog.earrings),
+    'bracelet': AvatarCatalog.valid(braceletId, AvatarCatalog.bracelets),
     'top': AvatarCatalog.valid(topId, AvatarCatalog.tops),
     'bottom': AvatarCatalog.valid(bottomId, AvatarCatalog.bottoms),
     'bottomColor': _id(bottomColorIndex, AvatarCatalog.colors),
@@ -130,6 +165,14 @@ class PlayerAvatar {
               AvatarCatalog.necklaces,
             ),
             topId: AvatarCatalog.valid(json['top'], AvatarCatalog.tops),
+            earringsId: AvatarCatalog.valid(
+              json['earrings'],
+              AvatarCatalog.earrings,
+            ),
+            braceletId: AvatarCatalog.valid(
+              json['bracelet'],
+              AvatarCatalog.bracelets,
+            ),
             bottomId: AvatarCatalog.valid(
               json['bottom'],
               AvatarCatalog.bottoms,
