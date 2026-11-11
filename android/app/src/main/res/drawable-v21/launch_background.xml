@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Modify this file to customize your launch splash screen -->
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item><shape android:shape="rectangle"><solid android:color="#FFF9EF" /></shape></item>
+    <item><shape android:shape="rectangle"><solid android:color="#FFF0F5" /></shape></item>
+    <item android:width="216dp" android:height="216dp" android:gravity="center">
+        <bitmap android:src="@mipmap/ic_launcher_foreground" android:gravity="fill" />
+    </item>
 
     <!-- You can insert your own image assets here -->
     <!-- <item>

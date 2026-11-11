@@ -5,10 +5,13 @@ import '../../../app/app_router.dart';
 import '../../../app/app_startup_provider.dart';
 import '../../../core/localization/app_localizations.dart';
 import '../../../shared/providers/app_initialization_provider.dart';
-import '../../profile/widgets/create_explorer_dialog.dart';
+import '../widgets/animated_explorer_logo.dart';
+import '../widgets/live_explorer_scene.dart';
 
 class SplashScreen extends ConsumerStatefulWidget {
   const SplashScreen({super.key});
+  static const logoDuration = Duration(milliseconds: 2500);
+  static const presentationDuration = Duration(milliseconds: 7000);
   @override
   ConsumerState<SplashScreen> createState() => _SplashScreenState();
 }
@@ -17,6 +20,8 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
     with SingleTickerProviderStateMixin {
   bool _navigating = false;
   late final AnimationController _intro;
+  late final CurvedAnimation _loadingAnimation;
+  bool _showLoading = false;
 
   @override
   void initState() {
@@ -24,38 +29,45 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
     _intro =
         AnimationController(
           vsync: this,
-          duration: const Duration(milliseconds: 900),
+          duration: SplashScreen.presentationDuration,
         )..addStatusListener((status) {
           if (status == AnimationStatus.completed && mounted) setState(() {});
         });
+    _loadingAnimation = CurvedAnimation(
+      parent: _intro,
+      curve: const Interval(2.5 / 7, 1),
+    );
+    _intro.addListener(() {
+      if (!_showLoading && _intro.value >= 2.5 / 7 && mounted) {
+        setState(() => _showLoading = true);
+      }
+    });
   }
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    if (MediaQuery.disableAnimationsOf(context)) {
-      _intro.value = 1;
-    } else if (!_intro.isAnimating && !_intro.isCompleted) {
+    // Keep the requested viewing time even with motion disabled. Visual widgets
+    // independently render a still frame when Reduce Motion is enabled.
+    if (!_intro.isAnimating && !_intro.isCompleted) {
       _intro.forward();
     }
   }
 
   @override
   void dispose() {
+    _loadingAnimation.dispose();
     _intro.dispose();
     super.dispose();
   }
 
   Future<void> _enter(bool needsName) async {
     if (!mounted) return;
-    if (needsName) {
-      await showDialog<bool>(
-        context: context,
-        barrierDismissible: false,
-        builder: (_) => const CreateExplorerDialog(),
-      );
-    }
-    if (mounted) Navigator.pushReplacementNamed(context, AppRouter.home);
+    Navigator.pushReplacementNamed(
+      context,
+      AppRouter.home,
+      arguments: needsName,
+    );
   }
 
   @override
@@ -64,8 +76,8 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
     final startup = ref.watch(appStartupProvider);
     final progress = ref.watch(startupProgressProvider);
     final ready = startup.hasValue && !startup.isLoading && !startup.hasError;
-    // A finite logo reveal, not a simulated loading timer. Progress can reach
-    // 100% during the reveal; reduced motion bypasses it immediately.
+    // The presentation and real startup must both finish before onboarding.
+    // Both the 2.5-second logo and 4.5-second loading scene finish first.
     if (ready && _intro.isCompleted && !_navigating) {
       _navigating = true;
       WidgetsBinding.instance.addPostFrameCallback(
@@ -88,18 +100,37 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
             'Handa nang maglakbay',
           ];
     final value = ready ? 1.0 : progress.fraction;
+    if (!_showLoading) {
+      return Scaffold(
+        key: const Key('logo_intro'),
+        backgroundColor: const Color(0xFFFFF0F5),
+        body: SafeArea(
+          child: Center(
+            child: Padding(
+              padding: const EdgeInsets.all(24),
+              child: AnimatedBuilder(
+                animation: _intro,
+                builder: (_, _) => AnimatedExplorerLogo(
+                  animation: AlwaysStoppedAnimation(
+                    (_intro.value / (2.5 / 7)).clamp(0.0, 1.0),
+                  ),
+                  reduceMotion: MediaQuery.disableAnimationsOf(context),
+                  height: 240,
+                ),
+              ),
+            ),
+          ),
+        ),
+      );
+    }
     return Scaffold(
-      backgroundColor: const Color(0xFF091C30),
+      backgroundColor: const Color(0xFFFFF0F5),
       body: Stack(
         fit: StackFit.expand,
         children: [
-          Image.asset(
-            'assets/images/branding/loading-islands-v1.png',
-            fit: BoxFit.cover,
-            excludeFromSemantics: true,
-            cacheWidth: 1080,
-            errorBuilder: (_, _, _) =>
-                const ColoredBox(color: Color(0xFF123D51)),
+          LiveExplorerScene(
+            animation: _loadingAnimation,
+            reduceMotion: MediaQuery.disableAnimationsOf(context),
           ),
           const DecoratedBox(
             decoration: BoxDecoration(
@@ -107,11 +138,11 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  Color(0x2209182C),
-                  Color(0x0009182C),
-                  Color(0xF509182C),
+                  Color(0x10FFF0F5),
+                  Color(0x00FFF0F5),
+                  Color(0xD9261A30),
                 ],
-                stops: [0, .4, 1],
+                stops: [0, .75, 1],
               ),
             ),
           ),
@@ -133,38 +164,23 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
                     child: IntrinsicHeight(
                       child: Column(
                         children: [
-                          Semantics(
-                            label: 'Rehiyonia',
-                            image: true,
-                            child: FadeTransition(
-                              opacity: _intro,
-                              child: Image.asset(
-                                'assets/images/branding/rehiyonia-logo-v1.png',
-                                width: 360,
-                                height: constraints.maxHeight < 500 ? 100 : 180,
-                                fit: BoxFit.contain,
-                                excludeFromSemantics: true,
-                                errorBuilder: (_, _, _) => const Text(
-                                  'REHIYONIA',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 36,
-                                    fontWeight: FontWeight.w900,
-                                  ),
-                                ),
-                              ),
+                          AnimatedExplorerLogo(
+                            animation: _loadingAnimation,
+                            reduceMotion: MediaQuery.disableAnimationsOf(
+                              context,
                             ),
+                            height: constraints.maxHeight < 500 ? 100 : 180,
                           ),
                           Text(
                             english
-                                ? 'EVERY WORD. A NEW DISCOVERY.'
-                                : 'BAWAT SALITA. BAGONG TUKLAS.',
+                                ? 'Find words. Discover the Philippines.'
+                                : 'Maghanap ng salita. Tuklasin ang Pilipinas.',
                             textAlign: TextAlign.center,
                             style: const TextStyle(
-                              color: Colors.white,
+                              color: Color(0xFF37223F),
                               fontWeight: FontWeight.w700,
-                              letterSpacing: 1.6,
-                              fontSize: 11,
+                              letterSpacing: .3,
+                              fontSize: 13,
                             ),
                           ),
                           const Spacer(),
@@ -173,29 +189,6 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
                             constraints: const BoxConstraints(maxWidth: 460),
                             child: Column(
                               children: [
-                                Text(
-                                  english
-                                      ? 'Your next discovery awaits'
-                                      : 'Naghihintay ang susunod mong tuklas',
-                                  textAlign: TextAlign.center,
-                                  style: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.w800,
-                                  ),
-                                ),
-                                const SizedBox(height: 12),
-                                Text(
-                                  english
-                                      ? 'Explore the Philippines, one word at a time.'
-                                      : 'Tuklasin ang Pilipinas, isang salita bawat hakbang.',
-                                  textAlign: TextAlign.center,
-                                  style: const TextStyle(
-                                    color: Color(0xFFCFDDE6),
-                                    height: 1.5,
-                                  ),
-                                ),
-                                const SizedBox(height: 28),
                                 if (startup.hasError) ...[
                                   Text(
                                     english
@@ -237,7 +230,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
                                       Text(
                                         '${(value * 100).round()}%',
                                         style: const TextStyle(
-                                          color: Color(0xFFFFD777),
+                                          color: Color(0xFFFFB8D3),
                                           fontWeight: FontWeight.bold,
                                         ),
                                       ),
@@ -258,9 +251,9 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
                                           borderRadius: BorderRadius.circular(
                                             8,
                                           ),
-                                          color: const Color(0xFFFFCF68),
+                                          color: const Color(0xFFFF8EB7),
                                           backgroundColor: const Color(
-                                            0xFF385367,
+                                            0xFF5A3553,
                                           ),
                                           semanticsLabel: english
                                               ? 'Startup progress'

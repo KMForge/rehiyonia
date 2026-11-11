@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../features/avatar/screens/avatar_studio_screen.dart';
 import '../features/badges/screens/badge_gallery_screen.dart';
 import '../features/home/screens/home_screen.dart';
+import '../features/profile/widgets/first_launch_home.dart';
 import '../features/learning/screens/locality_learning_cards_screen.dart';
 import '../features/regions/screens/island_group_selection_screen.dart';
 import '../features/regions/screens/region_intro_screen.dart';
@@ -35,6 +36,12 @@ abstract final class AppRouter {
   };
 
   static Route<dynamic>? onGenerateRoute(RouteSettings routeSettings) {
+    if (routeSettings.name == home && routeSettings.arguments == true) {
+      return MaterialPageRoute<void>(
+        builder: (_) => const FirstLaunchHome(),
+        settings: routeSettings,
+      );
+    }
     if (routeSettings.name == game) {
       final regionId = (routeSettings.arguments as int?) ?? 1;
       return MaterialPageRoute<void>(

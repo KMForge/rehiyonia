@@ -2,8 +2,8 @@
 <resources>
     <style name="LaunchTheme" parent="@android:style/Theme.Light.NoTitleBar">
         <item name="android:windowBackground">@drawable/launch_background</item>
-        <item name="android:windowSplashScreenBackground">#FFF9EF</item>
-        <item name="android:windowSplashScreenAnimatedIcon">@drawable/explorer_launch_icon</item>
-        <item name="android:windowSplashScreenIconBackgroundColor">#FFF9EF</item>
+        <item name="android:windowSplashScreenBackground">#FFF0F5</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/pink_launch_logo</item>
+        <item name="android:windowSplashScreenIconBackgroundColor">#FFF0F5</item>
     </style>
 </resources>
