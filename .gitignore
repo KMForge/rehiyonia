@@ -43,6 +43,14 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+/android/build/
+
+# Generated test-comparison artifacts
+/test/**/failures/
+
+# Intermediate audio-loop timing report; source audio is not versioned.
+/assets/audio/music/instrumental_loop.json
+/assets/audio/music/i_see_the_light.mp3
 
 # Widget Preview related
 .widget_preview/
