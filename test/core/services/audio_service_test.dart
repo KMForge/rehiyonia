@@ -4,6 +4,33 @@ import 'package:rehiyonia/core/services/audio_service.dart';
 
 class MockAudioPlayer extends Fake implements AudioPlayer {
   bool isStopped = false;
+  int plays = 0, pauses = 0, resumes = 0;
+  Source? lastSource;
+  AudioContext? lastContext;
+  @override
+  Future<void> play(
+    Source source, {
+    double? volume,
+    double? balance,
+    AudioContext? ctx,
+    Duration? position,
+    PlayerMode? mode,
+  }) async {
+    plays++;
+    lastSource = source;
+    lastContext = ctx;
+  }
+
+  @override
+  Future<void> pause() async {
+    pauses++;
+  }
+
+  @override
+  Future<void> resume() async {
+    resumes++;
+  }
+
   double _volume = 1.0;
   ReleaseMode _releaseMode = ReleaseMode.release;
 
@@ -52,6 +79,75 @@ void main() {
       expect(audioService.isSoundEffectsEnabled, isTrue);
       expect(audioService.volume, 1.0);
     });
+
+    test(
+      'word sparkle mixes without pausing or stealing music focus',
+      () async {
+        await audioService.setBackgroundMusic('music.ogg', active: true);
+        await audioService.playSoundEffect('sparkle.wav');
+        expect(
+          mockSfxPlayer.lastContext!.android.audioFocus,
+          AndroidAudioFocus.none,
+        );
+        expect(
+          mockSfxPlayer.lastContext!.iOS.options,
+          contains(AVAudioSessionOptions.mixWithOthers),
+        );
+        expect(mockMusicPlayer.pauses, 0);
+        expect(mockMusicPlayer.isStopped, isFalse);
+        expect(mockMusicPlayer.plays, 1);
+        expect(mockSfxPlayer.plays, 1);
+        await audioService.dispose();
+      },
+    );
+
+    test('background loop survives navigation and resumes after background or mute', () async {
+      const asset = 'audio/music/instrumental_loop.ogg';
+      await audioService.setBackgroundMusic(asset, active: true);
+      await audioService.setBackgroundMusic(asset, active: true);
+      expect(mockMusicPlayer.plays, 1);
+      expect((mockMusicPlayer.lastSource as AssetSource).path, asset);
+      expect(mockMusicPlayer.releaseMode, ReleaseMode.loop);
+      await audioService.setBackgroundMusic(asset, active: false);
+      expect(mockMusicPlayer.pauses, 1);
+      await audioService.setBackgroundMusic(asset, active: true);
+      expect(mockMusicPlayer.resumes, 1);
+      audioService.updatePreferences(
+        musicEnabled: false,
+        soundEffectsEnabled: true,
+      );
+      await audioService.setBackgroundMusic(asset, active: true);
+      expect(mockMusicPlayer.pauses, 2);
+      audioService.updatePreferences(
+        musicEnabled: true,
+        soundEffectsEnabled: true,
+      );
+      await audioService.setBackgroundMusic(asset, active: true);
+      expect(mockMusicPlayer.resumes, 2);
+      expect(mockMusicPlayer.plays, 1);
+      await audioService.dispose();
+    });
+
+    test(
+      'disabled music does not start until enabled while foregrounded',
+      () async {
+        audioService.updatePreferences(
+          musicEnabled: false,
+          soundEffectsEnabled: true,
+        );
+        await audioService.setBackgroundMusic('music.mp3', active: true);
+        expect(mockMusicPlayer.plays, 0);
+        audioService.updatePreferences(
+          musicEnabled: true,
+          soundEffectsEnabled: true,
+        );
+        await audioService.setBackgroundMusic('music.mp3', active: false);
+        expect(mockMusicPlayer.plays, 0);
+        await audioService.setBackgroundMusic('music.mp3', active: true);
+        expect(mockMusicPlayer.plays, 1);
+        await audioService.dispose();
+      },
+    );
 
     test('updatePreferences updates values and clamps volume', () {
       audioService.updatePreferences(
