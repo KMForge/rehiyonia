@@ -63,7 +63,11 @@ class _WordSearchGridWidgetState extends State<WordSearchGridWidget> {
       return Center(
         child: DecoratedBox(
           decoration: BoxDecoration(
-            color: Colors.white,
+            gradient: const LinearGradient(
+              colors: [ExplorerTheme.sky, Colors.white, ExplorerTheme.blush],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
             borderRadius: BorderRadius.circular(20),
             border: Border.all(color: ExplorerTheme.line),
           ),
@@ -187,10 +191,10 @@ class _SelectionPainter extends CustomPainter {
     }
 
     const colors = [
-      Color(0xFFAADCCB),
-      Color(0xFFFADE97),
-      Color(0xFFBED9F3),
-      Color(0xFFD8CBE9),
+      Color(0xFFF8DDE8),
+      Color(0xFFCFE7FA),
+      Color(0xFFE4DCF3),
+      Color(0xFFDCEEEB),
     ];
     var i = 0;
     for (final word in puzzle.placedWords.where((w) => w.isFound)) {

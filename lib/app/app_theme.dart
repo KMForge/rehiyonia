@@ -10,6 +10,8 @@ abstract final class AppTheme {
       seedColor: ExplorerTheme.ocean,
       primary: ExplorerTheme.ocean,
       secondary: ExplorerTheme.teal,
+      primaryContainer: ExplorerTheme.sky,
+      secondaryContainer: ExplorerTheme.blush,
       surface: ExplorerTheme.paper,
       onSurface: ExplorerTheme.ink,
       error: const Color(0xFFB3261E),

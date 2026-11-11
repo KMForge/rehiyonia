@@ -5,13 +5,13 @@ import 'package:flutter/material.dart';
 abstract final class AppColors {
   // Brand Primaries
   static const babyBlue = Color(
-    0xFFA9D6F5,
+    0xFFDDEFFC,
   ); // Main brand surface & hero elements
   static const deepBlue = Color(0xFF1465C0); // Accessible ocean-blue actions
 
   // Brand Accents
   static const pastelPink = Color(
-    0xFFF7B7C8,
+    0xFFFBE1EA,
   ); // Secondary badges, highlights, mascot scarf
   static const softLavender = Color(
     0xFFDCC6F0,
@@ -19,7 +19,7 @@ abstract final class AppColors {
 
   // Neutrals & Backgrounds
   static const lightCream = Color(
-    0xFFFFF9EF,
+    0xFFFFF7FA,
   ); // Game canvas & scaffold background
   static const surfaceWhite = Color(0xFFFFFFFF); // Layered card surfaces
   static const textNavy = Color(

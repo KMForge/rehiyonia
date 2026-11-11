@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../app/app_router.dart';
+import '../../../core/constants/app_constants.dart';
 import '../../../core/localization/app_localizations.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../shared/localization/explorer_strings.dart';
 import '../../mascot/widgets/bayanito_mascot_widget.dart';
+import '../../settings/providers/settings_provider.dart';
 import '../models/regional_word.dart';
 import '../providers/gameplay_provider.dart';
 import '../widgets/word_list_bar.dart';
@@ -109,6 +111,9 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
       barrierDismissible: false,
       builder: (dialogCtx) {
         return AlertDialog(
+          scrollable: true,
+          actionsOverflowButtonSpacing: 12,
+          actionsPadding: const EdgeInsets.fromLTRB(20, 8, 20, 20),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(28),
           ),
@@ -176,11 +181,13 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
                       size: 22,
                     ),
                     const SizedBox(width: 6),
-                    Text(
-                      loc.rewardCoins(20, state.coins),
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: AppColors.textNavy,
+                    Flexible(
+                      child: Text(
+                        loc.rewardCoins(20, state.coins),
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: AppColors.textNavy,
+                        ),
                       ),
                     ),
                   ],
@@ -190,45 +197,51 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
           ),
           actionsAlignment: MainAxisAlignment.center,
           actions: [
-            OutlinedButton(
-              key: const Key('button_return_regions'),
-              style: OutlinedButton.styleFrom(
-                foregroundColor: AppColors.deepBlue,
-                side: const BorderSide(color: AppColors.deepBlue),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16),
-                ),
-              ),
-              onPressed: () {
-                Navigator.pop(dialogCtx);
-                Navigator.pop(context); // Return to Region Selection
-              },
-              child: Text(loc.continueButton),
-            ),
-            if (hasNext)
-              FilledButton.icon(
-                key: const Key('button_next_level'),
-                style: FilledButton.styleFrom(
-                  backgroundColor: AppColors.deepBlue,
+            SizedBox(
+              width: double.infinity,
+              child: OutlinedButton(
+                key: const Key('button_return_regions'),
+                style: OutlinedButton.styleFrom(
+                  foregroundColor: AppColors.deepBlue,
+                  side: const BorderSide(color: AppColors.deepBlue),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(16),
                   ),
                 ),
-                icon: const Icon(Icons.arrow_forward_rounded),
                 onPressed: () {
                   Navigator.pop(dialogCtx);
-                  final nextRegion = ref
-                      .read(gameplayProvider.notifier)
-                      .getNextRegion();
-                  if (nextRegion != null) {
-                    Navigator.pushReplacementNamed(
-                      context,
-                      AppRouter.triviaChallenge,
-                      arguments: nextRegion.id,
-                    );
-                  }
+                  Navigator.pop(context); // Return to Region Selection
                 },
-                label: Text(loc.nextLevelButton),
+                child: Text(loc.continueButton),
+              ),
+            ),
+            if (hasNext)
+              SizedBox(
+                width: double.infinity,
+                child: FilledButton.icon(
+                  key: const Key('button_next_level'),
+                  style: FilledButton.styleFrom(
+                    backgroundColor: AppColors.deepBlue,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                  ),
+                  icon: const Icon(Icons.arrow_forward_rounded),
+                  onPressed: () {
+                    Navigator.pop(dialogCtx);
+                    final nextRegion = ref
+                        .read(gameplayProvider.notifier)
+                        .getNextRegion();
+                    if (nextRegion != null) {
+                      Navigator.pushReplacementNamed(
+                        context,
+                        AppRouter.triviaChallenge,
+                        arguments: nextRegion.id,
+                      );
+                    }
+                  },
+                  label: Text(loc.nextLevelButton),
+                ),
               ),
           ],
         );
@@ -242,6 +255,17 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
     final loc = ref.watch(localizationsProvider);
 
     ref.listen<GameplayState>(gameplayProvider, (prev, next) {
+      // Emit from the accepted state transition, never from rebuilds or drags.
+      // The final discovery also sparkles before the completion dialog opens.
+      if (prev != null &&
+          prev.status == GameStatus.playing &&
+          prev.region?.id == next.region?.id &&
+          next.foundWords.difference(prev.foundWords).isNotEmpty &&
+          ref.read(settingsProvider).isSoundEffectsEnabled) {
+        ref
+            .read(audioServiceProvider)
+            .playSoundEffect(AppConstants.audioSfxWordFound);
+      }
       if (prev?.status != GameStatus.completed &&
           next.status == GameStatus.completed) {
         _showCompletionDialog(next);
@@ -383,7 +407,10 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
             // Status bar (Grid size, Found count, Hint button)
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-              child: Row(
+              child: Wrap(
+                spacing: 12,
+                runSpacing: 8,
+                crossAxisAlignment: WrapCrossAlignment.center,
                 children: [
                   Container(
                     padding: const EdgeInsets.symmetric(
@@ -413,7 +440,6 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
                       ],
                     ),
                   ),
-                  const Spacer(),
                   Text(
                     loc.foundCount(
                       gameState.foundWords.length,
@@ -425,7 +451,6 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
                       color: AppColors.textNavy,
                     ),
                   ),
-                  const Spacer(),
                   FilledButton.tonalIcon(
                     style: FilledButton.styleFrom(
                       backgroundColor: const Color(0xFFFFF8E1),

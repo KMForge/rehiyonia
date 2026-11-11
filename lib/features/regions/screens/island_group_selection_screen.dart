@@ -4,7 +4,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../app/app_router.dart';
 import '../../../core/localization/app_localizations.dart';
 import '../../../shared/localization/explorer_strings.dart';
-import '../../../shared/widgets/journey_landscape.dart';
 import '../providers/region_provider.dart';
 
 class IslandGroupSelectionScreen extends ConsumerWidget {
@@ -48,7 +47,21 @@ class IslandGroupSelectionScreen extends ConsumerWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
-                            JourneyLandscape(height: 100, group: group),
+                            Image.asset(
+                              'assets/images/localities/${switch (group) {
+                                'Luzon' => 'banaue',
+                                'Visayas' => 'cebu',
+                                _ => 'davao',
+                              }}.jpg',
+                              height: 140,
+                              width: double.infinity,
+                              fit: BoxFit.cover,
+                              semanticLabel: switch (group) {
+                                'Luzon' => 'Banaue, Luzon',
+                                'Visayas' => 'Cebu, Visayas',
+                                _ => 'Davao, Mindanao',
+                              },
+                            ),
                             Padding(
                               padding: const EdgeInsets.all(20),
                               child: Row(

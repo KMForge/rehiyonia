@@ -71,6 +71,13 @@ void main() {
         expect(map['question'], isNotEmpty);
         expect(map['answer'], isNotEmpty);
         expect(map['fun_fact'], isNotEmpty);
+        final options = [
+          for (final letter in ['a', 'b', 'c', 'd'])
+            map['option_$letter'] as String,
+        ];
+        expect(options.every((s) => s.trim().isNotEmpty), isTrue);
+        expect(options.toSet().length, 4);
+        expect(options[map['correct_option'] as int], map['answer']);
 
         regionIds.add(map['region_id'] as int);
       }
@@ -90,7 +97,7 @@ void main() {
       final puzzleComplete = File(
         'assets/audio/sound_effects/puzzle_complete.wav',
       );
-      final mainTheme = File('assets/audio/music/main_theme.wav');
+      final mainTheme = File('assets/audio/music/instrumental_loop.ogg');
 
       expect(buttonClick.existsSync(), isTrue);
       expect(buttonClick.lengthSync(), greaterThan(100));

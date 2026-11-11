@@ -96,6 +96,45 @@ class AssetSeedLoader {
           .map((item) => TriviaItem.fromMap(item as Map<String, dynamic>))
           .toList();
 
+      // Repair installed single-answer datasets, including when row counts match.
+      const contentKey = 'trivia_four_choices_v1';
+      final contentVersion = await db.query(
+        DatabaseConstants.tableUserProgress,
+        where: '${DatabaseConstants.columnKey} = ?',
+        whereArgs: [contentKey],
+      );
+      if (contentVersion.isEmpty) {
+        for (final item in trivia) {
+          final options = [
+            item.optionA,
+            item.optionB,
+            item.optionC,
+            item.optionD,
+          ];
+          if (options.any((s) => s.trim().isEmpty) ||
+              options.toSet().length != 4 ||
+              item.correctOption < 0 ||
+              item.correctOption > 3) {
+            throw FormatException('Trivia must have four unique choices');
+          }
+        }
+        await db.transaction((txn) async {
+          await txn.delete(DatabaseConstants.tableTrivia);
+          await txn.delete(DatabaseConstants.tableTriviaQuestions);
+          for (final item in trivia) {
+            await txn.insert(DatabaseConstants.tableTrivia, item.toMap());
+            await txn.insert(
+              DatabaseConstants.tableTriviaQuestions,
+              item.toTriviaQuestionMap(),
+            );
+          }
+          await txn.insert(DatabaseConstants.tableUserProgress, {
+            DatabaseConstants.columnKey: contentKey,
+            DatabaseConstants.columnValue: '1',
+          });
+        });
+      }
+
       final triviaCount = await triviaRepo.countTrivia();
       if (triviaCount == 0) {
         await triviaRepo.insertTrivia(trivia);

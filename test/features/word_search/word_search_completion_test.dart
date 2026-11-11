@@ -76,6 +76,10 @@ void main() {
     testWidgets(
       'Tapping Proceed to Next Level button navigates to next region trivia',
       (WidgetTester tester) async {
+        tester.view.physicalSize = const Size(360, 800);
+        tester.view.devicePixelRatio = 1;
+        addTearDown(tester.view.resetPhysicalSize);
+        addTearDown(tester.view.resetDevicePixelRatio);
         final mockAudioService = AudioService(
           musicPlayer: _MockAudioPlayer(),
           sfxPlayer: _MockAudioPlayer(),
@@ -116,6 +120,11 @@ void main() {
               audioServiceProvider.overrideWithValue(mockAudioService),
             ],
             child: MaterialApp(
+              builder: (context, child) => MediaQuery(
+                data: MediaQuery.of(context)
+                    .copyWith(textScaler: const TextScaler.linear(1.3)),
+                child: child!,
+              ),
               onGenerateRoute: (settings) {
                 pushedRoute = settings.name;
                 pushedArguments = settings.arguments;
@@ -158,6 +167,15 @@ void main() {
         expect(find.byKey(const Key('button_next_level')), findsOneWidget);
 
         // Tap Proceed to Next Level button
+        final backRect = tester.getRect(
+          find.byKey(const Key('button_return_regions')),
+        );
+        final nextRect = tester.getRect(
+          find.byKey(const Key('button_next_level')),
+        );
+        expect(backRect.overlaps(nextRect), isFalse);
+        expect(nextRect.right, lessThanOrEqualTo(360));
+        expect(tester.takeException(), isNull);
         await tester.tap(find.byKey(const Key('button_next_level')));
         await tester.pumpAndSettle();
 

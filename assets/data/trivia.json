@@ -3,108 +3,216 @@
     "region_id": 1,
     "question": "Ano ang itinuturing na pinakamatandang pader o tanggulan sa Maynila na itinayo ng mga Espanyol noong ika-16 na siglo?",
     "answer": "Intramuros",
-    "fun_fact": "Ang Intramuros ay tinatawag na 'Walled City' dahil pinaliligiran ito ng makakapal na pader bilang pananggalang laban sa mga mananakop at pirata."
+    "fun_fact": "Ang Intramuros ay tinatawag na 'Walled City' dahil pinaliligiran ito ng makakapal na pader bilang pananggalang laban sa mga mananakop at pirata.",
+    "option_a": "Intramuros",
+    "option_b": "Luneta",
+    "option_c": "Malacanang",
+    "option_d": "Quiapo",
+    "correct_option": 0,
+    "explanation": "Ang Intramuros ay tinatawag na 'Walled City' dahil pinaliligiran ito ng makakapal na pader bilang pananggalang laban sa mga mananakop at pirata."
   },
   {
     "region_id": 2,
     "question": "Anong tanyag na hagdan-hagdang palayan sa Cordillera ang tinaguriang 'Eighth Wonder of the World'?",
     "answer": "Banaue Rice Terraces",
-    "fun_fact": "Inukit ng mga ninunong Ifugao ang mga payyo (rice terraces) gamit lamang ang kanilang mga kamay mahigit 2,000 taon na ang nakalilipas."
+    "fun_fact": "Inukit ng mga ninunong Ifugao ang mga payyo (rice terraces) gamit lamang ang kanilang mga kamay mahigit 2,000 taon na ang nakalilipas.",
+    "option_a": "Chocolate Hills",
+    "option_b": "Banaue Rice Terraces",
+    "option_c": "Hundred Islands",
+    "option_d": "Mayon Volcano",
+    "correct_option": 1,
+    "explanation": "Inukit ng mga ninunong Ifugao ang mga payyo (rice terraces) gamit lamang ang kanilang mga kamay mahigit 2,000 taon na ang nakalilipas."
   },
   {
     "region_id": 3,
     "question": "Aling lungsod sa Rehiyon I ang kinilala ng UNESCO bilang World Heritage Site dahil sa napreserbang mga bahay na bato noong panahong kolonyal?",
     "answer": "Vigan",
-    "fun_fact": "Ang Calle Crisologo sa Vigan ay tanyag sa cobblestone streets kung saan kalesa lamang ang pinapayagang sasakyan upang mapanatili ang lumang anyo nito."
+    "fun_fact": "Ang Calle Crisologo sa Vigan ay tanyag sa cobblestone streets kung saan kalesa lamang ang pinapayagang sasakyan upang mapanatili ang lumang anyo nito.",
+    "option_a": "Laoag",
+    "option_b": "Dagupan",
+    "option_c": "Vigan",
+    "option_d": "Alaminos",
+    "correct_option": 2,
+    "explanation": "Ang Calle Crisologo sa Vigan ay tanyag sa cobblestone streets kung saan kalesa lamang ang pinapayagang sasakyan upang mapanatili ang lumang anyo nito."
   },
   {
     "region_id": 4,
     "question": "Anong pinakahilagang lalawigan sa Pilipinas ang kilala sa tradisyunal na bahay-bato (Ivatan stone houses) at suot na vakul?",
     "answer": "Batanes",
-    "fun_fact": "Ang mga bahay sa Batanes ay gawa sa makakapal na batong apog at kugon upang makatagal sa malalakas na bagyo at lindol."
+    "fun_fact": "Ang mga bahay sa Batanes ay gawa sa makakapal na batong apog at kugon upang makatagal sa malalakas na bagyo at lindol.",
+    "option_a": "Palawan",
+    "option_b": "Cebu",
+    "option_c": "Bohol",
+    "option_d": "Batanes",
+    "correct_option": 3,
+    "explanation": "Ang mga bahay sa Batanes ay gawa sa makakapal na batong apog at kugon upang makatagal sa malalakas na bagyo at lindol."
   },
   {
     "region_id": 5,
     "question": "Bakit tinaguriang 'Bangan ng Palay' (Rice Granary of the Philippines) ang Gitnang Luzon?",
     "answer": "Dahil sa malawak na kapatagan na nag-aani ng pinakamaraming palay sa bansa",
-    "fun_fact": "Ang lalawigan ng Nueva Ecija sa Gitnang Luzon ang nangunguna sa produksyon ng palay sa buong kapuluan."
+    "fun_fact": "Ang lalawigan ng Nueva Ecija sa Gitnang Luzon ang nangunguna sa produksyon ng palay sa buong kapuluan.",
+    "option_a": "Dahil sa malawak na kapatagan na nag-aani ng pinakamaraming palay sa bansa",
+    "option_b": "Dahil sa maraming plantasyon ng niyog",
+    "option_c": "Dahil sa malawak na palaisdaan",
+    "option_d": "Dahil sa malaking produksyon ng kape",
+    "correct_option": 0,
+    "explanation": "Ang lalawigan ng Nueva Ecija sa Gitnang Luzon ang nangunguna sa produksyon ng palay sa buong kapuluan."
   },
   {
     "region_id": 6,
     "question": "Saang bayan sa Cavite unang iwinagayway ang watawat ng Pilipinas noong Hunyo 12, 1898?",
     "answer": "Kawit",
-    "fun_fact": "Sa balkonahe ng tahanan ni Heneral Emilio Aguinaldo sa Kawit, Cavite tinugtog sa unang pagkakataon ang Marcha Nacional Filipina (Lupang Hinirang)."
+    "fun_fact": "Sa balkonahe ng tahanan ni Heneral Emilio Aguinaldo sa Kawit, Cavite tinugtog sa unang pagkakataon ang Marcha Nacional Filipina (Lupang Hinirang).",
+    "option_a": "Imus",
+    "option_b": "Kawit",
+    "option_c": "Bacoor",
+    "option_d": "Silang",
+    "correct_option": 1,
+    "explanation": "Sa balkonahe ng tahanan ni Heneral Emilio Aguinaldo sa Kawit, Cavite tinugtog sa unang pagkakataon ang Marcha Nacional Filipina (Lupang Hinirang)."
   },
   {
     "region_id": 7,
     "question": "Anong tanyag na kweba at pambansang parke sa Palawan ang kabilang sa New 7 Wonders of Nature?",
     "answer": "Puerto Princesa Subterranean River",
-    "fun_fact": "Umaabot sa 8.2 kilometro ang haba ng underground river na ito at may mga nakabibighaning pormasyon ng stalactites at stalagmites."
+    "fun_fact": "Umaabot sa 8.2 kilometro ang haba ng underground river na ito at may mga nakabibighaning pormasyon ng stalactites at stalagmites.",
+    "option_a": "Callao Cave",
+    "option_b": "Hinagdanan Cave",
+    "option_c": "Puerto Princesa Subterranean River",
+    "option_d": "Sumaguing Cave",
+    "correct_option": 2,
+    "explanation": "Umaabot sa 8.2 kilometro ang haba ng underground river na ito at may mga nakabibighaning pormasyon ng stalactites at stalagmites."
   },
   {
     "region_id": 8,
     "question": "Anong bulkan sa Albay ang hinahangaan sa buong mundo dahil sa halos perpektong hugis kono nito?",
     "answer": "Bulkang Mayon",
-    "fun_fact": "Ayon sa alamat ng mga Bicolano, ang pangalang Mayon ay nagmula sa salitang 'Magayon' na ang ibig sabihin ay maganda."
+    "fun_fact": "Ayon sa alamat ng mga Bicolano, ang pangalang Mayon ay nagmula sa salitang 'Magayon' na ang ibig sabihin ay maganda.",
+    "option_a": "Bulkang Taal",
+    "option_b": "Bundok Arayat",
+    "option_c": "Bundok Pinatubo",
+    "option_d": "Bulkang Mayon",
+    "correct_option": 3,
+    "explanation": "Ayon sa alamat ng mga Bicolano, ang pangalang Mayon ay nagmula sa salitang 'Magayon' na ang ibig sabihin ay maganda."
   },
   {
     "region_id": 9,
     "question": "Anong tanyag na pista sa Iloilo ang ipinagdiriwang bilang pasasalamat kay Santo Niño at paggunita sa kasunduan ng mga Malay at Ati?",
     "answer": "Dinagyang Festival",
-    "fun_fact": "Nagmula ang salitang Dinagyang sa salitang Ilonggo na 'dagyang' na ang ibig sabihin ay magdiwang o magsaya."
+    "fun_fact": "Nagmula ang salitang Dinagyang sa salitang Ilonggo na 'dagyang' na ang ibig sabihin ay magdiwang o magsaya.",
+    "option_a": "Dinagyang Festival",
+    "option_b": "Sinulog Festival",
+    "option_c": "MassKara Festival",
+    "option_d": "Panagbenga Festival",
+    "correct_option": 0,
+    "explanation": "Nagmula ang salitang Dinagyang sa salitang Ilonggo na 'dagyang' na ang ibig sabihin ay magdiwang o magsaya."
   },
   {
     "region_id": 10,
     "question": "Ano ang kakaibang heolohikal na tanawin sa Bohol na nagiging kulay tsokolate tuwing tag-init?",
     "answer": "Chocolate Hills",
-    "fun_fact": "Mayroong mahigit 1,260 hanggang 1,770 conical hills sa Bohol na binubuo ng limestone at tinutubuan ng damo na nagkukulay-tsokolate sa tag-araw."
+    "fun_fact": "Mayroong mahigit 1,260 hanggang 1,770 conical hills sa Bohol na binubuo ng limestone at tinutubuan ng damo na nagkukulay-tsokolate sa tag-araw.",
+    "option_a": "Banaue Rice Terraces",
+    "option_b": "Chocolate Hills",
+    "option_c": "Hundred Islands",
+    "option_d": "Mayon Volcano",
+    "correct_option": 1,
+    "explanation": "Mayroong mahigit 1,260 hanggang 1,770 conical hills sa Bohol na binubuo ng limestone at tinutubuan ng damo na nagkukulay-tsokolate sa tag-araw."
   },
   {
     "region_id": 11,
     "question": "Anong makasaysayang tulay ang nagdurugtong sa mga pulo ng Samar at Leyte patawid sa San Juanico Strait?",
     "answer": "Tulay ng San Juanico",
-    "fun_fact": "May habang mahigit 2.16 kilometro ang San Juanico Bridge at itinuturing na isa sa pinakamahabang tulay sa bansa."
+    "fun_fact": "May habang mahigit 2.16 kilometro ang San Juanico Bridge at itinuturing na isa sa pinakamahabang tulay sa bansa.",
+    "option_a": "Tulay ng Mactan-Mandaue",
+    "option_b": "Tulay ng Buntun",
+    "option_c": "Tulay ng San Juanico",
+    "option_d": "Tulay ng Agas-Agas",
+    "correct_option": 2,
+    "explanation": "May habang mahigit 2.16 kilometro ang San Juanico Bridge at itinuturing na isa sa pinakamahabang tulay sa bansa."
   },
   {
     "region_id": 12,
     "question": "Bakit tinaguriang 'Asia's Latin City' ang Lungsod ng Zamboanga?",
     "answer": "Dahil sa wikang Chavacano na hango sa wikang Espanyol",
-    "fun_fact": "Ang Chavacano ay isang creole language na may 70-80% bokabularyo mula sa lumang Espanyol at gramatika mula sa mga katutubong wikang Pilipino."
+    "fun_fact": "Ang Chavacano ay isang creole language na may 70-80% bokabularyo mula sa lumang Espanyol at gramatika mula sa mga katutubong wikang Pilipino.",
+    "option_a": "Dahil sa wikang Ilokano",
+    "option_b": "Dahil sa wikang Nihongo",
+    "option_c": "Dahil sa wikang Koreano",
+    "option_d": "Dahil sa wikang Chavacano na hango sa wikang Espanyol",
+    "correct_option": 3,
+    "explanation": "Ang Chavacano ay isang creole language na may 70-80% bokabularyo mula sa lumang Espanyol at gramatika mula sa mga katutubong wikang Pilipino."
   },
   {
     "region_id": 13,
     "question": "Anong tanyag na talon sa Lungsod ng Iligan ang pangunahing pinagkukunan ng enerhiyang hydroelectric sa Mindanao?",
     "answer": "Maria Cristina Falls",
-    "fun_fact": "Kilala ang Maria Cristina bilang 'twin falls' dahil sa malaking bato sa bingit ng talon na naghahati sa lagaslas ng tubig sa dalawa."
+    "fun_fact": "Kilala ang Maria Cristina bilang 'twin falls' dahil sa malaking bato sa bingit ng talon na naghahati sa lagaslas ng tubig sa dalawa.",
+    "option_a": "Maria Cristina Falls",
+    "option_b": "Pagsanjan Falls",
+    "option_c": "Kawasan Falls",
+    "option_d": "Tinuy-an Falls",
+    "correct_option": 0,
+    "explanation": "Kilala ang Maria Cristina bilang 'twin falls' dahil sa malaking bato sa bingit ng talon na naghahati sa lagaslas ng tubig sa dalawa."
   },
   {
     "region_id": 14,
     "question": "Ano ang pinakamataas na bundok sa Pilipinas na may taas na 2,954 metro sa ibabaw ng dagat?",
     "answer": "Bundok Apo",
-    "fun_fact": "Ang salitang 'Apo' sa mga katutubong wika ay nangangahulugang 'ninuno' o 'panginoon'. Dito rin naninirahan ang pambansang ibon na Haribon."
+    "fun_fact": "Ang salitang 'Apo' sa mga katutubong wika ay nangangahulugang 'ninuno' o 'panginoon'. Dito rin naninirahan ang pambansang ibon na Haribon.",
+    "option_a": "Bundok Pulag",
+    "option_b": "Bundok Apo",
+    "option_c": "Bundok Banahaw",
+    "option_d": "Bundok Makiling",
+    "correct_option": 1,
+    "explanation": "Ang salitang 'Apo' sa mga katutubong wika ay nangangahulugang 'ninuno' o 'panginoon'. Dito rin naninirahan ang pambansang ibon na Haribon."
   },
   {
     "region_id": 15,
     "question": "Anong tradisyunal na tela ang hinahabi ng mga katutubong T'boli sa Lake Sebu, South Cotabato gamit ang hibla ng abaka?",
     "answer": "T'nalak",
-    "fun_fact": "Ang mga naghahabi ng T'nalak ay tinatawag na 'Dreamweavers' dahil ang mga disenyo ng tela ay nagmumula sa kanilang mga panaginip na ipinagkaloob ng espiritung si Fu Dalu."
+    "fun_fact": "Ang mga naghahabi ng T'nalak ay tinatawag na 'Dreamweavers' dahil ang mga disenyo ng tela ay nagmumula sa kanilang mga panaginip na ipinagkaloob ng espiritung si Fu Dalu.",
+    "option_a": "Inabel",
+    "option_b": "Hablon",
+    "option_c": "T'nalak",
+    "option_d": "Pina",
+    "correct_option": 2,
+    "explanation": "Ang mga naghahabi ng T'nalak ay tinatawag na 'Dreamweavers' dahil ang mga disenyo ng tela ay nagmumula sa kanilang mga panaginip na ipinagkaloob ng espiritung si Fu Dalu."
   },
   {
     "region_id": 16,
     "question": "Anong makasaysayang bangka ang nahukay sa Butuan na nagpapatunay sa maagang kalakalan at kahusayan sa pandaragat ng mga sinaunang Pilipino?",
     "answer": "Balangay",
-    "fun_fact": "Ang mga nahukay na Balangay sa Butuan ay tinatayang ginawa noon pang 320 CE, patunay na bago pa dumating ang mga Kanluranin ay may maunlad nang sibilisasyon sa bansa."
+    "fun_fact": "Ang mga nahukay na Balangay sa Butuan ay tinatayang ginawa noon pang 320 CE, patunay na bago pa dumating ang mga Kanluranin ay may maunlad nang sibilisasyon sa bansa.",
+    "option_a": "Vinta",
+    "option_b": "Paraw",
+    "option_c": "Balsa",
+    "option_d": "Balangay",
+    "correct_option": 3,
+    "explanation": "Ang mga nahukay na Balangay sa Butuan ay tinatayang ginawa noon pang 320 CE, patunay na bago pa dumating ang mga Kanluranin ay may maunlad nang sibilisasyon sa bansa."
   },
   {
     "region_id": 17,
     "question": "Ano ang pinakamalaking lawa sa Mindanao at pangalawa sa buong Pilipinas na sentro ng pamayanan at kultura ng mga Maranao?",
     "answer": "Lawa ng Lanao",
-    "fun_fact": "Ang salitang 'Maranao' ay nangangahulugang 'mga tao ng lawa' (People of the Lake) na tumutukoy sa kanilang tahanan sa paligid ng Lawa ng Lanao."
+    "fun_fact": "Ang salitang 'Maranao' ay nangangahulugang 'mga tao ng lawa' (People of the Lake) na tumutukoy sa kanilang tahanan sa paligid ng Lawa ng Lanao.",
+    "option_a": "Lawa ng Lanao",
+    "option_b": "Lawa ng Sebu",
+    "option_c": "Lawa ng Mainit",
+    "option_d": "Lawa ng Buluan",
+    "correct_option": 0,
+    "explanation": "Ang salitang 'Maranao' ay nangangahulugang 'mga tao ng lawa' (People of the Lake) na tumutukoy sa kanilang tahanan sa paligid ng Lawa ng Lanao."
   },
   {
     "region_id": 18,
     "question": "Aling batas ang nilagdaan noong Hunyo 2024 na pormal na nagtatag sa Negros Island Region (NIR) na kinabibilangan ng Negros Occidental, Negros Oriental, at Siquijor?",
     "answer": "Batas Republika Blg. 12000 (Republic Act No. 12000)",
-    "fun_fact": "Ang Negros Island Region (NIR) ang pinakabagong rehiyon sa Pilipinas na pinag-isa ang mga lalawigan sa pulo ng Negros at ang isla ng Siquijor upang mapabilis ang serbisyong pampamahalaan at kaunlaran sa Visayas."
+    "fun_fact": "Ang Negros Island Region (NIR) ang pinakabagong rehiyon sa Pilipinas na pinag-isa ang mga lalawigan sa pulo ng Negros at ang isla ng Siquijor upang mapabilis ang serbisyong pampamahalaan at kaunlaran sa Visayas.",
+    "option_a": "Batas Republika Blg. 1425",
+    "option_b": "Batas Republika Blg. 12000 (Republic Act No. 12000)",
+    "option_c": "Batas Republika Blg. 9165",
+    "option_d": "Batas Republika Blg. 10175",
+    "correct_option": 1,
+    "explanation": "Ang Negros Island Region (NIR) ang pinakabagong rehiyon sa Pilipinas na pinag-isa ang mga lalawigan sa pulo ng Negros at ang isla ng Siquijor upang mapabilis ang serbisyong pampamahalaan at kaunlaran sa Visayas."
   }
 ]

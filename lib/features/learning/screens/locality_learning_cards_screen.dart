@@ -6,6 +6,7 @@ import '../../../core/localization/app_localizations.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../word_search/models/regional_word.dart';
 import '../../word_search/providers/word_provider.dart';
+import '../../../shared/widgets/locality_photo.dart';
 
 class LocalityLearningCardsScreen extends ConsumerStatefulWidget {
   const LocalityLearningCardsScreen({super.key, required this.regionId});
@@ -59,14 +60,17 @@ class _LocalityLearningCardsScreenState
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        loc.cardProgress(_currentPage + 1, total),
-                        style: const TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.textNavy,
+                      Expanded(
+                        child: Text(
+                          loc.cardProgress(_currentPage + 1, total),
+                          style: const TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.textNavy,
+                          ),
                         ),
                       ),
+                      const SizedBox(width: 12),
                       Text(
                         '${((_currentPage + 1) / total * 100).round()}%',
                         style: const TextStyle(
@@ -118,7 +122,8 @@ class _LocalityLearningCardsScreenState
                     horizontal: 20,
                     vertical: 12,
                   ),
-                  child: Row(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       // Previous Button
                       if (_currentPage > 0)
@@ -141,15 +146,14 @@ class _LocalityLearningCardsScreenState
                       else
                         const SizedBox.shrink(),
 
-                      const Spacer(),
+                      const SizedBox(height: 10),
 
                       // Next / Trivia Challenge Button
                       FilledButton.icon(
                         key: const Key('button_next_or_trivia'),
                         style: FilledButton.styleFrom(
-                          backgroundColor: isLastPage
-                              ? const Color(0xFF2E7D32)
-                              : AppColors.deepBlue,
+                          backgroundColor: AppColors.babyBlue,
+                          foregroundColor: AppColors.textNavy,
                           padding: const EdgeInsets.symmetric(
                             horizontal: 20,
                             vertical: 14,
@@ -239,47 +243,7 @@ class _LocalityLearningCardsScreenState
                   child: Stack(
                     fit: StackFit.expand,
                     children: [
-                      Image.asset(
-                        item.resolvedImagePath,
-                        fit: BoxFit.cover,
-                        errorBuilder: (context, error, stackTrace) {
-                          return Container(
-                            decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                colors: [
-                                  AppColors.babyBlue.withValues(alpha: 0.4),
-                                  AppColors.softLavender.withValues(alpha: 0.4),
-                                ],
-                                begin: Alignment.topLeft,
-                                end: Alignment.bottomRight,
-                              ),
-                            ),
-                            child: Center(
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Icon(
-                                    Icons.landscape_rounded,
-                                    size: 48,
-                                    color: AppColors.deepBlue.withValues(
-                                      alpha: 0.7,
-                                    ),
-                                  ),
-                                  const SizedBox(height: 6),
-                                  Text(
-                                    title,
-                                    style: const TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      color: AppColors.deepBlue,
-                                      fontSize: 15,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          );
-                        },
-                      ),
+                      LocalityPhoto(locality: item),
                       // Top Right: Word Search Target Badge
                       Positioned(
                         top: 10,
@@ -329,6 +293,14 @@ class _LocalityLearningCardsScreenState
               const SizedBox(height: 16),
 
               // Locality Name
+              if (item.word == 'SANJUAN' && item.regionId == 1)
+                const Padding(
+                  padding: EdgeInsets.only(bottom: 8),
+                  child: Text(
+                    'Museo ng Katipunan • Photo: Department of Tourism',
+                    style: TextStyle(fontSize: 10, color: AppColors.mutedSlate),
+                  ),
+                ),
               Text(
                 title,
                 style: const TextStyle(

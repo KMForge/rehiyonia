@@ -31,7 +31,14 @@ class _PreGameTriviaScreenState extends ConsumerState<PreGameTriviaScreen> {
     final triviaAsync = ref.watch(triviaForRegionProvider(widget.regionId));
 
     return Scaffold(
-      appBar: AppBar(title: Text(loc.triviaChallenge)),
+      appBar: AppBar(
+        toolbarHeight: 68,
+        title: Text(
+          loc.triviaChallenge,
+          maxLines: 2,
+          style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w800),
+        ),
+      ),
       body: triviaAsync.when(
         loading: () => const Center(
           child: CircularProgressIndicator(color: AppColors.deepBlue),
@@ -81,17 +88,20 @@ class _PreGameTriviaScreenState extends ConsumerState<PreGameTriviaScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        loc.questionProgress(
-                          _currentQuestionIndex + 1,
-                          totalQuestions,
-                        ),
-                        style: const TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.textNavy,
+                      Expanded(
+                        child: Text(
+                          loc.questionProgress(
+                            _currentQuestionIndex + 1,
+                            totalQuestions,
+                          ),
+                          style: const TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.textNavy,
+                          ),
                         ),
                       ),
+                      const SizedBox(width: 12),
                       Container(
                         padding: const EdgeInsets.symmetric(
                           horizontal: 12,
