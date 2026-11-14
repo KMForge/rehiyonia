@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -6,7 +7,9 @@ import '../../../core/constants/app_constants.dart';
 import '../../../core/localization/app_localizations.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../shared/localization/explorer_strings.dart';
+import '../../../shared/widgets/how_to_play_dialog.dart';
 import '../../mascot/widgets/bayanito_mascot_widget.dart';
+import '../../regions/providers/region_provider.dart';
 import '../../settings/providers/settings_provider.dart';
 import '../models/regional_word.dart';
 import '../providers/gameplay_provider.dart';
@@ -14,18 +17,44 @@ import '../widgets/word_list_bar.dart';
 import '../widgets/word_search_grid_widget.dart';
 
 class WordSearchScreen extends ConsumerStatefulWidget {
-  const WordSearchScreen({super.key, required this.regionId});
+  const WordSearchScreen({
+    super.key,
+    required this.regionId,
+    this.previewCompletion = false,
+  });
 
   final int regionId;
+
+  /// Used only by the standalone debug preview; never completes a real game.
+  final bool previewCompletion;
 
   @override
   ConsumerState<WordSearchScreen> createState() => _WordSearchScreenState();
 }
 
 class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
+  bool get _isCompletionPreview => kDebugMode && widget.previewCompletion;
+
+  void _showPreview() {
+    _showCompletionDialog(
+      GameplayState(
+        status: GameStatus.completed,
+        region: defaultPhilippineRegions.first,
+        starsEarned: 3,
+        coins: 275,
+      ),
+    );
+  }
+
   @override
   void initState() {
     super.initState();
+    if (_isCompletionPreview) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) _showPreview();
+      });
+      return;
+    }
     Future.microtask(() {
       ref.read(gameplayProvider.notifier).initGame(widget.regionId);
     });
@@ -104,146 +133,179 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
     final regionName = loc.isEnglish
         ? (state.region?.designation ?? state.region?.name ?? 'Region')
         : (state.region?.name ?? 'Rehiyon');
-    final hasNext = ref.read(gameplayProvider.notifier).hasNextLevel;
+    final hasNext =
+        _isCompletionPreview ||
+        ref.read(gameplayProvider.notifier).hasNextLevel;
 
     showDialog<void>(
       context: context,
       barrierDismissible: false,
       builder: (dialogCtx) {
         return AlertDialog(
-          scrollable: true,
-          actionsOverflowButtonSpacing: 12,
-          actionsPadding: const EdgeInsets.fromLTRB(20, 8, 20, 20),
+          contentPadding: EdgeInsets.zero,
+          clipBehavior: Clip.antiAlias,
+          backgroundColor: Colors.transparent,
+          surfaceTintColor: Colors.transparent,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(28),
+            side: const BorderSide(color: Color(0xFFF0BDD5)),
           ),
-          title: Center(
-            child: Text(
-              loc.congratulations,
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                color: AppColors.textNavy,
+          content: DecoratedBox(
+            key: const Key('completion_pastel_background'),
+            decoration: const BoxDecoration(
+              gradient: RadialGradient(
+                center: Alignment(0, -.3),
+                radius: 1.1,
+                colors: [
+                  Color(0xFFFFF8ED),
+                  Color(0xFFDDF3FF),
+                  Color(0xFFFFDDEB),
+                ],
               ),
             ),
-          ),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const BayanitoMascotWidget(
-                size: 90,
-                expression: MascotExpression.celebrating,
-                animated: false,
-              ),
-              const SizedBox(height: 12),
-              Text(
-                loc.completedMessage(regionName),
-                textAlign: TextAlign.center,
-                style: const TextStyle(fontSize: 15, color: AppColors.textNavy),
-              ),
-              const SizedBox(height: 16),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: List.generate(3, (index) {
-                  return TweenAnimationBuilder<double>(
-                    tween: Tween(begin: 0.65, end: 1),
-                    duration: MediaQuery.disableAnimationsOf(context)
-                        ? Duration.zero
-                        : Duration(milliseconds: 300 + index * 140),
-                    builder: (_, scale, child) =>
-                        Transform.scale(scale: scale, child: child),
-                    child: Icon(
-                      index < state.starsEarned
-                          ? Icons.star_rounded
-                          : Icons.star_border_rounded,
-                      color: const Color(0xFFFFB300),
-                      size: 42,
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.all(20),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Center(
+                    child: Text(
+                      loc.congratulations,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.textNavy,
+                        fontSize: 24,
+                      ),
                     ),
-                  );
-                }),
-              ),
-              const SizedBox(height: 14),
-              Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 16,
-                  vertical: 8,
-                ),
-                decoration: BoxDecoration(
-                  color: const Color(0xFFFFF8E1),
-                  borderRadius: BorderRadius.circular(14),
-                  border: Border.all(color: const Color(0xFFFFD54F)),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    const Icon(
-                      Icons.monetization_on_rounded,
-                      color: Color(0xFFFFB300),
-                      size: 22,
-                    ),
-                    const SizedBox(width: 6),
-                    Flexible(
-                      child: Text(
-                        loc.rewardCoins(20, state.coins),
+                  ),
+                  const SizedBox(height: 24),
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const BayanitoMascotWidget(
+                        size: 90,
+                        expression: MascotExpression.celebrating,
+                        animated: false,
+                      ),
+                      const SizedBox(height: 12),
+                      Text(
+                        loc.completedMessage(regionName),
+                        textAlign: TextAlign.center,
                         style: const TextStyle(
-                          fontWeight: FontWeight.bold,
+                          fontSize: 15,
                           color: AppColors.textNavy,
                         ),
                       ),
+                      const SizedBox(height: 16),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: List.generate(3, (index) {
+                          return TweenAnimationBuilder<double>(
+                            tween: Tween(begin: 0.65, end: 1),
+                            duration: MediaQuery.disableAnimationsOf(context)
+                                ? Duration.zero
+                                : Duration(milliseconds: 300 + index * 140),
+                            builder: (_, scale, child) =>
+                                Transform.scale(scale: scale, child: child),
+                            child: Icon(
+                              index < state.starsEarned
+                                  ? Icons.star_rounded
+                                  : Icons.star_border_rounded,
+                              color: const Color(0xFFFFB300),
+                              size: 42,
+                            ),
+                          );
+                        }),
+                      ),
+                      const SizedBox(height: 14),
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 16,
+                          vertical: 8,
+                        ),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFFFFF8E1),
+                          borderRadius: BorderRadius.circular(14),
+                          border: Border.all(color: const Color(0xFFFFD54F)),
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            const Icon(
+                              Icons.monetization_on_rounded,
+                              color: Color(0xFFFFB300),
+                              size: 22,
+                            ),
+                            const SizedBox(width: 6),
+                            Flexible(
+                              child: Text(
+                                loc.rewardCoins(20, state.coins),
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.textNavy,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 24),
+                  SizedBox(
+                    width: double.infinity,
+                    child: OutlinedButton(
+                      key: const Key('button_return_regions'),
+                      style: OutlinedButton.styleFrom(
+                        foregroundColor: AppColors.deepBlue,
+                        side: const BorderSide(color: AppColors.deepBlue),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                      ),
+                      onPressed: () {
+                        Navigator.pop(dialogCtx);
+                        if (_isCompletionPreview) return;
+                        Navigator.pop(context); // Return to Region Selection
+                      },
+                      child: Text(loc.backToRegionsButton),
+                    ),
+                  ),
+                  if (hasNext) ...[
+                    const SizedBox(height: 12),
+                    SizedBox(
+                      width: double.infinity,
+                      child: FilledButton.icon(
+                        key: const Key('button_next_level'),
+                        style: FilledButton.styleFrom(
+                          backgroundColor: AppColors.deepBlue,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                        ),
+                        icon: const Icon(Icons.arrow_forward_rounded),
+                        onPressed: () {
+                          Navigator.pop(dialogCtx);
+                          if (_isCompletionPreview) return;
+                          final nextRegion = ref
+                              .read(gameplayProvider.notifier)
+                              .getNextRegion();
+                          if (nextRegion != null) {
+                            Navigator.pushReplacementNamed(
+                              context,
+                              AppRouter.triviaChallenge,
+                              arguments: nextRegion.id,
+                            );
+                          }
+                        },
+                        label: Text(loc.nextLevelButton),
+                      ),
                     ),
                   ],
-                ),
-              ),
-            ],
-          ),
-          actionsAlignment: MainAxisAlignment.center,
-          actions: [
-            SizedBox(
-              width: double.infinity,
-              child: OutlinedButton(
-                key: const Key('button_return_regions'),
-                style: OutlinedButton.styleFrom(
-                  foregroundColor: AppColors.deepBlue,
-                  side: const BorderSide(color: AppColors.deepBlue),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                ),
-                onPressed: () {
-                  Navigator.pop(dialogCtx);
-                  Navigator.pop(context); // Return to Region Selection
-                },
-                child: Text(loc.continueButton),
+                ],
               ),
             ),
-            if (hasNext)
-              SizedBox(
-                width: double.infinity,
-                child: FilledButton.icon(
-                  key: const Key('button_next_level'),
-                  style: FilledButton.styleFrom(
-                    backgroundColor: AppColors.deepBlue,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                  ),
-                  icon: const Icon(Icons.arrow_forward_rounded),
-                  onPressed: () {
-                    Navigator.pop(dialogCtx);
-                    final nextRegion = ref
-                        .read(gameplayProvider.notifier)
-                        .getNextRegion();
-                    if (nextRegion != null) {
-                      Navigator.pushReplacementNamed(
-                        context,
-                        AppRouter.triviaChallenge,
-                        arguments: nextRegion.id,
-                      );
-                    }
-                  },
-                  label: Text(loc.nextLevelButton),
-                ),
-              ),
-          ],
+          ),
         );
       },
     );
@@ -251,6 +313,17 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
 
   @override
   Widget build(BuildContext context) {
+    if (_isCompletionPreview) {
+      return Scaffold(
+        backgroundColor: const Color(0xFFFFDDEB),
+        body: Center(
+          child: FilledButton(
+            onPressed: _showPreview,
+            child: const Text('Preview Level Complete — sample data only'),
+          ),
+        ),
+      );
+    }
     final gameState = ref.watch(gameplayProvider);
     final loc = ref.watch(localizationsProvider);
 
@@ -356,15 +429,10 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
             icon: const Icon(Icons.help_outline_rounded),
             onPressed: () => showDialog<void>(
               context: context,
-              builder: (ctx) => AlertDialog(
-                title: Text(ExplorerStrings(loc.isEnglish)('help')),
-                content: Text(ExplorerStrings(loc.isEnglish)('helpText')),
-                actions: [
-                  TextButton(
-                    onPressed: () => Navigator.pop(ctx),
-                    child: Text(loc.closeButton),
-                  ),
-                ],
+              builder: (_) => HowToPlayDialog(
+                title: ExplorerStrings(loc.isEnglish)('help'),
+                instructions: ExplorerStrings(loc.isEnglish)('helpText'),
+                closeLabel: loc.closeButton,
               ),
             ),
           ),

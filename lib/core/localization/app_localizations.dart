@@ -141,6 +141,7 @@ class AppLocalizations {
       ? 'Sound on word selection and interaction'
       : 'Tunog sa pagpili ng salita at pagpindot';
   String get volumeTitle => isEnglish ? 'Volume' : 'Lakas ng Tunog';
+  String get musicVolumeTitle => isEnglish ? 'Music volume' : 'Lakas ng musika';
 
   // Player Account & Profile
   String get accountSection =>
@@ -172,6 +173,8 @@ class AppLocalizations {
       : '+$coins Barya (Kabuuan: $total)';
   String get readTrivia => isEnglish ? 'Read Trivia' : 'Basahin ang Trivia';
   String get continueButton => isEnglish ? 'Continue' : 'Magpatuloy';
+  String get backToRegionsButton =>
+      isEnglish ? 'Back to Regions' : 'Bumalik sa mga Rehiyon';
   String get understoodButton => isEnglish ? 'Got it!' : 'Naintindihan ko!';
   String get nextLevelButton =>
       isEnglish ? 'Next Level ➔' : 'Susunod na Antas ➔';

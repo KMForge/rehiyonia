@@ -46,6 +46,34 @@ void main() {
     sqfliteFfiInit();
   });
 
+  testWidgets('Standalone completion preview does not initialize gameplay', (
+    tester,
+  ) async {
+    tester.view.physicalSize = const Size(360, 800);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+    await tester.pumpWidget(
+      ProviderScope(
+        overrides: [
+          appDatabaseProvider.overrideWith((_) {
+            throw StateError('The preview must not access saved data');
+          }),
+        ],
+        child: const MaterialApp(
+          home: WordSearchScreen(regionId: 1, previewCompletion: true),
+        ),
+      ),
+    );
+    await tester.pumpAndSettle();
+    expect(find.byType(AlertDialog), findsOneWidget);
+    await tester.tap(find.byKey(const Key('button_next_level')));
+    await tester.pumpAndSettle();
+    expect(find.byType(AlertDialog), findsNothing);
+    expect(find.byType(WordSearchScreen), findsOneWidget);
+    expect(tester.takeException(), isNull);
+  });
+
   group('Word Search Completion & Next Level Flow Tests', () {
     late AppDatabase appDatabase;
     late RegionRepository regionRepo;
