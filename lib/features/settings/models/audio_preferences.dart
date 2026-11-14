@@ -5,6 +5,7 @@ class AudioPreferences {
     this.isMusicEnabled = true,
     this.isSoundEffectsEnabled = true,
     this.volume = 1.0,
+    this.musicVolume = 1.0,
     this.language = AppLanguage.english,
     this.reduceMotion = false,
   });
@@ -12,6 +13,7 @@ class AudioPreferences {
   final bool isMusicEnabled;
   final bool isSoundEffectsEnabled;
   final double volume;
+  final double musicVolume;
   final AppLanguage language;
   final bool reduceMotion;
 
@@ -19,6 +21,7 @@ class AudioPreferences {
     bool? isMusicEnabled,
     bool? isSoundEffectsEnabled,
     double? volume,
+    double? musicVolume,
     AppLanguage? language,
     bool? reduceMotion,
   }) {
@@ -27,6 +30,7 @@ class AudioPreferences {
       isSoundEffectsEnabled:
           isSoundEffectsEnabled ?? this.isSoundEffectsEnabled,
       volume: volume ?? this.volume,
+      musicVolume: musicVolume ?? this.musicVolume,
       language: language ?? this.language,
       reduceMotion: reduceMotion ?? this.reduceMotion,
     );
@@ -40,6 +44,7 @@ class AudioPreferences {
           isMusicEnabled == other.isMusicEnabled &&
           isSoundEffectsEnabled == other.isSoundEffectsEnabled &&
           volume == other.volume &&
+          musicVolume == other.musicVolume &&
           language == other.language &&
           reduceMotion == other.reduceMotion;
 
@@ -48,6 +53,7 @@ class AudioPreferences {
       isMusicEnabled.hashCode ^
       isSoundEffectsEnabled.hashCode ^
       volume.hashCode ^
+      musicVolume.hashCode ^
       language.hashCode ^
       reduceMotion.hashCode;
 }

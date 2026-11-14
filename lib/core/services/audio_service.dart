@@ -13,6 +13,7 @@ class AudioService {
   bool _isMusicEnabled = true;
   bool _isSoundEffectsEnabled = true;
   double _volume = 1.0;
+  double _musicVolume = 1.0;
   String? _backgroundAsset;
   bool _foreground = false;
   bool _started = false;
@@ -55,18 +56,25 @@ class AudioService {
   bool get isMusicEnabled => _isMusicEnabled;
   bool get isSoundEffectsEnabled => _isSoundEffectsEnabled;
   double get volume => _volume;
+  double get musicVolume => _musicVolume;
 
   void updatePreferences({
     required bool musicEnabled,
     required bool soundEffectsEnabled,
     double? volume,
+    double? musicVolume,
   }) {
     _isMusicEnabled = musicEnabled;
     _isSoundEffectsEnabled = soundEffectsEnabled;
     if (volume != null) {
       _volume = volume.clamp(0.0, 1.0);
-      _musicPlayer.setVolume(_volume);
       _sfxPlayer.setVolume(_volume);
+    }
+    if (musicVolume != null) {
+      _musicVolume = musicVolume.clamp(0.0, 1.0);
+    }
+    if (volume != null || musicVolume != null) {
+      _musicPlayer.setVolume(_volume * _musicVolume);
     }
 
     if (_backgroundAsset != null) {
@@ -85,7 +93,7 @@ class AudioService {
       } else {
         await _musicPlayer.setReleaseMode(ReleaseMode.release);
       }
-      await _musicPlayer.setVolume(_volume);
+      await _musicPlayer.setVolume(_volume * _musicVolume);
       await _musicPlayer.play(
         AssetSource(assetPath),
         ctx: AudioContext(

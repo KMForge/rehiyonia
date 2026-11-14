@@ -19,117 +19,214 @@ class SettingsScreen extends ConsumerWidget {
     final profile = ref.watch(profileProvider);
 
     return Scaffold(
-      appBar: AppBar(title: Text(loc.settingsTitle)),
-      body: ListView(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-        children: [
-          Card(
-            child: SwitchListTile.adaptive(
-              key: const Key('reduce_motion_switch'),
-              secondary: const Icon(Icons.animation_rounded),
-              title: Text(ExplorerStrings(loc.isEnglish)('motion')),
-              subtitle: Text(ExplorerStrings(loc.isEnglish)('motionHint')),
-              value: audioPrefs.reduceMotion,
-              onChanged: (value) async {
-                try {
-                  await notifier.setReduceMotion(value);
-                } catch (_) {
-                  if (context.mounted) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Text(
-                          ExplorerStrings(loc.isEnglish)('saveFailed'),
+      backgroundColor: const Color(0xFFFFE6F1),
+      appBar: AppBar(
+        backgroundColor: const Color(0xFFDFF3FF),
+        surfaceTintColor: Colors.transparent,
+        foregroundColor: const Color(0xFF3A174D),
+        elevation: 0,
+        centerTitle: true,
+        title: Text(
+          loc.settingsTitle,
+          style: const TextStyle(
+            fontFamily: 'Fredoka',
+            fontSize: 23,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
+      body: DecoratedBox(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [Color(0xFFDFF3FF), Color(0xFFFFF4E7), Color(0xFFFFD6EB)],
+            stops: [0, .4, 1],
+          ),
+        ),
+        child: SizedBox.expand(
+          child: SafeArea(
+            child: ListView(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+              children: [
+                Card(
+                  color: const Color(0xFFFFF2E4),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            const Icon(
+                              Icons.music_note_rounded,
+                              color: Color(0xFFB53879),
+                            ),
+                            const SizedBox(width: 12),
+                            Expanded(
+                              child: Text(
+                                loc.musicVolumeTitle,
+                                style: theme.textTheme.titleMedium,
+                              ),
+                            ),
+                            const SizedBox(width: 8),
+                            Text(
+                              '${(audioPrefs.musicVolume * 100).round()}%',
+                              key: const Key('music_volume_value'),
+                            ),
+                          ],
                         ),
-                      ),
-                    );
-                  }
-                }
-              },
-            ),
-          ),
-          const SizedBox(height: 24),
-          // Player Account Section
-          Text(
-            loc.accountSection,
-            style: theme.textTheme.titleMedium?.copyWith(
-              color: theme.colorScheme.primary,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const SizedBox(height: 8),
-          Card(
-            elevation: 0,
-            color: theme.colorScheme.surfaceContainerHighest.withValues(
-              alpha: 0.5,
-            ),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16),
-            ),
-            child: ListTile(
-              leading: CircleAvatar(
-                backgroundColor: theme.colorScheme.primaryContainer,
-                child: Icon(
-                  Icons.person_rounded,
-                  color: theme.colorScheme.primary,
+                        SliderTheme(
+                          data: SliderTheme.of(context).copyWith(
+                            activeTrackColor: const Color(0xFFF53691),
+                            inactiveTrackColor: const Color(0xFFFFD6EB),
+                            thumbColor: const Color(0xFFF53691),
+                          ),
+                          child: Slider(
+                            key: const Key('music_volume_slider'),
+                            value: audioPrefs.musicVolume,
+                            divisions: 20,
+                            label: '${(audioPrefs.musicVolume * 100).round()}%',
+                            semanticFormatterCallback: (value) =>
+                                '${(value * 100).round()}%',
+                            onChanged: (value) =>
+                                notifier.setMusicVolume(value, persist: false),
+                            onChangeEnd: (value) async {
+                              try {
+                                await notifier.setMusicVolume(value);
+                              } catch (_) {
+                                if (context.mounted) {
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      content: Text(
+                                        ExplorerStrings(loc.isEnglish)(
+                                          'saveFailed',
+                                        ),
+                                      ),
+                                    ),
+                                  );
+                                }
+                              }
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
-              ),
-              title: Text(
-                profile.name,
-                style: const TextStyle(fontWeight: FontWeight.bold),
-              ),
-              subtitle: Text(loc.customizeName),
-              trailing: IconButton(
-                key: const Key('button_settings_edit_name'),
-                icon: const Icon(Icons.edit_rounded),
-                onPressed: () =>
-                    _showEditNameDialog(context, loc, ref, profile.name),
-              ),
-            ),
-          ),
-
-          const Divider(height: 32),
-
-          // Language Section
-          Text(
-            loc.languageSection,
-            style: theme.textTheme.titleMedium?.copyWith(
-              color: theme.colorScheme.primary,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const SizedBox(height: 4),
-          Text(
-            loc.languageSubtitle,
-            style: theme.textTheme.bodySmall?.copyWith(
-              color: theme.colorScheme.outline,
-            ),
-          ),
-          const SizedBox(height: 12),
-          Center(
-            child: ConstrainedBox(
-              constraints: const BoxConstraints(maxWidth: 400),
-              child: SegmentedButton<AppLanguage>(
-                key: const Key('settings_language_selector'),
-                segments: const [
-                  ButtonSegment<AppLanguage>(
-                    value: AppLanguage.english,
-                    label: Text('English'),
-                    icon: Icon(Icons.language_rounded),
+                const SizedBox(height: 12),
+                Card(
+                  child: SwitchListTile.adaptive(
+                    key: const Key('reduce_motion_switch'),
+                    secondary: const Icon(Icons.animation_rounded),
+                    title: Text(ExplorerStrings(loc.isEnglish)('motion')),
+                    subtitle: Text(
+                      ExplorerStrings(loc.isEnglish)('motionHint'),
+                    ),
+                    value: audioPrefs.reduceMotion,
+                    onChanged: (value) async {
+                      try {
+                        await notifier.setReduceMotion(value);
+                      } catch (_) {
+                        if (context.mounted) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text(
+                                ExplorerStrings(loc.isEnglish)('saveFailed'),
+                              ),
+                            ),
+                          );
+                        }
+                      }
+                    },
                   ),
-                  ButtonSegment<AppLanguage>(
-                    value: AppLanguage.tagalog,
-                    label: Text('Tagalog'),
-                    icon: Icon(Icons.translate_rounded),
+                ),
+                const SizedBox(height: 24),
+                // Player Account Section
+                Text(
+                  loc.accountSection,
+                  style: theme.textTheme.titleMedium?.copyWith(
+                    color: theme.colorScheme.primary,
+                    fontWeight: FontWeight.bold,
                   ),
-                ],
-                selected: {audioPrefs.language},
-                onSelectionChanged: (newSelection) {
-                  notifier.setLanguage(newSelection.first);
-                },
-              ),
+                ),
+                const SizedBox(height: 8),
+                Card(
+                  elevation: 0,
+                  color: theme.colorScheme.surfaceContainerHighest.withValues(
+                    alpha: 0.5,
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: ListTile(
+                    leading: CircleAvatar(
+                      backgroundColor: theme.colorScheme.primaryContainer,
+                      child: Icon(
+                        Icons.person_rounded,
+                        color: theme.colorScheme.primary,
+                      ),
+                    ),
+                    title: Text(
+                      profile.name,
+                      style: const TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    subtitle: Text(loc.customizeName),
+                    trailing: IconButton(
+                      key: const Key('button_settings_edit_name'),
+                      icon: const Icon(Icons.edit_rounded),
+                      onPressed: () =>
+                          _showEditNameDialog(context, loc, ref, profile.name),
+                    ),
+                  ),
+                ),
+
+                const Divider(height: 32),
+
+                // Language Section
+                Text(
+                  loc.languageSection,
+                  style: theme.textTheme.titleMedium?.copyWith(
+                    color: theme.colorScheme.primary,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  loc.languageSubtitle,
+                  style: theme.textTheme.bodySmall?.copyWith(
+                    color: theme.colorScheme.outline,
+                  ),
+                ),
+                const SizedBox(height: 12),
+                Center(
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints(maxWidth: 400),
+                    child: SegmentedButton<AppLanguage>(
+                      key: const Key('settings_language_selector'),
+                      segments: const [
+                        ButtonSegment<AppLanguage>(
+                          value: AppLanguage.english,
+                          label: Text('English'),
+                          icon: Icon(Icons.language_rounded),
+                        ),
+                        ButtonSegment<AppLanguage>(
+                          value: AppLanguage.tagalog,
+                          label: Text('Tagalog'),
+                          icon: Icon(Icons.translate_rounded),
+                        ),
+                      ],
+                      selected: {audioPrefs.language},
+                      onSelectionChanged: (newSelection) {
+                        notifier.setLanguage(newSelection.first);
+                      },
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
-        ],
+        ),
       ),
     );
   }

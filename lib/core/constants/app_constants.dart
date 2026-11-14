@@ -17,6 +17,7 @@ abstract final class AppConstants {
   static const String keySoundEffectsEnabled = 'sfx_enabled';
   static const String keyMusicEnabled = 'music_enabled';
   static const String keyVolume = 'master_volume';
+  static const String keyMusicVolume = 'music_volume';
 
   // Audio asset paths
   static const String audioMusicMainTheme = 'audio/music/instrumental_loop.ogg';

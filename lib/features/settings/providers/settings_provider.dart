@@ -38,6 +38,20 @@ class SettingsNotifier extends Notifier<AudioPreferences> {
     _syncAudioService();
   }
 
+  Future<void> setMusicVolume(double volume, {bool persist = true}) async {
+    state = state.copyWith(musicVolume: volume.clamp(0.0, 1.0));
+    _syncAudioService();
+    if (!persist) return;
+    final appDb = ref.read(appDatabaseProvider);
+    if (appDb.isOpen) {
+      await appDb.database.insert(DatabaseConstants.tableUserProgress, {
+        DatabaseConstants.columnKey: AppConstants.keyMusicVolume,
+        DatabaseConstants.columnValue: state.musicVolume.toString(),
+        DatabaseConstants.columnUpdatedAt: DateTime.now().toIso8601String(),
+      }, conflictAlgorithm: ConflictAlgorithm.replace);
+    }
+  }
+
   void setLanguage(AppLanguage language) {
     state = state.copyWith(language: language);
     _persistLanguage(language);
@@ -76,8 +90,17 @@ class SettingsNotifier extends Notifier<AudioPreferences> {
             state = state.copyWith(
               reduceMotion: row[DatabaseConstants.columnValue] == 'true',
             );
+          } else if (row[DatabaseConstants.columnKey] ==
+              AppConstants.keyMusicVolume) {
+            final saved = double.tryParse(
+              row[DatabaseConstants.columnValue] as String? ?? '',
+            );
+            if (saved != null && saved.isFinite) {
+              state = state.copyWith(musicVolume: saved.clamp(0.0, 1.0));
+            }
           }
         }
+        _syncAudioService();
       }
     } catch (_) {}
   }
@@ -89,6 +112,7 @@ class SettingsNotifier extends Notifier<AudioPreferences> {
           musicEnabled: state.isMusicEnabled,
           soundEffectsEnabled: state.isSoundEffectsEnabled,
           volume: state.volume,
+          musicVolume: state.musicVolume,
         );
   }
 
