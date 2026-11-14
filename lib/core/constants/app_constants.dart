@@ -1,6 +1,7 @@
 abstract final class AppConstants {
   static const String appName = 'Rehiyonia';
   static const String appVersion = '1.0.0';
+  static const int regionalWordTargetCount = 15;
 
   // Game economy constants
   static const int startingCoins = 50;

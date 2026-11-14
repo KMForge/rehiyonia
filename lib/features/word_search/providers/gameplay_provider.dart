@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../core/constants/app_constants.dart';
 import '../../profile/providers/profile_provider.dart';
 import '../../regions/models/region.dart';
 import '../../regions/providers/region_provider.dart';
@@ -108,8 +109,8 @@ class GameplayNotifier extends Notifier<GameplayState> {
       );
 
       var words = await wordRepo.getWordsForRegion(regionId);
-      if (words.length > 10) {
-        words = words.take(10).toList();
+      if (words.length > AppConstants.regionalWordTargetCount) {
+        words = words.take(AppConstants.regionalWordTargetCount).toList();
       }
       if (words.isEmpty) {
         // Fallback words if database not yet populated

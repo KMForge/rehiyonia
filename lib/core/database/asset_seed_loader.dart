@@ -69,8 +69,7 @@ class AssetSeedLoader {
         final batch = db.batch();
         for (var i = 0; i < words.length; i++) {
           final w = words[i];
-          // Top 10 per region are word search targets, remaining 5 are locality cards
-          final isTarget = (i % 15) < 10;
+          // All 15 regional localities are both learning cards and puzzle targets.
           batch.insert(DatabaseConstants.tableLocalities, {
             DatabaseConstants.columnRegionId: w.regionId,
             DatabaseConstants.columnWord: w.word,
@@ -84,10 +83,24 @@ class AssetSeedLoader {
             DatabaseConstants.columnFactEn: w.displayFactEn,
             DatabaseConstants.columnFactFil: w.displayFactFil,
             DatabaseConstants.columnImagePath: w.resolvedImagePath,
-            DatabaseConstants.columnIsWordSearchTarget: isTarget ? 1 : 0,
+            DatabaseConstants.columnIsWordSearchTarget: 1,
           });
         }
         await batch.commit(noResult: true);
+      }
+
+      // Repair older installations that marked only ten localities as targets.
+      // Preserve locality IDs, learning content, and every saved progress record.
+      final regionIds = words.map((word) => word.regionId).toSet().toList();
+      if (regionIds.isNotEmpty) {
+        await db.update(
+          DatabaseConstants.tableLocalities,
+          {DatabaseConstants.columnIsWordSearchTarget: 1},
+          where:
+              '${DatabaseConstants.columnIsWordSearchTarget} = 0 AND '
+              '${DatabaseConstants.columnRegionId} IN (${List.filled(regionIds.length, '?').join(',')})',
+          whereArgs: regionIds,
+        );
       }
 
       final triviaJson = await rootBundle.loadString('assets/data/trivia.json');
