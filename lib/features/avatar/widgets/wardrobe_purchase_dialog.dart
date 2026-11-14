@@ -77,6 +77,7 @@ class _WardrobePurchaseDialogState
             mainAxisSize: MainAxisSize.min,
             children: [
               AvatarStage(
+                baseId: widget.preview.baseId,
                 height: 225,
                 child: PlayerAvatarWidget(
                   avatar: widget.preview,

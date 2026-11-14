@@ -2,21 +2,33 @@ import 'package:flutter/material.dart';
 
 /// A lightweight wardrobe display; no continuously running animation controller.
 class AvatarStage extends StatelessWidget {
-  const AvatarStage({super.key, required this.height, required this.child});
+  const AvatarStage({
+    super.key,
+    required this.height,
+    required this.child,
+    this.baseId = 'female',
+  });
   final double height;
   final Widget child;
+  final String baseId;
+
+  bool get _isMale => baseId == 'male';
   @override
   Widget build(BuildContext context) => Container(
     height: height,
     clipBehavior: Clip.antiAlias,
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(28),
-      gradient: const RadialGradient(
+      gradient: RadialGradient(
         center: Alignment(0, -.3),
         radius: 1.1,
-        colors: [Color(0xFF397781), Color(0xFF173B54), Color(0xFF102439)],
+        colors: _isMale
+            ? const [Color(0xFFFFF8ED), Color(0xFFDDF3FF), Color(0xFFDDF3EC)]
+            : const [Color(0xFFFFF8ED), Color(0xFFDDF3FF), Color(0xFFFFDDEB)],
       ),
-      border: Border.all(color: const Color(0xFF496978)),
+      border: Border.all(
+        color: _isMale ? const Color(0xFFB5D8E8) : const Color(0xFFF0BDD5),
+      ),
     ),
     child: Stack(
       alignment: Alignment.center,
@@ -28,7 +40,7 @@ class AvatarStage extends StatelessWidget {
             height: height * .72,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              border: Border.all(color: const Color(0x337BDED5), width: 1.5),
+              border: Border.all(color: const Color(0xFFB7DCEB), width: 1.5),
             ),
           ),
         ),
@@ -39,10 +51,22 @@ class AvatarStage extends StatelessWidget {
             height: 26,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(100),
-              color: const Color(0xFF244E63),
-              border: Border.all(color: const Color(0xFF78C5BE), width: 2),
-              boxShadow: const [
-                BoxShadow(color: Color(0x335FE5C9), blurRadius: 18),
+              color: _isMale
+                  ? const Color(0xFFDDEFF8)
+                  : const Color(0xFFFCE3ED),
+              border: Border.all(
+                color: _isMale
+                    ? const Color(0xFFA8CEDF)
+                    : const Color(0xFFE9B5CE),
+                width: 2,
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: _isMale
+                      ? const Color(0x228BB4C5)
+                      : const Color(0x22C58BAC),
+                  blurRadius: 18,
+                ),
               ],
             ),
           ),
@@ -52,7 +76,7 @@ class AvatarStage extends StatelessWidget {
           right: 18,
           child: Icon(
             Icons.auto_awesome,
-            color: const Color(0xFFFFD885).withValues(alpha: .8),
+            color: const Color(0xFFC99445).withValues(alpha: .8),
             size: 22,
           ),
         ),
