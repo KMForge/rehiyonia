@@ -4,6 +4,10 @@ Generated on 2026-10-25 with the built-in image generation tool using the imageg
 
 - `loading-islands-v1.png`: portrait loading-screen artwork. Decorative Philippine-inspired montage, not an accurate map or a single real location.
 - `rehiyonia-logo-v1.png`: transparent title logo, separate from the background so the UI can size and animate it independently.
+- `rehiyonia-logo-pink-v2.png`: existing pink-and-gold logo shared by the splash and Home screens, including the sun/compass and blue waves. Home adds a separate localized subtitle ribbon.
+- `home-sky-scene-v1.jpg`, `home-travel-footer-v1.jpg`, `home-foliage-left-v1.jpg`, and `home-foliage-right-v1.jpg`: optimized layers derived from the existing travel backdrop. Their combined compressed size is approximately 179 KiB. Flutter positions each layer separately without stretching the full composition, and caps image decode widths. All text, controls, the geographic map, and the player's customized avatar are live Flutter widgets.
+
+The original backdrop (generated on 2026-11-12 with the built-in image generation tool and imagegen skill) is retained at `design/home/home-travel-background.png`, outside the runtime asset bundle. It includes the jeepney and flag, mountain and historical bell tower, tropical foliage, camera, postcards, backpack, lantern, and compass. Regenerate the JPEG layers with `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/prepare_home_artwork.ps1`. All runtime artwork remains bundled for offline use.
 
 ## Generation prompts
 

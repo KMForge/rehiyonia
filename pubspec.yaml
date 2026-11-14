@@ -73,8 +73,14 @@ flutter:
     - assets/data/
     - assets/images/localities/
     - assets/images/branding/
+    - assets/fonts/OFL-Fredoka.txt
     - assets/audio/music/instrumental_loop.ogg
     - assets/audio/sound_effects/
+
+  fonts:
+    - family: Fredoka
+      fonts:
+        - asset: assets/fonts/Fredoka-Variable.ttf
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

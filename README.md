@@ -1,5 +1,11 @@
 # Rehiyonia
 
+The home illustration uses Philippine coastline geometry from the public-domain
+Natural Earth 1:50m dataset. It depicts the archipelago and a decorative journey
+through Luzon, Visayas, and Mindanao, rather than administrative boundaries.
+The generated vector data is included for offline use. To regenerate it, run
+`powershell -NoProfile -File scripts/generate_philippine_map.ps1`.
+
 ### Temporary testing in Edge
 
 Run `flutter run -d web-server --web-hostname localhost --web-port 8080`, then
