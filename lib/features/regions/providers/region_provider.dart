@@ -171,7 +171,7 @@ class RegionsNotifier extends AsyncNotifier<List<Region>> {
     if (regions.isEmpty) {
       await repo.insertRegions(defaultPhilippineRegions);
       regions = await repo.getAllRegions();
-    } else if (regions.length < defaultPhilippineRegions.length) {
+    } else {
       final existingIds = regions.map((r) => r.id).toSet();
       final missing = defaultPhilippineRegions
           .where((r) => !existingIds.contains(r.id))

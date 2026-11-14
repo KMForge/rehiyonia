@@ -1,0 +1,32 @@
+# Regional landmark photographs
+
+All 18 JPEG photographs are bundled for offline use. No AI-generated or placeholder landmark images are used.
+
+Photos are attributed below and in each in-game badge detail sheet. The source license applies to each photographic adaptation independently of the application code. CC BY-SA adaptations remain under the indicated CC BY-SA version. Source pages contain the original publication and licensing records.
+
+Modifications: resized to at most 960px wide, EXIF orientation normalized when present, and JPEG-encoded at quality 85. The UI also crops with BoxFit.cover and applies muted/faded treatments to locked and background views. No landmark content is composited or generated.
+
+The manifest assets/data/region_landmarks.json retains region IDs/codes, creator names, source descriptions, source/license URLs, original revision details where supplied, dimensions, and local SHA-256 hashes.
+
+Regenerate using scripts/fetch_region_landmarks.ps1 -Mode Download. Reviewed source selections are pinned in tool/region_landmark_sources.json. Downloads occur during asset preparation only.
+
+| ID / region | Landmark and location | Local asset | Creator | License | Source |
+|---|---|---|---|---|---|
+| 1 / NCR | Rizal Monument, Manila | [ncr_rizal_monument.jpg](ncr_rizal_monument.jpg) | Ernest Malsin | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) | [Original photograph](https://commons.wikimedia.org/wiki/File:Rizal_Monument_(Manila,_2024).jpg) |
+| 2 / CAR | Banaue Rice Terraces, Ifugao | [car_banaue_rice_terraces.jpg](car_banaue_rice_terraces.jpg) | Say Bernardo | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Original photograph](https://commons.wikimedia.org/wiki/File:The_Banaue_Rice_Terraces_(2018)_by_Say_Bernardo.jpg) |
+| 3 / REGION_I | Paoay Church, Ilocos Norte | [region_i_paoay_church.jpg](region_i_paoay_church.jpg) | Ibarra Siapno | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0) | [Original photograph](https://commons.wikimedia.org/wiki/File:Paoay_Church_facade_in_Ilocos_Norte.jpg) |
+| 4 / REGION_II | Callao Cave, Cagayan | [region_ii_callao_cave.jpg](region_ii_callao_cave.jpg) | BiyaheNiDrik | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Original photograph](https://commons.wikimedia.org/wiki/File:Callao_Cave,_Penablanca_Cagayan.jpg) |
+| 5 / REGION_III | Mount Pinatubo, Central Luzon | [region_iii_mount_pinatubo.jpg](region_iii_mount_pinatubo.jpg) | Chester Sigua | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0) | [Original photograph](https://commons.wikimedia.org/wiki/File:Mount_Pinatubo_Crater_Lake.JPG) |
+| 6 / REGION_IV_A | Taal Volcano, Batangas | [region_iv_a_taal_volcano.jpg](region_iv_a_taal_volcano.jpg) | Michael Angelo Luna | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Original photograph](https://commons.wikimedia.org/wiki/File:Taal_Volcano_from_Agoncillo,_Batangas.jpg) |
+| 7 / REGION_IV_B | Puerto Princesa Underground River, Palawan | [region_iv_b_underground_river.jpg](region_iv_b_underground_river.jpg) | lumoplank | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [Original photograph](https://commons.wikimedia.org/wiki/File:Puerto_Princesa_Subterranean_River_-_PuertoPrincesaSR1757.jpg) |
+| 8 / REGION_V | Mayon Volcano, Albay | [region_v_mayon_volcano.jpg](region_v_mayon_volcano.jpg) | Johrabino | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Original photograph](https://commons.wikimedia.org/wiki/File:Mayon_Volcano,_Albay,_Philippines.jpg) |
+| 9 / REGION_VI | Miagao Church, Iloilo | [region_vi_miagao_church.jpg](region_vi_miagao_church.jpg) | Paolobon140 | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [Original photograph](https://commons.wikimedia.org/wiki/File:Miagao_Church_facade_Filipinas.jpg) |
+| 10 / REGION_VII | Chocolate Hills, Bohol | [region_vii_chocolate_hills.jpg](region_vii_chocolate_hills.jpg) | Vyacheslav Argenberg | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) | [Original photograph](https://commons.wikimedia.org/wiki/File:Bohol_Hills,_Chocolate_Hills,_Philippines.jpg) |
+| 11 / REGION_VIII | San Juanico Bridge, Leyte–Samar | [region_viii_san_juanico_bridge.jpg](region_viii_san_juanico_bridge.jpg) | byron alcantara from Fredon, United States | Public domain | [Original photograph](https://commons.wikimedia.org/wiki/File:San_Juanico_Bridge.jpg) |
+| 12 / REGION_IX | Great Santa Cruz Island, Zamboanga City | [region_ix_santa_cruz_island.jpg](region_ix_santa_cruz_island.jpg) | Fayziii | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [Original photograph](https://commons.wikimedia.org/wiki/File:A_Natural_Treasure_of_Zamboanga_City.jpg) |
+| 13 / REGION_X | Maria Cristina Falls, Iligan City | [region_x_maria_cristina_falls.jpg](region_x_maria_cristina_falls.jpg) | Uayan Family | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0) | [Original photograph](https://commons.wikimedia.org/wiki/File:Maria_Cristina_Falls_Iligan_City.jpg) |
+| 14 / REGION_XI | Mount Apo, Davao Region | [region_xi_mount_apo.jpg](region_xi_mount_apo.jpg) | patrickroque01 | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Original photograph](https://commons.wikimedia.org/wiki/File:Mount_Apo_from_air_(Davao_City;_11-24-2021).jpg) |
+| 15 / REGION_XII | Lake Sebu, South Cotabato | [region_xii_lake_sebu.jpg](region_xii_lake_sebu.jpg) | GinaD | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0) | [Original photograph](https://commons.wikimedia.org/wiki/File:The_picturesque_view_of_Lake_Sebu..JPG) |
+| 16 / REGION_XIII | Siargao Island, Surigao del Norte | [region_xiii_siargao_island.jpg](region_xiii_siargao_island.jpg) | Spraken eboy2887 | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Original photograph](https://commons.wikimedia.org/wiki/File:Siargao_Cloud_9.jpg) |
+| 17 / BARMM | Grand Mosque, Cotabato City | [barmm_grand_mosque.jpg](barmm_grand_mosque.jpg) | Robert Forever Ago | [Pexels License](https://www.pexels.com/license/) | [Original photograph](https://www.pexels.com/photo/person-in-orange-robe-standing-outside-a-mosque-8493519/) |
+| 18 / NIR | The Ruins, Talisay City, Negros Occidental | [nir_the_ruins.jpg](nir_the_ruins.jpg) | Mark Daniel Lecciones | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Original photograph](https://commons.wikimedia.org/wiki/File:The_Ruins_in_Talisay.jpg) |

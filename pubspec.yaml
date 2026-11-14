@@ -73,6 +73,7 @@ flutter:
     - assets/data/
     - assets/images/localities/
     - assets/images/branding/
+    - assets/images/region_landmarks/
     - assets/fonts/OFL-Fredoka.txt
     - assets/audio/music/instrumental_loop.ogg
     - assets/audio/sound_effects/
