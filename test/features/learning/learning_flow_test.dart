@@ -102,6 +102,7 @@ void main() {
         expect(find.text('Select Island Group'), findsOneWidget);
         expect(find.text('Luzon'), findsOneWidget);
         expect(find.text('Visayas'), findsOneWidget);
+        await tester.scrollUntilVisible(find.text('Mindanao'), 180);
         expect(find.text('Mindanao'), findsOneWidget);
       },
     );

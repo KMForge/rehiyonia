@@ -7,4 +7,6 @@ Downloaded image: https://dot-marketing.s3.ap-southeast-1.amazonaws.com/2026/06/
 
 Image is unchanged; the UI crops it to fit. Credit is shown on the San Juan learning card. This source attribution does not claim a separate Creative Commons license.
 
-Island group cards reuse the existing bundled Banaue, Cebu and Davao photos. Missing locality-specific assets use those existing island-group photos with an explicit regional-scenery label, not as a photograph of the named locality.
+Explore Regions island-group cards use the bundled Mayon Volcano (Luzon), Chocolate Hills (Visayas), and Maria Cristina Falls (Mindanao) photographs from `assets/images/region_landmarks/`. Their creators, source URLs, licenses, and modifications are recorded in that directory's `README.md` and `assets/data/region_landmarks.json`. All three photos work offline.
+
+Missing locality-specific assets elsewhere use the existing Banaue, Cebu, and Davao photos with an explicit regional-scenery label, not as a photograph of the named locality.
