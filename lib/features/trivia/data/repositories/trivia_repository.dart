@@ -40,7 +40,34 @@ class TriviaRepository {
       );
     }
 
-    return maps.map(TriviaItem.fromMap).toList();
+    // Keep legacy IDs, answer order, and Filipino content as the source of truth;
+    // read the translations from the existing bilingual table.
+    final translations = await db.query(
+      DatabaseConstants.tableTriviaQuestions,
+      where: '${DatabaseConstants.columnRegionId} = ?',
+      whereArgs: [regionId],
+    );
+    final byQuestion = {
+      for (final row in translations) row['question_fil']: row,
+    };
+    return maps.map((row) {
+      final translation = byQuestion[row['question']];
+      return TriviaItem.fromMap({
+        ...row,
+        if (translation != null) ...{
+          for (final field in [
+            'question_en',
+            'option_a_en',
+            'option_b_en',
+            'option_c_en',
+            'option_d_en',
+            'explanation_en',
+          ])
+            field: translation[field],
+          'image_caption_en': translation['image_caption'],
+        },
+      });
+    }).toList();
   }
 
   Future<void> insertTrivia(List<TriviaItem> items) async {

@@ -15,6 +15,10 @@ class TriviaItem {
     this.optionCEn,
     this.optionDEn,
     this.explanationEn,
+    this.imagePath,
+    this.imageCaption,
+    this.imageCaptionEn,
+    this.imageCredit,
   });
 
   final int? id;
@@ -32,6 +36,10 @@ class TriviaItem {
   final String? optionCEn;
   final String? optionDEn;
   final String? explanationEn;
+  final String? imagePath;
+  final String? imageCaption;
+  final String? imageCaptionEn;
+  final String? imageCredit;
 
   String getQuestion(bool isEnglish) =>
       isEnglish ? (questionEn ?? question) : question;
@@ -45,6 +53,8 @@ class TriviaItem {
       isEnglish ? (optionDEn ?? optionD) : optionD;
   String getExplanation(bool isEnglish) =>
       isEnglish ? (explanationEn ?? explanation) : explanation;
+  String? getImageCaption(bool isEnglish) =>
+      isEnglish ? (imageCaptionEn ?? imageCaption) : imageCaption;
 
   String getAnswer(bool isEnglish) {
     switch (correctOption) {
@@ -77,6 +87,9 @@ class TriviaItem {
       'option_d': optionD,
       'correct_option': correctOption,
       'explanation': explanation,
+      'image_path': imagePath,
+      'image_caption': imageCaption,
+      'image_credit': imageCredit,
     };
   }
 
@@ -98,6 +111,9 @@ class TriviaItem {
       'correct_option': correctOption,
       'explanation_en': getExplanation(true),
       'explanation_fil': getExplanation(false),
+      'image_path': imagePath,
+      'image_caption': getImageCaption(true),
+      'image_credit': imageCredit,
     };
   }
 
@@ -119,6 +135,10 @@ class TriviaItem {
       optionCEn: map['option_c_en'] as String?,
       optionDEn: map['option_d_en'] as String?,
       explanationEn: map['explanation_en'] as String?,
+      imagePath: map['image_path'] as String?,
+      imageCaption: map['image_caption'] as String?,
+      imageCaptionEn: map['image_caption_en'] as String?,
+      imageCredit: map['image_credit'] as String?,
     );
   }
 

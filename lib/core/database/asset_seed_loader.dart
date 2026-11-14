@@ -92,12 +92,72 @@ class AssetSeedLoader {
 
       final triviaJson = await rootBundle.loadString('assets/data/trivia.json');
       final List<dynamic> triviaList = json.decode(triviaJson) as List<dynamic>;
+      final englishJson = await rootBundle.loadString(
+        'assets/data/trivia_en.json',
+      );
+      final englishRegions = (json.decode(englishJson) as List<dynamic>)
+          .cast<Map<String, dynamic>>();
+      final englishByRegion = {
+        for (final region in englishRegions) region['region_id'] as int: region,
+      };
+      for (final item in triviaList.cast<Map<String, dynamic>>()) {
+        final translation =
+            englishByRegion[item['region_id']]!['base'] as Map<String, dynamic>;
+        final options = (translation['options'] as List<dynamic>)
+            .cast<String>();
+        item.addAll({
+          'question_en': translation['question'],
+          'option_a_en': options[0],
+          'option_b_en': options[1],
+          'option_c_en': options[2],
+          'option_d_en': options[3],
+          'explanation_en': translation['explanation'],
+        });
+      }
+      final cultureJson = await rootBundle.loadString(
+        'assets/data/regional_culture.json',
+      );
+      final cultureRegions = json.decode(cultureJson) as List<dynamic>;
+      for (final region in cultureRegions.cast<Map<String, dynamic>>()) {
+        final englishRegion = englishByRegion[region['region_id']]!;
+        final englishQuestions = (englishRegion['culture'] as List<dynamic>)
+            .cast<Map<String, dynamic>>();
+        var questionIndex = 0;
+        for (final question
+            in (region['questions'] as List<dynamic>)
+                .cast<Map<String, dynamic>>()) {
+          final options = (question['options'] as List<dynamic>).cast<String>();
+          final translation = englishQuestions[questionIndex++];
+          final optionsEn = (translation['options'] as List<dynamic>)
+              .cast<String>();
+          triviaList.add({
+            'region_id': region['region_id'],
+            'question': question['question'],
+            'option_a': options[0],
+            'option_b': options[1],
+            'option_c': options[2],
+            'option_d': options[3],
+            'correct_option': question['correct_option'],
+            'explanation': question['explanation'],
+            'question_en': translation['question'],
+            'option_a_en': optionsEn[0],
+            'option_b_en': optionsEn[1],
+            'option_c_en': optionsEn[2],
+            'option_d_en': optionsEn[3],
+            'explanation_en': translation['explanation'],
+            'image_path': region['image_path'],
+            'image_caption': region['image_caption'],
+            'image_caption_en': englishRegion['image_caption'],
+            'image_credit': region['image_credit'],
+          });
+        }
+      }
       final trivia = triviaList
           .map((item) => TriviaItem.fromMap(item as Map<String, dynamic>))
           .toList();
 
       // Repair installed single-answer datasets, including when row counts match.
-      const contentKey = 'trivia_four_choices_v1';
+      const contentKey = 'trivia_culture_traditions_v2';
       final contentVersion = await db.query(
         DatabaseConstants.tableUserProgress,
         where: '${DatabaseConstants.columnKey} = ?',
@@ -164,23 +224,65 @@ class AssetSeedLoader {
         final batch = db.batch();
         for (final t in trivia) {
           batch.insert(DatabaseConstants.tableTriviaQuestions, {
-            DatabaseConstants.columnRegionId: t.regionId,
-            DatabaseConstants.columnQuestionEn: t.getQuestion(true),
-            DatabaseConstants.columnQuestionFil: t.getQuestion(false),
-            DatabaseConstants.columnOptionAEn: t.getOptionA(true),
-            DatabaseConstants.columnOptionAFil: t.getOptionA(false),
-            DatabaseConstants.columnOptionBEn: t.getOptionB(true),
-            DatabaseConstants.columnOptionBFil: t.getOptionB(false),
-            DatabaseConstants.columnOptionCEn: t.getOptionC(true),
-            DatabaseConstants.columnOptionCFil: t.getOptionC(false),
-            DatabaseConstants.columnOptionDEn: t.getOptionD(true),
-            DatabaseConstants.columnOptionDFil: t.getOptionD(false),
-            DatabaseConstants.columnCorrectOption: t.correctOption,
-            DatabaseConstants.columnExplanationEn: t.getExplanation(true),
-            DatabaseConstants.columnExplanationFil: t.getExplanation(false),
+            ...t.toTriviaQuestionMap(),
           });
         }
         await batch.commit(noResult: true);
+      }
+      // Fill English fields in-place for installations already on culture v2.
+      // No legacy question IDs, answers, player records, or progress are replaced.
+      const englishContentKey = 'trivia_english_content_v1';
+      final englishVersion = await db.query(
+        DatabaseConstants.tableUserProgress,
+        where: '${DatabaseConstants.columnKey} = ?',
+        whereArgs: [englishContentKey],
+      );
+      if (englishVersion.isEmpty) {
+        for (final item in trivia) {
+          final englishFields = [
+            item.questionEn,
+            item.optionAEn,
+            item.optionBEn,
+            item.optionCEn,
+            item.optionDEn,
+            item.explanationEn,
+          ];
+          if (englishFields.any(
+                (text) => text == null || text.trim().isEmpty,
+              ) ||
+              (item.imagePath != null &&
+                  (item.imageCaptionEn?.trim().isEmpty ?? true))) {
+            throw const FormatException(
+              'Every bundled trivia item needs complete English content',
+            );
+          }
+        }
+        await db.transaction((txn) async {
+          for (final item in trivia) {
+            final english = item.toTriviaQuestionMap();
+            await txn.update(
+              DatabaseConstants.tableTriviaQuestions,
+              {
+                for (final field in [
+                  'question_en',
+                  'option_a_en',
+                  'option_b_en',
+                  'option_c_en',
+                  'option_d_en',
+                  'explanation_en',
+                  'image_caption',
+                ])
+                  field: english[field],
+              },
+              where: 'region_id = ? AND question_fil = ?',
+              whereArgs: [item.regionId, item.question],
+            );
+          }
+          await txn.insert(DatabaseConstants.tableUserProgress, {
+            DatabaseConstants.columnKey: englishContentKey,
+            DatabaseConstants.columnValue: '1',
+          });
+        });
       }
     } catch (_) {
       // Gracefully handle headless/pure unit tests where rootBundle is uninitialized

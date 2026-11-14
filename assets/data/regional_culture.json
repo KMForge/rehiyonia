@@ -1,0 +1,623 @@
+[
+    {
+        "region_id":  1,
+        "topic":  "Bagong Taong Tsino sa Binondo",
+        "image_search":  "intitle:Binondo \"lion\"",
+        "image_caption":  "Pagdiriwang ng Bagong Taong Tsino sa Binondo, Maynila.",
+        "source_url":  "https://www.pna.gov.ph/index.php/articles/1269185",
+        "questions":  [
+                          {
+                              "question":  "Aling pamayanan sa Maynila ang kilala sa pagdiriwang ng Bagong Taong Tsino?",
+                              "options":  [
+                                              "Binondo",
+                                              "Banaue",
+                                              "Lucban",
+                                              "Kalibo"
+                                          ],
+                              "correct_option":  0,
+                              "explanation":  "Sa Binondo, ipinagdiriwang ng pamayanang Tsinoy ang Bagong Taong Tsino sa pamamagitan ng pagkain, dekorasyon, at mga pagtatanghal."
+                          },
+                          {
+                              "question":  "Anong pagtatanghal ang karaniwang makikita sa Bagong Taong Tsino sa Binondo?",
+                              "options":  [
+                                              "Pagtatanghal ng Moriones",
+                                              "Sayaw ng leon at dragon",
+                                              "Paligsahan ng higanteng parol",
+                                              "Sayaw ng Pintados"
+                                          ],
+                              "correct_option":  1,
+                              "explanation":  "Ang lion dance at dragon dance ay bahagi ng pagdiriwang ng Bagong Taong Tsino. Iniuugnay ang mga ito sa pag-asang magkaroon ng magandang kapalaran."
+                          }
+                      ],
+        "image_path":  "assets/images/trivia/region_1.jpg",
+        "image_credit":  "P1898 / CC BY 4.0 / Wikimedia Commons",
+        "image_file_title":  "File:Binondo Santa Cruz Ongpin Street Lion dance.jpg"
+    },
+    {
+        "region_id":  2,
+        "topic":  "Panagbenga",
+        "image_search":  "Panagbenga flower float Baguio",
+        "image_caption":  "Mga bulaklak at karosa sa Panagbenga sa Baguio.",
+        "source_url":  "https://www.panagbengaflowerfestival.com/about-us/",
+        "questions":  [
+                          {
+                              "question":  "Anong pagdiriwang sa Baguio ang kilala bilang Flower Festival?",
+                              "options":  [
+                                              "Sinulog",
+                                              "MassKara",
+                                              "Panagbenga",
+                                              "Pahiyas"
+                                          ],
+                              "correct_option":  2,
+                              "explanation":  "Ang Panagbenga ay pagdiriwang ng mga bulaklak sa Baguio. Tampok dito ang pagkamalikhain at pakikiisa ng pamayanan."
+                          },
+                          {
+                              "question":  "Ano ang pangunahing palamuti ng mga karosa sa Panagbenga?",
+                              "options":  [
+                                              "Mga palayok",
+                                              "Mga kabibe",
+                                              "Mga lambat",
+                                              "Mga bulaklak"
+                                          ],
+                              "correct_option":  3,
+                              "explanation":  "Ang makukulay na bulaklak ang pangunahing palamuti ng mga karosa sa Panagbenga, isang tampok na pagdiriwang ng Baguio sa Cordillera."
+                          }
+                      ],
+        "image_path":  "assets/images/trivia/region_2.jpg",
+        "image_credit":  "Praisashimi / CC0 / Wikimedia Commons",
+        "image_file_title":  "File:Safeguard Float Entry, Panagbenga 2024.jpg"
+    },
+    {
+        "region_id":  3,
+        "topic":  "Inabel ng Ilocos",
+        "image_search":  "inabel weaving Ilocos",
+        "image_caption":  "Tradisyon ng paghahabi ng inabel sa Ilocos.",
+        "source_url":  "https://www.nationalmuseum.gov.ph/exhibitions/nm-ilocos-regional-museum-complex/abel-iloko-exhibition/",
+        "questions":  [
+                          {
+                              "question":  "Ano ang tawag sa tradisyonal na hinabing tela ng mga Ilokano?",
+                              "options":  [
+                                              "Inabel",
+                                              "T\u0027nalak",
+                                              "Kiping",
+                                              "Vakul"
+                                          ],
+                              "correct_option":  0,
+                              "explanation":  "Ang inabel o abel-Iloko ay telang hinahabi sa Ilocos. Naipapasa sa mga susunod na salinlahi ang kaalaman sa mga disenyo at paghahabi nito."
+                          },
+                          {
+                              "question":  "Anong kasangkapan ang ginagamit sa tradisyonal na paggawa ng inabel?",
+                              "options":  [
+                                              "Gilingan ng palay",
+                                              "Habihan",
+                                              "Gulong ng magpapalayok",
+                                              "Lambat"
+                                          ],
+                              "correct_option":  1,
+                              "explanation":  "Gumagamit ng habihan ang mga manghahabing Ilokano upang mapag-ugnay ang mga sinulid at makabuo ng tela at mga disenyo ng inabel."
+                          }
+                      ],
+        "image_path":  "assets/images/trivia/region_3.jpg",
+        "image_credit":  "Wikimedia Commons contributor (see source) / CC BY-SA 4.0 / Wikimedia Commons",
+        "image_file_title":  "File:Inabel Magdalena Gamayo Pinili Ilocos A.jpg"
+    },
+    {
+        "region_id":  4,
+        "topic":  "Vakul ng mga Ivatan",
+        "image_search":  "Ivatan vakul Batanes",
+        "image_caption":  "Vakul, tradisyonal na panakip sa ulo ng mga babaeng Ivatan.",
+        "source_url":  "https://philmuseum.ueuo.com/nm_museum/nmtreasure/plant/voyavoy.html",
+        "questions":  [
+                          {
+                              "question":  "Ano ang tawag sa tradisyonal na panakip sa ulo ng mga babaeng Ivatan sa Batanes?",
+                              "options":  [
+                                              "Salakot na kawayan",
+                                              "Putong na bulaklak",
+                                              "Vakul",
+                                              "Maskarang Morion"
+                                          ],
+                              "correct_option":  2,
+                              "explanation":  "Ang vakul ay tradisyonal na panakip sa ulo ng mga babaeng Ivatan. Ginagamit ito bilang proteksiyon sa araw at ulan habang nagtatrabaho sa labas."
+                          },
+                          {
+                              "question":  "Anong halaman ang pinagkukunan ng dahong ginagamit sa paggawa ng vakul?",
+                              "options":  [
+                                              "Narra",
+                                              "Mangga",
+                                              "Kawayan",
+                                              "Voyavoy"
+                                          ],
+                              "correct_option":  3,
+                              "explanation":  "Ginagamit ang dahon ng voyavoy, isang uri ng palma, sa paggawa ng vakul. Ipinapakita nito ang kaalaman ng mga Ivatan sa paggamit ng likas na materyales."
+                          }
+                      ],
+        "image_path":  "assets/images/trivia/region_4.jpg",
+        "image_credit":  "Unknown authorUnknown author / Public domain / Wikimedia Commons",
+        "image_file_title":  "File:Corazon Aquino wearing a vakul.jpg"
+    },
+    {
+        "region_id":  5,
+        "topic":  "Giant Lantern Festival",
+        "image_search":  "intitle:\"Giant Lantern\" -intitle:banner",
+        "image_caption":  "Higanteng parol sa San Fernando, Pampanga.",
+        "source_url":  "https://www.bsp.gov.ph/SitePages/CoinsAndNotes/FestivalsCoins.aspx",
+        "questions":  [
+                          {
+                              "question":  "Saang lungsod sa Pampanga ginaganap ang Giant Lantern Festival?",
+                              "options":  [
+                                              "San Fernando",
+                                              "Vigan",
+                                              "Naga",
+                                              "Dumaguete"
+                                          ],
+                              "correct_option":  0,
+                              "explanation":  "Sa San Fernando, Pampanga, itinatampok ng Giant Lantern Festival ang husay ng mga gumagawa ng parol at ang pagtutulungan ng mga pamayanan."
+                          },
+                          {
+                              "question":  "Anong tradisyon sa Pasko ang tampok sa Giant Lantern Festival?",
+                              "options":  [
+                                              "Paghahabi ng inabel",
+                                              "Paggawa ng makukulay na parol",
+                                              "Pagsusuot ng vakul",
+                                              "Pagpapalamuti ng kiping"
+                                          ],
+                              "correct_option":  1,
+                              "explanation":  "Tampok dito ang malalaki at makukulay na parol. Bahagi ng kulturang Kapampangan ang kasanayan sa pagdisenyo at pagpapailaw ng mga ito."
+                          }
+                      ],
+        "image_path":  "assets/images/trivia/region_5.jpg",
+        "image_credit":  "Ramon FVelasquez / CC BY-SA 3.0 / Wikimedia Commons",
+        "image_file_title":  "File:GLFjf1416 06.JPG"
+    },
+    {
+        "region_id":  6,
+        "topic":  "Pahiyas",
+        "image_search":  "Pahiyas Festival Lucban kiping house",
+        "image_caption":  "Bahay na pinalamutian para sa Pahiyas sa Lucban, Quezon.",
+        "source_url":  "https://www.bsp.gov.ph/SitePages/CoinsAndNotes/FestivalsCoins.aspx",
+        "questions":  [
+                          {
+                              "question":  "Anong pista sa Lucban, Quezon ang pasasalamat para sa masaganang ani?",
+                              "options":  [
+                                              "Panagbenga",
+                                              "Sinulog",
+                                              "Pahiyas",
+                                              "MassKara"
+                                          ],
+                              "correct_option":  2,
+                              "explanation":  "Ang Pahiyas sa Lucban ay pagdiriwang ng pasasalamat para sa ani at pagpupugay kay San Isidro Labrador, patron ng mga magsasaka."
+                          },
+                          {
+                              "question":  "Ano ang tawag sa makukulay na palamuting gawa sa bigas na ginagamit sa Pahiyas?",
+                              "options":  [
+                                              "Inabel",
+                                              "T\u0027nalak",
+                                              "Vakul",
+                                              "Kiping"
+                                          ],
+                              "correct_option":  3,
+                              "explanation":  "Ang kiping ay manipis na palamuting gawa sa bigas at hinuhubog gamit ang mga dahon. Ikinakabit ito sa mga bahay tuwing Pahiyas."
+                          }
+                      ],
+        "image_path":  "assets/images/trivia/region_6.jpg",
+        "image_credit":  "Magicsdcar / CC BY 4.0 / Wikimedia Commons",
+        "image_file_title":  "File:Pahiyas Festival Lucban, Quezon May 15 2026 Grand Prize.jpg"
+    },
+    {
+        "region_id":  7,
+        "topic":  "Moriones",
+        "image_search":  "intitle:Moriones Marinduque",
+        "image_caption":  "Maskara at kasuotang Moriones sa Marinduque.",
+        "source_url":  "https://www.bsp.gov.ph/SitePages/CoinsAndNotes/FestivalsCoins.aspx",
+        "questions":  [
+                          {
+                              "question":  "Anong tradisyon sa Marinduque ang may mga kalahok na nakamaskarang sundalong Romano?",
+                              "options":  [
+                                              "Moriones",
+                                              "Kaamulan",
+                                              "Panagbenga",
+                                              "Pahiyas"
+                                          ],
+                              "correct_option":  0,
+                              "explanation":  "Sa Moriones ng Marinduque, nagsusuot ang mga kalahok ng maskara at kasuotang kahawig ng sundalong Romano bilang bahagi ng tradisyong panrelihiyon."
+                          },
+                          {
+                              "question":  "Kailan karaniwang isinasagawa ang tradisyong Moriones?",
+                              "options":  [
+                                              "Bagong Taon",
+                                              "Semana Santa",
+                                              "Araw ng Kalayaan",
+                                              "Panahon ng Pasko"
+                                          ],
+                              "correct_option":  1,
+                              "explanation":  "Ang Moriones ay kaugnay ng paggunita ng Semana Santa sa Marinduque. Isa itong halimbawa ng lokal na tradisyong ipinapasa sa mga salinlahi."
+                          }
+                      ],
+        "image_path":  "assets/images/trivia/region_7.jpg",
+        "image_credit":  "Ranieljosecastaneda / CC BY-SA 4.0 / Wikimedia Commons",
+        "image_file_title":  "File:Marinduque\u0027s Moriones Festival.jpg"
+    },
+    {
+        "region_id":  8,
+        "topic":  "Peñafrancia",
+        "image_search":  "intitle:Peñafrancia intitle:fluvial",
+        "image_caption":  "Prusisyong pantubig ng Peñafrancia sa Naga.",
+        "source_url":  "https://www.deped.gov.ph/wp-content/uploads/Q1-TLE9-10-FCS-TN36-TOURISM-FESTIVALS-IN-THE-PHILIPPINES.pdf",
+        "questions":  [
+                          {
+                              "question":  "Anong pagdiriwang sa Naga ang nagpapakita ng debosyon sa Birhen ng Peñafrancia?",
+                              "options":  [
+                                              "MassKara",
+                                              "Pahiyas",
+                                              "Peñafrancia Festival",
+                                              "Panagbenga"
+                                          ],
+                              "correct_option":  2,
+                              "explanation":  "Ang Peñafrancia Festival sa Naga ay pagdiriwang ng debosyon ng maraming Bikolano sa Birhen ng Peñafrancia, na tinatawag ding Ina."
+                          },
+                          {
+                              "question":  "Ano ang tawag sa prusisyon ng Peñafrancia na nagaganap sa ilog?",
+                              "options":  [
+                                              "Parada ng bulaklak",
+                                              "Sayaw sa kalye",
+                                              "Paligsahan ng parol",
+                                              "Prusisyong pantubig"
+                                          ],
+                              "correct_option":  3,
+                              "explanation":  "Ang prusisyong pantubig o fluvial procession ay tampok na bahagi ng pagdiriwang ng Peñafrancia. Dinadala ang imahen sa Ilog Naga."
+                          }
+                      ],
+        "image_path":  "assets/images/trivia/region_8.jpg",
+        "image_credit":  "Sir Mervs (pinoy biyahero) / CC BY 2.0 / Wikimedia Commons",
+        "image_file_title":  "File:Peñafrancia Fluvial Parade Naga City.jpg"
+    },
+    {
+        "region_id":  9,
+        "topic":  "Ati-Atihan",
+        "image_search":  "Ati Atihan festival Kalibo dancers",
+        "image_caption":  "Pagsasayaw sa Ati-Atihan sa Kalibo, Aklan.",
+        "source_url":  "https://www.deped.gov.ph/wp-content/uploads/Q1-TLE9-10-FCS-TN36-TOURISM-FESTIVALS-IN-THE-PHILIPPINES.pdf",
+        "questions":  [
+                          {
+                              "question":  "Anong pista sa Kalibo, Aklan ang kilala sa makukulay na kasuotan at sayaw sa saliw ng tambol?",
+                              "options":  [
+                                              "Ati-Atihan",
+                                              "Moriones",
+                                              "Pahiyas",
+                                              "Panagbenga"
+                                          ],
+                              "correct_option":  0,
+                              "explanation":  "Ang Ati-Atihan ay tanyag na pagdiriwang sa Kalibo, Aklan. May mga kalahok na sumasayaw sa saliw ng tambol bilang bahagi ng pista."
+                          },
+                          {
+                              "question":  "Sino ang pinararangalan sa panrelihiyong pagdiriwang ng Ati-Atihan?",
+                              "options":  [
+                                              "San Isidro Labrador",
+                                              "Santo Niño",
+                                              "San Juan Bautista",
+                                              "San Nicolas de Tolentino"
+                                          ],
+                              "correct_option":  1,
+                              "explanation":  "Bahagi ng Ati-Atihan ang debosyon sa Santo Niño. Mahalaga ring igalang ang mga Ati bilang mga katutubong pamayanang may sariling buhay na kultura."
+                          }
+                      ],
+        "image_path":  "assets/images/trivia/region_9.jpg",
+        "image_credit":  "Elisolidum / CC BY-SA 4.0 / Wikimedia Commons",
+        "image_file_title":  "File:Dancers Kalibo Ati-Atihan Festival, Philippines.jpg"
+    },
+    {
+        "region_id":  10,
+        "topic":  "Sinulog",
+        "image_search":  "Sinulog Festival Cebu dancers",
+        "image_caption":  "Mga mananayaw sa Sinulog sa Cebu.",
+        "source_url":  "https://www.bsp.gov.ph/SitePages/CoinsAndNotes/FestivalsCoins.aspx",
+        "questions":  [
+                          {
+                              "question":  "Anong pagdiriwang sa Cebu ang kilala sa sayaw bilang pagpupugay sa Santo Niño?",
+                              "options":  [
+                                              "Pahiyas",
+                                              "Kaamulan",
+                                              "Sinulog",
+                                              "Moriones"
+                                          ],
+                              "correct_option":  2,
+                              "explanation":  "Ang Sinulog sa Cebu ay kilala sa sayaw at debosyon sa Santo Niño. Isa itong mahalagang bahagi ng kulturang Cebuano."
+                          },
+                          {
+                              "question":  "Ano ang batayang hakbang ng tradisyonal na sayaw na Sinulog?",
+                              "options":  [
+                                              "Isang hakbang pasulong lamang",
+                                              "Tatlong hakbang paatras lamang",
+                                              "Pagtalon nang walang hakbang",
+                                              "Dalawang hakbang pasulong at isang paatras"
+                                          ],
+                              "correct_option":  3,
+                              "explanation":  "Ang batayang galaw ng Sinulog ay dalawang hakbang pasulong at isang hakbang paatras. Iniuugnay ang indayog nito sa agos ng tubig."
+                          }
+                      ],
+        "image_path":  "assets/images/trivia/region_10.jpg",
+        "image_credit":  "Ranieljosecastaneda / CC BY-SA 4.0 / Wikimedia Commons",
+        "image_file_title":  "File:Sinulog Festival Cebu 2011.jpg",
+        "additional_sources":  [
+                                   "https://www.deped.gov.ph/wp-content/uploads/final-Q3-LAS-07-PE-9.pdf"
+                               ]
+    },
+    {
+        "region_id":  11,
+        "topic":  "Pintados",
+        "image_search":  "intitle:Pintados Leyte",
+        "image_caption":  "Kasuotan at palamuti sa pagdiriwang ng Pintados-Kasadyaan sa Leyte.",
+        "source_url":  "https://www.nationalmuseum.gov.ph/2022/06/29/pintados-festival/",
+        "questions":  [
+                          {
+                              "question":  "Anong pagdiriwang sa Leyte ang may mga mananayaw na may makukulay na pintang-katawan?",
+                              "options":  [
+                                              "Pintados-Kasadyaan",
+                                              "Pahiyas",
+                                              "Moriones",
+                                              "Giant Lantern Festival"
+                                          ],
+                              "correct_option":  0,
+                              "explanation":  "Tampok sa Pintados-Kasadyaan ng Leyte ang mga mananayaw na may pintang-katawan. Iniuugnay ito sa kasaysayan ng pagtatatu ng mga sinaunang Bisaya."
+                          },
+                          {
+                              "question":  "Anong sinaunang sining ng mga Bisaya ang ginugunita ng pintang-katawan sa Pintados?",
+                              "options":  [
+                                              "Paggawa ng parol",
+                                              "Pagtatatu",
+                                              "Paghahabi ng vakul",
+                                              "Paggawa ng kiping"
+                                          ],
+                              "correct_option":  1,
+                              "explanation":  "Ang pintang-katawan sa Pintados ay paggunita sa tradisyon ng pagtatatu ng mga sinaunang Bisaya. Nagpapahayag ang mga tato ng pagkakakilanlan at katayuan sa pamayanan."
+                          }
+                      ],
+        "image_path":  "assets/images/trivia/region_11.jpg",
+        "image_credit":  "JinJian (talk) / CC BY-SA 3.0 / Wikimedia Commons",
+        "image_file_title":  "File:PIN-KASA.JPG"
+    },
+    {
+        "region_id":  12,
+        "topic":  "Fiesta Hermosa",
+        "image_search":  "Zamboanga Hermosa Festival vinta regatta",
+        "image_caption":  "Mga vinta na tampok sa Regatta de Zamboanga.",
+        "source_url":  "https://pia.gov.ph/news/mindanao/zp/fort-pilar-and-the-faith-that-shapes-zamboangas-fiesta-hermosa/",
+        "questions":  [
+                          {
+                              "question":  "Anong pagdiriwang sa Zamboanga City ang nagpaparangal sa Nuestra Señora del Pilar?",
+                              "options":  [
+                                              "Panagbenga",
+                                              "MassKara",
+                                              "Fiesta Hermosa",
+                                              "Pahiyas"
+                                          ],
+                              "correct_option":  2,
+                              "explanation":  "Tuwing Fiesta Hermosa, ipinapakita ng Zamboanga City ang debosyon sa Nuestra Señora del Pilar at ang mayamang kultura ng lungsod."
+                          },
+                          {
+                              "question":  "Anong bangkang may makulay na layag ang tampok sa Regatta de Zamboanga?",
+                              "options":  [
+                                              "Balsa",
+                                              "Galyon",
+                                              "Bapor",
+                                              "Vinta"
+                                          ],
+                              "correct_option":  3,
+                              "explanation":  "Tampok sa Regatta de Zamboanga ang mga vinta na may makukulay na layag. Ipinagdiriwang nito ang pamana ng mga pamayanang pandagat sa lugar."
+                          }
+                      ],
+        "image_path":  "assets/images/trivia/region_12.jpg",
+        "image_credit":  "Bro. Jeffrey  Pioquinto, SJ / CC BY 2.0 / Wikimedia Commons",
+        "image_file_title":  "File:Regatta de Zamboanga 2019 (Bro. Jeffrey Pioquinto, SJ) - Flickr.jpg",
+        "additional_sources":  [
+                                   "https://www.pna.gov.ph/articles/1050463"
+                               ]
+    },
+    {
+        "region_id":  13,
+        "topic":  "Kaamulan",
+        "image_search":  "Kaamulan festival Bukidnon dancers",
+        "image_caption":  "Pagdiriwang ng kultura sa Kaamulan sa Bukidnon.",
+        "source_url":  "https://pia.gov.ph/features/kaamulan-festival-wields-culture-competition-to-reach-world-class-stage/",
+        "questions":  [
+                          {
+                              "question":  "Anong pagdiriwang sa Bukidnon ang nagbibigay-pugay sa kultura ng pitong katutubong pangkat nito?",
+                              "options":  [
+                                              "Kaamulan",
+                                              "Sinulog",
+                                              "Pahiyas",
+                                              "Moriones"
+                                          ],
+                              "correct_option":  0,
+                              "explanation":  "Ang Kaamulan ay pagtitipon sa Bukidnon na nagpapahalaga sa mga tradisyon ng pitong katutubong pangkat ng lalawigan."
+                          },
+                          {
+                              "question":  "Ano ang diwang ipinahihiwatig ng salitang Kaamulan?",
+                              "options":  [
+                                              "Paglalayag sa karagatan",
+                                              "Pagtitipon para sa isang layunin",
+                                              "Paggawa ng higanteng parol",
+                                              "Pag-ukit ng batong bahay"
+                                          ],
+                              "correct_option":  1,
+                              "explanation":  "Nagmula ang Kaamulan sa salitang amul na may diwang pagtitipon. Maaaring magtipon ang pamayanan para sa pasasalamat, kasal, at iba pang mahalagang okasyon."
+                          }
+                      ],
+        "image_path":  "assets/images/trivia/region_13.jpg",
+        "image_credit":  "Theglennpalacio / CC BY-SA 4.0 / Wikimedia Commons",
+        "image_file_title":  "File:Kaamulan Festival - The Next Generation.jpg"
+    },
+    {
+        "region_id":  14,
+        "topic":  "Kadayawan",
+        "image_search":  "Kadayawan festival Davao dancers",
+        "image_caption":  "Pagdiriwang ng Kadayawan sa Davao.",
+        "source_url":  "https://www.bsp.gov.ph/SitePages/CoinsAndNotes/FestivalsCoins.aspx",
+        "questions":  [
+                          {
+                              "question":  "Anong pagdiriwang sa Davao ang nagpapasalamat sa kalikasan at masaganang ani?",
+                              "options":  [
+                                              "Moriones",
+                                              "Pahiyas",
+                                              "Kadayawan",
+                                              "Panagbenga"
+                                          ],
+                              "correct_option":  2,
+                              "explanation":  "Ang Kadayawan sa Davao ay pagdiriwang ng pasasalamat sa biyaya ng kalikasan at ani. Itinatampok din nito ang pagkakaiba-iba ng kultura ng lungsod."
+                          },
+                          {
+                              "question":  "Bukod sa ani, ano pa ang pinahahalagahan sa Kadayawan?",
+                              "options":  [
+                                              "Paggawa lamang ng parol",
+                                              "Iisang kasuotan para sa lahat",
+                                              "Paglimot sa katutubong wika",
+                                              "Iba\u0027t ibang kultura ng mga pamayanan"
+                                          ],
+                              "correct_option":  3,
+                              "explanation":  "Binibigyang-halaga ng Kadayawan ang mga katutubo at pamayanang Moro ng Davao. Ipinapakita sa musika, sayaw, at iba pang gawain ang kanilang magkakaibang pamana."
+                          }
+                      ],
+        "image_path":  "assets/images/trivia/region_14.jpg",
+        "image_credit":  "Fpj455 / CC BY-SA 4.0 / Wikimedia Commons",
+        "image_file_title":  "File:Indak Boy Kadayawan Festival 1.jpg"
+    },
+    {
+        "region_id":  15,
+        "topic":  "T\u0027nalak",
+        "image_search":  "Tnalak Tboli weaving cloth",
+        "image_caption":  "T\u0027nalak, hinabing telang abaka ng mga T\u0027boli.",
+        "source_url":  "https://www.bsp.gov.ph/SitePages/CoinsAndNotes/FestivalsCoins.aspx",
+        "questions":  [
+                          {
+                              "question":  "Anong hinabing tela ng mga T\u0027boli ang ipinagdiriwang sa T\u0027nalak Festival ng South Cotabato?",
+                              "options":  [
+                                              "T\u0027nalak",
+                                              "Inabel",
+                                              "Kiping",
+                                              "Vakul"
+                                          ],
+                              "correct_option":  0,
+                              "explanation":  "Ang T\u0027nalak Festival sa South Cotabato ay nagpapahalaga sa telang t\u0027nalak at sa kasanayan ng mga manghahabing T\u0027boli."
+                          },
+                          {
+                              "question":  "Anong hibla ang ginagamit sa tradisyonal na paghahabi ng t\u0027nalak?",
+                              "options":  [
+                                              "Naylon",
+                                              "Abaka",
+                                              "Alambre",
+                                              "Plastik"
+                                          ],
+                              "correct_option":  1,
+                              "explanation":  "Hinahabi ang t\u0027nalak mula sa hibla ng abaka. Mahalaga sa kulturang T\u0027boli ang mga disenyo, kaalaman, at paggalang na kaugnay ng telang ito."
+                          }
+                      ],
+        "image_path":  "assets/images/trivia/region_15.jpg",
+        "image_credit":  "Hydztemple / CC BY-SA 4.0 / Wikimedia Commons",
+        "image_file_title":  "File:The Dreamweaver, Tnalak Festival.jpg",
+        "additional_sources":  [
+                                   "https://sites.google.com/dfa.gov.ph/wondrous-weaves/home/tboli-tnalak"
+                               ]
+    },
+    {
+        "region_id":  16,
+        "topic":  "Bonok-Bonok",
+        "image_search":  "Bonok Bonok festival Surigao dancers",
+        "image_caption":  "Pagsasayaw sa Bonok-Bonok sa Surigao City.",
+        "source_url":  "https://www.deped.gov.ph/wp-content/uploads/Q1-TLE9-10-FCS-TN36-TOURISM-FESTIVALS-IN-THE-PHILIPPINES.pdf",
+        "questions":  [
+                          {
+                              "question":  "Anong pagdiriwang sa Surigao City ang kilala sa makukulay na sayaw sa kalye?",
+                              "options":  [
+                                              "Moriones",
+                                              "Panagbenga",
+                                              "Bonok-Bonok Maradjaw Karadjaw",
+                                              "Giant Lantern Festival"
+                                          ],
+                              "correct_option":  2,
+                              "explanation":  "Ang Bonok-Bonok Maradjaw Karadjaw ay pagdiriwang sa Surigao City sa Caraga. Tampok dito ang mga pagtatanghal at sayaw ng mga kalahok."
+                          },
+                          {
+                              "question":  "Sino ang pinararangalan sa panrelihiyong pagdiriwang ng Bonok-Bonok sa Surigao City?",
+                              "options":  [
+                                              "San Isidro Labrador",
+                                              "San Juan Bautista",
+                                              "San Pedro",
+                                              "San Nicolas de Tolentino"
+                                          ],
+                              "correct_option":  3,
+                              "explanation":  "Kaugnay ng Bonok-Bonok ang kapistahan ni San Nicolas de Tolentino, patron ng Surigao City. Pinagsasama ng pagdiriwang ang lokal na kultura at debosyon."
+                          }
+                      ],
+        "image_path":  "assets/images/trivia/region_16.jpg",
+        "image_credit":  "Mhlayson / CC BY-SA 4.0 / Wikimedia Commons",
+        "image_file_title":  "File:Bonok-Bonok sa Surigao Tribal Dance Performance.jpg"
+    },
+    {
+        "region_id":  17,
+        "topic":  "Torogan at okir",
+        "image_search":  "Torogan panolong Maranao",
+        "image_caption":  "Torogan at mga ukit na kaugnay ng arkitekturang Maranao.",
+        "source_url":  "https://www.nationalmuseum.gov.ph/our-collections/ethnology/architecture-and-furniture/",
+        "questions":  [
+                          {
+                              "question":  "Ano ang tawag sa tradisyonal na malaking bahay ng pinunong Maranao?",
+                              "options":  [
+                                              "Torogan",
+                                              "Bahay-kubo",
+                                              "Bahay na bato ng Ivatan",
+                                              "Kamaling"
+                                          ],
+                              "correct_option":  0,
+                              "explanation":  "Ang torogan ay tradisyonal na malaking bahay na kaugnay ng mga pinunong Maranao. Bahagi ito ng pamana ng mga Maranao sa Lanao del Sur at karatig-lugar."
+                          },
+                          {
+                              "question":  "Ano ang tawag sa masining na disenyong iniuukit sa mga bahagi ng torogan?",
+                              "options":  [
+                                              "Kiping",
+                                              "Okir",
+                                              "T\u0027nalak",
+                                              "Inabel"
+                                          ],
+                              "correct_option":  1,
+                              "explanation":  "Ang okir ay masining na disenyo ng mga ukit na makikita sa mga bahagi ng torogan, kabilang ang panolong. Ipinapakita nito ang husay ng mga alagad ng sining na Maranao."
+                          }
+                      ],
+        "image_path":  "assets/images/trivia/region_17.jpg",
+        "image_credit":  "Nikka Cunom / CC BY 2.0 / Wikimedia Commons",
+        "image_file_title":  "File:Panolong.jpg"
+    },
+    {
+        "region_id":  18,
+        "topic":  "MassKara",
+        "image_search":  "MassKara festival Bacolod smiling mask",
+        "image_caption":  "Makukulay na maskara sa MassKara sa Bacolod.",
+        "source_url":  "https://www.bsp.gov.ph/SitePages/CoinsAndNotes/FestivalsCoins.aspx",
+        "questions":  [
+                          {
+                              "question":  "Anong pista sa Bacolod ang kilala sa makukulay na nakangiting maskara?",
+                              "options":  [
+                                              "Sinulog",
+                                              "Moriones",
+                                              "MassKara",
+                                              "Pahiyas"
+                                          ],
+                              "correct_option":  2,
+                              "explanation":  "Ang MassKara ay tanyag na pagdiriwang sa Bacolod, Negros Occidental. Tampok ang mga nakangiting maskara at sayaw sa kalye."
+                          },
+                          {
+                              "question":  "Anong lungsod sa Negros Island Region ang pinagmulan ng MassKara Festival?",
+                              "options":  [
+                                              "Naga",
+                                              "Baguio",
+                                              "Vigan",
+                                              "Bacolod"
+                                          ],
+                              "correct_option":  3,
+                              "explanation":  "Ang Bacolod sa Negros Occidental ang tahanan ng MassKara Festival. Ang pagdiriwang ay nagpapakita ng pagkamalikhain at katatagan ng pamayanan."
+                          }
+                      ],
+        "image_path":  "assets/images/trivia/region_18.jpg",
+        "image_credit":  "Ranieljosecastaneda / CC BY-SA 4.0 / Wikimedia Commons",
+        "image_file_title":  "File:Masskara Festival of Bacolod City.jpg"
+    }
+]

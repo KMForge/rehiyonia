@@ -1,0 +1,380 @@
+[
+  {
+    "region_id": 1,
+    "image_caption": "Chinese New Year celebrations in Binondo, Manila.",
+    "base": {
+      "question": "Which historic walled district in Manila was built by the Spanish in the 16th century?",
+      "options": ["Intramuros", "Luneta", "Malacanang", "Quiapo"],
+      "explanation": "Intramuros is called the Walled City because thick walls surround it, built to defend against invaders and pirates."
+    },
+    "culture": [
+      {
+        "question": "Which community in Manila is known for celebrating Chinese New Year?",
+        "options": ["Binondo", "Banaue", "Lucban", "Kalibo"],
+        "explanation": "In Binondo, the Filipino-Chinese community celebrates Chinese New Year through food, decorations, and performances."
+      },
+      {
+        "question": "Which performance is commonly seen during Chinese New Year in Binondo?",
+        "options": ["Moriones performances", "Lion and dragon dances", "Giant lantern competitions", "Pintados dances"],
+        "explanation": "Lion and dragon dances are part of Chinese New Year celebrations. They are associated with hopes for good fortune."
+      }
+    ]
+  },
+  {
+    "region_id": 2,
+    "image_caption": "Flowers and floats at Panagbenga in Baguio.",
+    "base": {
+      "question": "Which famous rice terraces in the Cordillera are often called the Eighth Wonder of the World?",
+      "options": ["Chocolate Hills", "Banaue Rice Terraces", "Hundred Islands", "Mayon Volcano"],
+      "explanation": "The Ifugao ancestors carved the payyo, or rice terraces, by hand more than 2,000 years ago."
+    },
+    "culture": [
+      {
+        "question": "Which celebration in Baguio is known as the Flower Festival?",
+        "options": ["Sinulog", "MassKara", "Panagbenga", "Pahiyas"],
+        "explanation": "Panagbenga is Baguio's flower festival. It showcases creativity and cooperation within the community."
+      },
+      {
+        "question": "What is the main decoration used on Panagbenga floats?",
+        "options": ["Clay pots", "Seashells", "Fishing nets", "Flowers"],
+        "explanation": "Colorful flowers are the main decorations on Panagbenga floats, a highlight of this celebration in Baguio in the Cordillera."
+      }
+    ]
+  },
+  {
+    "region_id": 3,
+    "image_caption": "The tradition of inabel weaving in Ilocos.",
+    "base": {
+      "question": "Which city in Region I is a UNESCO World Heritage Site known for its preserved colonial stone houses?",
+      "options": ["Laoag", "Dagupan", "Vigan", "Alaminos"],
+      "explanation": "Calle Crisologo in Vigan is famous for its cobblestone streets, where horse-drawn carriages help preserve the feel of the old town."
+    },
+    "culture": [
+      {
+        "question": "What is the traditional woven cloth of the Ilocano people called?",
+        "options": ["Inabel", "T'nalak", "Kiping", "Vakul"],
+        "explanation": "Inabel, or abel-Iloko, is cloth woven in Ilocos. Knowledge of its designs and weaving techniques is passed down through generations."
+      },
+      {
+        "question": "Which tool is used to make traditional inabel cloth?",
+        "options": ["Rice mill", "Loom", "Potter's wheel", "Fishing net"],
+        "explanation": "Ilocano weavers use a loom to interlace threads and create inabel cloth and its designs."
+      }
+    ]
+  },
+  {
+    "region_id": 4,
+    "image_caption": "Vakul, the traditional head covering worn by Ivatan women.",
+    "base": {
+      "question": "Which northernmost Philippine province is known for Ivatan stone houses and the vakul head covering?",
+      "options": ["Palawan", "Cebu", "Bohol", "Batanes"],
+      "explanation": "Traditional houses in Batanes use thick limestone walls and cogon grass roofs to withstand strong storms and earthquakes."
+    },
+    "culture": [
+      {
+        "question": "What is the traditional head covering worn by Ivatan women in Batanes called?",
+        "options": ["Bamboo salakot", "Flower headdress", "Vakul", "Morion mask"],
+        "explanation": "The vakul is a traditional head covering worn by Ivatan women. It protects them from the sun and rain while working outdoors."
+      },
+      {
+        "question": "Which plant provides the leaves used to make a vakul?",
+        "options": ["Narra", "Mango", "Bamboo", "Voyavoy"],
+        "explanation": "Leaves from voyavoy, a type of palm, are used to make the vakul. This shows the Ivatan people's knowledge of natural materials."
+      }
+    ]
+  },
+  {
+    "region_id": 5,
+    "image_caption": "A giant lantern in San Fernando, Pampanga.",
+    "base": {
+      "question": "Why is Central Luzon known as the Rice Granary of the Philippines?",
+      "options": ["Its broad plains produce a large share of the country's rice", "It has many coconut plantations", "It has extensive fishponds", "It produces large amounts of coffee"],
+      "explanation": "Nueva Ecija in Central Luzon is a leading rice-producing province in the Philippines."
+    },
+    "culture": [
+      {
+        "question": "Which city in Pampanga hosts the Giant Lantern Festival?",
+        "options": ["San Fernando", "Vigan", "Naga", "Dumaguete"],
+        "explanation": "The Giant Lantern Festival in San Fernando, Pampanga, showcases the skill of lantern makers and cooperation among communities."
+      },
+      {
+        "question": "Which Christmas tradition is featured at the Giant Lantern Festival?",
+        "options": ["Weaving inabel", "Making colorful lanterns", "Wearing vakul", "Decorating with kiping"],
+        "explanation": "The festival features large, colorful lanterns. Designing and lighting them is an important skill in Kapampangan culture."
+      }
+    ]
+  },
+  {
+    "region_id": 6,
+    "image_caption": "A house decorated for Pahiyas in Lucban, Quezon.",
+    "base": {
+      "question": "In which town in Cavite was the Philippine flag raised during the declaration of independence on June 12, 1898?",
+      "options": ["Imus", "Kawit", "Bacoor", "Silang"],
+      "explanation": "Marcha Nacional Filipina, now known as Lupang Hinirang, was first played at General Emilio Aguinaldo's home in Kawit, Cavite."
+    },
+    "culture": [
+      {
+        "question": "Which festival in Lucban, Quezon, gives thanks for a plentiful harvest?",
+        "options": ["Panagbenga", "Sinulog", "Pahiyas", "MassKara"],
+        "explanation": "Pahiyas in Lucban celebrates gratitude for the harvest and honors San Isidro Labrador, the patron saint of farmers."
+      },
+      {
+        "question": "What are the colorful rice decorations used during Pahiyas called?",
+        "options": ["Inabel", "T'nalak", "Vakul", "Kiping"],
+        "explanation": "Kiping are thin rice decorations shaped using leaves. They are hung on houses during Pahiyas."
+      }
+    ]
+  },
+  {
+    "region_id": 7,
+    "image_caption": "Moriones masks and costumes in Marinduque.",
+    "base": {
+      "question": "Which famous cave and national park in Palawan is one of the New 7 Wonders of Nature?",
+      "options": ["Callao Cave", "Hinagdanan Cave", "Puerto Princesa Subterranean River", "Sumaguing Cave"],
+      "explanation": "This underground river stretches about 8.2 kilometers and has remarkable stalactite and stalagmite formations."
+    },
+    "culture": [
+      {
+        "question": "Which tradition in Marinduque features participants dressed as masked Roman soldiers?",
+        "options": ["Moriones", "Kaamulan", "Panagbenga", "Pahiyas"],
+        "explanation": "During Moriones in Marinduque, participants wear masks and costumes resembling Roman soldiers as part of a religious tradition."
+      },
+      {
+        "question": "When is the Moriones tradition usually observed?",
+        "options": ["New Year", "Holy Week", "Independence Day", "Christmas season"],
+        "explanation": "Moriones is associated with Holy Week observances in Marinduque. It is a local tradition passed down through generations."
+      }
+    ]
+  },
+  {
+    "region_id": 8,
+    "image_caption": "The Peñafrancia river procession in Naga.",
+    "base": {
+      "question": "Which volcano in Albay is admired around the world for its nearly perfect cone shape?",
+      "options": ["Taal Volcano", "Mount Arayat", "Mount Pinatubo", "Mayon Volcano"],
+      "explanation": "According to Bicolano legend, the name Mayon comes from Magayon, which means beautiful."
+    },
+    "culture": [
+      {
+        "question": "Which celebration in Naga shows devotion to Our Lady of Peñafrancia?",
+        "options": ["MassKara", "Pahiyas", "Peñafrancia Festival", "Panagbenga"],
+        "explanation": "The Peñafrancia Festival in Naga expresses the devotion of many Bicolanos to Our Lady of Peñafrancia, also called Ina."
+      },
+      {
+        "question": "What is the Peñafrancia procession held on the river called?",
+        "options": ["Flower parade", "Street dance", "Lantern competition", "Fluvial procession"],
+        "explanation": "The fluvial procession is a highlight of the Peñafrancia celebration. The image is carried along the Naga River."
+      }
+    ]
+  },
+  {
+    "region_id": 9,
+    "image_caption": "Ati-Atihan dancing in Kalibo, Aklan.",
+    "base": {
+      "question": "Which famous festival in Iloilo honors the Santo Niño and recalls the agreement between the Malays and the Ati?",
+      "options": ["Dinagyang Festival", "Sinulog Festival", "MassKara Festival", "Panagbenga Festival"],
+      "explanation": "Dinagyang comes from the Hiligaynon word dagyang, meaning to celebrate or make merry."
+    },
+    "culture": [
+      {
+        "question": "Which festival in Kalibo, Aklan, is known for colorful costumes and dancing to drumbeats?",
+        "options": ["Ati-Atihan", "Moriones", "Pahiyas", "Panagbenga"],
+        "explanation": "Ati-Atihan is a well-known celebration in Kalibo, Aklan. Participants dance to drumbeats as part of the festival."
+      },
+      {
+        "question": "Who is honored during the religious celebration of Ati-Atihan?",
+        "options": ["San Isidro Labrador", "Santo Niño", "San Juan Bautista", "San Nicolas de Tolentino"],
+        "explanation": "Devotion to the Santo Niño is part of Ati-Atihan. It is also important to respect the Ati as Indigenous communities with their own living culture."
+      }
+    ]
+  },
+  {
+    "region_id": 10,
+    "image_caption": "Sinulog dancers in Cebu.",
+    "base": {
+      "question": "Which unusual geological landscape in Bohol turns chocolate brown during the dry season?",
+      "options": ["Banaue Rice Terraces", "Chocolate Hills", "Hundred Islands", "Mayon Volcano"],
+      "explanation": "Bohol has roughly 1,260 to 1,770 cone-shaped limestone hills covered with grass that turns brown in the dry season."
+    },
+    "culture": [
+      {
+        "question": "Which celebration in Cebu is known for dancing in honor of the Santo Niño?",
+        "options": ["Pahiyas", "Kaamulan", "Sinulog", "Moriones"],
+        "explanation": "Sinulog in Cebu is known for its dance and devotion to the Santo Niño. It is an important part of Cebuano culture."
+      },
+      {
+        "question": "What is the basic step of the traditional Sinulog dance?",
+        "options": ["Only one step forward", "Only three steps backward", "Jumping without taking steps", "Two steps forward and one step backward"],
+        "explanation": "The basic Sinulog movement is two steps forward and one step backward. Its rhythm is associated with flowing water."
+      }
+    ]
+  },
+  {
+    "region_id": 11,
+    "image_caption": "Costumes and decorations at Pintados-Kasadyaan in Leyte.",
+    "base": {
+      "question": "Which historic bridge connects Samar and Leyte across the San Juanico Strait?",
+      "options": ["Mactan-Mandaue Bridge", "Buntun Bridge", "San Juanico Bridge", "Agas-Agas Bridge"],
+      "explanation": "San Juanico Bridge is about 2.16 kilometers long and is one of the longest bridges in the Philippines."
+    },
+    "culture": [
+      {
+        "question": "Which celebration in Leyte features dancers wearing colorful body paint?",
+        "options": ["Pintados-Kasadyaan", "Pahiyas", "Moriones", "Giant Lantern Festival"],
+        "explanation": "Pintados-Kasadyaan in Leyte features dancers with painted bodies. This is linked to the tattooing traditions of the early Visayans."
+      },
+      {
+        "question": "Which ancient Visayan art is remembered through the body paint in Pintados?",
+        "options": ["Lantern making", "Tattooing", "Vakul weaving", "Kiping making"],
+        "explanation": "Body paint in Pintados recalls the tattooing traditions of the early Visayans. Tattoos expressed identity and status within the community."
+      }
+    ]
+  },
+  {
+    "region_id": 12,
+    "image_caption": "Vinta boats featured in the Regatta de Zamboanga.",
+    "base": {
+      "question": "Why is Zamboanga City known as Asia's Latin City?",
+      "options": ["Because of the Ilocano language", "Because of the Japanese language", "Because of the Korean language", "Because of Chavacano, a language based on Spanish"],
+      "explanation": "Chavacano is a creole language with much of its vocabulary from older Spanish and grammar influenced by Indigenous Philippine languages."
+    },
+    "culture": [
+      {
+        "question": "Which celebration in Zamboanga City honors Nuestra Señora del Pilar?",
+        "options": ["Panagbenga", "MassKara", "Fiesta Hermosa", "Pahiyas"],
+        "explanation": "During Fiesta Hermosa, Zamboanga City shows devotion to Nuestra Señora del Pilar and celebrates its rich culture."
+      },
+      {
+        "question": "Which boat with colorful sails is featured in the Regatta de Zamboanga?",
+        "options": ["Raft", "Galleon", "Steamship", "Vinta"],
+        "explanation": "The Regatta de Zamboanga features vinta boats with colorful sails. It celebrates the heritage of local seafaring communities."
+      }
+    ]
+  },
+  {
+    "region_id": 13,
+    "image_caption": "Cultural celebrations at Kaamulan in Bukidnon.",
+    "base": {
+      "question": "Which famous waterfall in Iligan City is an important source of hydroelectric power in Mindanao?",
+      "options": ["Maria Cristina Falls", "Pagsanjan Falls", "Kawasan Falls", "Tinuy-an Falls"],
+      "explanation": "Maria Cristina is known as the twin falls because a large rock at its edge divides the flow of water into two streams."
+    },
+    "culture": [
+      {
+        "question": "Which festival in Bukidnon honors the cultures of its seven Indigenous groups?",
+        "options": ["Kaamulan", "Sinulog", "Pahiyas", "Moriones"],
+        "explanation": "Kaamulan is a gathering in Bukidnon that celebrates the traditions of the province's seven Indigenous groups."
+      },
+      {
+        "question": "What idea does the word Kaamulan express?",
+        "options": ["Sailing across the ocean", "Gathering for a purpose", "Making giant lanterns", "Carving stone houses"],
+        "explanation": "Kaamulan comes from amul, which expresses the idea of gathering. Communities may gather for thanksgiving, weddings, and other important occasions."
+      }
+    ]
+  },
+  {
+    "region_id": 14,
+    "image_caption": "Kadayawan celebrations in Davao.",
+    "base": {
+      "question": "Which is the highest mountain in the Philippines, rising about 2,954 meters above sea level?",
+      "options": ["Mount Pulag", "Mount Apo", "Mount Banahaw", "Mount Makiling"],
+      "explanation": "In Indigenous languages, Apo can mean ancestor or lord. Mount Apo is also home to the Philippine eagle, the national bird."
+    },
+    "culture": [
+      {
+        "question": "Which festival in Davao gives thanks for nature and a plentiful harvest?",
+        "options": ["Moriones", "Pahiyas", "Kadayawan", "Panagbenga"],
+        "explanation": "Kadayawan in Davao gives thanks for the gifts of nature and the harvest. It also showcases the city's cultural diversity."
+      },
+      {
+        "question": "Besides the harvest, what else does Kadayawan celebrate?",
+        "options": ["Only lantern making", "The same costume for everyone", "Forgetting Indigenous languages", "The different cultures of local communities"],
+        "explanation": "Kadayawan values Davao's Indigenous peoples and Moro communities. Their diverse heritage is expressed through music, dance, and other activities."
+      }
+    ]
+  },
+  {
+    "region_id": 15,
+    "image_caption": "T'nalak, abaca cloth woven by the T'boli people.",
+    "base": {
+      "question": "Which traditional cloth is woven from abaca fibers by the T'boli people of Lake Sebu, South Cotabato?",
+      "options": ["Inabel", "Hablon", "T'nalak", "Pina"],
+      "explanation": "T'nalak weavers are called Dreamweavers because their cloth designs are said to come from dreams given by the spirit Fu Dalu."
+    },
+    "culture": [
+      {
+        "question": "Which woven T'boli cloth is celebrated at South Cotabato's T'nalak Festival?",
+        "options": ["T'nalak", "Inabel", "Kiping", "Vakul"],
+        "explanation": "The T'nalak Festival in South Cotabato celebrates t'nalak cloth and the skill of T'boli weavers."
+      },
+      {
+        "question": "Which fiber is used in traditional t'nalak weaving?",
+        "options": ["Nylon", "Abaca", "Wire", "Plastic"],
+        "explanation": "T'nalak is woven from abaca fibers. Its designs, knowledge, and the respect associated with the cloth are important in T'boli culture."
+      }
+    ]
+  },
+  {
+    "region_id": 16,
+    "image_caption": "Bonok-Bonok dancing in Surigao City.",
+    "base": {
+      "question": "Which historic boats discovered in Butuan show the early trading and seafaring skills of ancient Filipinos?",
+      "options": ["Vinta", "Paraw", "Raft", "Balangay"],
+      "explanation": "The Balangay boats found in Butuan have been dated as early as 320 CE, showing a developed seafaring culture before Western arrivals."
+    },
+    "culture": [
+      {
+        "question": "Which festival in Surigao City is known for colorful street dances?",
+        "options": ["Moriones", "Panagbenga", "Bonok-Bonok Maradjaw Karadjaw", "Giant Lantern Festival"],
+        "explanation": "Bonok-Bonok Maradjaw Karadjaw is a festival in Surigao City in Caraga. It features performances and dances by its participants."
+      },
+      {
+        "question": "Who is honored during the religious celebration of Bonok-Bonok in Surigao City?",
+        "options": ["San Isidro Labrador", "San Juan Bautista", "San Pedro", "San Nicolas de Tolentino"],
+        "explanation": "Bonok-Bonok is associated with the feast of San Nicolas de Tolentino, the patron saint of Surigao City. The celebration brings together local culture and devotion."
+      }
+    ]
+  },
+  {
+    "region_id": 17,
+    "image_caption": "A torogan and carvings associated with Maranao architecture.",
+    "base": {
+      "question": "Which lake is the largest in Mindanao and the second largest in the Philippines, and is central to Maranao community life and culture?",
+      "options": ["Lake Lanao", "Lake Sebu", "Lake Mainit", "Lake Buluan"],
+      "explanation": "Maranao means People of the Lake, referring to their home around Lake Lanao."
+    },
+    "culture": [
+      {
+        "question": "What is the traditional large house of a Maranao leader called?",
+        "options": ["Torogan", "Bahay-kubo", "Ivatan stone house", "Kamaling"],
+        "explanation": "The torogan is a traditional large house associated with Maranao leaders. It is part of Maranao heritage in Lanao del Sur and nearby areas."
+      },
+      {
+        "question": "What are the artistic carved designs found on parts of a torogan called?",
+        "options": ["Kiping", "Okir", "T'nalak", "Inabel"],
+        "explanation": "Okir refers to artistic carved designs found on parts of a torogan, including its panolong. It shows the skill of Maranao artists."
+      }
+    ]
+  },
+  {
+    "region_id": 18,
+    "image_caption": "Colorful MassKara masks in Bacolod.",
+    "base": {
+      "question": "Which law, signed in June 2024, established the Negros Island Region, consisting of Negros Occidental, Negros Oriental, and Siquijor?",
+      "options": ["Republic Act No. 1425", "Republic Act No. 12000", "Republic Act No. 9165", "Republic Act No. 10175"],
+      "explanation": "The Negros Island Region brings together the provinces on Negros Island and Siquijor to improve government services and development in the Visayas."
+    },
+    "culture": [
+      {
+        "question": "Which festival in Bacolod is known for colorful smiling masks?",
+        "options": ["Sinulog", "Moriones", "MassKara", "Pahiyas"],
+        "explanation": "MassKara is a well-known festival in Bacolod, Negros Occidental. It features smiling masks and street dancing."
+      },
+      {
+        "question": "Which city in the Negros Island Region is the home of the MassKara Festival?",
+        "options": ["Naga", "Baguio", "Vigan", "Bacolod"],
+        "explanation": "Bacolod in Negros Occidental is the home of the MassKara Festival. The celebration shows the community's creativity and resilience."
+      }
+    ]
+  }
+]

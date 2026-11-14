@@ -62,6 +62,9 @@ abstract final class DatabaseTables {
       ${DatabaseConstants.columnOptionD} TEXT NOT NULL,
       ${DatabaseConstants.columnCorrectOption} INTEGER NOT NULL,
       ${DatabaseConstants.columnExplanation} TEXT NOT NULL,
+      image_path TEXT,
+      image_caption TEXT,
+      image_credit TEXT,
       FOREIGN KEY (${DatabaseConstants.columnRegionId}) REFERENCES ${DatabaseConstants.tableRegions} (${DatabaseConstants.columnId}) ON DELETE CASCADE
     )
   ''';
@@ -84,6 +87,9 @@ abstract final class DatabaseTables {
       ${DatabaseConstants.columnCorrectOption} INTEGER NOT NULL,
       ${DatabaseConstants.columnExplanationEn} TEXT NOT NULL,
       ${DatabaseConstants.columnExplanationFil} TEXT NOT NULL,
+      image_path TEXT,
+      image_caption TEXT,
+      image_credit TEXT,
       FOREIGN KEY (${DatabaseConstants.columnRegionId}) REFERENCES ${DatabaseConstants.tableRegions} (${DatabaseConstants.columnId}) ON DELETE CASCADE
     )
   ''';

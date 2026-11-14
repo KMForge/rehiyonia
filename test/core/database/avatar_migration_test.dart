@@ -58,7 +58,7 @@ void main() {
       await legacy.close();
       app = AppDatabase(databaseFactory: databaseFactoryFfi);
       final db = await app.initialize(databasePath: path);
-      expect(await db.getVersion(), 3);
+      expect(await db.getVersion(), DatabaseConstants.databaseVersion);
       final rows = await db.query('player_profile', orderBy: 'id');
       expect(rows.length, 4);
       expect(

@@ -72,6 +72,7 @@ flutter:
   assets:
     - assets/data/
     - assets/images/localities/
+    - assets/images/trivia/
     - assets/images/branding/
     - assets/images/region_landmarks/
     - assets/fonts/OFL-Fredoka.txt

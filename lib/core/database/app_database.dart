@@ -97,6 +97,20 @@ class AppDatabase {
       });
     }
     if (oldVersion < 3) await _upgradeAvatar(db);
+    if (oldVersion < 4) {
+      for (final table in [
+        DatabaseConstants.tableTrivia,
+        DatabaseConstants.tableTriviaQuestions,
+      ]) {
+        final columns = await db.rawQuery('PRAGMA table_info($table)');
+        if (columns.isEmpty) continue;
+        for (final column in ['image_path', 'image_caption', 'image_credit']) {
+          if (!columns.any((c) => c['name'] == column)) {
+            await db.execute('ALTER TABLE $table ADD COLUMN $column TEXT');
+          }
+        }
+      }
+    }
   }
 
   Future<void> _upgradeAvatar(sqflite.Database db) async {

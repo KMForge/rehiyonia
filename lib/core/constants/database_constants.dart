@@ -1,6 +1,6 @@
 abstract final class DatabaseConstants {
   static const String databaseName = 'rehiyonia.db';
-  static const int databaseVersion = 3;
+  static const int databaseVersion = 4;
 
   // Table Names
   static const String tableRegions = 'regions';

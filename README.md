@@ -6,6 +6,25 @@ through Luzon, Visayas, and Mindanao, rather than administrative boundaries.
 The generated vector data is included for offline use. To regenerate it, run
 `powershell -NoProfile -File scripts/generate_philippine_map.ps1`.
 
+### Regional culture trivia
+
+Each of the 18 regions now has its original question plus two questions about
+local culture and traditions (54 questions in total). The new content is in
+`assets/data/regional_culture.json`, including reference URLs. Photos appear
+with the answer explanations and are bundled for offline use.
+
+Photo authors, licenses, license links, and original Wikimedia Commons file
+pages are recorded in `assets/data/culture_image_credits.json`. Each photo
+retains its stated license, including CC BY-SA where applicable.
+Run `powershell -NoProfile -File scripts/fetch_culture_images.ps1` to fetch
+missing photos automatically; add `-Refresh` to download them again.
+The downloader uses pinned file titles to preserve the reviewed selections.
+
+Existing installations migrate the trivia tables and refresh both question
+collections without clearing player profiles, coins, stars, or region progress.
+Fully stop and restart the app after updating; hot reload does not run the
+startup content migration.
+
 ### Temporary testing in Edge
 
 Run `flutter run -d web-server --web-hostname localhost --web-port 8080`, then
