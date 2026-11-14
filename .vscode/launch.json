@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Edge preview (open localhost:8080)",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main.dart",
+            "deviceId": "web-server",
+            "toolArgs": ["--web-hostname", "localhost", "--web-port", "8080"]
+        },
+        {
+            "name": "Flutter (selected device)",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main.dart"
+        }
+    ]
+}

@@ -1,5 +1,21 @@
 # Rehiyonia
 
+### Temporary testing in Edge
+
+Run `flutter run -d web-server --web-hostname localhost --web-port 8080`, then
+open <http://localhost:8080> in Edge. In VS Code, select **Edge preview (open
+localhost:8080)** under Run and Debug and press F5, then open the same URL.
+This bypasses Flutter's automatic Edge debugger launch.
+
+The web build uses SQLite WebAssembly with IndexedDB storage; Android and iOS
+continue using native SQLite. Browser saves are separate from phone saves.
+Keep the same browser and URL (including port) to reuse browser progress;
+clearing site data removes it.
+
+The required `web/sqlite3.wasm` and `web/sqflite_sw.js` files are included.
+After upgrading the web SQLite dependencies, regenerate them with
+`dart run sqflite_common_ffi_web:setup --force` before running or building web.
+
 **Rehiyonia: An Offline Educational Word Search Game for Philippine Regions**  
 *Araling Panlipunan • Grade 5 Curriculum Aligned*
 

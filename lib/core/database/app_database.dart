@@ -4,6 +4,8 @@ import 'package:sqflite/sqflite.dart' as sqflite;
 import '../constants/database_constants.dart';
 import '../errors/app_exceptions.dart';
 import 'database_tables.dart';
+import 'platform_database_factory.dart'
+    if (dart.library.js_interop) 'platform_database_factory_web.dart';
 
 class AppDatabase {
   AppDatabase({this.databaseFactory});
@@ -32,7 +34,7 @@ class AppDatabase {
     }
 
     try {
-      final factory = databaseFactory ?? sqflite.databaseFactory;
+      final factory = databaseFactory ?? platformDatabaseFactory;
 
       String path;
       if (inMemory) {
