@@ -8,11 +8,13 @@ class WordListBar extends StatelessWidget {
     required this.words,
     required this.foundWords,
     required this.onWordClueTap,
+    this.allowUnfoundClues = true,
   });
 
   final List<RegionalWord> words;
   final Set<String> foundWords;
   final void Function(RegionalWord word) onWordClueTap;
+  final bool allowUnfoundClues;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +28,7 @@ class WordListBar extends StatelessWidget {
           final isFound = foundWords.contains(w.word.toUpperCase());
 
           return InkWell(
-            onTap: () => onWordClueTap(w),
+            onTap: allowUnfoundClues || isFound ? () => onWordClueTap(w) : null,
             borderRadius: BorderRadius.circular(16),
             child: AnimatedContainer(
               duration: MediaQuery.disableAnimationsOf(context)

@@ -7,6 +7,8 @@ import '../../../shared/localization/explorer_strings.dart';
 import '../../../shared/widgets/how_to_play_dialog.dart';
 import '../../avatar/widgets/player_avatar_widget.dart';
 import '../../profile/providers/profile_provider.dart';
+import '../../final_challenge/final_challenge_provider.dart';
+import '../../final_challenge/widgets/final_challenge_tile.dart';
 import '../../regions/models/region.dart';
 import '../../regions/providers/region_provider.dart';
 import '../widgets/home_discovery_cards.dart';
@@ -36,6 +38,7 @@ class HomeScreen extends ConsumerWidget {
       ),
     );
     final journey = ref.watch(regionsProvider);
+    final finalUnlocked = ref.watch(finalChallengeUnlockedProvider);
     final regions = journey.asData?.value ?? <Region>[];
     final completed = regions.where((r) => r.starsEarned > 0).length;
     final next = regions
@@ -51,7 +54,9 @@ class HomeScreen extends ConsumerWidget {
       regionsLabel: copy('Explore\nRegions', 'Tuklasin ang\nRehiyon'),
       onStart: journey.isLoading || journey.hasError
           ? null
-          : () => next != null && completed > 0
+          : () => finalUnlocked
+                ? Navigator.pushNamed(context, AppRouter.finalChallenge)
+                : next != null && completed > 0
                 ? Navigator.pushNamed(
                     context,
                     AppRouter.regionIntro,
@@ -119,6 +124,10 @@ class HomeScreen extends ConsumerWidget {
                   ),
                   const SizedBox(height: 18),
                   mainMenu,
+                  if (finalUnlocked) ...[
+                    const SizedBox(height: 12),
+                    const FinalChallengeTile(),
+                  ],
                   const SizedBox(height: 20),
                   Center(
                     child: Container(

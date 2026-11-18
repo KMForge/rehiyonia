@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../app/app_router.dart';
@@ -9,6 +10,8 @@ import '../../../shared/localization/explorer_strings.dart';
 import '../../badges/region_landmark.dart';
 import '../../badges/widgets/regional_badge_stamp.dart';
 import '../providers/region_provider.dart';
+import '../../final_challenge/final_challenge_provider.dart';
+import '../../final_challenge/widgets/final_challenge_tile.dart';
 
 class RegionSelectionScreen extends ConsumerStatefulWidget {
   const RegionSelectionScreen({super.key, this.initialGroup});
@@ -104,6 +107,12 @@ class _RegionSelectionScreenState extends ConsumerState<RegionSelectionScreen> {
                                 .toList(),
                           ),
                         ),
+                        if (_selected == 'All' &&
+                            ref.watch(finalChallengeUnlockedProvider))
+                          const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 20),
+                            child: FinalChallengeTile(),
+                          ),
                         Expanded(
                           child: ListView.separated(
                             padding: const EdgeInsets.all(20),

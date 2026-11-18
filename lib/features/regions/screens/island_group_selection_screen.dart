@@ -1,6 +1,7 @@
 import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../app/app_router.dart';
@@ -8,6 +9,7 @@ import '../../../core/localization/app_localizations.dart';
 import '../../../shared/widgets/rehiyonia_adventure_background.dart';
 import '../../../shared/localization/explorer_strings.dart';
 import '../providers/region_provider.dart';
+import '../../final_challenge/widgets/final_challenge_tile.dart';
 
 class IslandGroupSelectionScreen extends ConsumerWidget {
   const IslandGroupSelectionScreen({super.key});
@@ -50,27 +52,30 @@ class IslandGroupSelectionScreen extends ConsumerWidget {
                       constraints: const BoxConstraints(maxWidth: 520),
                       child: ListView(
                         padding: const EdgeInsets.all(20),
-                        children: ['Luzon', 'Visayas', 'Mindanao'].map((group) {
-                          final entries = regions
-                              .where((r) => r.islandGroup == group)
-                              .toList();
-                          final completed = entries
-                              .where((r) => r.starsEarned > 0)
-                              .length;
-                          return Padding(
-                            padding: const EdgeInsets.only(bottom: 20),
-                            child: _IslandGroupPhotoCard(
-                              group: group,
-                              progress:
-                                  '${loc.regionsCount(entries.length)} · ${ui('completed')}: $completed',
-                              onTap: () => Navigator.pushNamed(
-                                context,
-                                AppRouter.regions,
-                                arguments: group,
+                        children: [
+                          ...['Luzon', 'Visayas', 'Mindanao'].map((group) {
+                            final entries = regions
+                                .where((r) => r.islandGroup == group)
+                                .toList();
+                            final completed = entries
+                                .where((r) => r.starsEarned > 0)
+                                .length;
+                            return Padding(
+                              padding: const EdgeInsets.only(bottom: 20),
+                              child: _IslandGroupPhotoCard(
+                                group: group,
+                                progress:
+                                    '${loc.regionsCount(entries.length)} · ${ui('completed')}: $completed',
+                                onTap: () => Navigator.pushNamed(
+                                  context,
+                                  AppRouter.regions,
+                                  arguments: group,
+                                ),
                               ),
-                            ),
-                          );
-                        }).toList(),
+                            );
+                          }),
+                          const FinalChallengeTile(),
+                        ],
                       ),
                     ),
                   ),

@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/constants/app_constants.dart';
+import '../../final_challenge/final_challenge_provider.dart';
 import '../../profile/providers/profile_provider.dart';
 import '../../regions/models/region.dart';
 import '../../regions/providers/region_provider.dart';
@@ -30,6 +31,7 @@ class GameplayState {
     this.starsEarned = 0,
     this.coins = 50,
     this.errorMessage,
+    this.isFinalChallenge = false,
   });
 
   final GameStatus status;
@@ -44,6 +46,7 @@ class GameplayState {
   final int starsEarned;
   final int coins;
   final String? errorMessage;
+  final bool isFinalChallenge;
 
   bool get isAllWordsFound =>
       puzzle != null &&
@@ -77,6 +80,7 @@ class GameplayState {
       starsEarned: starsEarned ?? this.starsEarned,
       coins: coins ?? this.coins,
       errorMessage: errorMessage ?? this.errorMessage,
+      isFinalChallenge: isFinalChallenge,
     );
   }
 }
@@ -86,10 +90,58 @@ class GameplayNotifier extends Notifier<GameplayState> {
     : _engine = engine ?? const WordSearchEngine();
 
   final WordSearchEngine _engine;
+  bool _finalWritePending = false;
 
   @override
   GameplayState build() {
     return const GameplayState(status: GameStatus.loading);
+  }
+
+  Future<void> initFinalChallenge({bool replay = false, int? seed}) async {
+    state = const GameplayState(
+      status: GameStatus.loading,
+      isFinalChallenge: true,
+    );
+    try {
+      final round = await ref
+          .read(finalChallengeRepositoryProvider)
+          .start(replay: replay, seed: seed);
+      final words = round.clues.map((clue) => clue.target).toList();
+      final gridSize = max(
+        12,
+        words.map((word) => word.word.length).reduce(max),
+      );
+      final generated = _engine.createPuzzle(
+        words: words.map((word) => word.word).toList(),
+        rows: gridSize,
+        cols: gridSize,
+        seed: round.seed,
+      );
+      final puzzle = generated.copyWith(
+        placedWords: [
+          for (final placed in generated.placedWords)
+            placed.copyWith(isFound: round.found.contains(placed.word)),
+        ],
+      );
+      if (!ref.mounted) return;
+      state = GameplayState(
+        status: round.completed ? GameStatus.completed : GameStatus.playing,
+        isFinalChallenge: true,
+        puzzle: puzzle,
+        targetWords: words,
+        foundWords: round.found,
+        revealedHints: {
+          for (final placed in puzzle.placedWords)
+            if (round.hints.contains(placed.word)) placed.coordinates.first,
+        },
+        score: round.found.length * 100,
+        starsEarned: round.stars,
+        coins: ref.read(profileProvider).coins,
+      );
+    } catch (error) {
+      if (!ref.mounted) return;
+      state = state.copyWith(status: GameStatus.error, errorMessage: '$error');
+    }
   }
 
   Future<void> initGame(int regionId, {int? seed}) async {
@@ -213,6 +265,42 @@ class GameplayNotifier extends Notifier<GameplayState> {
         placedWords: updatedPlacedWords,
       );
 
+      if (state.isFinalChallenge) {
+        if (_finalWritePending) return false;
+        _finalWritePending = true;
+        try {
+          final saved = await ref
+              .read(finalChallengeRepositoryProvider)
+              .discover(placed.word);
+          await ref.read(profileProvider.notifier).loadProfile();
+          if (!ref.mounted) return false;
+          state = state.copyWith(
+            puzzle: updatedPuzzle,
+            foundWords: saved.round.found,
+            activeSelection: [],
+            score: saved.round.found.length * 100,
+            coins: saved.coins,
+            starsEarned: saved.round.stars,
+            status: saved.round.completed
+                ? GameStatus.completed
+                : GameStatus.playing,
+          );
+          ref.invalidate(finalChallengeProgressProvider);
+          return true;
+        } catch (error) {
+          if (ref.mounted) {
+            state = state.copyWith(
+              status: GameStatus.error,
+              activeSelection: [],
+              errorMessage: 'Could not save final challenge: $error',
+            );
+          }
+          return false;
+        } finally {
+          _finalWritePending = false;
+        }
+      }
+
       final newScore = state.score + 100;
       final isCompleted =
           updatedFound.length >= updatedPuzzle.placedWords.length;
@@ -271,6 +359,10 @@ class GameplayNotifier extends Notifier<GameplayState> {
   void useHint() {
     if (state.status != GameStatus.playing || state.puzzle == null) return;
     if (state.coins < 10) return;
+    if (state.isFinalChallenge) {
+      _useFinalHint();
+      return;
+    }
 
     for (final placed in state.puzzle!.placedWords) {
       if (!state.foundWords.contains(placed.word)) {
@@ -291,7 +383,45 @@ class GameplayNotifier extends Notifier<GameplayState> {
     }
   }
 
+  Future<void> _useFinalHint() async {
+    if (_finalWritePending) return;
+    final placed = state.puzzle!.placedWords
+        .where(
+          (word) =>
+              !state.foundWords.contains(word.word) &&
+              !state.revealedHints.contains(word.coordinates.first),
+        )
+        .firstOrNull;
+    if (placed == null) return;
+    _finalWritePending = true;
+    try {
+      final saved = await ref
+          .read(finalChallengeRepositoryProvider)
+          .hint(placed.word);
+      await ref.read(profileProvider.notifier).loadProfile();
+      if (!ref.mounted) return;
+      state = state.copyWith(
+        coins: saved.coins,
+        revealedHints: {
+          for (final word in state.puzzle!.placedWords)
+            if (saved.round.hints.contains(word.word)) word.coordinates.first,
+        },
+      );
+      ref.invalidate(finalChallengeProgressProvider);
+    } catch (error) {
+      if (ref.mounted) {
+        state = state.copyWith(
+          status: GameStatus.error,
+          errorMessage: 'Could not save hint: $error',
+        );
+      }
+    } finally {
+      _finalWritePending = false;
+    }
+  }
+
   Region? getNextRegion([int? currentRegionId]) {
+    if (state.isFinalChallenge) return null;
     final curId = currentRegionId ?? state.region?.id;
     if (curId == null) return null;
     final index = defaultPhilippineRegions.indexWhere((r) => r.id == curId);

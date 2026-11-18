@@ -1,5 +1,36 @@
 # Rehiyonia
 
+### Final Mixed-Region Challenge
+
+Completing all 18 existing regions unlocks a separate final challenge from Home,
+Explore Regions, and the last regional completion dialog. It is not a 19th
+region or badge. Each new round selects 15 distinct words
+from the 18-region catalog, always including NIR and all three island groups.
+The existing word-search engine mixes 8 landmark/place words with 7 vocabulary
+words from existing regional trivia, such as SINULOG, MASSKARA, VINTA and INABEL.
+All 15 boxes show plain word names, without questions or category labels. The
+same 15 words are placed in one grid. Finding a word automatically opens its
+matching landmark or cultural photograph, travel fact, and photo credits. The 15th
+discovery shows its photograph before the final completion dialog. Found words
+can be tapped to reopen their photos; unfound words do not reveal photos.
+
+The final round, deterministic puzzle seed, found words, hints, completion, and
+best stars are stored under `final_mixed_challenge_v1` in the existing SQLite
+`user_progress` table. Discoveries and coin updates share a transaction, so a
+repeated discovery cannot pay twice. The existing 5-coin discovery, 20-coin final
+discovery, 10-coin hint, and hint-based star rules are reused. Regional records,
+badges, and avatar customization are not changed by the final challenge.
+Replaying creates a new round while retaining the best final-challenge stars.
+
+The 18 regional landmark photos and 18 cultural trivia photos are reused offline
+from `assets/images/region_landmarks/` and `assets/images/trivia/`. No manual
+downloads are required. Photo source and license records remain in the existing
+landmark README and `assets/data/culture_image_credits.json`.
+`scripts/prepare_final_trivia_words.ps1` prepares the final trivia-word catalog
+from the existing bilingual culture questions, explanations, and photo captions.
+An in-progress older final round keeps its original words and discoveries;
+new rounds include the trivia vocabulary.
+
 The home illustration uses Philippine coastline geometry from the public-domain
 Natural Earth 1:50m dataset. It depicts the archipelago and a decorative journey
 through Luzon, Visayas, and Mindanao, rather than administrative boundaries.

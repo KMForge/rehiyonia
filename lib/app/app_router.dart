@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../features/avatar/screens/avatar_studio_screen.dart';
 import '../features/badges/screens/badge_gallery_screen.dart';
 import '../features/home/screens/home_screen.dart';
+import '../features/final_challenge/screens/final_challenge_screen.dart';
 import '../features/profile/widgets/first_launch_home.dart';
 import '../features/learning/screens/locality_learning_cards_screen.dart';
 import '../features/regions/screens/island_group_selection_screen.dart';
@@ -25,6 +26,8 @@ abstract final class AppRouter {
   static const regionIntro = '/region-intro';
   static const localityCards = '/locality-cards';
   static const triviaChallenge = '/trivia-challenge';
+  static const finalChallenge = '/final-challenge';
+  static const finalGame = '/final-word-search';
 
   static final Map<String, WidgetBuilder> routes = {
     home: (_) => const HomeScreen(),
@@ -33,9 +36,20 @@ abstract final class AppRouter {
     avatarStudio: (_) => const AvatarStudioScreen(),
     badges: (_) => const BadgeGalleryScreen(),
     islandGroups: (_) => const IslandGroupSelectionScreen(),
+    finalChallenge: (_) => const FinalChallengeScreen(),
   };
 
   static Route<dynamic>? onGenerateRoute(RouteSettings routeSettings) {
+    if (routeSettings.name == finalGame) {
+      return MaterialPageRoute<void>(
+        builder: (_) => WordSearchScreen(
+          regionId: 1,
+          isFinalChallenge: true,
+          replayFinal: routeSettings.arguments == true,
+        ),
+        settings: routeSettings,
+      );
+    }
     if (routeSettings.name == home && routeSettings.arguments == true) {
       return MaterialPageRoute<void>(
         builder: (_) => const FirstLaunchHome(),
