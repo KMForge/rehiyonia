@@ -77,12 +77,11 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
 
   void _showClueModal(RegionalWord word) {
     final loc = ref.read(localizationsProvider);
-    if (widget.isFinalChallenge) {
-      if (ref.read(gameplayProvider).foundWords.contains(word.word)) {
-        _showWordPhoto(word);
-      }
+    if (ref.read(gameplayProvider).foundWords.contains(word.word)) {
+      _showWordPhoto(word);
       return;
     }
+    if (widget.isFinalChallenge) return;
     showModalBottomSheet<void>(
       context: context,
       shape: const RoundedRectangleBorder(
@@ -444,25 +443,19 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
       }
       if (prev?.status != GameStatus.completed &&
           next.status == GameStatus.completed) {
-        if (next.isFinalChallenge) {
-          _pendingCompletion = next;
-        } else {
-          _showCompletionDialog(next);
-        }
+        _pendingCompletion = next;
       }
-      if (next.isFinalChallenge) {
-        if (prev != null &&
-            prev.status == GameStatus.playing &&
-            prev.isFinalChallenge == next.isFinalChallenge &&
-            prev.region?.id == next.region?.id) {
-          final discovered = next.foundWords.difference(prev.foundWords);
-          _pendingWordPhotos.addAll(
-            next.targetWords.where((word) => discovered.contains(word.word)),
-          );
-        }
-        if (_pendingWordPhotos.isNotEmpty || _pendingCompletion != null) {
-          _drainWordPhotos();
-        }
+      if (prev != null &&
+          prev.status == GameStatus.playing &&
+          prev.isFinalChallenge == next.isFinalChallenge &&
+          prev.region?.id == next.region?.id) {
+        final discovered = next.foundWords.difference(prev.foundWords);
+        _pendingWordPhotos.addAll(
+          next.targetWords.where((word) => discovered.contains(word.word)),
+        );
+      }
+      if (_pendingWordPhotos.isNotEmpty || _pendingCompletion != null) {
+        _drainWordPhotos();
       }
     });
 

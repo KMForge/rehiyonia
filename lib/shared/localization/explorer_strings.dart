@@ -159,8 +159,8 @@ class ExplorerStrings {
     ],
     'help': ['How to play', 'Paano maglaro'],
     'helpText': [
-      'Drag from the first letter to the last. Words can run across, down, diagonally, or backwards. Tap a word below the board for its clue.',
-      'I-drag mula sa unang letra hanggang sa huli. Maaaring pahalang, pababa, pahilis, o pabaliktad ang salita. Pindutin ang salita sa ibaba para sa pahiwatig.',
+      'Drag from the first letter to the last. Words can run across, down, diagonally, or backwards. Each word you find opens its photograph and a short fact. Tap an unfound word for its clue or a found word to see its photo again.',
+      'I-drag mula sa unang letra hanggang sa huli. Maaaring pahalang, pababa, pahilis, o pabaliktad ang salita. Lalabas ang larawan at kaalaman kapag nahanap ang salita. Pindutin ang hindi pa nahanap na salita para sa pahiwatig o ang nahanap na salita upang makita muli ang larawan.',
     ],
     'profile': ['Explorer profile', 'Profile ng manlalakbay'],
     'allDone': [

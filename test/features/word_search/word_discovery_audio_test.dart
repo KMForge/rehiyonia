@@ -10,6 +10,8 @@ import 'package:rehiyonia/features/word_search/engine/word_search_engine.dart';
 import 'package:rehiyonia/features/word_search/models/regional_word.dart';
 import 'package:rehiyonia/features/word_search/providers/gameplay_provider.dart';
 import 'package:rehiyonia/features/word_search/screens/word_search_screen.dart';
+import 'package:rehiyonia/shared/widgets/word_discovery_content.dart';
+import 'package:rehiyonia/features/badges/region_landmark.dart';
 
 class _Player extends Fake implements AudioPlayer {
   @override
@@ -78,6 +80,19 @@ void main() {
       );
       final game = container.read(gameplayProvider.notifier);
       final initial = container.read(gameplayProvider);
+      await tester.runAsync(() async {
+        await container.read(discoveryImageAssetsProvider.future);
+        await container.read(regionLandmarksProvider.future);
+      });
+      Future<void> closePhoto() async {
+        final button = find.byKey(const Key('continue_final_discovery'));
+        await tester.ensureVisible(button);
+        await tester.tap(button);
+        await tester.pumpAndSettle();
+        await tester.runAsync(() async {});
+        await tester.pumpAndSettle();
+      }
+
       expect(audio.effects, isEmpty);
 
       game.updateStateForTesting(initial.copyWith(foundWords: {'MANILA'}));
@@ -92,6 +107,7 @@ void main() {
       );
       await tester.pumpAndSettle();
       expect(audio.effects.length, 1);
+      await closePhoto();
 
       container.read(settingsProvider.notifier).toggleSoundEffects();
       game.updateStateForTesting(
@@ -101,12 +117,14 @@ void main() {
       );
       await tester.pumpAndSettle();
       expect(audio.effects.length, 1);
+      await closePhoto();
 
       // Fresh game: resetting the found set does not emit a sound.
       game.updateStateForTesting(initial);
       container.read(settingsProvider.notifier).toggleSoundEffects();
       game.updateStateForTesting(initial.copyWith(foundWords: {'MANILA'}));
       await tester.pumpAndSettle();
+      await closePhoto();
       game.updateStateForTesting(
         container
             .read(gameplayProvider)
@@ -118,6 +136,7 @@ void main() {
       );
       await tester.pumpAndSettle();
       expect(audio.effects.length, 3);
+      await closePhoto();
       expect(
         audio.effects.every((path) => path == AppConstants.audioSfxWordFound),
         isTrue,

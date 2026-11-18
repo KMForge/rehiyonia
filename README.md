@@ -1,5 +1,15 @@
 # Rehiyonia
 
+### Regional word discoveries
+
+All 18 regional word-search screens share the same compact discovery dialog.
+Finding a word opens its name, bundled locality photograph, and localized fact.
+The word list remains visible, and a found word can reopen its photo. The last
+photo closes before the level-completion dialog appears. Missing locality assets
+use a verified photo from that region with an explicit regional-landmark label;
+they are not presented as photographs of the named locality. No photographs are
+downloaded during gameplay, and discoveries keep the existing reward rules.
+
 ### Final Mixed-Region Challenge
 
 Completing all 18 existing regions unlocks a separate final challenge from Home,
