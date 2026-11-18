@@ -43,16 +43,16 @@ class _WordSearchGridWidgetState extends State<WordSearchGridWidget> {
       final rows = widget.puzzle.rows, cols = widget.puzzle.cols;
       final availableWidth = constraints.maxWidth.isFinite
           ? constraints.maxWidth
-          : 480.0;
+          : 540.0;
       final availableHeight = constraints.maxHeight.isFinite
           ? constraints.maxHeight
-          : 480.0;
+          : 540.0;
       final width = math
           .min(
-            math.min(availableWidth - 24, 480),
-            (availableHeight - 16) * cols / rows,
+            math.min(availableWidth - 16, 540),
+            (availableHeight - 8) * cols / rows,
           )
-          .clamp(1.0, 480.0);
+          .clamp(1.0, 540.0);
       final size = Size(width.toDouble(), width * rows / cols);
       final cellW = size.width / cols, cellH = size.height / rows;
       final active = widget.activeSelection.toSet();
@@ -135,7 +135,8 @@ class _WordSearchGridWidgetState extends State<WordSearchGridWidget> {
                                 child: Text(
                                   widget.puzzle.grid[row][col],
                                   style: TextStyle(
-                                    fontSize: math.min(19, cellW * .51),
+                                    fontSize: math.min(21, cellW * .56),
+                                    height: 1,
                                     fontWeight: FontWeight.w800,
                                     color:
                                         active.contains(

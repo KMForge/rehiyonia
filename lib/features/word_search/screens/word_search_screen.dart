@@ -634,6 +634,7 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Row(
+                        mainAxisSize: MainAxisSize.min,
                         children: [
                           const Icon(
                             Icons.grid_4x4_rounded,
