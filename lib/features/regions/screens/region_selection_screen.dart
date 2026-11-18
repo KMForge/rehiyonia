@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../app/app_router.dart';
 import '../../../app/explorer_theme.dart';
 import '../../../core/localization/app_localizations.dart';
+import '../../../shared/widgets/rehiyonia_adventure_background.dart';
 import '../../../shared/localization/explorer_strings.dart';
 import '../../badges/region_landmark.dart';
 import '../../badges/widgets/regional_badge_stamp.dart';
@@ -25,11 +26,11 @@ class _RegionSelectionScreenState extends ConsumerState<RegionSelectionScreen> {
     final ui = ExplorerStrings(loc.isEnglish);
     final landmarkPhotos = ref.watch(regionLandmarksProvider);
     return Scaffold(
-      backgroundColor: const Color(0xFFFFE6F1),
+      backgroundColor: RehiyoniaAdventureBackground.cream,
       appBar: AppBar(
-        backgroundColor: const Color(0xFFDFF3FF),
+        backgroundColor: RehiyoniaAdventureBackground.sky,
         surfaceTintColor: Colors.transparent,
-        foregroundColor: const Color(0xFF3A174D),
+        foregroundColor: RehiyoniaAdventureBackground.ink,
         elevation: 0,
         centerTitle: true,
         title: Text(
@@ -41,15 +42,7 @@ class _RegionSelectionScreenState extends ConsumerState<RegionSelectionScreen> {
           ),
         ),
       ),
-      body: DecoratedBox(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [Color(0xFFDFF3FF), Color(0xFFFFF4E7), Color(0xFFFFD6EB)],
-            stops: [0, .4, 1],
-          ),
-        ),
+      body: RehiyoniaAdventureBackground(
         child: SizedBox.expand(
           child: ref
               .watch(regionsProvider)

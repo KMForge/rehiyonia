@@ -7,6 +7,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../app/app_router.dart';
 import '../../../core/localization/app_localizations.dart';
 import '../../../core/theme/app_colors.dart';
+import '../../../shared/widgets/rehiyonia_adventure_background.dart';
 import '../../mascot/widgets/bayanito_mascot_widget.dart';
 import '../../profile/providers/profile_provider.dart';
 import '../models/trivia_item.dart';
@@ -39,12 +40,12 @@ class _PreGameTriviaScreenState extends ConsumerState<PreGameTriviaScreen> {
         : null;
 
     return Scaffold(
-      backgroundColor: const Color(0xFFFFE6F1),
+      backgroundColor: RehiyoniaAdventureBackground.cream,
       appBar: AppBar(
         toolbarHeight: 68,
-        backgroundColor: const Color(0xFFDFF3FF),
+        backgroundColor: RehiyoniaAdventureBackground.sky,
         surfaceTintColor: Colors.transparent,
-        foregroundColor: const Color(0xFF3A174D),
+        foregroundColor: RehiyoniaAdventureBackground.ink,
         elevation: 0,
         centerTitle: true,
         title: Text(
@@ -66,15 +67,7 @@ class _PreGameTriviaScreenState extends ConsumerState<PreGameTriviaScreen> {
             ),
         ],
       ),
-      body: DecoratedBox(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [Color(0xFFDFF3FF), Color(0xFFFFF4E7), Color(0xFFFFD6EB)],
-            stops: [0, .4, 1],
-          ),
-        ),
+      body: RehiyoniaAdventureBackground(
         child: SizedBox.expand(
           child: triviaAsync.when(
             loading: () => const Center(
@@ -189,7 +182,7 @@ class _PreGameTriviaScreenState extends ConsumerState<PreGameTriviaScreen> {
                           Container(
                             padding: const EdgeInsets.all(14),
                             decoration: BoxDecoration(
-                              color: const Color(0xFFF5E7D7),
+                              color: RehiyoniaAdventureBackground.cream,
                               borderRadius: BorderRadius.circular(20),
                               boxShadow: [
                                 BoxShadow(
@@ -221,7 +214,7 @@ class _PreGameTriviaScreenState extends ConsumerState<PreGameTriviaScreen> {
                                     fontSize: 16,
                                     fontWeight: FontWeight.bold,
                                     height: 1.35,
-                                    color: AppColors.textNavy,
+                                    color: RehiyoniaAdventureBackground.ink,
                                   ),
                                 ),
                               ],
@@ -237,7 +230,8 @@ class _PreGameTriviaScreenState extends ConsumerState<PreGameTriviaScreen> {
                               return const SizedBox.shrink();
                             }
 
-                            Color cardColor = const Color(0xFFF5E7D7);
+                            Color cardColor =
+                                RehiyoniaAdventureBackground.cream;
                             Color borderColor = const Color(0xFFE1C5A8);
                             Widget? trailingIcon;
 
@@ -419,17 +413,27 @@ class _PreGameTriviaScreenState extends ConsumerState<PreGameTriviaScreen> {
                                   key: const Key(
                                     'button_trivia_continue_or_start',
                                   ),
-                                  style: FilledButton.styleFrom(
-                                    backgroundColor: AppColors.deepBlue,
-                                    minimumSize: const Size(0, 48),
-                                    padding: const EdgeInsets.symmetric(
-                                      horizontal: 16,
-                                      vertical: 10,
-                                    ),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(14),
-                                    ),
-                                  ),
+                                  style:
+                                      FilledButton.styleFrom(
+                                        backgroundColor:
+                                            RehiyoniaAdventureBackground.mauve,
+                                        foregroundColor:
+                                            RehiyoniaAdventureBackground.ink,
+                                        minimumSize: const Size(0, 48),
+                                        padding: const EdgeInsets.symmetric(
+                                          horizontal: 16,
+                                          vertical: 10,
+                                        ),
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(
+                                            14,
+                                          ),
+                                        ),
+                                      ).copyWith(
+                                        backgroundBuilder:
+                                            RehiyoniaAdventureBackground
+                                                .glossyMauve,
+                                      ),
                                   onPressed: () {
                                     if (isLastQuestion) {
                                       Navigator.pushReplacementNamed(
