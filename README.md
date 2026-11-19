@@ -1,5 +1,22 @@
 # Rehiyonia
 
+### Offline locality photographs
+
+All 270 locality image paths now resolve to bundled photographs. The 50-photo
+addition set includes the last four missing localities: Don Carlos (Lake
+Pinamaloy lakeside park), Monkayo (jewelry training center opening), Santa Maria
+in Davao Occidental (Basiawan cacao solar dryer), and Lingig (Palo Alto marine
+hatchery). These facilities and park views are labelled accurately; they are
+not presented as beach or waterfall photographs.
+
+Photo authors, source URLs, licenses, bilingual captions, source checksums and
+image dimensions are stored in `assets/data/locality_photo_credits.json`.
+See `assets/images/localities/ADDITIONAL_PHOTO_SOURCES.md` for the photo list.
+Run `powershell -ExecutionPolicy Bypass -File scripts/fetch_locality_photos.ps1`
+and `dart tool/register_locality_photos.dart` to download and register reviewed
+additions. Runtime photo overrides also work for old saved locality image paths.
+The startup refresh updates those paths without resetting saved player data.
+
 ### Regional word discoveries
 
 All 18 regional word-search screens share the same compact discovery dialog.

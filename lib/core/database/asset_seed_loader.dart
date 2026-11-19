@@ -103,6 +103,45 @@ class AssetSeedLoader {
         );
       }
 
+      // Content-only photo updates for existing saves. Match both region and
+      // word because names such as SANFERNANDO belong to multiple regions.
+      // Keep locality IDs, target flags and all player/progression rows intact.
+      final photos = (jsonDecode(
+        await rootBundle.loadString('assets/data/locality_photo_credits.json'),
+      ) as List).cast<Map<String, dynamic>>();
+      final bundledByKey = {
+        for (final word in words) '${word.regionId}:${word.word}': word,
+      };
+      await db.transaction((txn) async {
+        for (final photo in photos) {
+          final key = '${photo['region_id']}:${photo['word']}';
+          final bundled = bundledByKey[key];
+          if (bundled == null ||
+              bundled.resolvedImagePath != photo['asset_path']) {
+            throw FormatException(
+              'Photo does not match bundled locality: $key',
+            );
+          }
+          final updates = <String, Object?>{
+            DatabaseConstants.columnImagePath: bundled.resolvedImagePath,
+            if (key == '5:SANFERNANDO' || key == '18:SANCARLOS') ...{
+              DatabaseConstants.columnProvinceEn: bundled.provinceEn,
+              DatabaseConstants.columnProvinceFil: bundled.provinceFil,
+              DatabaseConstants.columnDescriptionEn: bundled.displayClueEn,
+              DatabaseConstants.columnDescriptionFil: bundled.displayClueFil,
+              DatabaseConstants.columnFactEn: bundled.displayFactEn,
+              DatabaseConstants.columnFactFil: bundled.displayFactFil,
+            },
+          };
+          await txn.update(
+            DatabaseConstants.tableLocalities,
+            updates,
+            where: 'region_id = ? AND word = ?',
+            whereArgs: [bundled.regionId, bundled.word],
+          );
+        }
+      });
+
       final triviaJson = await rootBundle.loadString('assets/data/trivia.json');
       final List<dynamic> triviaList = json.decode(triviaJson) as List<dynamic>;
       final englishJson = await rootBundle.loadString(

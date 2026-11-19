@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'rehiyonia_adventure_background.dart';
+import '../models/locality_photo_credit.dart';
 import '../../features/badges/region_landmark.dart';
 import '../../features/regions/providers/region_provider.dart';
 import '../../features/word_search/models/regional_word.dart';
@@ -31,29 +32,47 @@ class WordDiscoveryContent extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final isTriviaWord = word.category == 'Trivia';
-    final photoPanel = !isFinalChallenge
+    final localityCredit = !isFinalChallenge
         ? ref
-              .watch(discoveryImageAssetsProvider)
-              .when(
-                loading: () => const Center(child: CircularProgressIndicator()),
-                error: (_, _) => _regionalPhoto(ref, localityFallback: true),
-                data: (assets) => assets.contains(word.resolvedImagePath)
-                    ? _photo(
-                        word.resolvedImagePath,
-                        english ? word.displayNameEn : word.displayNameFil,
-                        word.word == 'SANJUAN' && word.regionId == 1
-                            ? {
-                                'author': 'Philippine Department of Tourism',
-                                'license': 'Source attribution',
-                                'source_url': 'https://cms-bmco.dmtlph.com/destination/national-capital-region/san-juan/',
-                                'license_url': '',
-                                'modifications':
-                                    'Existing bundled locality photograph.',
-                              }
-                            : null,
-                      )
-                    : _regionalPhoto(ref, localityFallback: true),
-              )
+              .watch(localityPhotoCreditsProvider)
+              .asData
+              ?.value['${word.regionId}:${word.word}']
+        : null;
+    final photoPanel = !isFinalChallenge
+        ? localityCredit != null
+              ? _photo(
+                  localityCredit.assetPath,
+                  english
+                      ? localityCredit.caption
+                      : (localityCredit.captionFil ?? localityCredit.caption),
+                  localityCredit.credit,
+                )
+              : ref
+                    .watch(discoveryImageAssetsProvider)
+                    .when(
+                      loading: () =>
+                          const Center(child: CircularProgressIndicator()),
+                      error: (_, _) =>
+                          _regionalPhoto(ref, localityFallback: true),
+                      data: (assets) => assets.contains(word.resolvedImagePath)
+                          ? _photo(
+                              word.resolvedImagePath,
+                              english
+                                  ? word.displayNameEn
+                                  : word.displayNameFil,
+                              word.word == 'SANJUAN' && word.regionId == 1
+                                  ? {
+                                      'author':
+                                          'Philippine Department of Tourism',
+                                      'license': 'Source attribution',
+                                      'source_url': 'https://cms-bmco.dmtlph.com/destination/national-capital-region/san-juan/',
+                                      'license_url': '',
+                                      'modifications': 'Existing bundled locality photograph.',
+                                    }
+                                  : null,
+                            )
+                          : _regionalPhoto(ref, localityFallback: true),
+                    )
         : isTriviaWord
         ? ref
               .watch(finalTriviaPhotoCreditsProvider)
@@ -209,8 +228,11 @@ class WordDiscoveryContent extends ConsumerWidget {
               title: Text(english ? 'Photo credits' : 'Pagkilala sa larawan'),
               childrenPadding: const EdgeInsets.all(12),
               children: [
+                if (credit['title'] != null) Text(credit['title'] as String),
                 Text('${credit['author']} · ${credit['license']}'),
                 SelectableText(credit['source_url'] as String),
+                if (credit['original_source_url'] != null)
+                  SelectableText(credit['original_source_url'] as String),
                 if ((credit['license_url'] as String? ?? '').isNotEmpty)
                   SelectableText(credit['license_url'] as String),
                 Text(credit['modifications'] as String? ?? ''),

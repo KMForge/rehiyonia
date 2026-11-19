@@ -101,14 +101,14 @@
     "category": "Lungsod",
     "clue": "Baybaying lungsod na kilala sa paliparan at kalakalan.",
     "difficulty": "Katamtaman",
-    "name_en": "Parañaque City",
-    "name_fil": "Lungsod ng Parañaque",
+    "name_en": "ParaÃ±aque City",
+    "name_fil": "Lungsod ng ParaÃ±aque",
     "province_en": "Metro Manila",
     "province_fil": "Kalakhang Maynila",
-    "description_en": "Parañaque is a coastal city known for entertainment complexes, the Baclaran National Shrine, and flourishing trade along Manila Bay.",
-    "description_fil": "Ang Parañaque ay isang baybaying lungsod na kilala sa Pambansang Dambana ng Baclaran at masiglang kalakalan sa Look ng Maynila.",
-    "fact_en": "Baclaran Church in Parañaque welcomes over one hundred thousand pilgrims every Wednesday for the Our Mother of Perpetual Help novena!",
-    "fact_fil": "Ang Simbahan ng Baclaran sa Parañaque ay dinarayo ng mahigit isandaang libong deboto tuwing Miyerkules para sa novena!",
+    "description_en": "ParaÃ±aque is a coastal city known for entertainment complexes, the Baclaran National Shrine, and flourishing trade along Manila Bay.",
+    "description_fil": "Ang ParaÃ±aque ay isang baybaying lungsod na kilala sa Pambansang Dambana ng Baclaran at masiglang kalakalan sa Look ng Maynila.",
+    "fact_en": "Baclaran Church in ParaÃ±aque welcomes over one hundred thousand pilgrims every Wednesday for the Our Mother of Perpetual Help novena!",
+    "fact_fil": "Ang Simbahan ng Baclaran sa ParaÃ±aque ay dinarayo ng mahigit isandaang libong deboto tuwing Miyerkules para sa novena!",
     "image_path": "assets/images/localities/paranaque.jpg"
   },
   {
@@ -153,8 +153,8 @@
     "name_fil": "Lungsod ng Valenzuela",
     "province_en": "Metro Manila",
     "province_fil": "Kalakhang Maynila",
-    "description_en": "Valenzuela is a premier industrial city in northern Metro Manila, named in honor of Katipunan hero Dr. Pío Valenzuela.",
-    "description_fil": "Ang Valenzuela ay isang industriyal na lungsod sa hilagang Metro Manila na ipinangalan sa bayaning si Dr. Pío Valenzuela.",
+    "description_en": "Valenzuela is a premier industrial city in northern Metro Manila, named in honor of Katipunan hero Dr. PÃ­o Valenzuela.",
+    "description_fil": "Ang Valenzuela ay isang industriyal na lungsod sa hilagang Metro Manila na ipinangalan sa bayaning si Dr. PÃ­o Valenzuela.",
     "fact_en": "The historic Bell Tower of San Diego de Alcala Church in Valenzuela survived total devastation during the battle of 1945!",
     "fact_fil": "Ang makasaysayang Kampanaryo ng Simbahan ng San Diego de Alcala sa Valenzuela ay nakaligtas sa pagkawasak noong digmaan ng 1945!",
     "image_path": "assets/images/localities/valenzuela.jpg"
@@ -165,15 +165,15 @@
     "category": "Lungsod",
     "clue": "Tanyag sa makasaysayang Bamboo Organ sa Simbahan ng San Jose.",
     "difficulty": "Madali",
-    "name_en": "Las Piñas City",
-    "name_fil": "Lungsod ng Las Piñas",
+    "name_en": "Las PiÃ±as City",
+    "name_fil": "Lungsod ng Las PiÃ±as",
     "province_en": "Metro Manila",
     "province_fil": "Kalakhang Maynila",
-    "description_en": "Las Piñas is celebrated globally for its unique Bamboo Organ housed in St. Joseph Parish Church and its traditional salt beds.",
-    "description_fil": "Tanyag ang Las Piñas sa buong daigdig dahil sa Bamboo Organ sa Simbahan ng San Jose at tradisyonal na pag-aasin.",
-    "fact_en": "The Las Piñas Bamboo Organ has 1,031 pipes, of which 902 are constructed entirely out of native Philippine bamboo!",
-    "fact_fil": "Ang Bamboo Organ ng Las Piñas ay may 1,031 na tubo kung saan 902 sa mga ito ay gawa sa tunay na kawayang Pilipino!",
-    "image_path": "assets/images/localities/laspinas.jpg"
+    "description_en": "Las PiÃ±as is celebrated globally for its unique Bamboo Organ housed in St. Joseph Parish Church and its traditional salt beds.",
+    "description_fil": "Tanyag ang Las PiÃ±as sa buong daigdig dahil sa Bamboo Organ sa Simbahan ng San Jose at tradisyonal na pag-aasin.",
+    "fact_en": "The Las PiÃ±as Bamboo Organ has 1,031 pipes, of which 902 are constructed entirely out of native Philippine bamboo!",
+    "fact_fil": "Ang Bamboo Organ ng Las PiÃ±as ay may 1,031 na tubo kung saan 902 sa mga ito ay gawa sa tunay na kawayang Pilipino!",
+    "image_path": "assets/images/localities/region_1_laspinas.jpg"
   },
   {
     "region_id": 1,
@@ -301,7 +301,7 @@
     "description_fil": "Ang La Trinidad ang kabisera ng Benguet at 'Strawberry Capital ng Pilipinas' na kilala sa masasarap na presa at bulaklak.",
     "fact_en": "La Trinidad baked the World's Largest Strawberry Shortcake in 2004, serving slices to over 42,000 festival visitors!",
     "fact_fil": "Nagluto ang La Trinidad ng Pinakamalaking Strawberry Shortcake sa Daigdig noong 2004 na pinagsaluhan ng mahigit 42,000 katao!",
-    "image_path": "assets/images/localities/latrinidad.jpg"
+    "image_path": "assets/images/localities/region_2_latrinidad.jpg"
   },
   {
     "region_id": 2,
@@ -397,7 +397,7 @@
     "description_fil": "Bayan sa Apayao na ipinangalan sa heneral ng rebolusyon.",
     "fact_en": "Luna boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Luna ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/luna.jpg"
+    "image_path": "assets/images/localities/region_2_luna.jpg"
   },
   {
     "region_id": 2,
@@ -413,7 +413,7 @@
     "description_fil": "Tarangkahan patungong Baguio na may magagandang tanawin sa Benguet.",
     "fact_en": "Tuba boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Tuba ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/tuba.jpg"
+    "image_path": "assets/images/localities/region_2_tuba.jpg"
   },
   {
     "region_id": 2,
@@ -477,7 +477,7 @@
     "description_fil": "Tahanan ng Bundok Pulag at sinaunang mummies ng Benguet.",
     "fact_en": "Kabayan boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Kabayan ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/kabayan.jpg"
+    "image_path": "assets/images/localities/region_2_kabayan.jpg"
   },
   {
     "region_id": 3,
@@ -525,7 +525,7 @@
     "description_fil": "Ang San Fernando ang kabisera ng La Union at sentrong pampangasiwaan ng Rehiyon I na matatagpuan sa tabi ng Look ng San Fernando.",
     "fact_en": "San Fernando is home to Pindangan Ruins, where the coral walls of an 18th-century stone church still stand preserved!",
     "fact_fil": "Sa San Fernando matatagpuan ang Pindangan Ruins kung saan nakatayo pa rin ang mga kural na pader ng lumang simbahan mula ika-18 siglo!",
-    "image_path": "assets/images/localities/sanfernando.jpg"
+    "image_path": "assets/images/localities/region_3_sanfernando.jpg"
   },
   {
     "region_id": 3,
@@ -541,7 +541,7 @@
     "description_fil": "Ang Dagupan ay isang malayang bahaging lungsod sa Pangasinan na tanyag sa buong bansa bilang 'Bangus Capital ng Pilipinas' dahil sa malawak nitong palaisdaan.",
     "fact_en": "Dagupan holds a Guinness World Record for the Longest Barbecue Grill, grilling thousands of fresh bangus simultaneously!",
     "fact_fil": "Nakamit ng Dagupan ang Guinness World Record para sa Pinakamahabang Ihawan kung saan sabay-sabay na inihaw ang libo-libong sariwang bangus!",
-    "image_path": "assets/images/localities/dagupan.jpg"
+    "image_path": "assets/images/localities/region_3_dagupan.jpg"
   },
   {
     "region_id": 3,
@@ -637,7 +637,7 @@
     "description_fil": "Ang San Carlos ang pinakamataong lungsod sa Pangasinan na kilala sa mga produktong kawayan at taniman ng matatamis na mangga.",
     "fact_en": "San Carlos was historically named 'Binalatongan' because of the abundance of monggo beans that grew on its fertile plains!",
     "fact_fil": "Ang San Carlos ay dating tinawag na 'Binalatongan' dahil sa saganang tanim na balatong o monggo sa kapatagan nito!",
-    "image_path": "assets/images/localities/sancarlos.jpg"
+    "image_path": "assets/images/localities/region_3_sancarlos.jpg"
   },
   {
     "region_id": 3,
@@ -877,7 +877,7 @@
     "description_fil": "Makasaysayang bayan at tahanan ng Isabela State University.",
     "fact_en": "Echague boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Echague ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/echague.jpg"
+    "image_path": "assets/images/localities/region_4_echague.jpg"
   },
   {
     "region_id": 4,
@@ -925,7 +925,7 @@
     "description_fil": "Dating Ciudad Nueva Segovia, isa sa pinakamatandang pamayanan sa bansa.",
     "fact_en": "Lallo boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Lallo ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/lallo.jpg"
+    "image_path": "assets/images/localities/region_4_lallo.jpg"
   },
   {
     "region_id": 4,
@@ -999,13 +999,13 @@
     "difficulty": "Katamtaman",
     "name_en": "San Fernando City",
     "name_fil": "Lungsod ng San Fernando",
-    "province_en": "La Union",
-    "province_fil": "La Union",
-    "description_en": "San Fernando is the capital of La Union and the regional administrative center of Region I, situated along picturesque San Fernando Bay.",
-    "description_fil": "Ang San Fernando ang kabisera ng La Union at sentrong pampangasiwaan ng Rehiyon I na matatagpuan sa tabi ng Look ng San Fernando.",
-    "fact_en": "San Fernando is home to Pindangan Ruins, where the coral walls of an 18th-century stone church still stand preserved!",
-    "fact_fil": "Sa San Fernando matatagpuan ang Pindangan Ruins kung saan nakatayo pa rin ang mga kural na pader ng lumang simbahan mula ika-18 siglo!",
-    "image_path": "assets/images/localities/sanfernando.jpg"
+    "province_en": "Pampanga",
+    "province_fil": "Pampanga",
+    "description_en": "San Fernando is the capital city of Pampanga in Central Luzon.",
+    "description_fil": "Ang San Fernando ay kabisera ng Pampanga sa Gitnang Luzon.",
+    "fact_en": "San Fernando, Pampanga is known for its Giant Lantern Festival.",
+    "fact_fil": "Kilala ang San Fernando, Pampanga sa Giant Lantern Festival nito.",
+    "image_path": "assets/images/localities/region_5_sanfernando.jpg"
   },
   {
     "region_id": 5,
@@ -1373,7 +1373,7 @@
     "description_fil": "Pinakamalaking lungsod sa Cavite at sentro ng unibersidad.",
     "fact_en": "Dasmarinas boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Dasmarinas ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/dasmarinas.jpg"
+    "image_path": "assets/images/localities/region_6_dasmarinas.jpg"
   },
   {
     "region_id": 6,
@@ -1389,7 +1389,7 @@
     "description_fil": "City of Seven Lakes sa lalawigan ng Laguna.",
     "fact_en": "Sanpablo boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Sanpablo ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/sanpablo.jpg"
+    "image_path": "assets/images/localities/region_6_sanpablo.jpg"
   },
   {
     "region_id": 6,
@@ -1517,7 +1517,7 @@
     "description_fil": "Pinakamalaking sentro ng komersyo sa Occidental Mindoro.",
     "fact_en": "Sanjose boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Sanjose ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/sanjose.jpg"
+    "image_path": "assets/images/localities/region_7_sanjose.jpg"
   },
   {
     "region_id": 7,
@@ -1581,7 +1581,7 @@
     "description_fil": "Tanyag sa matatayog na limestone cliffs at magagandang lagoon sa Palawan.",
     "fact_en": "Elnido boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Elnido ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/elnido.jpg"
+    "image_path": "assets/images/localities/region_7_elnido.jpg"
   },
   {
     "region_id": 7,
@@ -1613,7 +1613,7 @@
     "description_fil": "Timog Palawan kung saan natagpuan ang higanteng Pearl of Lao Tzu.",
     "fact_en": "Brookespoint boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Brookespoint ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/brookespoint.jpg"
+    "image_path": "assets/images/localities/region_7_brookespoint.jpg"
   },
   {
     "region_id": 7,
@@ -1645,7 +1645,7 @@
     "description_fil": "Tahanan ng tanyag na Apo Reef Natural Park sa Occidental Mindoro.",
     "fact_en": "Sablayan boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Sablayan ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/sablayan.jpg"
+    "image_path": "assets/images/localities/region_7_sablayan.jpg"
   },
   {
     "region_id": 7,
@@ -1677,7 +1677,7 @@
     "description_fil": "Tanyag sa Poctoy White Beach sa silangang Marinduque.",
     "fact_en": "Torrijos boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Torrijos ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/torrijos.jpg"
+    "image_path": "assets/images/localities/region_7_torrijos.jpg"
   },
   {
     "region_id": 8,
@@ -1699,14 +1699,14 @@
     "region_id": 8,
     "word": "NAGA",
     "category": "Lungsod",
-    "clue": "An Maogmang Lugar at sentro ng Debosyon sa Birhen ng Peñafrancia.",
+    "clue": "An Maogmang Lugar at sentro ng Debosyon sa Birhen ng PeÃ±afrancia.",
     "difficulty": "Madali",
     "name_en": "Naga",
     "name_fil": "Naga",
     "province_en": "",
     "province_fil": "",
     "description_en": "Naga is a prominent lungsod in the region known for its local culture and community.",
-    "description_fil": "An Maogmang Lugar at sentro ng Debosyon sa Birhen ng Peñafrancia.",
+    "description_fil": "An Maogmang Lugar at sentro ng Debosyon sa Birhen ng PeÃ±afrancia.",
     "fact_en": "Naga boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Naga ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
     "image_path": "assets/images/localities/naga.jpg"
@@ -1997,7 +1997,7 @@
     "description_fil": "Bayan sa Aklan kung saan matatagpuan ang Pulo ng Boracay.",
     "fact_en": "Malay boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Malay ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/malay.jpg"
+    "image_path": "assets/images/localities/region_9_malay.jpg"
   },
   {
     "region_id": 9,
@@ -2013,7 +2013,7 @@
     "description_fil": "Kabisera ng lalawigan ng Antique (San Jose de Buenavista).",
     "fact_en": "Sanjose boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Sanjose ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/sanjose.jpg"
+    "image_path": "assets/images/localities/region_9_sanjose.jpg"
   },
   {
     "region_id": 9,
@@ -2141,7 +2141,7 @@
     "description_fil": "Bayan sa Iloilo na tanyag sa Carabao-Carroza Festival at Simbahan ng Pavia.",
     "fact_en": "Pavia boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Pavia ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/pavia.jpg"
+    "image_path": "assets/images/localities/region_9_pavia.jpg"
   },
   {
     "region_id": 9,
@@ -2189,7 +2189,7 @@
     "description_fil": "Makasaysayang lungsod sa Mactan na ipinangalan sa unang bayani ng bansa.",
     "fact_en": "Lapulapu boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Lapulapu ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/lapulapu.jpg"
+    "image_path": "assets/images/localities/region_10_lapulapu.jpg"
   },
   {
     "region_id": 10,
@@ -2355,14 +2355,14 @@
     "region_id": 10,
     "word": "DALAGUETE",
     "category": "Bayan",
-    "clue": "Vegetable Basket of Cebu at kinalalagyan ng Osmeña Peak.",
+    "clue": "Vegetable Basket of Cebu at kinalalagyan ng OsmeÃ±a Peak.",
     "difficulty": "Katamtaman",
     "name_en": "Dalaguete",
     "name_fil": "Dalaguete",
     "province_en": "",
     "province_fil": "",
     "description_en": "Dalaguete is a prominent bayan in the region known for its local culture and community.",
-    "description_fil": "Vegetable Basket of Cebu at kinalalagyan ng Osmeña Peak.",
+    "description_fil": "Vegetable Basket of Cebu at kinalalagyan ng OsmeÃ±a Peak.",
     "fact_en": "Dalaguete boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Dalaguete ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
     "image_path": "assets/images/localities/dalaguete.jpg"
@@ -2429,7 +2429,7 @@
     "description_fil": "Lungsod sa kanlurang Leyte na tanyag sa geothermal energy at matamis na pinya.",
     "fact_en": "Ormoc boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Ormoc ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/ormoc.jpg"
+    "image_path": "assets/images/localities/region_11_ormoc.jpg"
   },
   {
     "region_id": 11,
@@ -2525,7 +2525,7 @@
     "description_fil": "Kabisera ng pulo-lalawigan ng Biliran.",
     "fact_en": "Naval boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Naval ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/naval.jpg"
+    "image_path": "assets/images/localities/region_11_naval.jpg"
   },
   {
     "region_id": 11,
@@ -2711,13 +2711,13 @@
     "difficulty": "Katamtaman",
     "name_en": "San Carlos City",
     "name_fil": "Lungsod ng San Carlos",
-    "province_en": "Pangasinan",
-    "province_fil": "Pangasinan",
-    "description_en": "San Carlos is the most populous component city in Pangasinan, known for its extensive bamboo handicraft industry and mango orchards.",
-    "description_fil": "Ang San Carlos ang pinakamataong lungsod sa Pangasinan na kilala sa mga produktong kawayan at taniman ng matatamis na mangga.",
-    "fact_en": "San Carlos was historically named 'Binalatongan' because of the abundance of monggo beans that grew on its fertile plains!",
-    "fact_fil": "Ang San Carlos ay dating tinawag na 'Binalatongan' dahil sa saganang tanim na balatong o monggo sa kapatagan nito!",
-    "image_path": "assets/images/localities/sancarlos.jpg"
+    "province_en": "Negros Occidental",
+    "province_fil": "Negros Occidental",
+    "description_en": "San Carlos is a coastal city in Negros Occidental in the Negros Island Region.",
+    "description_fil": "Ang San Carlos ay lungsod sa baybayin ng Negros Occidental sa Negros Island Region.",
+    "fact_en": "The Port of San Carlos connects Negros with nearby islands.",
+    "fact_fil": "Iniuugnay ng Daungan ng San Carlos ang Negros sa mga kalapit na isla.",
+    "image_path": "assets/images/localities/region_18_sancarlos.jpg"
   },
   {
     "region_id": 18,
@@ -2781,7 +2781,7 @@
     "description_fil": "Lungsod sa paanan ng maringal na Bulkang Kanlaon.",
     "fact_en": "Canlaon boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Canlaon ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/canlaon.jpg"
+    "image_path": "assets/images/localities/region_18_canlaon.jpg"
   },
   {
     "region_id": 18,
@@ -2829,7 +2829,7 @@
     "description_fil": "Tanyag sa makulay na Pasalamat Festival sa paanan ng Kanlaon.",
     "fact_en": "Lacarlota boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Lacarlota ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/lacarlota.jpg"
+    "image_path": "assets/images/localities/region_18_lacarlota.jpg"
   },
   {
     "region_id": 18,
@@ -2867,14 +2867,14 @@
     "region_id": 18,
     "word": "BAIS",
     "category": "Lungsod",
-    "clue": "Tanyag sa panonood ng dolphin at balyena sa Tañon Strait.",
+    "clue": "Tanyag sa panonood ng dolphin at balyena sa TaÃ±on Strait.",
     "difficulty": "Madali",
     "name_en": "Bais",
     "name_fil": "Bais",
     "province_en": "",
     "province_fil": "",
     "description_en": "Bais is a prominent lungsod in the region known for its local culture and community.",
-    "description_fil": "Tanyag sa panonood ng dolphin at balyena sa Tañon Strait.",
+    "description_fil": "Tanyag sa panonood ng dolphin at balyena sa TaÃ±on Strait.",
     "fact_en": "Bais boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Bais ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
     "image_path": "assets/images/localities/bais.jpg"
@@ -3037,7 +3037,7 @@
     "description_fil": "Baybaying bayan sa lalawigan ng Sulu.",
     "fact_en": "Patikul boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Patikul ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/patikul.jpg"
+    "image_path": "assets/images/localities/region_12_patikul.jpg"
   },
   {
     "region_id": 12,
@@ -3117,7 +3117,7 @@
     "description_fil": "Bayan sa baybayin ng Zamboanga del Norte na mayaman sa mineral.",
     "fact_en": "Siocon boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Siocon ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/siocon.jpg"
+    "image_path": "assets/images/localities/region_12_siocon.jpg"
   },
   {
     "region_id": 13,
@@ -3133,7 +3133,7 @@
     "description_fil": "City of Golden Friendship at sentrong pang-rehiyon ng Hilagang Mindanao.",
     "fact_en": "Cagayandeoro boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Cagayandeoro ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/cagayandeoro.jpg"
+    "image_path": "assets/images/localities/region_13_cagayandeoro.jpg"
   },
   {
     "region_id": 13,
@@ -3309,7 +3309,7 @@
     "description_fil": "Makasaysayang baybaying bayan sa lalawigan ng Misamis Oriental.",
     "fact_en": "Balingasag boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Balingasag ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/balingasag.jpg"
+    "image_path": "assets/images/localities/region_13_balingasag.jpg"
   },
   {
     "region_id": 13,
@@ -3341,7 +3341,7 @@
     "description_fil": "Bayang agrikultural sa Bukidnon na tanyag sa Pinamaloy Lake.",
     "fact_en": "Doncarlos boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Doncarlos ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/doncarlos.jpg"
+    "image_path": "assets/images/localities/region_13_doncarlos.jpg"
   },
   {
     "region_id": 13,
@@ -3389,7 +3389,7 @@
     "description_fil": "Palm City of the Philippines at kabisera ng Davao del Norte.",
     "fact_en": "Tagum boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Tagum ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/tagum.jpg"
+    "image_path": "assets/images/localities/region_14_tagum.jpg"
   },
   {
     "region_id": 14,
@@ -3421,7 +3421,7 @@
     "description_fil": "Kabisera ng Davao Oriental na bantog sa Dahican Beach at skimboarding.",
     "fact_en": "Mati boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Mati ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/mati.jpg"
+    "image_path": "assets/images/localities/region_14_mati.jpg"
   },
   {
     "region_id": 14,
@@ -3453,7 +3453,7 @@
     "description_fil": "Island Garden City of Samal na bantog sa mga dalampasigan at kuweba.",
     "fact_en": "Samal boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Samal ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/samal.jpg"
+    "image_path": "assets/images/localities/region_14_samal.jpg"
   },
   {
     "region_id": 14,
@@ -3469,7 +3469,7 @@
     "description_fil": "Kabisera ng lalawigan ng Davao de Oro (dating Compostela Valley).",
     "fact_en": "Nabunturan boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Nabunturan ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/nabunturan.jpg"
+    "image_path": "assets/images/localities/region_14_nabunturan.jpg"
   },
   {
     "region_id": 14,
@@ -3485,7 +3485,7 @@
     "description_fil": "Kabisera ng pinakabagong lalawigan sa rehiyon, ang Davao Occidental.",
     "fact_en": "Malita boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Malita ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/malita.jpg"
+    "image_path": "assets/images/localities/region_14_malita.jpg"
   },
   {
     "region_id": 14,
@@ -3533,7 +3533,7 @@
     "description_fil": "Mayaman sa ginto at yamang mineral sa Davao de Oro.",
     "fact_en": "Monkayo boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Monkayo ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/monkayo.jpg"
+    "image_path": "assets/images/localities/region_14_monkayo.jpg"
   },
   {
     "region_id": 14,
@@ -3565,7 +3565,7 @@
     "description_fil": "Bayang agrikultural sa baybayin ng Davao Occidental.",
     "fact_en": "Santamaria boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Santamaria ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/santamaria.jpg"
+    "image_path": "assets/images/localities/region_14_santamaria.jpg"
   },
   {
     "region_id": 14,
@@ -3581,7 +3581,7 @@
     "description_fil": "Baybaying bayan sa silangang baybayin ng Davao Oriental.",
     "fact_en": "Baganga boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Baganga ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/baganga.jpg"
+    "image_path": "assets/images/localities/region_14_baganga.jpg"
   },
   {
     "region_id": 14,
@@ -3613,7 +3613,7 @@
     "description_fil": "Tuna Capital of the Philippines (Lungsod ng General Santos).",
     "fact_en": "Gensan boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Gensan ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/gensan.jpg"
+    "image_path": "assets/images/localities/region_15_gensan.jpg"
   },
   {
     "region_id": 15,
@@ -3965,7 +3965,7 @@
     "description_fil": "Kabisera ng kapuluan ng Dinagat Islands.",
     "fact_en": "Sanjose boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Sanjose ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/sanjose.jpg"
+    "image_path": "assets/images/localities/region_16_sanjose.jpg"
   },
   {
     "region_id": 16,
@@ -3981,7 +3981,7 @@
     "description_fil": "Pangunahing daungang bayan sa Pulo ng Siargao sa Surigao del Norte.",
     "fact_en": "Dapa boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Dapa ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/dapa.jpg"
+    "image_path": "assets/images/localities/region_16_dapa.jpg"
   },
   {
     "region_id": 16,
@@ -4045,7 +4045,7 @@
     "description_fil": "Baybaying bayan sa timog-silangang dulo ng Surigao del Sur.",
     "fact_en": "Lingig boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Lingig ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/lingig.jpg"
+    "image_path": "assets/images/localities/region_16_lingig.jpg"
   },
   {
     "region_id": 16,
@@ -4141,7 +4141,7 @@
     "description_fil": "Kabisera ng Tawi-Tawi at tahanan ng banal na Bud Bongao.",
     "fact_en": "Bongao boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Bongao ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/bongao.jpg"
+    "image_path": "assets/images/localities/region_17_bongao.jpg"
   },
   {
     "region_id": 17,
@@ -4157,7 +4157,7 @@
     "description_fil": "Bayan sa Maguindanao del Norte kung saan matatagpuan ang Awang Airport.",
     "fact_en": "Datuodin boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Datuodin ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/datuodin.jpg"
+    "image_path": "assets/images/localities/region_17_datuodin.jpg"
   },
   {
     "region_id": 17,
@@ -4173,7 +4173,7 @@
     "description_fil": "Makasaysayang bayan sa lalawigan ng Maguindanao del Sur.",
     "fact_en": "Sharifaguak boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Sharifaguak ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/sharifaguak.jpg"
+    "image_path": "assets/images/localities/region_17_sharifaguak.jpg"
   },
   {
     "region_id": 17,
@@ -4205,7 +4205,7 @@
     "description_fil": "Makasaysayang baybaying bayan sa Lanao del Sur.",
     "fact_en": "Malabang boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Malabang ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/malabang.jpg"
+    "image_path": "assets/images/localities/region_17_malabang.jpg"
   },
   {
     "region_id": 17,
@@ -4221,7 +4221,7 @@
     "description_fil": "Sentro ng agrikultura sa silangang dulo ng Lanao del Sur.",
     "fact_en": "Wao boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Wao ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/wao.jpg"
+    "image_path": "assets/images/localities/region_17_wao.jpg"
   },
   {
     "region_id": 17,
@@ -4269,7 +4269,7 @@
     "description_fil": "Tahanan ng katutubong Teduray sa kabundukan ng Maguindanao del Norte.",
     "fact_en": "Upi boasts unique local traditions and historic heritage treasured by its residents!",
     "fact_fil": "Ang Upi ay may mga natatanging tradisyon at pamanang ipinagmamalaki ng mga naninirahan dito!",
-    "image_path": "assets/images/localities/upi.jpg"
+    "image_path": "assets/images/localities/region_17_upi.jpg"
   },
   {
     "region_id": 17,

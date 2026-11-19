@@ -54,3 +54,6 @@ app.*.map.json
 
 # Widget Preview related
 .widget_preview/
+
+# Cached Wikimedia API responses; reviewed locality source records are versioned.
+/tool/.locality-photo-cache/
