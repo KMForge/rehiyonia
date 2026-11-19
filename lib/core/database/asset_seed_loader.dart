@@ -142,6 +142,57 @@ class AssetSeedLoader {
         }
       });
 
+      // Refresh reviewed educational copy even when installed row counts match.
+      // Update in place by region + word: never replace IDs or saved progress.
+      final reviewedKeys = {
+        for (final item in wordsList.cast<Map<String, dynamic>>())
+          if (const {
+            'locality_learning_2026_11_v1',
+            'locality_learning_2026_11_v2',
+          }.contains(item['content_revision']))
+            '${item['region_id']}:${item['word']}',
+      };
+      final installedLocalities = {
+        for (final row in await db.query(DatabaseConstants.tableLocalities))
+          '${row['region_id']}:${row['word']}': row,
+      };
+      await db.transaction((txn) async {
+        for (final word in words) {
+          final key = '${word.regionId}:${word.word}';
+          if (!reviewedKeys.contains(key)) continue;
+          final copy = <String, Object?>{
+            DatabaseConstants.columnNameEn: word.displayNameEn,
+            DatabaseConstants.columnNameFil: word.displayNameFil,
+            DatabaseConstants.columnProvinceEn: word.provinceEn,
+            DatabaseConstants.columnProvinceFil: word.provinceFil,
+            DatabaseConstants.columnDescriptionEn: word.displayClueEn,
+            DatabaseConstants.columnDescriptionFil: word.displayClueFil,
+            DatabaseConstants.columnFactEn: word.displayFactEn,
+            DatabaseConstants.columnFactFil: word.displayFactFil,
+          };
+          final installed = installedLocalities[key];
+          if (installed == null) {
+            throw FormatException('Missing reviewed locality: $key');
+          }
+          if (copy.entries.any(
+            (entry) => installed[entry.key] != entry.value,
+          )) {
+            await txn.update(
+              DatabaseConstants.tableLocalities,
+              copy,
+              where: 'region_id = ? AND word = ?',
+              whereArgs: [word.regionId, word.word],
+            );
+          }
+          await txn.update(
+            DatabaseConstants.tableWords,
+            {'clue': word.clue},
+            where: 'region_id = ? AND word = ? AND clue <> ?',
+            whereArgs: [word.regionId, word.word, word.clue],
+          );
+        }
+      });
+
       final triviaJson = await rootBundle.loadString('assets/data/trivia.json');
       final List<dynamic> triviaList = json.decode(triviaJson) as List<dynamic>;
       final englishJson = await rootBundle.loadString(

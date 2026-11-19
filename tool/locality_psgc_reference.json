@@ -1,0 +1,1883 @@
+{
+  "publisher": "Philippine Statistics Authority",
+  "population_reference": "2024 Census of Population (2024 POPCEN)",
+  "reviewed_on": "2026-11-20",
+  "sources": [
+    "https://psa.gov.ph/classification/psgc/municipalities",
+    "https://psa.gov.ph/classification/psgc/cities"
+  ],
+  "records": [
+    {
+      "name": "Bangued",
+      "code": "1400101000",
+      "population2024": 48331,
+      "type": "Municipality",
+      "region_id": 2,
+      "word": "BANGUED"
+    },
+    {
+      "name": "Kabugao",
+      "code": "1408104000",
+      "population2024": 16425,
+      "type": "Municipality",
+      "region_id": 2,
+      "word": "KABUGAO"
+    },
+    {
+      "name": "Lagawe",
+      "code": "1402704000",
+      "population2024": 19124,
+      "type": "Municipality",
+      "region_id": 2,
+      "word": "LAGAWE"
+    },
+    {
+      "name": "City of Tabuk",
+      "code": "1403213000",
+      "population2024": 122771,
+      "type": "City",
+      "region_id": 2,
+      "word": "TABUK"
+    },
+    {
+      "name": "Bontoc",
+      "code": "1404404000",
+      "population2024": 23466,
+      "type": "Municipality",
+      "region_id": 2,
+      "word": "BONTOC"
+    },
+    {
+      "name": "Luna",
+      "code": "1408105000",
+      "population2024": 21630,
+      "type": "Municipality",
+      "region_id": 2,
+      "word": "LUNA"
+    },
+    {
+      "name": "Tuba",
+      "code": "1401113000",
+      "population2024": 49268,
+      "type": "Municipality",
+      "region_id": 2,
+      "word": "TUBA"
+    },
+    {
+      "name": "Tadian",
+      "code": "1404410000",
+      "population2024": 18073,
+      "type": "Municipality",
+      "region_id": 2,
+      "word": "TADIAN"
+    },
+    {
+      "name": "Bauko",
+      "code": "1404402000",
+      "population2024": 31470,
+      "type": "Municipality",
+      "region_id": 2,
+      "word": "BAUKO"
+    },
+    {
+      "name": "Kiangan",
+      "code": "1402703000",
+      "population2024": 17849,
+      "type": "Municipality",
+      "region_id": 2,
+      "word": "KIANGAN"
+    },
+    {
+      "name": "Kabayan",
+      "code": "1401107000",
+      "population2024": 15841,
+      "type": "Municipality",
+      "region_id": 2,
+      "word": "KABAYAN"
+    },
+    {
+      "name": "Tuguegarao City",
+      "code": "0201529000",
+      "population2024": 167297,
+      "type": "City",
+      "region_id": 4,
+      "word": "TUGUEGARAO"
+    },
+    {
+      "name": "City of Ilagan",
+      "code": "0203114000",
+      "population2024": 164020,
+      "type": "City",
+      "region_id": 4,
+      "word": "ILAGAN"
+    },
+    {
+      "name": "City of Cauayan",
+      "code": "0203108000",
+      "population2024": 143539,
+      "type": "City",
+      "region_id": 4,
+      "word": "CAUAYAN"
+    },
+    {
+      "name": "City of Santiago",
+      "code": "0203135000",
+      "population2024": 150313,
+      "type": "City",
+      "region_id": 4,
+      "word": "SANTIAGO"
+    },
+    {
+      "name": "Basco",
+      "code": "0200901000",
+      "population2024": 9647,
+      "type": "Municipality",
+      "region_id": 4,
+      "word": "BASCO"
+    },
+    {
+      "name": "Bayombong",
+      "code": "0205005000",
+      "population2024": 72890,
+      "type": "Municipality",
+      "region_id": 4,
+      "word": "BAYOMBONG"
+    },
+    {
+      "name": "Cabarroguis",
+      "code": "0205702000",
+      "population2024": 34720,
+      "type": "Municipality",
+      "region_id": 4,
+      "word": "CABARROGUIS"
+    },
+    {
+      "name": "Aparri",
+      "code": "0201505000",
+      "population2024": 68368,
+      "type": "Municipality",
+      "region_id": 4,
+      "word": "APARRI"
+    },
+    {
+      "name": "Solano",
+      "code": "0205013000",
+      "population2024": 69296,
+      "type": "Municipality",
+      "region_id": 4,
+      "word": "SOLANO"
+    },
+    {
+      "name": "Echague",
+      "code": "0203112000",
+      "population2024": 91320,
+      "type": "Municipality",
+      "region_id": 4,
+      "word": "ECHAGUE"
+    },
+    {
+      "name": "Maddela",
+      "code": "0205704000",
+      "population2024": 41867,
+      "type": "Municipality",
+      "region_id": 4,
+      "word": "MADDELA"
+    },
+    {
+      "name": "Diffun",
+      "code": "0205703000",
+      "population2024": 58254,
+      "type": "Municipality",
+      "region_id": 4,
+      "word": "DIFFUN"
+    },
+    {
+      "name": "Lal-Lo",
+      "code": "0201516000",
+      "population2024": 48404,
+      "type": "Municipality",
+      "region_id": 4,
+      "word": "LALLO"
+    },
+    {
+      "name": "Gattaran",
+      "code": "0201513000",
+      "population2024": 59704,
+      "type": "Municipality",
+      "region_id": 4,
+      "word": "GATTARAN"
+    },
+    {
+      "name": "Roxas",
+      "code": "0203126000",
+      "population2024": 66593,
+      "type": "Municipality",
+      "region_id": 4,
+      "word": "ROXAS"
+    },
+    {
+      "name": "City of Angeles",
+      "code": "0330100000",
+      "population2024": 483452,
+      "type": "City",
+      "region_id": 5,
+      "word": "ANGELES"
+    },
+    {
+      "name": "City of Olongapo",
+      "code": "0331400000",
+      "population2024": 264903,
+      "type": "City",
+      "region_id": 5,
+      "word": "OLONGAPO"
+    },
+    {
+      "name": "City of Malolos",
+      "code": "0301410000",
+      "population2024": 269809,
+      "type": "City",
+      "region_id": 5,
+      "word": "MALOLOS"
+    },
+    {
+      "name": "City of Cabanatuan",
+      "code": "0304903000",
+      "population2024": 343672,
+      "type": "City",
+      "region_id": 5,
+      "word": "CABANATUAN"
+    },
+    {
+      "name": "City of Tarlac",
+      "code": "0306916000",
+      "population2024": 401892,
+      "type": "City",
+      "region_id": 5,
+      "word": "TARLAC"
+    },
+    {
+      "name": "City of Balanga",
+      "code": "0300803000",
+      "population2024": 109931,
+      "type": "City",
+      "region_id": 5,
+      "word": "BALANGA"
+    },
+    {
+      "name": "Baler",
+      "code": "0307701000",
+      "population2024": 44684,
+      "type": "Municipality",
+      "region_id": 5,
+      "word": "BALER"
+    },
+    {
+      "name": "Iba",
+      "code": "0307105000",
+      "population2024": 59580,
+      "type": "Municipality",
+      "region_id": 5,
+      "word": "IBA"
+    },
+    {
+      "name": "City of Palayan",
+      "code": "0304919000",
+      "population2024": 47883,
+      "type": "City",
+      "region_id": 5,
+      "word": "PALAYAN"
+    },
+    {
+      "name": "City of Meycauayan",
+      "code": "0301412000",
+      "population2024": 228023,
+      "type": "City",
+      "region_id": 5,
+      "word": "MEYCAUAYAN"
+    },
+    {
+      "name": "City of Baliwag",
+      "code": "0301403000",
+      "population2024": 174194,
+      "type": "City",
+      "region_id": 5,
+      "word": "BALIWAG"
+    },
+    {
+      "name": "Mabalacat City",
+      "code": "0305409000",
+      "population2024": 306594,
+      "type": "City",
+      "region_id": 5,
+      "word": "MABALACAT"
+    },
+    {
+      "name": "Subic",
+      "code": "0307114000",
+      "population2024": 116788,
+      "type": "Municipality",
+      "region_id": 5,
+      "word": "SUBIC"
+    },
+    {
+      "name": "Guagua",
+      "code": "0305407000",
+      "population2024": 137948,
+      "type": "Municipality",
+      "region_id": 5,
+      "word": "GUAGUA"
+    },
+    {
+      "name": "City of Antipolo",
+      "code": "0405802000",
+      "population2024": 913712,
+      "type": "City",
+      "region_id": 6,
+      "word": "ANTIPOLO"
+    },
+    {
+      "name": "City of Calamba",
+      "code": "0403405000",
+      "population2024": 575046,
+      "type": "City",
+      "region_id": 6,
+      "word": "CALAMBA"
+    },
+    {
+      "name": "Batangas City",
+      "code": "0401005000",
+      "population2024": 358267,
+      "type": "City",
+      "region_id": 6,
+      "word": "BATANGAS"
+    },
+    {
+      "name": "City of Lucena",
+      "code": "0431200000",
+      "population2024": 280331,
+      "type": "City",
+      "region_id": 6,
+      "word": "LUCENA"
+    },
+    {
+      "name": "City of Cavite",
+      "code": "0402105000",
+      "population2024": 98673,
+      "type": "City",
+      "region_id": 6,
+      "word": "CAVITE"
+    },
+    {
+      "name": "City of Tagaytay",
+      "code": "0402119000",
+      "population2024": 87811,
+      "type": "City",
+      "region_id": 6,
+      "word": "TAGAYTAY"
+    },
+    {
+      "name": "City of Santa Rosa",
+      "code": "0403428000",
+      "population2024": 430920,
+      "type": "City",
+      "region_id": 6,
+      "word": "SANTAROSA"
+    },
+    {
+      "name": "City of Imus",
+      "code": "0402109000",
+      "population2024": 481949,
+      "type": "City",
+      "region_id": 6,
+      "word": "IMUS"
+    },
+    {
+      "name": "City of Tanauan",
+      "code": "0401031000",
+      "population2024": 209697,
+      "type": "City",
+      "region_id": 6,
+      "word": "TANAUAN"
+    },
+    {
+      "name": "City of Tayabas",
+      "code": "0405647000",
+      "population2024": 115318,
+      "type": "City",
+      "region_id": 6,
+      "word": "TAYABAS"
+    },
+    {
+      "name": "City of Dasmariñas",
+      "code": "0402106000",
+      "population2024": 744511,
+      "type": "City",
+      "region_id": 6,
+      "word": "DASMARINAS"
+    },
+    {
+      "name": "City of San Pablo",
+      "code": "0403424000",
+      "population2024": 300166,
+      "type": "City",
+      "region_id": 6,
+      "word": "SANPABLO"
+    },
+    {
+      "name": "City of Lipa",
+      "code": "0401014000",
+      "population2024": 387392,
+      "type": "City",
+      "region_id": 6,
+      "word": "LIPA"
+    },
+    {
+      "name": "Candelaria",
+      "code": "0405608000",
+      "population2024": 137933,
+      "type": "Municipality",
+      "region_id": 6,
+      "word": "CANDELARIA"
+    },
+    {
+      "name": "Los Baños",
+      "code": "0403411000",
+      "population2024": 117030,
+      "type": "Municipality",
+      "region_id": 6,
+      "word": "LOSBANOS"
+    },
+    {
+      "name": "City of Puerto Princesa",
+      "code": "1731500000",
+      "population2024": 316384,
+      "type": "City",
+      "region_id": 7,
+      "word": "PUERTOPRINCESA"
+    },
+    {
+      "name": "City of Calapan",
+      "code": "1705205000",
+      "population2024": 148558,
+      "type": "City",
+      "region_id": 7,
+      "word": "CALAPAN"
+    },
+    {
+      "name": "Boac",
+      "code": "1704001000",
+      "population2024": 54365,
+      "type": "Municipality",
+      "region_id": 7,
+      "word": "BOAC"
+    },
+    {
+      "name": "Mamburao",
+      "code": "1705106000",
+      "population2024": 44554,
+      "type": "Municipality",
+      "region_id": 7,
+      "word": "MAMBURAO"
+    },
+    {
+      "name": "San Jose",
+      "code": "1705110000",
+      "population2024": 143495,
+      "type": "Municipality",
+      "region_id": 7,
+      "word": "SANJOSE"
+    },
+    {
+      "name": "Romblon",
+      "code": "1705910000",
+      "population2024": 39004,
+      "type": "Municipality",
+      "region_id": 7,
+      "word": "ROMBLON"
+    },
+    {
+      "name": "Odiongan",
+      "code": "1705909000",
+      "population2024": 48133,
+      "type": "Municipality",
+      "region_id": 7,
+      "word": "ODIONGAN"
+    },
+    {
+      "name": "Coron",
+      "code": "1705309000",
+      "population2024": 69439,
+      "type": "Municipality",
+      "region_id": 7,
+      "word": "CORON"
+    },
+    {
+      "name": "El Nido",
+      "code": "1705312000",
+      "population2024": 51367,
+      "type": "Municipality",
+      "region_id": 7,
+      "word": "ELNIDO"
+    },
+    {
+      "name": "Roxas",
+      "code": "1705318000",
+      "population2024": 69729,
+      "type": "Municipality",
+      "region_id": 7,
+      "word": "ROXAS"
+    },
+    {
+      "name": "Brooke's Point",
+      "code": "1705306000",
+      "population2024": 76715,
+      "type": "Municipality",
+      "region_id": 7,
+      "word": "BROOKESPOINT"
+    },
+    {
+      "name": "Narra",
+      "code": "1705315000",
+      "population2024": 80572,
+      "type": "Municipality",
+      "region_id": 7,
+      "word": "NARRA"
+    },
+    {
+      "name": "Sablayan",
+      "code": "1705109000",
+      "population2024": 91406,
+      "type": "Municipality",
+      "region_id": 7,
+      "word": "SABLAYAN"
+    },
+    {
+      "name": "Naujan",
+      "code": "1705208000",
+      "population2024": 109122,
+      "type": "Municipality",
+      "region_id": 7,
+      "word": "NAUJAN"
+    },
+    {
+      "name": "Torrijos",
+      "code": "1704006000",
+      "population2024": 28535,
+      "type": "Municipality",
+      "region_id": 7,
+      "word": "TORRIJOS"
+    },
+    {
+      "name": "City of Legazpi",
+      "code": "0500506000",
+      "population2024": 210616,
+      "type": "City",
+      "region_id": 8,
+      "word": "LEGAZPI"
+    },
+    {
+      "name": "City of Naga",
+      "code": "0501724000",
+      "population2024": 210545,
+      "type": "City",
+      "region_id": 8,
+      "word": "NAGA"
+    },
+    {
+      "name": "City of Sorsogon",
+      "code": "0506216000",
+      "population2024": 187670,
+      "type": "City",
+      "region_id": 8,
+      "word": "SORSOGON"
+    },
+    {
+      "name": "City of Masbate",
+      "code": "0504111000",
+      "population2024": 104011,
+      "type": "City",
+      "region_id": 8,
+      "word": "MASBATE"
+    },
+    {
+      "name": "Daet",
+      "code": "0501603000",
+      "population2024": 106465,
+      "type": "Municipality",
+      "region_id": 8,
+      "word": "DAET"
+    },
+    {
+      "name": "Virac",
+      "code": "0502011000",
+      "population2024": 75135,
+      "type": "Municipality",
+      "region_id": 8,
+      "word": "VIRAC"
+    },
+    {
+      "name": "Pili",
+      "code": "0501728000",
+      "population2024": 101668,
+      "type": "Municipality",
+      "region_id": 8,
+      "word": "PILI"
+    },
+    {
+      "name": "City of Iriga",
+      "code": "0501716000",
+      "population2024": 115306,
+      "type": "City",
+      "region_id": 8,
+      "word": "IRIGA"
+    },
+    {
+      "name": "City of Ligao",
+      "code": "0500508000",
+      "population2024": 119779,
+      "type": "City",
+      "region_id": 8,
+      "word": "LIGAO"
+    },
+    {
+      "name": "City of Tabaco",
+      "code": "0500517000",
+      "population2024": 140779,
+      "type": "City",
+      "region_id": 8,
+      "word": "TABACO"
+    },
+    {
+      "name": "Goa",
+      "code": "0501715000",
+      "population2024": 71651,
+      "type": "Municipality",
+      "region_id": 8,
+      "word": "GOA"
+    },
+    {
+      "name": "Donsol",
+      "code": "0506207000",
+      "population2024": 51781,
+      "type": "Municipality",
+      "region_id": 8,
+      "word": "DONSOL"
+    },
+    {
+      "name": "Daraga",
+      "code": "0500503000",
+      "population2024": 138000,
+      "type": "Municipality",
+      "region_id": 8,
+      "word": "DARAGA"
+    },
+    {
+      "name": "Sipocot",
+      "code": "0501734000",
+      "population2024": 65286,
+      "type": "Municipality",
+      "region_id": 8,
+      "word": "SIPOCOT"
+    },
+    {
+      "name": "Bulan",
+      "code": "0506203000",
+      "population2024": 106919,
+      "type": "Municipality",
+      "region_id": 8,
+      "word": "BULAN"
+    },
+    {
+      "name": "City of Iloilo",
+      "code": "0631000000",
+      "population2024": 473728,
+      "type": "City",
+      "region_id": 9,
+      "word": "ILOILO"
+    },
+    {
+      "name": "City of Roxas",
+      "code": "0601914000",
+      "population2024": 185236,
+      "type": "City",
+      "region_id": 9,
+      "word": "ROXAS"
+    },
+    {
+      "name": "City of Passi",
+      "code": "0603035000",
+      "population2024": 90313,
+      "type": "City",
+      "region_id": 9,
+      "word": "PASSI"
+    },
+    {
+      "name": "Kalibo",
+      "code": "0600407000",
+      "population2024": 93218,
+      "type": "Municipality",
+      "region_id": 9,
+      "word": "KALIBO"
+    },
+    {
+      "name": "Malay",
+      "code": "0600412000",
+      "population2024": 64723,
+      "type": "Municipality",
+      "region_id": 9,
+      "word": "MALAY"
+    },
+    {
+      "name": "San Jose",
+      "code": "0600613000",
+      "population2024": 69522,
+      "type": "Municipality",
+      "region_id": 9,
+      "word": "SANJOSE"
+    },
+    {
+      "name": "Jordan",
+      "code": "0607902000",
+      "population2024": 40647,
+      "type": "Municipality",
+      "region_id": 9,
+      "word": "JORDAN"
+    },
+    {
+      "name": "Buenavista",
+      "code": "0607901000",
+      "population2024": 54352,
+      "type": "Municipality",
+      "region_id": 9,
+      "word": "BUENAVISTA"
+    },
+    {
+      "name": "Miagao",
+      "code": "0603030000",
+      "population2024": 68163,
+      "type": "Municipality",
+      "region_id": 9,
+      "word": "MIAGAO"
+    },
+    {
+      "name": "New Washington",
+      "code": "0600415000",
+      "population2024": 49204,
+      "type": "Municipality",
+      "region_id": 9,
+      "word": "WASHINGTON"
+    },
+    {
+      "name": "Pandan",
+      "code": "0600611000",
+      "population2024": 37325,
+      "type": "Municipality",
+      "region_id": 9,
+      "word": "PANDAN"
+    },
+    {
+      "name": "Culasi",
+      "code": "0600606000",
+      "population2024": 46442,
+      "type": "Municipality",
+      "region_id": 9,
+      "word": "CULASI"
+    },
+    {
+      "name": "Santa Barbara",
+      "code": "0603043000",
+      "population2024": 68467,
+      "type": "Municipality",
+      "region_id": 9,
+      "word": "SANTABARBARA"
+    },
+    {
+      "name": "Pavia",
+      "code": "0603036000",
+      "population2024": 74594,
+      "type": "Municipality",
+      "region_id": 9,
+      "word": "PAVIA"
+    },
+    {
+      "name": "Guimbal",
+      "code": "0603020000",
+      "population2024": 35129,
+      "type": "Municipality",
+      "region_id": 9,
+      "word": "GUIMBAL"
+    },
+    {
+      "name": "City of Cebu",
+      "code": "0730600000",
+      "population2024": 965332,
+      "type": "City",
+      "region_id": 10,
+      "word": "CEBU"
+    },
+    {
+      "name": "City of Lapu-Lapu",
+      "code": "0731100000",
+      "population2024": 497813,
+      "type": "City",
+      "region_id": 10,
+      "word": "LAPULAPU"
+    },
+    {
+      "name": "City of Mandaue",
+      "code": "0731300000",
+      "population2024": 364482,
+      "type": "City",
+      "region_id": 10,
+      "word": "MANDAUE"
+    },
+    {
+      "name": "City of Tagbilaran",
+      "code": "0701242000",
+      "population2024": 106120,
+      "type": "City",
+      "region_id": 10,
+      "word": "TAGBILARAN"
+    },
+    {
+      "name": "City of Talisay",
+      "code": "0702250000",
+      "population2024": 263832,
+      "type": "City",
+      "region_id": 10,
+      "word": "TALISAY"
+    },
+    {
+      "name": "City of Naga",
+      "code": "0702234000",
+      "population2024": 138727,
+      "type": "City",
+      "region_id": 10,
+      "word": "NAGA"
+    },
+    {
+      "name": "City of Carcar",
+      "code": "0702214000",
+      "population2024": 140308,
+      "type": "City",
+      "region_id": 10,
+      "word": "CARCAR"
+    },
+    {
+      "name": "City of Toledo",
+      "code": "0702251000",
+      "population2024": 206692,
+      "type": "City",
+      "region_id": 10,
+      "word": "TOLEDO"
+    },
+    {
+      "name": "Danao City",
+      "code": "0702223000",
+      "population2024": 161307,
+      "type": "City",
+      "region_id": 10,
+      "word": "DANAO"
+    },
+    {
+      "name": "Panglao",
+      "code": "0701233000",
+      "population2024": 41760,
+      "type": "Municipality",
+      "region_id": 10,
+      "word": "PANGLAO"
+    },
+    {
+      "name": "City of Bogo",
+      "code": "0702211000",
+      "population2024": 90187,
+      "type": "City",
+      "region_id": 10,
+      "word": "BOGO"
+    },
+    {
+      "name": "Moalboal",
+      "code": "0702233000",
+      "population2024": 37993,
+      "type": "Municipality",
+      "region_id": 10,
+      "word": "MOALBOAL"
+    },
+    {
+      "name": "Dalaguete",
+      "code": "0702222000",
+      "population2024": 75937,
+      "type": "Municipality",
+      "region_id": 10,
+      "word": "DALAGUETE"
+    },
+    {
+      "name": "Argao",
+      "code": "0702205000",
+      "population2024": 78111,
+      "type": "Municipality",
+      "region_id": 10,
+      "word": "ARGAO"
+    },
+    {
+      "name": "Tubigon",
+      "code": "0701245000",
+      "population2024": 49275,
+      "type": "Municipality",
+      "region_id": 10,
+      "word": "TUBIGON"
+    },
+    {
+      "name": "City of Tacloban",
+      "code": "0831600000",
+      "population2024": 259353,
+      "type": "City",
+      "region_id": 11,
+      "word": "TACLOBAN"
+    },
+    {
+      "name": "Ormoc City",
+      "code": "0803738000",
+      "population2024": 238545,
+      "type": "City",
+      "region_id": 11,
+      "word": "ORMOC"
+    },
+    {
+      "name": "City of Calbayog",
+      "code": "0806003000",
+      "population2024": 187848,
+      "type": "City",
+      "region_id": 11,
+      "word": "CALBAYOG"
+    },
+    {
+      "name": "City of Catbalogan",
+      "code": "0806005000",
+      "population2024": 107896,
+      "type": "City",
+      "region_id": 11,
+      "word": "CATBALOGAN"
+    },
+    {
+      "name": "City of Borongan",
+      "code": "0802604000",
+      "population2024": 71431,
+      "type": "City",
+      "region_id": 11,
+      "word": "BORONGAN"
+    },
+    {
+      "name": "City of Baybay",
+      "code": "0803708000",
+      "population2024": 114708,
+      "type": "City",
+      "region_id": 11,
+      "word": "BAYBAY"
+    },
+    {
+      "name": "City of Maasin",
+      "code": "0806407000",
+      "population2024": 85486,
+      "type": "City",
+      "region_id": 11,
+      "word": "MAASIN"
+    },
+    {
+      "name": "Naval",
+      "code": "0807808000",
+      "population2024": 59236,
+      "type": "Municipality",
+      "region_id": 11,
+      "word": "NAVAL"
+    },
+    {
+      "name": "Catarman",
+      "code": "0804805000",
+      "population2024": 97738,
+      "type": "Municipality",
+      "region_id": 11,
+      "word": "CATARMAN"
+    },
+    {
+      "name": "Palo",
+      "code": "0803739000",
+      "population2024": 80291,
+      "type": "Municipality",
+      "region_id": 11,
+      "word": "PALO"
+    },
+    {
+      "name": "Biliran",
+      "code": "0807802000",
+      "population2024": 18721,
+      "type": "Municipality",
+      "region_id": 11,
+      "word": "BILIRAN"
+    },
+    {
+      "name": "Laoang",
+      "code": "0804808000",
+      "population2024": 60980,
+      "type": "Municipality",
+      "region_id": 11,
+      "word": "LAOANG"
+    },
+    {
+      "name": "Guiuan",
+      "code": "0802609000",
+      "population2024": 52749,
+      "type": "Municipality",
+      "region_id": 11,
+      "word": "GUIUAN"
+    },
+    {
+      "name": "Liloan",
+      "code": "0806406000",
+      "population2024": 23787,
+      "type": "Municipality",
+      "region_id": 11,
+      "word": "LILOAN"
+    },
+    {
+      "name": "Sogod",
+      "code": "0806417000",
+      "population2024": 48815,
+      "type": "Municipality",
+      "region_id": 11,
+      "word": "SOGOD"
+    },
+    {
+      "name": "City of Bacolod",
+      "code": "1830200000",
+      "population2024": 624787,
+      "type": "City",
+      "region_id": 18,
+      "word": "BACOLOD"
+    },
+    {
+      "name": "City of Dumaguete",
+      "code": "1804610000",
+      "population2024": 142171,
+      "type": "City",
+      "region_id": 18,
+      "word": "DUMAGUETE"
+    },
+    {
+      "name": "City of Bago",
+      "code": "1804502000",
+      "population2024": 192993,
+      "type": "City",
+      "region_id": 18,
+      "word": "BAGO"
+    },
+    {
+      "name": "City of Kabankalan",
+      "code": "1804515000",
+      "population2024": 210893,
+      "type": "City",
+      "region_id": 18,
+      "word": "KABANKALAN"
+    },
+    {
+      "name": "City of Silay",
+      "code": "1804526000",
+      "population2024": 136802,
+      "type": "City",
+      "region_id": 18,
+      "word": "SILAY"
+    },
+    {
+      "name": "City of Talisay",
+      "code": "1804528000",
+      "population2024": 109204,
+      "type": "City",
+      "region_id": 18,
+      "word": "TALISAY"
+    },
+    {
+      "name": "City of Bayawan",
+      "code": "1804606000",
+      "population2024": 126744,
+      "type": "City",
+      "region_id": 18,
+      "word": "BAYAWAN"
+    },
+    {
+      "name": "City of Canlaon",
+      "code": "1804608000",
+      "population2024": 62785,
+      "type": "City",
+      "region_id": 18,
+      "word": "CANLAON"
+    },
+    {
+      "name": "Siquijor",
+      "code": "1806106000",
+      "population2024": 30215,
+      "type": "Municipality",
+      "region_id": 18,
+      "word": "SIQUIJOR"
+    },
+    {
+      "name": "City of Victorias",
+      "code": "1804531000",
+      "population2024": 90290,
+      "type": "City",
+      "region_id": 18,
+      "word": "VICTORIAS"
+    },
+    {
+      "name": "City of La Carlota",
+      "code": "1804516000",
+      "population2024": 67740,
+      "type": "City",
+      "region_id": 18,
+      "word": "LACARLOTA"
+    },
+    {
+      "name": "City of Sipalay",
+      "code": "1804527000",
+      "population2024": 73847,
+      "type": "City",
+      "region_id": 18,
+      "word": "SIPALAY"
+    },
+    {
+      "name": "City of Guihulngan",
+      "code": "1804611000",
+      "population2024": 106576,
+      "type": "City",
+      "region_id": 18,
+      "word": "GUIHULNGAN"
+    },
+    {
+      "name": "City of Bais",
+      "code": "1804604000",
+      "population2024": 88050,
+      "type": "City",
+      "region_id": 18,
+      "word": "BAIS"
+    },
+    {
+      "name": "City of Zamboanga",
+      "code": "0931700000",
+      "population2024": 1018849,
+      "type": "City",
+      "region_id": 12,
+      "word": "ZAMBOANGA"
+    },
+    {
+      "name": "City of Pagadian",
+      "code": "0907322000",
+      "population2024": 206483,
+      "type": "City",
+      "region_id": 12,
+      "word": "PAGADIAN"
+    },
+    {
+      "name": "City of Dipolog",
+      "code": "0907202000",
+      "population2024": 136528,
+      "type": "City",
+      "region_id": 12,
+      "word": "DIPOLOG"
+    },
+    {
+      "name": "City of Dapitan",
+      "code": "0907201000",
+      "population2024": 87699,
+      "type": "City",
+      "region_id": 12,
+      "word": "DAPITAN"
+    },
+    {
+      "name": "City of Isabela",
+      "code": "0990101000",
+      "population2024": 151297,
+      "type": "City",
+      "region_id": 12,
+      "word": "ISABELA"
+    },
+    {
+      "name": "Ipil",
+      "code": "0908305000",
+      "population2024": 96363,
+      "type": "Municipality",
+      "region_id": 12,
+      "word": "IPIL"
+    },
+    {
+      "name": "Sindangan",
+      "code": "0907218000",
+      "population2024": 104514,
+      "type": "Municipality",
+      "region_id": 12,
+      "word": "SINDANGAN"
+    },
+    {
+      "name": "Molave",
+      "code": "0907319000",
+      "population2024": 52540,
+      "type": "Municipality",
+      "region_id": 12,
+      "word": "MOLAVE"
+    },
+    {
+      "name": "Jolo",
+      "code": "0906602000",
+      "population2024": 152067,
+      "type": "Municipality",
+      "region_id": 12,
+      "word": "JOLO"
+    },
+    {
+      "name": "Patikul",
+      "code": "0906611000",
+      "population2024": 92600,
+      "type": "Municipality",
+      "region_id": 12,
+      "word": "PATIKUL"
+    },
+    {
+      "name": "Talipao",
+      "code": "0906613000",
+      "population2024": 107901,
+      "type": "Municipality",
+      "region_id": 12,
+      "word": "TALIPAO"
+    },
+    {
+      "name": "Kabasalan",
+      "code": "0908306000",
+      "population2024": 48366,
+      "type": "Municipality",
+      "region_id": 12,
+      "word": "KABASALAN"
+    },
+    {
+      "name": "Liloy",
+      "code": "0907206000",
+      "population2024": 41881,
+      "type": "Municipality",
+      "region_id": 12,
+      "word": "LILOY"
+    },
+    {
+      "name": "Titay",
+      "code": "0908315000",
+      "population2024": 55534,
+      "type": "Municipality",
+      "region_id": 12,
+      "word": "TITAY"
+    },
+    {
+      "name": "Siocon",
+      "code": "0907219000",
+      "population2024": 51239,
+      "type": "Municipality",
+      "region_id": 12,
+      "word": "SIOCON"
+    },
+    {
+      "name": "City of Cagayan De Oro",
+      "code": "1030500000",
+      "population2024": 741617,
+      "type": "City",
+      "region_id": 13,
+      "word": "CAGAYANDEORO"
+    },
+    {
+      "name": "City of Iligan",
+      "code": "1030900000",
+      "population2024": 368132,
+      "type": "City",
+      "region_id": 13,
+      "word": "ILIGAN"
+    },
+    {
+      "name": "City of Malaybalay",
+      "code": "1001312000",
+      "population2024": 195046,
+      "type": "City",
+      "region_id": 13,
+      "word": "MALAYBALAY"
+    },
+    {
+      "name": "City of Valencia",
+      "code": "1001321000",
+      "population2024": 223620,
+      "type": "City",
+      "region_id": 13,
+      "word": "VALENCIA"
+    },
+    {
+      "name": "City of Gingoog",
+      "code": "1004308000",
+      "population2024": 138895,
+      "type": "City",
+      "region_id": 13,
+      "word": "GINGOOG"
+    },
+    {
+      "name": "City of El Salvador",
+      "code": "1004307000",
+      "population2024": 62126,
+      "type": "City",
+      "region_id": 13,
+      "word": "ELSALVADOR"
+    },
+    {
+      "name": "City of Oroquieta",
+      "code": "1004209000",
+      "population2024": 71373,
+      "type": "City",
+      "region_id": 13,
+      "word": "OROQUIETA"
+    },
+    {
+      "name": "City of Ozamiz",
+      "code": "1004210000",
+      "population2024": 143620,
+      "type": "City",
+      "region_id": 13,
+      "word": "OZAMIZ"
+    },
+    {
+      "name": "City of Tangub",
+      "code": "1004215000",
+      "population2024": 68419,
+      "type": "City",
+      "region_id": 13,
+      "word": "TANGUB"
+    },
+    {
+      "name": "Mambajao",
+      "code": "1001804000",
+      "population2024": 41782,
+      "type": "Municipality",
+      "region_id": 13,
+      "word": "MAMBAJAO"
+    },
+    {
+      "name": "Claveria",
+      "code": "1004306000",
+      "population2024": 52718,
+      "type": "Municipality",
+      "region_id": 13,
+      "word": "CLAVERIA"
+    },
+    {
+      "name": "Balingasag",
+      "code": "1004302000",
+      "population2024": 76877,
+      "type": "Municipality",
+      "region_id": 13,
+      "word": "BALINGASAG"
+    },
+    {
+      "name": "Maramag",
+      "code": "1001315000",
+      "population2024": 109864,
+      "type": "Municipality",
+      "region_id": 13,
+      "word": "MARAMAG"
+    },
+    {
+      "name": "Don Carlos",
+      "code": "1001304000",
+      "population2024": 73592,
+      "type": "Municipality",
+      "region_id": 13,
+      "word": "DONCARLOS"
+    },
+    {
+      "name": "Jasaan",
+      "code": "1004311000",
+      "population2024": 58098,
+      "type": "Municipality",
+      "region_id": 13,
+      "word": "JASAAN"
+    },
+    {
+      "name": "City of Davao",
+      "code": "1130700000",
+      "population2024": 1848947,
+      "type": "City",
+      "region_id": 14,
+      "word": "DAVAO"
+    },
+    {
+      "name": "City of Tagum",
+      "code": "1102319000",
+      "population2024": 300042,
+      "type": "City",
+      "region_id": 14,
+      "word": "TAGUM"
+    },
+    {
+      "name": "City of Digos",
+      "code": "1102403000",
+      "population2024": 192063,
+      "type": "City",
+      "region_id": 14,
+      "word": "DIGOS"
+    },
+    {
+      "name": "City of Mati",
+      "code": "1102509000",
+      "population2024": 148672,
+      "type": "City",
+      "region_id": 14,
+      "word": "MATI"
+    },
+    {
+      "name": "City of Panabo",
+      "code": "1102315000",
+      "population2024": 211242,
+      "type": "City",
+      "region_id": 14,
+      "word": "PANABO"
+    },
+    {
+      "name": "Island Garden City of Samal",
+      "code": "1102317000",
+      "population2024": 119701,
+      "type": "City",
+      "region_id": 14,
+      "word": "SAMAL"
+    },
+    {
+      "name": "Nabunturan",
+      "code": "1108209000",
+      "population2024": 85949,
+      "type": "Municipality",
+      "region_id": 14,
+      "word": "NABUNTURAN"
+    },
+    {
+      "name": "Malita",
+      "code": "1108603000",
+      "population2024": 118438,
+      "type": "Municipality",
+      "region_id": 14,
+      "word": "MALITA"
+    },
+    {
+      "name": "Lupon",
+      "code": "1102507000",
+      "population2024": 68717,
+      "type": "Municipality",
+      "region_id": 14,
+      "word": "LUPON"
+    },
+    {
+      "name": "Bansalan",
+      "code": "1102401000",
+      "population2024": 64816,
+      "type": "Municipality",
+      "region_id": 14,
+      "word": "BANSALAN"
+    },
+    {
+      "name": "Monkayo",
+      "code": "1108207000",
+      "population2024": 96405,
+      "type": "Municipality",
+      "region_id": 14,
+      "word": "MONKAYO"
+    },
+    {
+      "name": "Compostela",
+      "code": "1108201000",
+      "population2024": 89224,
+      "type": "Municipality",
+      "region_id": 14,
+      "word": "COMPOSTELA"
+    },
+    {
+      "name": "Santa Maria",
+      "code": "1108604000",
+      "population2024": 58886,
+      "type": "Municipality",
+      "region_id": 14,
+      "word": "SANTAMARIA"
+    },
+    {
+      "name": "Baganga",
+      "code": "1102501000",
+      "population2024": 59796,
+      "type": "Municipality",
+      "region_id": 14,
+      "word": "BAGANGA"
+    },
+    {
+      "name": "Governor Generoso",
+      "code": "1102506000",
+      "population2024": 63695,
+      "type": "Municipality",
+      "region_id": 14,
+      "word": "GENEROSO"
+    },
+    {
+      "name": "City of General Santos",
+      "code": "1230800000",
+      "population2024": 722059,
+      "type": "City",
+      "region_id": 15,
+      "word": "GENSAN"
+    },
+    {
+      "name": "City of Koronadal",
+      "code": "1206306000",
+      "population2024": 201844,
+      "type": "City",
+      "region_id": 15,
+      "word": "KORONADAL"
+    },
+    {
+      "name": "City of Kidapawan",
+      "code": "1204704000",
+      "population2024": 160864,
+      "type": "City",
+      "region_id": 15,
+      "word": "KIDAPAWAN"
+    },
+    {
+      "name": "City of Tacurong",
+      "code": "1206511000",
+      "population2024": 116945,
+      "type": "City",
+      "region_id": 15,
+      "word": "TACURONG"
+    },
+    {
+      "name": "Alabel",
+      "code": "1208001000",
+      "population2024": 90120,
+      "type": "Municipality",
+      "region_id": 15,
+      "word": "ALABEL"
+    },
+    {
+      "name": "Isulan",
+      "code": "1206504000",
+      "population2024": 101455,
+      "type": "Municipality",
+      "region_id": 15,
+      "word": "ISULAN"
+    },
+    {
+      "name": "Midsayap",
+      "code": "1204709000",
+      "population2024": 115735,
+      "type": "Municipality",
+      "region_id": 15,
+      "word": "MIDSAYAP"
+    },
+    {
+      "name": "Polomolok",
+      "code": "1206312000",
+      "population2024": 176671,
+      "type": "Municipality",
+      "region_id": 15,
+      "word": "POLOMOLOK"
+    },
+    {
+      "name": "Glan",
+      "code": "1208002000",
+      "population2024": 117017,
+      "type": "Municipality",
+      "region_id": 15,
+      "word": "GLAN"
+    },
+    {
+      "name": "Kabacan",
+      "code": "1204703000",
+      "population2024": 77945,
+      "type": "Municipality",
+      "region_id": 15,
+      "word": "KABACAN"
+    },
+    {
+      "name": "Tupi",
+      "code": "1206317000",
+      "population2024": 78599,
+      "type": "Municipality",
+      "region_id": 15,
+      "word": "TUPI"
+    },
+    {
+      "name": "T'Boli",
+      "code": "1206316000",
+      "population2024": 105296,
+      "type": "Municipality",
+      "region_id": 15,
+      "word": "TBOLI"
+    },
+    {
+      "name": "Surallah",
+      "code": "1206313000",
+      "population2024": 91412,
+      "type": "Municipality",
+      "region_id": 15,
+      "word": "SURALLAH"
+    },
+    {
+      "name": "Lebak",
+      "code": "1206506000",
+      "population2024": 93312,
+      "type": "Municipality",
+      "region_id": 15,
+      "word": "LEBAK"
+    },
+    {
+      "name": "Pigkawayan",
+      "code": "1204711000",
+      "population2024": 53593,
+      "type": "Municipality",
+      "region_id": 15,
+      "word": "PIGCAWAYAN"
+    },
+    {
+      "name": "City of Butuan",
+      "code": "1630400000",
+      "population2024": 385530,
+      "type": "City",
+      "region_id": 16,
+      "word": "BUTUAN"
+    },
+    {
+      "name": "City of Surigao",
+      "code": "1606724000",
+      "population2024": 177333,
+      "type": "City",
+      "region_id": 16,
+      "word": "SURIGAO"
+    },
+    {
+      "name": "City of Bayugan",
+      "code": "1600301000",
+      "population2024": 110313,
+      "type": "City",
+      "region_id": 16,
+      "word": "BAYUGAN"
+    },
+    {
+      "name": "City of Cabadbaran",
+      "code": "1600203000",
+      "population2024": 82343,
+      "type": "City",
+      "region_id": 16,
+      "word": "CABADBARAN"
+    },
+    {
+      "name": "City of Bislig",
+      "code": "1606803000",
+      "population2024": 99872,
+      "type": "City",
+      "region_id": 16,
+      "word": "BISLIG"
+    },
+    {
+      "name": "City of Tandag",
+      "code": "1606819000",
+      "population2024": 63098,
+      "type": "City",
+      "region_id": 16,
+      "word": "TANDAG"
+    },
+    {
+      "name": "Prosperidad",
+      "code": "1600306000",
+      "population2024": 90162,
+      "type": "Municipality",
+      "region_id": 16,
+      "word": "PROSPERIDAD"
+    },
+    {
+      "name": "San Jose",
+      "code": "1608506000",
+      "population2024": 26735,
+      "type": "Municipality",
+      "region_id": 16,
+      "word": "SANJOSE"
+    },
+    {
+      "name": "Dapa",
+      "code": "1606707000",
+      "population2024": 31392,
+      "type": "Municipality",
+      "region_id": 16,
+      "word": "DAPA"
+    },
+    {
+      "name": "Trento",
+      "code": "1600312000",
+      "population2024": 51179,
+      "type": "Municipality",
+      "region_id": 16,
+      "word": "TRENTO"
+    },
+    {
+      "name": "General Luna",
+      "code": "1606710000",
+      "population2024": 25208,
+      "type": "Municipality",
+      "region_id": 16,
+      "word": "GENERALLUNA"
+    },
+    {
+      "name": "Hinatuan",
+      "code": "1606809000",
+      "population2024": 44475,
+      "type": "Municipality",
+      "region_id": 16,
+      "word": "HINATUAN"
+    },
+    {
+      "name": "Lingig",
+      "code": "1606812000",
+      "population2024": 35203,
+      "type": "Municipality",
+      "region_id": 16,
+      "word": "LINGIG"
+    },
+    {
+      "name": "Talacogon",
+      "code": "1600311000",
+      "population2024": 37744,
+      "type": "Municipality",
+      "region_id": 16,
+      "word": "TALACOGON"
+    },
+    {
+      "name": "Buenavista",
+      "code": "1600201000",
+      "population2024": 70691,
+      "type": "Municipality",
+      "region_id": 16,
+      "word": "BUENAVISTA"
+    },
+    {
+      "name": "City of Cotabato",
+      "code": "1908703000",
+      "population2024": 383383,
+      "type": "City",
+      "region_id": 17,
+      "word": "COTABATO"
+    },
+    {
+      "name": "City of Marawi",
+      "code": "1903617000",
+      "population2024": 259993,
+      "type": "City",
+      "region_id": 17,
+      "word": "MARAWI"
+    },
+    {
+      "name": "City of Lamitan",
+      "code": "1900702000",
+      "population2024": 116652,
+      "type": "City",
+      "region_id": 17,
+      "word": "LAMITAN"
+    },
+    {
+      "name": "Bongao",
+      "code": "1907002000",
+      "population2024": 131887,
+      "type": "Municipality",
+      "region_id": 17,
+      "word": "BONGAO"
+    },
+    {
+      "name": "Datu Odin Sinsuat",
+      "code": "1908705000",
+      "population2024": 152907,
+      "type": "Municipality",
+      "region_id": 17,
+      "word": "DATUODIN"
+    },
+    {
+      "name": "Shariff Aguak",
+      "code": "1908820000",
+      "population2024": 37437,
+      "type": "Municipality",
+      "region_id": 17,
+      "word": "SHARIFAGUAK"
+    },
+    {
+      "name": "Buluan",
+      "code": "1908802000",
+      "population2024": 60931,
+      "type": "Municipality",
+      "region_id": 17,
+      "word": "BULUAN"
+    },
+    {
+      "name": "Malabang",
+      "code": "1903615000",
+      "population2024": 58377,
+      "type": "Municipality",
+      "region_id": 17,
+      "word": "MALABANG"
+    },
+    {
+      "name": "Wao",
+      "code": "1903630000",
+      "population2024": 51081,
+      "type": "Municipality",
+      "region_id": 17,
+      "word": "WAO"
+    },
+    {
+      "name": "Maluso",
+      "code": "1900704000",
+      "population2024": 66817,
+      "type": "Municipality",
+      "region_id": 17,
+      "word": "MALUSO"
+    },
+    {
+      "name": "Parang",
+      "code": "1908709000",
+      "population2024": 123209,
+      "type": "Municipality",
+      "region_id": 17,
+      "word": "PARANG"
+    },
+    {
+      "name": "Upi",
+      "code": "1908713000",
+      "population2024": 65363,
+      "type": "Municipality",
+      "region_id": 17,
+      "word": "UPI"
+    },
+    {
+      "name": "Simunul",
+      "code": "1907004000",
+      "population2024": 35616,
+      "type": "Municipality",
+      "region_id": 17,
+      "word": "SIMUNUL"
+    },
+    {
+      "name": "Panglima Sugala",
+      "code": "1907001000",
+      "population2024": 52657,
+      "type": "Municipality",
+      "region_id": 17,
+      "word": "PANGLIMA"
+    },
+    {
+      "name": "Sultan Kudarat",
+      "code": "1908710000",
+      "population2024": 124965,
+      "type": "Municipality",
+      "region_id": 17,
+      "word": "SULTANKUDARAT"
+    }
+  ]
+}

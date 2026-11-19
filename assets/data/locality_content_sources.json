@@ -1,0 +1,3521 @@
+[
+  {
+    "region_id": 2,
+    "word": "BANGUED",
+    "name": "Bangued",
+    "psgc_code": "1400101000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://pia.gov.ph/news/casamata-hill-national-park-all-set-for-p30m-development-makeover-project/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 2,
+    "word": "KABUGAO",
+    "name": "Kabugao",
+    "psgc_code": "1408104000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://apayao.gov.ph/tourism/municipalities/kabugao"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 2,
+    "word": "LAGAWE",
+    "name": "Lagawe",
+    "psgc_code": "1402704000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://blgf.gov.ph/regional-offices/car-2/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 2,
+    "word": "TABUK",
+    "name": "City of Tabuk",
+    "psgc_code": "1403213000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/cordillera-administrative-region/kalinga/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 2,
+    "word": "BONTOC",
+    "name": "Bontoc",
+    "psgc_code": "1404404000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://tourism.mountainprovince.gov.ph/bontoc/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 2,
+    "word": "LUNA",
+    "name": "Luna",
+    "psgc_code": "1408105000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://apayao.gov.ph/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 2,
+    "word": "TUBA",
+    "name": "Tuba",
+    "psgc_code": "1401113000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/cordillera-administrative-region/benguet/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 2,
+    "word": "TADIAN",
+    "name": "Tadian",
+    "psgc_code": "1404410000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://tourism.mountainprovince.gov.ph/tadian/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 2,
+    "word": "BAUKO",
+    "name": "Bauko",
+    "psgc_code": "1404402000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://tourism.mountainprovince.gov.ph/bauko/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 2,
+    "word": "KIANGAN",
+    "name": "Kiangan",
+    "psgc_code": "1402703000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/cordillera-administrative-region/ifugao/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 2,
+    "word": "KABAYAN",
+    "name": "Kabayan",
+    "psgc_code": "1401107000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://www.nationalmuseum.gov.ph/our-museums/regional-area-and-site-museums/kabayan-burial-caves/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 4,
+    "word": "TUGUEGARAO",
+    "name": "Tuguegarao City",
+    "psgc_code": "0201529000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://cagayan.gov.ph/gob-aglipay-nagbigay-ng-mainit-na-pagtanggap-sa-mptc-tour-of-luzon-delegates-sa-isang-fellowship-night-pagkakaisa-ng-mga-cagayano-ipinakita-sa-mga-bisita/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 4,
+    "word": "ILAGAN",
+    "name": "City of Ilagan",
+    "psgc_code": "0203114000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://cagayanvalley.da.gov.ph/2026/05/28/kauna-unahang-corn-complex-sa-pilipinas-phase-i-pinasinayangan-sa-ilagan-isabela/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 4,
+    "word": "CAUAYAN",
+    "name": "City of Cauayan",
+    "psgc_code": "0203108000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://provinceofisabela.gov.ph/tourism/festival/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 4,
+    "word": "SANTIAGO",
+    "name": "City of Santiago",
+    "psgc_code": "0203135000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://provinceofisabela.gov.ph/tourism/festival/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 4,
+    "word": "BASCO",
+    "name": "Basco",
+    "psgc_code": "0200901000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://www.namria.gov.ph/jdownloads/Notice%20to%20Mariners/03_March_2026_Edition.pdf"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 4,
+    "word": "BAYOMBONG",
+    "name": "Bayombong",
+    "psgc_code": "0205005000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://nuevavizcaya.gov.ph/bayombong/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 4,
+    "word": "CABARROGUIS",
+    "name": "Cabarroguis",
+    "psgc_code": "0205702000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://www.pna.gov.ph/articles/1183198"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 4,
+    "word": "APARRI",
+    "name": "Aparri",
+    "psgc_code": "0201505000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://r2.emb.gov.ph/emb-ro2-updates-inter-agency-committee-on-cagayan-river-restoration-project/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 4,
+    "word": "SOLANO",
+    "name": "Solano",
+    "psgc_code": "0205013000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://nuevavizcaya.gov.ph/tourism-officers-share-knowledge-on-promotions-best-practices/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 4,
+    "word": "ECHAGUE",
+    "name": "Echague",
+    "psgc_code": "0203112000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://region2.ched.gov.ph/index.php/higher-education-institutions-in-region-2/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 4,
+    "word": "MADDELA",
+    "name": "Maddela",
+    "psgc_code": "0205704000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/cagayan-valley/quirino/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 4,
+    "word": "DIFFUN",
+    "name": "Diffun",
+    "psgc_code": "0205703000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://pia.gov.ph/features/rediscovering-quirino-chasing-waterfalls-conquering-peaks-finding-natures-hidden-masterpieces/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 4,
+    "word": "LALLO",
+    "name": "Lal-Lo",
+    "psgc_code": "0201516000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://www.unesco.gov.ph/world-heritage-sites/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 4,
+    "word": "GATTARAN",
+    "name": "Gattaran",
+    "psgc_code": "0201513000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://ncca.gov.ph/about-culture-and-arts/in-focus/spirit-shaped-from-the-earth-a-short-heritage-tour-of-cagayan/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 4,
+    "word": "ROXAS",
+    "name": "Roxas",
+    "psgc_code": "0203126000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://pcaf.da.gov.ph/wp-content/uploads/2025/09/REGION-2-List-of-Accredited-Regional-CSOs.pdf"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 5,
+    "word": "ANGELES",
+    "name": "City of Angeles",
+    "psgc_code": "0330100000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/central-luzon/pampanga/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 5,
+    "word": "OLONGAPO",
+    "name": "City of Olongapo",
+    "psgc_code": "0331400000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://philhistoricsites.nhcp.gov.ph/registry_database/city-of-olongapo/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 5,
+    "word": "MALOLOS",
+    "name": "City of Malolos",
+    "psgc_code": "0301410000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://philhistoricsites.nhcp.gov.ph/registry_database/church-of-barasoain/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 5,
+    "word": "CABANATUAN",
+    "name": "City of Cabanatuan",
+    "psgc_code": "0304903000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://philhistoricsites.nhcp.gov.ph/registry_database/death-place-of-general-antonio-luna/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 5,
+    "word": "TARLAC",
+    "name": "City of Tarlac",
+    "psgc_code": "0306916000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://moncadatarlac.gov.ph/42nd-anniversary-of-the-martyrdom-of-former-sen-benigno-s-aquino-jr/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 5,
+    "word": "BALANGA",
+    "name": "City of Balanga",
+    "psgc_code": "0300803000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://bataan.gov.ph/behold-bataan/city-of-balanga-wetland-and-nature-park/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 5,
+    "word": "BALER",
+    "name": "Baler",
+    "psgc_code": "0307701000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/central-luzon/aurora/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 5,
+    "word": "IBA",
+    "name": "Iba",
+    "psgc_code": "0307105000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://philhistoricsites.nhcp.gov.ph/registry_database/iba-zambales/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 5,
+    "word": "PALAYAN",
+    "name": "City of Palayan",
+    "psgc_code": "0304919000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://issuances-library.senate.gov.ph/legislative%2Bissuances/Republic%20Act%20No.%204475"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 5,
+    "word": "MEYCAUAYAN",
+    "name": "City of Meycauayan",
+    "psgc_code": "0301412000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://bulacan.gov.ph/major-industries/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 5,
+    "word": "BALIWAG",
+    "name": "City of Baliwag",
+    "psgc_code": "0301403000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://bulacan.gov.ph/tatak-bulakenyo-products/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 5,
+    "word": "MABALACAT",
+    "name": "Mabalacat City",
+    "psgc_code": "0305409000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://rfo3.da.gov.ph/index.php/farmers-day-celebrated-at-mabalacat-caragan-festival/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 5,
+    "word": "SUBIC",
+    "name": "Subic",
+    "psgc_code": "0307114000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://chedro3.ched.gov.ph/wp-content/uploads/2023/08/Masterlist-as-of-August-31-2023-Download-attachment.pdf"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 5,
+    "word": "GUAGUA",
+    "name": "Guagua",
+    "psgc_code": "0305407000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://www.kapekulitan.region3.dilg.gov.ph/sikap-barangay-hub/lgus/guagua"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 6,
+    "word": "ANTIPOLO",
+    "name": "City of Antipolo",
+    "psgc_code": "0405802000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://www.deped.gov.ph/2021/07/09/life-from-the-fallen-the-resurgence-of-antipolos-hinulugang-taktak/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 6,
+    "word": "CALAMBA",
+    "name": "City of Calamba",
+    "psgc_code": "0403405000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/calabarzon/laguna/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 6,
+    "word": "BATANGAS",
+    "name": "Batangas City",
+    "psgc_code": "0401005000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://batangascity.gov.ph/web/images/RESOLUTIONS2018/RESOLUTIONNO.174S.2018.pdf"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 6,
+    "word": "LUCENA",
+    "name": "City of Lucena",
+    "psgc_code": "0431200000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://quezon.gov.ph/festivals/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 6,
+    "word": "CAVITE",
+    "name": "City of Cavite",
+    "psgc_code": "0402105000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://philhistoricsites.nhcp.gov.ph/registry_database/fort-san-felipe/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 6,
+    "word": "TAGAYTAY",
+    "name": "City of Tagaytay",
+    "psgc_code": "0402119000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/calabarzon/city-of-tagaytay/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 6,
+    "word": "SANTAROSA",
+    "name": "City of Santa Rosa",
+    "psgc_code": "0403428000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://philhistoricsites.nhcp.gov.ph/registry_database/cuartel-de-santo-domingo/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 6,
+    "word": "IMUS",
+    "name": "City of Imus",
+    "psgc_code": "0402109000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://philhistoricsites.nhcp.gov.ph/registry_database/battle-of-alapan/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 6,
+    "word": "TANAUAN",
+    "name": "City of Tanauan",
+    "psgc_code": "0401031000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://philhistoricsites.nhcp.gov.ph/registry_database/mabini-shrine-tanauan/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 6,
+    "word": "TAYABAS",
+    "name": "City of Tayabas",
+    "psgc_code": "0405647000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://www.nationalmuseum.gov.ph/2022/07/07/the-spanish-era-colonial-bridges-of-tayabas/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 6,
+    "word": "DASMARINAS",
+    "name": "City of Dasmariñas",
+    "psgc_code": "0402106000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://cityofdasmarinas.gov.ph/paruparo/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 6,
+    "word": "SANPABLO",
+    "name": "City of San Pablo",
+    "psgc_code": "0403424000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://llda.gov.ph/seven-7-crater-lakes/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 6,
+    "word": "LIPA",
+    "name": "City of Lipa",
+    "psgc_code": "0401014000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://lipa.gov.ph/history/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 6,
+    "word": "CANDELARIA",
+    "name": "Candelaria",
+    "psgc_code": "0405608000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://quezon.gov.ph/festivals/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 6,
+    "word": "LOSBANOS",
+    "name": "Los Baños",
+    "psgc_code": "0403411000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://pcaarrd.dost.gov.ph/index.php/quick-information-dispatch-qid-articles/lbscfi-launches-science-tourism-project"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 7,
+    "word": "PUERTOPRINCESA",
+    "name": "City of Puerto Princesa",
+    "psgc_code": "1731500000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/mimaropa/puerto-princesa/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 7,
+    "word": "CALAPAN",
+    "name": "City of Calapan",
+    "psgc_code": "1705205000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://beta.cityofcalapan.gov.ph/2026/03/12/%F0%9D%90%8A%F0%9D%90%9A%F0%9D%90%A5%F0%9D%90%9A%F0%9D%90%A9-%F0%9D%90%85%F0%9D%90%9E%F0%9D%90%AC%F0%9D%90%AD%F0%9D%90%A2%F0%9D%90%AF%F0%9D%90%9A%F0%9D%90%A5-%F0%9D%9F%90%F0%9D%9F%8E%F0%9D%9F%90/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 7,
+    "word": "BOAC",
+    "name": "Boac",
+    "psgc_code": "1704001000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/mimaropa/marinduque/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 7,
+    "word": "MAMBURAO",
+    "name": "Mamburao",
+    "psgc_code": "1705106000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://pia.gov.ph/news/luzon/mimaropa/mindoro-tuna-reaches-europe-as-occidental-mindoro-town-eyes-long-term-fisherfolk-support"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 7,
+    "word": "SANJOSE",
+    "name": "San Jose",
+    "psgc_code": "1705110000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://sanjoseoccimindoro.gov.ph/barangays-2/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 7,
+    "word": "ROMBLON",
+    "name": "Romblon",
+    "psgc_code": "1705910000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://philhistoricsites.nhcp.gov.ph/registry_database/fort-romblon/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 7,
+    "word": "ODIONGAN",
+    "name": "Odiongan",
+    "psgc_code": "1705909000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://odiongan.gov.ph/wp-content/uploads/2024/05/13-EXECUTIVE-ORDER-NO.03-002-AN-ORDER-DECLARING-WORK-AND-CLASS-SUSPENSION-ON-APRIL-05-202.t-IN-1.pdf"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 7,
+    "word": "CORON",
+    "name": "Coron",
+    "psgc_code": "1705309000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/mimaropa/palawan/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 7,
+    "word": "ELNIDO",
+    "name": "El Nido",
+    "psgc_code": "1705312000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/mimaropa/palawan/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 7,
+    "word": "ROXAS",
+    "name": "Roxas",
+    "psgc_code": "1705318000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://pcsd.gov.ph/wp-content/uploads/2020/12/4-ECAN-Resource-Management-Plan-of-the-Municipality-of-Roxas-Palawan-2015-2020.pdf"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 7,
+    "word": "BROOKESPOINT",
+    "name": "Brooke's Point",
+    "psgc_code": "1705306000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://www.namria.gov.ph/jdownloads/Navigational_Warning/NAVPHIL_015_25_ESTABLISHED_BUOYS_IN_BROOKES_POINT.pdf"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 7,
+    "word": "NARRA",
+    "name": "Narra",
+    "psgc_code": "1705315000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://web.senate.gov.ph/lisdata/4341639497%21.pdf"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked",
+    "source_note": "Legislative proposal used for its description of an existing place or environmental feature only. No proposed designation is presented as enacted law."
+  },
+  {
+    "region_id": 7,
+    "word": "SABLAYAN",
+    "name": "Sablayan",
+    "psgc_code": "1705109000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://ldr.senate.gov.ph/sites/default/files/2023-03/67655551%21.pdf"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked",
+    "source_note": "Legislative proposal used for its description of an existing place or environmental feature only. No proposed designation is presented as enacted law."
+  },
+  {
+    "region_id": 7,
+    "word": "NAUJAN",
+    "name": "Naujan",
+    "psgc_code": "1705208000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://ormindoro.gov.ph/about/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 7,
+    "word": "TORRIJOS",
+    "name": "Torrijos",
+    "psgc_code": "1704006000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://region4b.dost.gov.ph/ost-mimaropa-partners-expand-coral-restoration-efforts-with-reef-block-deployment-in-marinduque/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 8,
+    "word": "LEGAZPI",
+    "name": "City of Legazpi",
+    "psgc_code": "0500506000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://legazpi.gov.ph/legazpi-city-tourist-attractions/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 8,
+    "word": "NAGA",
+    "name": "City of Naga",
+    "psgc_code": "0501724000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/bicol-region/city-of-naga/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 8,
+    "word": "SORSOGON",
+    "name": "City of Sorsogon",
+    "psgc_code": "0506216000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://pia.gov.ph/news/luzon/br/sorsogon-stages-kasanggayahan-festival-oct-12-18"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 8,
+    "word": "MASBATE",
+    "name": "City of Masbate",
+    "psgc_code": "0504111000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://tpb.gov.ph/tpb-calendar-of-promotions-and-marketing-activities/calendar-of-philippine-festivals-and-monthly-observances-theme/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 8,
+    "word": "DAET",
+    "name": "Daet",
+    "psgc_code": "0501603000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://philhistoricsites.nhcp.gov.ph/registry_database/first-rizal-monument-in-the-philippines/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 8,
+    "word": "VIRAC",
+    "name": "Virac",
+    "psgc_code": "0502011000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://virac-catanduanes.gov.ph/tourism/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 8,
+    "word": "PILI",
+    "name": "Pili",
+    "psgc_code": "0501728000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/5/81460"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 8,
+    "word": "IRIGA",
+    "name": "City of Iriga",
+    "psgc_code": "0501716000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://iriga.gov.ph/tinagba-festival-2026-preparations-underway-as-ichat-holds-committee-meeting/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 8,
+    "word": "LIGAO",
+    "name": "City of Ligao",
+    "psgc_code": "0500508000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://pia.gov.ph/news/safe-viewing-locations-go-see-glowing-mayon-volcano-right-now/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 8,
+    "word": "TABACO",
+    "name": "City of Tabaco",
+    "psgc_code": "0500517000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://region5.dost.gov.ph/archives/21-a-winner-s-attitude-sbc-machine-shop-mold-for-success-not-as-easy-as-abc"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 8,
+    "word": "GOA",
+    "name": "Goa",
+    "psgc_code": "0501715000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://www.deped.gov.ph/k-to-12/senior-high-school/list-of-senior-high-schools/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 8,
+    "word": "DONSOL",
+    "name": "Donsol",
+    "psgc_code": "0506207000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://www.donsol.gov.ph/whale-sharks.html"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 8,
+    "word": "DARAGA",
+    "name": "Daraga",
+    "psgc_code": "0500503000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://www.nationalmuseum.gov.ph/our-museums/regional-area-and-site-museums/bicol/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 8,
+    "word": "SIPOCOT",
+    "name": "Sipocot",
+    "psgc_code": "0501734000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://memory.nhcp.gov.ph/wp-content/uploads/2024/10/Tracing-your-Philippine-Ancestors-Volume-Two.pdf"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 8,
+    "word": "BULAN",
+    "name": "Bulan",
+    "psgc_code": "0506203000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://pia.gov.ph/news/luzon/br/siram-food-expo-showcases-sorsogons-local-foods-at-sports-arena/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 9,
+    "word": "ILOILO",
+    "name": "City of Iloilo",
+    "psgc_code": "0631000000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/western-visayas/city-of-iloilo/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 9,
+    "word": "ROXAS",
+    "name": "City of Roxas",
+    "psgc_code": "0601914000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://region6.dost.gov.ph/2026/07/21/megaf-seafood-trading-in-capiz-eyes-export-ready-operations-through-dost-assistance/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 9,
+    "word": "PASSI",
+    "name": "City of Passi",
+    "psgc_code": "0603035000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://www.nationalmuseum.gov.ph/2022/06/29/pintados-festival/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 9,
+    "word": "KALIBO",
+    "name": "Kalibo",
+    "psgc_code": "0600407000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/western-visayas/aklan/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 9,
+    "word": "MALAY",
+    "name": "Malay",
+    "psgc_code": "0600412000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/sports/venues/boracay-island"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 9,
+    "word": "SANJOSE",
+    "name": "San Jose de Buenavista",
+    "psgc_code": "0600613000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://philhistoricsites.nhcp.gov.ph/registry_database/evelio-b-javier/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 9,
+    "word": "JORDAN",
+    "name": "Jordan",
+    "psgc_code": "0607902000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://rsc6.gov.ph/wp-content/uploads/2024/10/2022-RSET-WV.pdf"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 9,
+    "word": "BUENAVISTA",
+    "name": "Buenavista",
+    "psgc_code": "0607901000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://ldr.senate.gov.ph/bills/house-bill-no-3961-12th-congress-republic"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked",
+    "source_note": "Legislative proposal used for its description of an existing place or environmental feature only. No proposed designation is presented as enacted law."
+  },
+  {
+    "region_id": 9,
+    "word": "MIAGAO",
+    "name": "Miagao",
+    "psgc_code": "0603030000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/western-visayas/iloilo-province/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 9,
+    "word": "WASHINGTON",
+    "name": "New Washington",
+    "psgc_code": "0600415000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://aklan.gov.ph/tourism/new-washington/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 9,
+    "word": "PANDAN",
+    "name": "Pandan",
+    "psgc_code": "0600611000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://pandan-antique.gov.ph/bugang-river/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 9,
+    "word": "CULASI",
+    "name": "Culasi",
+    "psgc_code": "0600606000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://culasiantique.gov.ph/malalison-island-2/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 9,
+    "word": "SANTABARBARA",
+    "name": "Santa Barbara",
+    "psgc_code": "0603043000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/western-visayas/iloilo-province/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 9,
+    "word": "PAVIA",
+    "name": "Pavia",
+    "psgc_code": "0603036000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://tpb.gov.ph/events/carabao-carozza-race-festival/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 9,
+    "word": "GUIMBAL",
+    "name": "Guimbal",
+    "psgc_code": "0603020000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://phlpost.gov.ph/cpt-press-releases/municipality-of-guimbal-iloilo-province-rich-history-revealed-through-phlpost-postage-stamps/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 10,
+    "word": "CEBU",
+    "name": "City of Cebu",
+    "psgc_code": "0730600000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/central-visayas/cebu-province/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 10,
+    "word": "LAPULAPU",
+    "name": "City of Lapu-Lapu",
+    "psgc_code": "0731100000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/central-visayas/city-of-lapu-lapu/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 10,
+    "word": "MANDAUE",
+    "name": "City of Mandaue",
+    "psgc_code": "0731300000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://www.mandauecity.gov.ph/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 10,
+    "word": "TAGBILARAN",
+    "name": "City of Tagbilaran",
+    "psgc_code": "0701242000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://www.nationalmuseum.gov.ph/our-museums/regional-area-and-site-museums/bohol/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 10,
+    "word": "TALISAY",
+    "name": "City of Talisay",
+    "psgc_code": "0702250000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://talisaycitycebu.gov.ph/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 10,
+    "word": "NAGA",
+    "name": "City of Naga",
+    "psgc_code": "0702234000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://tourism.cebu.gov.ph/explore/city-of-naga/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 10,
+    "word": "CARCAR",
+    "name": "City of Carcar",
+    "psgc_code": "0702214000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://ncca.gov.ph/about-culture-and-arts/in-focus/nhcp-declares-silva-house-ang-dakong-balay-balay-na-tisa-and-mercado-mansion-as-heritage-houses/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 10,
+    "word": "TOLEDO",
+    "name": "City of Toledo",
+    "psgc_code": "0702251000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://eia.emb.gov.ph/wp-content/uploads/2026/10/Validated-List-of-ECPs-as-of-June-2026.pdf"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 10,
+    "word": "DANAO",
+    "name": "Danao City",
+    "psgc_code": "0702223000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://danaocity.gov.ph/2026/09/23/danao-celebrates-20-years-of-karansa-honors-faith-and-culture-shaped-by-danawanon-hands/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 10,
+    "word": "PANGLAO",
+    "name": "Panglao",
+    "psgc_code": "0701233000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://tourism.bohol.gov.ph/visitbohol-dauis/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 10,
+    "word": "BOGO",
+    "name": "City of Bogo",
+    "psgc_code": "0702211000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://cityofbogocebu.gov.ph/wp-content/uploads/2025/02/010.pdf"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 10,
+    "word": "MOALBOAL",
+    "name": "Moalboal",
+    "psgc_code": "0702233000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/central-visayas/cebu-province/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 10,
+    "word": "DALAGUETE",
+    "name": "Dalaguete",
+    "psgc_code": "0702222000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://www.cebu.gov.ph/11084/mantalongon-cebus-vegetable-basket-in-the-highlands-of-dalaguete/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 10,
+    "word": "ARGAO",
+    "name": "Argao",
+    "psgc_code": "0702205000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://tourism.cebu.gov.ph/explore/argao/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 10,
+    "word": "TUBIGON",
+    "name": "Tubigon",
+    "psgc_code": "0701245000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://boholinvest.bohol.gov.ph/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 11,
+    "word": "TACLOBAN",
+    "name": "City of Tacloban",
+    "psgc_code": "0831600000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/eastern-visayas/city-of-tacloban/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 11,
+    "word": "ORMOC",
+    "name": "Ormoc City",
+    "psgc_code": "0803738000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/eastern-visayas/ormoc-city/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 11,
+    "word": "CALBAYOG",
+    "name": "City of Calbayog",
+    "psgc_code": "0806003000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://calbayog.gov.ph/why-does-calbayog-have-so-many-waterfalls/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 11,
+    "word": "CATBALOGAN",
+    "name": "City of Catbalogan",
+    "psgc_code": "0806005000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://catbalogancity.gov.ph/%F0%9D%99%86%F0%9D%99%96%F0%9D%99%AA%F0%9D%99%A5%F0%9D%99%A4%F0%9D%99%99-%F0%9D%99%9D%F0%9D%99%96%F0%9D%99%A3-%F0%9D%99%A5%F0%9D%99%96%F0%9D%99%9C%F0%9D%99%A0%F0%9D%99%96%F0%9D%99%A3%F0%9D%99%A8/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 11,
+    "word": "BORONGAN",
+    "name": "City of Borongan",
+    "psgc_code": "0802604000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://easternsamar.gov.ph/borongan/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 11,
+    "word": "BAYBAY",
+    "name": "City of Baybay",
+    "psgc_code": "0803708000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/eastern-visayas/leyte/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 11,
+    "word": "MAASIN",
+    "name": "City of Maasin",
+    "psgc_code": "0806407000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://philhistoricsites.nhcp.gov.ph/registry_database/katedral-ng-maasin/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 11,
+    "word": "NAVAL",
+    "name": "Naval",
+    "psgc_code": "0807808000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://issuances-library.senate.gov.ph/legislative%2Bissuances/Republic%20Act%20No.%2011170"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 11,
+    "word": "CATARMAN",
+    "name": "Catarman",
+    "psgc_code": "0804805000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/2/96913"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 11,
+    "word": "PALO",
+    "name": "Palo",
+    "psgc_code": "0803739000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/eastern-visayas/leyte/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 11,
+    "word": "BILIRAN",
+    "name": "Biliran",
+    "psgc_code": "0807802000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://issuances-library.senate.gov.ph/legislative%2Bissuances/Republic%20Act%20No.%2011170"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 11,
+    "word": "LAOANG",
+    "name": "Laoang",
+    "psgc_code": "0804808000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://ro8.dmw.gov.ph/news-release/2673"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 11,
+    "word": "GUIUAN",
+    "name": "Guiuan",
+    "psgc_code": "0802609000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://philhistoricsites.nhcp.gov.ph/registry_database/homonhon/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 11,
+    "word": "LILOAN",
+    "name": "Liloan",
+    "psgc_code": "0806406000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://dromic.dswd.gov.ph/wp-content/uploads/2025/08/DSWD-DROMIC-Terminal-Report-on-the-Structural-Vulnerabilities-of-the-Wawa-Bridge-19-January-2026-6AM.pdf"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 11,
+    "word": "SOGOD",
+    "name": "Sogod",
+    "psgc_code": "0806417000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://southernleyte.gov.ph/sogod/sogod-history/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 18,
+    "word": "BACOLOD",
+    "name": "City of Bacolod",
+    "psgc_code": "1830200000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/nir/bacolod-city/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 18,
+    "word": "DUMAGUETE",
+    "name": "City of Dumaguete",
+    "psgc_code": "1804610000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/nir/city-of-dumaguete/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 18,
+    "word": "BAGO",
+    "name": "City of Bago",
+    "psgc_code": "1804502000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://bagocity.gov.ph/attractions/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 18,
+    "word": "KABANKALAN",
+    "name": "City of Kabankalan",
+    "psgc_code": "1804515000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://kabankalanwater.gov.ph/link/citizenscharter2025.pdf"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 18,
+    "word": "SILAY",
+    "name": "City of Silay",
+    "psgc_code": "1804526000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/nir/negros-occidental/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 18,
+    "word": "TALISAY",
+    "name": "City of Talisay",
+    "psgc_code": "1804528000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://sorsogoncitywd.gov.ph/the-ruins-of-talisay-city/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 18,
+    "word": "BAYAWAN",
+    "name": "City of Bayawan",
+    "psgc_code": "1804606000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://www.negor.gov.ph/festival/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 18,
+    "word": "CANLAON",
+    "name": "City of Canlaon",
+    "psgc_code": "1804608000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://canlaoncity.gov.ph/tourism"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 18,
+    "word": "SIQUIJOR",
+    "name": "Siquijor",
+    "psgc_code": "1806106000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://rsso07.psa.gov.ph/content/first-ever-binyagan-ng-bayan-organized-local-civil-registry-office-siquijor-4o"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 18,
+    "word": "VICTORIAS",
+    "name": "City of Victorias",
+    "psgc_code": "1804531000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://nlpdl.nlp.gov.ph/CC01/monographs/1994/NLP00VM052mcd/v1/v20.pdf"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 18,
+    "word": "LACARLOTA",
+    "name": "City of La Carlota",
+    "psgc_code": "1804516000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://lacarlotacity.gov.ph/43rd-pasalamat/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 18,
+    "word": "SIPALAY",
+    "name": "City of Sipalay",
+    "psgc_code": "1804527000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/nir/negros-occidental/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 18,
+    "word": "GUIHULNGAN",
+    "name": "City of Guihulngan",
+    "psgc_code": "1804611000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://pco.gov.ph/news_releases/pbbm-declares-special-non-working-days-for-bambang-nueva-ecija-and-guihulngan-city/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 18,
+    "word": "BAIS",
+    "name": "City of Bais",
+    "psgc_code": "1804604000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/nir/negros-oriental/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 12,
+    "word": "ZAMBOANGA",
+    "name": "City of Zamboanga",
+    "psgc_code": "0931700000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/zamboanga-peninsula/city-of-zamboanga/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 12,
+    "word": "PAGADIAN",
+    "name": "City of Pagadian",
+    "psgc_code": "0907322000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://r9.emb.gov.ph/wp-content/uploads/2022/03/EIS.pdf"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked",
+    "source_note": "Topography described in a proponent-prepared Environmental Impact Statement published by DENR-EMB; government hosting is not treated as government authorship."
+  },
+  {
+    "region_id": 12,
+    "word": "DIPOLOG",
+    "name": "City of Dipolog",
+    "psgc_code": "0907202000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/zamboanga-peninsula/zamboanga-del-norte/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 12,
+    "word": "DAPITAN",
+    "name": "City of Dapitan",
+    "psgc_code": "0907201000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/26/10141"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 12,
+    "word": "ISABELA",
+    "name": "City of Isabela",
+    "psgc_code": "0990101000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://basilan.gov.ph/tourism"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 12,
+    "word": "IPIL",
+    "name": "Ipil",
+    "psgc_code": "0908305000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://blgf.gov.ph/regional-offices/region-9/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 12,
+    "word": "SINDANGAN",
+    "name": "Sindangan",
+    "psgc_code": "0907218000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://ncca.gov.ph/about-culture-and-arts/culture-profile/glimpses-peoples-of-the-philippines/subanun/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 12,
+    "word": "MOLAVE",
+    "name": "Molave",
+    "psgc_code": "0907319000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://zampen.da.gov.ph/wp-content/uploads/2026/02/Edited-ANNUAL-REPORT-2024-02626forSupplier.pdf"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 12,
+    "word": "JOLO",
+    "name": "Jolo",
+    "psgc_code": "0906602000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/zamboanga-peninsula/sulu/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 12,
+    "word": "PATIKUL",
+    "name": "Patikul",
+    "psgc_code": "0906611000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://www.bfar.da.gov.ph/wp-content/uploads/2022/05/Sulu-PRSA-Final-Draft.pdf"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 12,
+    "word": "TALIPAO",
+    "name": "Talipao",
+    "psgc_code": "0906613000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://csea.bangsamoro.gov.ph/database/coopmasterlistpdf/coopmasterlist5.php?download=1&year=2024"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 12,
+    "word": "KABASALAN",
+    "name": "Kabasalan",
+    "psgc_code": "0908306000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://pia.gov.ph/features/sibugay-fires-up-guinness-bid-with-worlds-longest-line-of-talaba-shells/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 12,
+    "word": "LILOY",
+    "name": "Liloy",
+    "psgc_code": "0907206000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/zamboanga-peninsula/zamboanga-del-norte/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 12,
+    "word": "TITAY",
+    "name": "Titay",
+    "psgc_code": "0908315000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://prri.da.gov.ph/prri-brings-goma-gaang-buhay-to-titay-through-improved-rubber-plantation/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 12,
+    "word": "SIOCON",
+    "name": "Siocon",
+    "psgc_code": "0907219000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://region9.bfar.da.gov.ph/da-bfar-9-conducts-market-denial-operations-and-awareness-campaigns-against-iuuf-in-siocon-and-sirawai/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 13,
+    "word": "CAGAYANDEORO",
+    "name": "City of Cagayan De Oro",
+    "psgc_code": "1030500000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/northern-mindanao/cagayan-de-oro-city/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 13,
+    "word": "ILIGAN",
+    "name": "City of Iligan",
+    "psgc_code": "1030900000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://prod-cms.doe.gov.ph/documents/d/guest/03-mindanao-pdf"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 13,
+    "word": "MALAYBALAY",
+    "name": "City of Malaybalay",
+    "psgc_code": "1001312000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://bukidnon.gov.ph/kaamulan-festival/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 13,
+    "word": "VALENCIA",
+    "name": "City of Valencia",
+    "psgc_code": "1001321000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://www.congress.gov.ph/index.php/legis/results?congress=20&oth_nos=HB09479&qrytype=N&signif=NL"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked",
+    "source_note": "Legislative proposal used for its description of an existing place or environmental feature only. No proposed designation is presented as enacted law."
+  },
+  {
+    "region_id": 13,
+    "word": "GINGOOG",
+    "name": "City of Gingoog",
+    "psgc_code": "1004308000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/northern-mindanao/misamis-oriental/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 13,
+    "word": "ELSALVADOR",
+    "name": "City of El Salvador",
+    "psgc_code": "1004307000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/northern-mindanao/misamis-oriental/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 13,
+    "word": "OROQUIETA",
+    "name": "City of Oroquieta",
+    "psgc_code": "1004209000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://oroquietacity.gov.ph/history-of-oroquieta/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 13,
+    "word": "OZAMIZ",
+    "name": "City of Ozamiz",
+    "psgc_code": "1004210000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://philhistoricsites.nhcp.gov.ph/registry_database/fuerte-de-la-conception-y-del-triunfo/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 13,
+    "word": "TANGUB",
+    "name": "City of Tangub",
+    "psgc_code": "1004215000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/northern-mindanao/misamis-occidental/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 13,
+    "word": "MAMBAJAO",
+    "name": "Mambajao",
+    "psgc_code": "1001804000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://tpb.gov.ph/events/lanzones-festival/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 13,
+    "word": "CLAVERIA",
+    "name": "Claveria",
+    "psgc_code": "1004306000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://ati2.da.gov.ph/ati-10/content/learnings-sites-agriculture-misamis-oriental"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 13,
+    "word": "BALINGASAG",
+    "name": "Balingasag",
+    "psgc_code": "1004302000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://fishcore.bfar.da.gov.ph/wp-content/uploads/2025/08/4_FishCoRe-Matching-Grants-Operation-Manual_Feb2025-1.pdf"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 13,
+    "word": "MARAMAG",
+    "name": "Maramag",
+    "psgc_code": "1001315000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://prod-cms.doe.gov.ph/documents/d/guest/03-mindanao-grid-4-pdf"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 13,
+    "word": "DONCARLOS",
+    "name": "Don Carlos",
+    "psgc_code": "1001304000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://ldr.senate.gov.ph/bills/house-bill-no-2982-14th-congress-republic"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked",
+    "source_note": "Legislative proposal used for its description of an existing place or environmental feature only. No proposed designation is presented as enacted law."
+  },
+  {
+    "region_id": 13,
+    "word": "JASAAN",
+    "name": "Jasaan",
+    "psgc_code": "1004311000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://memory.nhcp.gov.ph/wp-content/uploads/2026/07/JPLHH-V1N2-Montilla.pdf"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 14,
+    "word": "DAVAO",
+    "name": "City of Davao",
+    "psgc_code": "1130700000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/davao-region/davao-city/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 14,
+    "word": "TAGUM",
+    "name": "City of Tagum",
+    "psgc_code": "1102319000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/davao-region/davao-del-norte/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 14,
+    "word": "DIGOS",
+    "name": "City of Digos",
+    "psgc_code": "1102403000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://davaodelsur.gov.ph/festivals-and-events/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 14,
+    "word": "MATI",
+    "name": "City of Mati",
+    "psgc_code": "1102509000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/davao-region/davao-oriental/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 14,
+    "word": "PANABO",
+    "name": "City of Panabo",
+    "psgc_code": "1102315000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/davao-region/davao-del-norte/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 14,
+    "word": "SAMAL",
+    "name": "Island Garden City of Samal",
+    "psgc_code": "1102317000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/davao-region/davao-del-norte/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 14,
+    "word": "NABUNTURAN",
+    "name": "Nabunturan",
+    "psgc_code": "1108209000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://pais.bmb.gov.ph/home/info/DENRRXI0004"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 14,
+    "word": "MALITA",
+    "name": "Malita",
+    "psgc_code": "1108603000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://davaooccidental.gov.ph/municipalities-malita/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 14,
+    "word": "LUPON",
+    "name": "Lupon",
+    "psgc_code": "1102507000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://pcaf.da.gov.ph/wp-content/uploads/2025/09/Region-11-List-of-Accredited-Regional-CSOs.pdf"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 14,
+    "word": "BANSALAN",
+    "name": "Bansalan",
+    "psgc_code": "1102401000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://www.da.gov.ph/from-magazine-agriculture-coffee-farmers-on-mt-apos-foothills-produce-internationally-acclaimed-coffee/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 14,
+    "word": "MONKAYO",
+    "name": "Monkayo",
+    "psgc_code": "1108207000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://pia.gov.ph/news/nations-first-nc-2-jewelry-training-center-opens-in-davao-de-oro/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 14,
+    "word": "COMPOSTELA",
+    "name": "Compostela",
+    "psgc_code": "1108201000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/7/97603"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 14,
+    "word": "SANTAMARIA",
+    "name": "Santa Maria",
+    "psgc_code": "1108604000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://davaooccidental.gov.ph/sta-maria/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 14,
+    "word": "BAGANGA",
+    "name": "Baganga",
+    "psgc_code": "1102501000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://r11.emb.gov.ph/wp-content/uploads/2024/02/2023-Annual-Water-Quality-Assessment-Report.pdf"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 14,
+    "word": "GENEROSO",
+    "name": "Governor Generoso",
+    "psgc_code": "1102506000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://www.dbm.gov.ph/wp-content/uploads/GAA/GAA2018/TechGAA/OEO/P.pdf"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 15,
+    "word": "GENSAN",
+    "name": "City of General Santos",
+    "psgc_code": "1230800000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/soccsksargen/city-of-general-santos/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 15,
+    "word": "KORONADAL",
+    "name": "City of Koronadal",
+    "psgc_code": "1206306000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://koronadal.gov.ph/culture/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 15,
+    "word": "KIDAPAWAN",
+    "name": "City of Kidapawan",
+    "psgc_code": "1204704000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/soccsksargen/cotabato-province/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 15,
+    "word": "TACURONG",
+    "name": "City of Tacurong",
+    "psgc_code": "1206511000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://phworldexpo.tpb.gov.ph/baras-bird-sanctuary/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 15,
+    "word": "ALABEL",
+    "name": "Alabel",
+    "psgc_code": "1208001000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://ldr.senate.gov.ph/legislative%2Bissuances/Republic%20Act%20No.%207228"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 15,
+    "word": "ISULAN",
+    "name": "Isulan",
+    "psgc_code": "1206504000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://pco.gov.ph/news_releases/palace-declares-special-non-working-days-at-three-towns-in-quezon-cagayan-and-sultan-kudarat/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 15,
+    "word": "MIDSAYAP",
+    "name": "Midsayap",
+    "psgc_code": "1204709000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://mirror.pia.gov.ph/news/2022/03/10/lgu-midsayap-promotes-local-tourism-as-restrictions-ease"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 15,
+    "word": "POLOMOLOK",
+    "name": "Polomolok",
+    "psgc_code": "1206312000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://buplant.da.gov.ph/2026/11/13/license-to-operate-packing-facility_pq-pa-psn-gsn-01_polo-samahang-nayon-mpc/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 15,
+    "word": "GLAN",
+    "name": "Glan",
+    "psgc_code": "1208002000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://r12.emb.gov.ph/wp-content/uploads/2023/04/PRIORITY-RECREATIONAL-WATERS-MONITORING-STATIONS.pdf"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 15,
+    "word": "KABACAN",
+    "name": "Kabacan",
+    "psgc_code": "1204703000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://issuances-library.senate.gov.ph/legislative%2Bissuances/Presidential%20Decree%20No.%201312%2C%20s.%201978"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 15,
+    "word": "TUPI",
+    "name": "Tupi",
+    "psgc_code": "1206317000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://www.pna.gov.ph/articles/1089608"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 15,
+    "word": "TBOLI",
+    "name": "T'boli",
+    "psgc_code": "1206316000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://southcotabato.gov.ph/lake-holon-opens-to-tourists/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 15,
+    "word": "SURALLAH",
+    "name": "Surallah",
+    "psgc_code": "1206313000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://southcotabato.gov.ph/surallah-durian-growers-begin-formation-of-farmers-association-with-opags-support/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 15,
+    "word": "LEBAK",
+    "name": "Lebak",
+    "psgc_code": "1206506000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://r12.emb.gov.ph/wp-content/uploads/2025/03/2021-SOBER.pdf"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 15,
+    "word": "PIGCAWAYAN",
+    "name": "Pigkawayan",
+    "psgc_code": "1204711000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://saad.da.gov.ph/phase-2/cotabato-north-cotabato/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 16,
+    "word": "BUTUAN",
+    "name": "City of Butuan",
+    "psgc_code": "1630400000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://www.nationalmuseum.gov.ph/2022/09/20/the-9th-to-10th-century-archaeological-evidence-of-maritime-relations-between-the-philippines-and-the-islands-of-southeast-asia/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 16,
+    "word": "SURIGAO",
+    "name": "City of Surigao",
+    "psgc_code": "1606724000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://surigaocity.gov.ph/wp-content/uploads/2025/06/CDP-2023-2032-Consolidated-with-CDIP.pdf"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 16,
+    "word": "BAYUGAN",
+    "name": "City of Bayugan",
+    "psgc_code": "1600301000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://agusandelsur.gov.ph/municipalities/bayugan-city/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 16,
+    "word": "CABADBARAN",
+    "name": "City of Cabadbaran",
+    "psgc_code": "1600203000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://cabadbarancity.gov.ph/dagkot-festival-grand-showdown/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 16,
+    "word": "BISLIG",
+    "name": "City of Bislig",
+    "psgc_code": "1606803000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://bislig.gov.ph/tourist-spots/tinuyanfalls/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 16,
+    "word": "TANDAG",
+    "name": "City of Tandag",
+    "psgc_code": "1606819000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://surigaodelsur.gov.ph/tourism/schedule"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 16,
+    "word": "PROSPERIDAD",
+    "name": "Prosperidad",
+    "psgc_code": "1600306000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://ldr.senate.gov.ph/sites/default/files/2023-07/3996236384%21.pdf"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked",
+    "source_note": "Legislative proposal used for its description of an existing place or environmental feature only. No proposed designation is presented as enacted law."
+  },
+  {
+    "region_id": 16,
+    "word": "SANJOSE",
+    "name": "San Jose",
+    "psgc_code": "1608506000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://dinagatislands.gov.ph/attractions/pbma-founders-shrine/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 16,
+    "word": "DAPA",
+    "name": "Dapa",
+    "psgc_code": "1606707000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://marina.gov.ph/wp-content/uploads/2026/04/Philippine-Nautical-Highway-Matrix-MAR-2026.pdf"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 16,
+    "word": "TRENTO",
+    "name": "Trento",
+    "psgc_code": "1600312000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://agusandelsur.gov.ph/municipalities/trento/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 16,
+    "word": "GENERALLUNA",
+    "name": "General Luna",
+    "psgc_code": "1606710000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://generalluna.gov.ph/wp-content/uploads/2024/10/CDP_2025.pdf"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 16,
+    "word": "HINATUAN",
+    "name": "Hinatuan",
+    "psgc_code": "1606809000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/caraga/surigao-del-sur/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 16,
+    "word": "LINGIG",
+    "name": "Lingig",
+    "psgc_code": "1606812000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/2/14381"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 16,
+    "word": "TALACOGON",
+    "name": "Talacogon",
+    "psgc_code": "1600311000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://www.congress.gov.ph/index.php/legis/results?congress=20&oth_nos=HB08575&qrytype=N&signif=NL"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked",
+    "source_note": "Legislative proposal used for its description of an existing place or environmental feature only. No proposed designation is presented as enacted law."
+  },
+  {
+    "region_id": 16,
+    "word": "BUENAVISTA",
+    "name": "Buenavista",
+    "psgc_code": "1600201000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/caraga/agusan-del-norte/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 17,
+    "word": "COTABATO",
+    "name": "Cotabato City",
+    "psgc_code": "1908703000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://congress.gov.ph/index.php/legis/results?congress=20&oth_nos=HB09516&qrytype=N&signif=NL"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked",
+    "source_note": "Legislative proposal used for its description of an existing place or environmental feature only. No proposed designation is presented as enacted law."
+  },
+  {
+    "region_id": 17,
+    "word": "MARAWI",
+    "name": "City of Marawi",
+    "psgc_code": "1903617000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://www.msumain.edu.ph/agakhan-museum-and-natural-science-museum/aga-khan-museum/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 17,
+    "word": "LAMITAN",
+    "name": "City of Lamitan",
+    "psgc_code": "1900702000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/cities"
+    ],
+    "fact_sources": [
+      "https://www.tourism.gov.ph/destination/barmm/basilan/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 17,
+    "word": "BONGAO",
+    "name": "Bongao",
+    "psgc_code": "1907002000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://tawi-tawi.gov.ph/bongao/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 17,
+    "word": "DATUODIN",
+    "name": "Datu Odin Sinsuat",
+    "psgc_code": "1908705000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://pagasa.dost.gov.ph/aviation/icao-codes"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 17,
+    "word": "SHARIFAGUAK",
+    "name": "Shariff Aguak",
+    "psgc_code": "1908820000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://bangsamoro.gov.ph/news/latest-news/barmm-turns-over-weaving-handlooms-to-ip-group-and-pdl-facilities/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 17,
+    "word": "BULUAN",
+    "name": "Buluan",
+    "psgc_code": "1908802000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://www.pna.gov.ph/articles/1022582"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 17,
+    "word": "MALABANG",
+    "name": "Malabang",
+    "psgc_code": "1903615000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://mafar.bangsamoro.gov.ph/mafar-sdf-turns-over-three-units-of-solar-powered-mini-ice-plants-to-boost-fishing-industry"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 17,
+    "word": "WAO",
+    "name": "Wao",
+    "psgc_code": "1903630000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://bangsamoro.gov.ph/news/latest-news/mafar-trains-wao-farmers-on-good-animal-husbandry-practices/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 17,
+    "word": "MALUSO",
+    "name": "Maluso",
+    "psgc_code": "1900704000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://csea.bangsamoro.gov.ph/database/coopmasterlistpdf/coopmasterlist5.php?download=1&year=2024"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 17,
+    "word": "PARANG",
+    "name": "Parang",
+    "psgc_code": "1908709000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://investmindanao.office.minda.gov.ph/locations/polloc-freeport-ecozone"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 17,
+    "word": "UPI",
+    "name": "Upi",
+    "psgc_code": "1908713000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://bangsamoro.gov.ph/news/latest-news/peace-unity-take-center-stage-in-upis-23rd-meguyaya-festival/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 17,
+    "word": "SIMUNUL",
+    "name": "Simunul",
+    "psgc_code": "1907004000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://issuances-library.senate.gov.ph/legislative%2Bissuances/Republic%20Act%20No.%2010573"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 17,
+    "word": "PANGLIMA",
+    "name": "Panglima Sugala",
+    "psgc_code": "1907001000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://bangsamoro.gov.ph/news/feature-story/keeping-barter-trade-alive-the-adlaw-pagtabuh-tabuh-of-tawi-tawi/"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  },
+  {
+    "region_id": 17,
+    "word": "SULTANKUDARAT",
+    "name": "Sultan Kudarat",
+    "psgc_code": "1908710000",
+    "description_sources": [
+      "https://psa.gov.ph/classification/psgc/municipalities"
+    ],
+    "fact_sources": [
+      "https://ldr.senate.gov.ph/legislative-issuance/republic-act-no-5647"
+    ],
+    "fact_topic": "local_history_culture_nature_or_livelihood",
+    "reviewed_on": "2026-11-20",
+    "review_status": "source_checked"
+  }
+]

@@ -1,5 +1,41 @@
 # Rehiyonia
 
+### Locality educational content review (20 November 2026)
+
+The 234 placeholder locality descriptions and fun facts have been replaced in
+both English and Filipino. All revised cards now identify the locality and its
+region, with province labels where applicable. Official PSA names are used on
+display labels; normalized puzzle targets, including WASHINGTON and PIGCAWAYAN,
+remain unchanged so existing puzzles and saves stay compatible.
+
+The replacement set now includes 234 source-checked local learning highlights:
+the first 55 plus the remaining 179 in English and Filipino. Subjects include
+heritage sites, festivals, food, Indigenous languages, nature, local history,
+educational institutions and livelihoods. No census-only replacements remain.
+The offline content builder rejects missing or duplicate highlights instead of
+silently filling gaps with a population template. The other 36 originally
+non-placeholder entries and the separate trivia/introduction audit findings
+are outside this replacement pass and are not certified by it.
+
+Claim references, official PSGC codes, review date and source notes are
+bundled in `assets/data/locality_content_sources.json`. Local highlights and
+their official source URLs are in `assets/data/locality_content_highlights.json`
+and `assets/data/locality_content_additions.json`. Sources include NHCP, NCCA,
+National Museum, PSA, DepEd, DOST, DA/BFAR, official local governments, and the
+Mindanao State University museum. Legislative proposals are used only to
+identify named places where noted; proposed legal designations are not taught
+as enacted laws. Beliefs and legends are identified as such.
+The pinned PSA reference records are in `tool/locality_psgc_reference.json`.
+Educational wording is original; PSA reference data is attributed to the
+Philippine Statistics Authority (CC BY 4.0). No Wikipedia source is used for
+these educational replacements. Photograph licensing remains separate.
+
+To rebuild the reviewed copy offline, run
+`dart tool/update_locality_learning_content.dart`. At startup the existing
+locality rows are updated in place by region and word, without a schema change,
+new progress markers, or any reset of IDs, player data, rewards or progression.
+Fully restart the app to run this startup refresh; hot reload alone is insufficient.
+
 ### Offline locality photographs
 
 All 270 locality image paths now resolve to bundled photographs. The 50-photo
